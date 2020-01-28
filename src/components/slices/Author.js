@@ -1,24 +1,20 @@
 import React from 'react'
+import Img from 'gatsby-image'
+import styled from 'styled-components'
+import tw from 'tailwind.macro'
 
-const Author = ({ slice }) => {
-	if (!slice.primary.author_relation) {
-		return null
-	}
-
-	const {
-		author_name,
-		author_phone,
-		author_role,
-		author_email,
-	} = slice.primary.author_relation
-
+const Author = ({ name, role, email, phone, image }) => {
 	return (
 		<div className="border p-3">
-			<div className="text-xs mb-2">(type: {slice.type})</div>
-			<div>{author_name}</div>
-			<div>{author_role}</div>
-			<div>{author_phone}</div>
-			<div>{author_email}</div>
+			<Img
+				className="h-32 w-32 rounded-full"
+				fluid={image}
+				alt="hahahahahaha"
+			/>
+			<div>{name}</div>
+			<div>{role}</div>
+			<div>{phone}</div>
+			<div>{email}</div>
 		</div>
 	)
 }
