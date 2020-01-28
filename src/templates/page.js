@@ -5,7 +5,7 @@ import Layout from '../components/Layout'
 import Seo from '../components/Seo'
 import SliceParser from '../components/SliceParser'
 
-import { Author } from '../fragments'
+// import { TestFragment } from '../fragments'
 
 const Page = ({
 	data: {
@@ -29,11 +29,19 @@ export const query = graphql`
 			content(uid: $uid, lang: $lang) {
 				title
 				body {
-					...Author
+					... on PRISMIC_ContentBodyTest {
+						type
+						label
+						primary {
+							test_title
+						}
+					}
 				}
 			}
 		}
 	}
 `
+
+// Page.fragments = [TestFragment]
 
 export default Page

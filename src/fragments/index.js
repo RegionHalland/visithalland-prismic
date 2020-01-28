@@ -1,5 +1,1 @@
-import { Author } from './Author'
-
-export default {
-	Author,
-}
+export { TestFragment } from './TestFragment'
