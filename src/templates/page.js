@@ -5,7 +5,7 @@ import Layout from '../components/Layout'
 import Seo from '../components/Seo'
 import SliceParser from '../components/SliceParser'
 
-import { Author } from '../fragments'
+import { AuthorFragment } from '../fragments'
 
 const Page = ({
 	data: {
@@ -29,11 +29,13 @@ export const query = graphql`
 			content(uid: $uid, lang: $lang) {
 				title
 				body {
-					...Author
+					...AuthorFragment
 				}
 			}
 		}
 	}
 `
+
+Page.fragments = [AuthorFragment]
 
 export default Page

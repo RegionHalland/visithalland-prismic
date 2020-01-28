@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby'
 
-export const Author = graphql`
-	fragment Author on PRISMIC_ContentBodyAuthor {
+export const AuthorFragment = graphql`
+	fragment AuthorFragment on PRISMIC_ContentBodyAuthor {
 		type
 		label
 		primary {
