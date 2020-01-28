@@ -20,6 +20,12 @@
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.8.3",
+    "@storybook/addon-actions": "^5.3.9",
+    "@storybook/addon-links": "^5.3.9",
+    "@storybook/addons": "^5.3.9",
+    "@storybook/react": "^5.3.9",
+    "babel-loader": "^8.0.6",
     "babel-plugin-styled-components": "^1.10.7",
     "gatsby-plugin-postcss": "^2.1.19",
     "gatsby-plugin-styled-components": "^3.1.18",
@@ -39,7 +45,9 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "repository": {
     "type": "git",
