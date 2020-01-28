@@ -23,7 +23,7 @@ const Layout = ({ children }) => {
     `)
 
     return (
-        <div>
+        <div className="font-sans">
             <Header siteTitle={data.site.siteMetadata.title} />
             <div>{children}</div>
             <footer>Footer</footer>
