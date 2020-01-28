@@ -29,6 +29,24 @@ module.exports = {
 			},
 		},
 		'gatsby-plugin-postcss',
+		{
+			resolve: 'gatsby-source-prismic-graphql',
+			options: {
+				repositoryName: 'visithalland', // required
+				defaultLang: 'sv-se', // optional, but recommended
+				langs: ['sv-se', 'no'],
+				previews: true,
+				pages: [
+					{
+						type: 'Content',
+						match: '/:lang?/:uid',
+						path: '/', // placeholder page for unpublished documents
+						component: require.resolve('./src/templates/page.js'),
+						langs: ['se-sv', 'no'],
+					},
+				],
+			},
+		},
 		// this (optional) plugin enables Progressive Web App + Offline functionality
 		// To learn more, visit: https://gatsby.dev/offline
 		// 'gatsby-plugin-offline',
