@@ -5,6 +5,8 @@ import Layout from '../components/Layout'
 import Seo from '../components/Seo'
 import SliceParser from '../components/SliceParser'
 
+import { Author } from '../fragments'
+
 const Page = ({
 	data: {
 		prismic: {
@@ -27,35 +29,7 @@ export const query = graphql`
 			content(uid: $uid, lang: $lang) {
 				title
 				body {
-					... on PRISMIC_ContentBodyAuthor {
-						type
-						label
-						primary {
-							author_relation {
-								... on PRISMIC_Editor {
-									author_name
-									author_phone
-									author_role
-									author_email
-								}
-							}
-						}
-					}
-					... on PRISMIC_ContentBodyHero_image_with_text {
-						type
-						label
-						primary {
-							hero_image_with_text_title
-							hero_image_with_text_imgSharp {
-								childImageSharp {
-									fluid(maxWidth: 400, maxHeight: 250) {
-										...GatsbyImageSharpFluid
-									}
-								}
-							}
-							hero_image_with_text_img
-						}
-					}
+					...Author
 				}
 			}
 		}
