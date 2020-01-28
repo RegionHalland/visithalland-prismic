@@ -1,1 +1,1 @@
-export { AuthorFragment } from './AuthorFragment'
+export { TestFragment } from './TestFragment'
