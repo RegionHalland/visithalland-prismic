@@ -47,11 +47,11 @@
 	font-family: 'Axiforma';
 	font-weight: 400;
 	font-display: fallback;
-	src: url('../../fonts/3A12BD_5_0.eot');
-	src: url('../../fonts/3A12BD_5_0.eot?#iefix') format('embedded-opentype'),
-		url('../../fonts/3A12BD_5_0.woff2') format('woff2'),
-		url('../../fonts/3A12BD_5_0.woff') format('woff'),
-		url('../../fonts/3A12BD_5_0.ttf') format('truetype');
+	src: url('../fonts/3A12BD_5_0.eot');
+	src: url('../fonts/3A12BD_5_0.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/3A12BD_5_0.woff2') format('woff2'),
+		url('../fonts/3A12BD_5_0.woff') format('woff'),
+		url('../fonts/3A12BD_5_0.ttf') format('truetype');
 }
 
 /*
@@ -62,11 +62,11 @@
 	font-style: italic;
 	font-weight: 400;
 	font-display: fallback;
-	src: url('../../fonts/3A12BD_2_0.eot');
-	src: url('../../fonts/3A12BD_2_0.eot?#iefix') format('embedded-opentype'),
-		url('../../fonts/3A12BD_2_0.woff2') format('woff2'),
-		url('../../fonts/3A12BD_2_0.woff') format('woff'),
-		url('../../fonts/3A12BD_2_0.ttf') format('truetype');
+	src: url('../fonts/3A12BD_2_0.eot');
+	src: url('../fonts/3A12BD_2_0.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/3A12BD_2_0.woff2') format('woff2'),
+		url('../fonts/3A12BD_2_0.woff') format('woff'),
+		url('../fonts/3A12BD_2_0.ttf') format('truetype');
 }
 
 /*
@@ -76,11 +76,11 @@
 	font-family: 'Axiforma';
 	font-weight: 500;
 	font-display: fallback;
-	src: url('../../fonts/3A12BD_3_0.eot');
-	src: url('../../fonts/3A12BD_3_0.eot?#iefix') format('embedded-opentype'),
-		url('../../fonts/3A12BD_3_0.woff2') format('woff2'),
-		url('../../fonts/3A12BD_3_0.woff') format('woff'),
-		url('../../fonts/3A12BD_3_0.ttf') format('truetype');
+	src: url('../fonts/3A12BD_3_0.eot');
+	src: url('../fonts/3A12BD_3_0.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/3A12BD_3_0.woff2') format('woff2'),
+		url('../fonts/3A12BD_3_0.woff') format('woff'),
+		url('../fonts/3A12BD_3_0.ttf') format('truetype');
 }
 
 /*
@@ -91,11 +91,11 @@
 	font-weight: 500;
 	font-style: italic;
 	font-display: fallback;
-	src: url('../../fonts/3A12BD_4_0.eot');
-	src: url('../../fonts/3A12BD_4_0.eot?#iefix') format('embedded-opentype'),
-		url('../../fonts/3A12BD_4_0.woff2') format('woff2'),
-		url('../../fonts/3A12BD_4_0.woff') format('woff'),
-		url('../../fonts/3A12BD_4_0.ttf') format('truetype');
+	src: url('../fonts/3A12BD_4_0.eot');
+	src: url('../fonts/3A12BD_4_0.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/3A12BD_4_0.woff2') format('woff2'),
+		url('../fonts/3A12BD_4_0.woff') format('woff'),
+		url('../fonts/3A12BD_4_0.ttf') format('truetype');
 }
 
 /*
@@ -105,11 +105,11 @@
 	font-family: 'Axiforma';
 	font-weight: 600;
 	font-display: fallback;
-	src: url('../../fonts/3A12BD_6_0.eot');
-	src: url('../../fonts/3A12BD_6_0.eot?#iefix') format('embedded-opentype'),
-		url('../../fonts/3A12BD_6_0.woff2') format('woff2'),
-		url('../../fonts/3A12BD_6_0.woff') format('woff'),
-		url('../../fonts/3A12BD_6_0.ttf') format('truetype');
+	src: url('../fonts/3A12BD_6_0.eot');
+	src: url('../fonts/3A12BD_6_0.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/3A12BD_6_0.woff2') format('woff2'),
+		url('../fonts/3A12BD_6_0.woff') format('woff'),
+		url('../fonts/3A12BD_6_0.ttf') format('truetype');
 }
 
 /*
@@ -120,11 +120,11 @@
 	font-style: italic;
 	font-weight: 600;
 	font-display: fallback;
-	src: url('../../fonts/3A12BD_7_0.eot');
-	src: url('../../fonts/3A12BD_7_0.eot?#iefix') format('embedded-opentype'),
-		url('../../fonts/3A12BD_7_0.woff2') format('woff2'),
-		url('../../fonts/3A12BD_7_0.woff') format('woff'),
-		url('../../fonts/3A12BD_7_0.ttf') format('truetype');
+	src: url('../fonts/3A12BD_7_0.eot');
+	src: url('../fonts/3A12BD_7_0.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/3A12BD_7_0.woff2') format('woff2'),
+		url('../fonts/3A12BD_7_0.woff') format('woff'),
+		url('../fonts/3A12BD_7_0.ttf') format('truetype');
 }
 
 /*
@@ -134,11 +134,11 @@
 	font-family: 'Axiforma';
 	font-weight: 700;
 	font-display: fallback;
-	src: url('../../fonts/3A12BD_0_0.eot');
-	src: url('../../fonts/3A12BD_0_0.eot?#iefix') format('embedded-opentype'),
-		url('../../fonts/3A12BD_0_0.woff2') format('woff2'),
-		url('../../fonts/3A12BD_0_0.woff') format('woff'),
-		url('../../fonts/3A12BD_0_0.ttf') format('truetype');
+	src: url('../fonts/3A12BD_0_0.eot');
+	src: url('../fonts/3A12BD_0_0.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/3A12BD_0_0.woff2') format('woff2'),
+		url('../fonts/3A12BD_0_0.woff') format('woff'),
+		url('../fonts/3A12BD_0_0.ttf') format('truetype');
 }
 
 /*
@@ -149,9 +149,9 @@
 	font-style: italic;
 	font-weight: 700;
 	font-display: fallback;
-	src: url('../../fonts/3A12BD_1_0.eot');
-	src: url('../../fonts/3A12BD_1_0.eot?#iefix') format('embedded-opentype'),
-		url('../../fonts/3A12BD_1_0.woff2') format('woff2'),
-		url('../../fonts/3A12BD_1_0.woff') format('woff'),
-		url('../../fonts/3A12BD_1_0.ttf') format('truetype');
+	src: url('../fonts/3A12BD_1_0.eot');
+	src: url('../fonts/3A12BD_1_0.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/3A12BD_1_0.woff2') format('woff2'),
+		url('../fonts/3A12BD_1_0.woff') format('woff'),
+		url('../fonts/3A12BD_1_0.ttf') format('truetype');
 }
