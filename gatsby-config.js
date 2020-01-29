@@ -33,16 +33,18 @@ module.exports = {
 			resolve: 'gatsby-source-prismic-graphql',
 			options: {
 				repositoryName: 'visithalland', // required
-				defaultLang: 'sv-se', // optional, but recommended
-				// langs: ['sv-se', 'no'],
+				defaultLang: 'sv-se',
+				langs: ['sv-se', 'no'],
+				shortenUrlLangs: true,
 				previews: true,
 				pages: [
 					{
 						type: 'Content',
-						match: '/content/:uid',
+						match: '/:lang?/:uid',
 						path: '/content', // placeholder page for unpublished documents
-						component: require.resolve('./src/templates/page.js'),
-						langs: ['se-sv', 'no'],
+						component: require.resolve(
+							'./src/templates/content.js',
+						),
 					},
 				],
 			},
