@@ -7,7 +7,7 @@ import SliceParser from '../components/SliceParser'
 
 // import { TestFragment } from '../fragments'
 
-const Page = ({
+const Content = ({
 	data: {
 		prismic: { content },
 	},
@@ -29,11 +29,11 @@ export const query = graphql`
 			content(uid: $uid, lang: $lang) {
 				title
 				body {
-					... on PRISMIC_ContentBodyTest {
+					... on PRISMIC_ContentBodyText {
 						type
 						label
 						primary {
-							test_title
+							text
 						}
 					}
 				}
@@ -44,4 +44,4 @@ export const query = graphql`
 
 // Page.fragments = [TestFragment]
 
-export default Page
+export default Content
