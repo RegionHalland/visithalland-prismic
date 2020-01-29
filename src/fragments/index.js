@@ -1,1 +1,1 @@
-export { TestFragment } from './TestFragment'
+export { TextFragment } from './TextFragment'
