@@ -31,13 +31,6 @@ export const query = graphql`
 			content(uid: $uid, lang: $lang) {
 				title
 				body {
-					... on PRISMIC_ContentBodyTest {
-						type
-						label
-						primary {
-							test_title
-						}
-					}
 					... on PRISMIC_ContentBodyText {
 						type
 						label
