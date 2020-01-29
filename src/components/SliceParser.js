@@ -1,16 +1,16 @@
 import React from 'react'
 
-import TestContainer from './slices/TestContainer'
+import TextContainer from './slices/TextContainer'
+
+const TYPE_COMPONENTS = {
+	text: TextContainer,
+}
 
 const SliceParser = ({ slices }) => (
 	<main>
 		{slices.map((slice, index) => {
-			switch (slice.type) {
-				case 'test':
-					return <TestContainer slice={slice} key={index} />
-				default:
-					return null
-			}
+			const Component = TYPE_COMPONENTS[slice.type] || null
+			return Component ? <Component slice={slice} key={index} /> : null
 		})}
 	</main>
 )
