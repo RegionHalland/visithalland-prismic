@@ -12,27 +12,27 @@ import { useStaticQuery, graphql } from 'gatsby'
 import Header from './Header'
 
 const Layout = ({ children }) => {
-    const data = useStaticQuery(graphql`
-        query SiteTitleQuery {
-            site {
-                siteMetadata {
-                    title
-                }
-            }
-        }
-    `)
+	const data = useStaticQuery(graphql`
+		query SiteTitleQuery {
+			site {
+				siteMetadata {
+					title
+				}
+			}
+		}
+	`)
 
-    return (
-        <div className="font-sans">
-            <Header siteTitle={data.site.siteMetadata.title} />
-            <div>{children}</div>
-            <footer>Footer</footer>
-        </div>
-    )
+	return (
+		<div className="font-sans">
+			{/* <Header siteTitle={data.site.siteMetadata.title} /> */}
+			<div>{children}</div>
+			<footer>Footer</footer>
+		</div>
+	)
 }
 
 Layout.propTypes = {
-    children: PropTypes.node.isRequired,
+	children: PropTypes.node.isRequired,
 }
 
 export default Layout
