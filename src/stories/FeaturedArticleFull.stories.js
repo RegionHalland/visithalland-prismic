@@ -7,6 +7,7 @@ import { ImageSquare } from './Image'
 import FeaturedArticleFull from '../components/slices/FeaturedArticleFull'
 
 const title = 'På höstlov i Halland'
+const to = '/startsida'
 
 storiesOf('FeaturedArticleFull', module)
 	.addDecorator(withKnobs)
@@ -15,6 +16,7 @@ storiesOf('FeaturedArticleFull', module)
 			<FeaturedArticleFull
 				title={text('title', title)}
 				image={ImageSquare}
+				to={to}
 			/>
 		)
 	})
