@@ -2,8 +2,6 @@ import React from 'react'
 import Test from './Test'
 
 const TestContainer = ({ slice }) => {
-	console.log('Slice from TestContainer:', slice)
-
 	if (!slice.primary) {
 		return null
 	}

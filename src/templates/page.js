@@ -12,6 +12,7 @@ const Page = ({
 		prismic: { content },
 	},
 }) => {
+	// TODO: Redirect if there's no content?
 	if (!content) return null
 
 	return (
@@ -23,6 +24,7 @@ const Page = ({
 	)
 }
 
+// TODO: Use fragments from files
 export const query = graphql`
 	query($uid: String!, $lang: String!) {
 		prismic {
@@ -34,6 +36,13 @@ export const query = graphql`
 						label
 						primary {
 							test_title
+						}
+					}
+					... on PRISMIC_ContentBodyText {
+						type
+						label
+						primary {
+							text
 						}
 					}
 				}
