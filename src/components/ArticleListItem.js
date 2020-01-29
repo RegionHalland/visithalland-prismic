@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
+import Link from 'gatsby-link'
 import Img from 'gatsby-image'
 
 const ArticleListItem = ({ title, excerpt, image, ...props }) => (
-	<div {...props}>
+	<Link {...props}>
 		<div className="flex flex-wrap">
 			<div className="w-32 h-48">
 				<Img fluid={image} className="w-full h-full" />
@@ -16,7 +17,7 @@ const ArticleListItem = ({ title, excerpt, image, ...props }) => (
 				<p className="font-sans text-base text-gray-700">{excerpt}</p>
 			</div>
 		</div>
-	</div>
+	</Link>
 )
 
 ArticleListItem.propTypes = {

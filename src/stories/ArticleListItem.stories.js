@@ -18,6 +18,7 @@ storiesOf('ArticleListItem', module)
 				title={text('title', title)}
 				excerpt={text('excerpt', excerpt)}
 				image={ImageTall}
+				to="/example"
 			/>
 		)
 	})
