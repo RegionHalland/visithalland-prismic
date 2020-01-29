@@ -34,7 +34,7 @@ module.exports = {
 			options: {
 				repositoryName: 'visithalland', // required
 				defaultLang: 'sv-se',
-				langs: ['sv-se', 'no'],
+				langs: ['sv-se', 'no', 'da-dk'],
 				shortenUrlLangs: true,
 				previews: true,
 				pages: [
