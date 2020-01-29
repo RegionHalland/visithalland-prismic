@@ -47,11 +47,9 @@ const ArticleHeroFull = ({
 
 const StyledSection = styled.section`
 	height: 80vh;
-
 	@media screen and (min-width: ${screens.md}) {
 		height: 70vh;
 	}
-
 	@media screen and (min-width: ${screens.xl}) {
 		height: 80vh;
 	}
