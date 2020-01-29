@@ -9,16 +9,16 @@ import SliceParser from '../components/SliceParser'
 
 const Page = ({
 	data: {
-		prismic: {
-			content: { body: slices },
-		},
+		prismic: { content },
 	},
 }) => {
+	if (!content) return null
+
 	return (
 		<Layout>
 			<Seo title="Page" />
 			<h1>Hello from Page</h1>
-			<SliceParser slices={slices} />
+			<SliceParser slices={content.body} />
 		</Layout>
 	)
 }
