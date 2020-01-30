@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+import propTypes from 'prop-types'
 import React from 'react'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
@@ -8,6 +8,7 @@ import resolveConfig from 'tailwindcss/resolveConfig'
 import Container from '../Container'
 import PublicationDate from '../PublicationDate'
 import Author from '../Author'
+import TextRenderer from '../TextRenderer'
 
 const screens = resolveConfig().theme.screens
 
@@ -15,7 +16,7 @@ const ArticleHeroFull = ({
 	title,
 	introduction,
 	author,
-	publication_date,
+	publicationDate,
 	image,
 }) => (
 	<StyledSection className="w-full font-sans relative">
@@ -30,16 +31,16 @@ const ArticleHeroFull = ({
 					</span>
 					<PublicationDate
 						className="text-base text-white block"
-						publication_date={publication_date}
+						publicationDate={publicationDate}
 					/>
 				</div>
 				<h1 className="text-3xl md:text-4xl font-semibold text-white mb-4">
 					{title}
 				</h1>
-				<p className="text-white text-base max-w-xl text-white mb-8 mx-auto">
-					{introduction}
-				</p>
-				<Author {...author} />
+				<div className="text-white text-base max-w-xl text-white mb-8 mx-auto">
+					<TextRenderer text={introduction} />
+				</div>
+				{<Author {...author} />}
 			</div>
 		</Container>
 	</StyledSection>
@@ -63,11 +64,11 @@ const StyledImageContainer = styled.div`
 `
 
 ArticleHeroFull.propTypes = {
-	title: PropTypes.string.isRequired,
-	introduction: PropTypes.string.isRequired,
-	author: PropTypes.object.isRequired,
-	publication_date: PropTypes.number.isRequired,
-	image: PropTypes.object.isRequired,
+	title: propTypes.string.isRequired,
+	introduction: propTypes.arrayOf(propTypes.object).isRequired,
+	author: propTypes.object.isRequired,
+	publicationDate: propTypes.string.isRequired,
+	image: propTypes.object.isRequired,
 }
 
 export default ArticleHeroFull

@@ -3,8 +3,8 @@ import React from 'react'
 import { format } from 'date-fns'
 import { sv } from 'date-fns/locale'
 
-const PublicationDate = ({ publication_date, ...props }) => {
-	const formattedDate = format(publication_date, 'd MMMM', {
+const PublicationDate = ({ publicationDate, ...props }) => {
+	const formattedDate = format(new Date(publicationDate), 'd MMMM', {
 		locale: sv,
 	})
 
@@ -12,7 +12,7 @@ const PublicationDate = ({ publication_date, ...props }) => {
 }
 
 PublicationDate.propTypes = {
-	publication_date: PropTypes.number.isRequired,
+	publicationDate: PropTypes.string.isRequired,
 }
 
 export default PublicationDate
