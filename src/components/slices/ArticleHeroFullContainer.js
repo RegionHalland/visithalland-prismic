@@ -32,6 +32,7 @@ const ArticleHeroFullContainer = ({ slice, meta }) => {
 		phone: editor_phone,
 		role: editor_role,
 		image: editor_image,
+		className: 'text-white',
 	}
 
 	return (

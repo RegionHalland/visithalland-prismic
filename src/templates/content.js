@@ -19,7 +19,6 @@ const Content = ({
 	return (
 		<Layout>
 			<Seo title="Page" />
-			<h1>Hello from Page</h1>
 			<SliceParser slices={body} meta={meta} />
 		</Layout>
 	)

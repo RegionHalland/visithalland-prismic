@@ -12,7 +12,7 @@ const ArticleHeroSplit = ({
 	title,
 	introduction,
 	author,
-	publication_date,
+	publicationDate,
 	image,
 }) => (
 	<section className="w-full font-sans">
@@ -25,7 +25,7 @@ const ArticleHeroSplit = ({
 						</span>
 						<PublicationDate
 							className="text-base text-black block"
-							publication_date={publication_date}
+							publicationDate={publicationDate}
 						/>
 					</div>
 					<div className="mb-6 w-full md:w-10/12">
@@ -50,7 +50,7 @@ ArticleHeroSplit.propTypes = {
 	title: PropTypes.string.isRequired,
 	introduction: PropTypes.string.isRequired,
 	author: PropTypes.object.isRequired,
-	publication_date: PropTypes.number.isRequired,
+	publicationDate: PropTypes.string.isRequired,
 	image: PropTypes.object.isRequired,
 }
 
