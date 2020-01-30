@@ -66,10 +66,6 @@ const RichTextContainer = styled.div`
 const htmlSerializer = (type, element, content, children, key) => {
 	let props = {}
 
-	if (type === 'hyperlink') {
-		console.log(element)
-	}
-
 	if (type === 'image') {
 		// Don't wrap images in a <p> tag
 		props = { src: element.url, alt: element.alt || '' }
