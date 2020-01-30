@@ -13,17 +13,50 @@ const Text = ({ text }) => {
 }
 
 const RichTextContainer = styled.div`
-	${props => (props.inverse ? tw`text-gray-300` : tw`text-gray-700`)}
+	${tw`font-sans`};
+
+	> h1 {
+		${tw`font-bold text-2xl md:text-3xl mt-4 mb-4 md:mb-6 text-black`};
+	}
+
 	> h2 {
-		${tw`font-semibold text-xl mt-12 mb-3 text-black`};
+		${tw`font-bold text-2xl md:text-3xl mt-4 mb-4 md:mb-6 text-black`};
+	}
+
+	> h3 {
+		${tw`font-bold text-xl md:text-2xl mt-3 mb-3 md:mb-5 text-black`};
+	}
+
+	> h4 {
+		${tw`font-semibold text-lg md:text-xl mt-2 mb-3 md:mb-5 text-black`};
+	}
+
+	> h5 {
+		${tw`font-semibold text-base md:text-lg mt-1 mb-2 md:mb-4 text-black`};
+	}
+
+	> h6 {
+		${tw`font-semibold text-base mt-1 mb-1 md:mb-3 text-black`};
 	}
 
 	> p {
-		${tw`text-gray-700 text-base leading-normal mb-3`};
+		${tw`text-gray-700 text-base leading-relaxed mb-8`};
+
+		& > strong {
+			${tw`font-semibold`}
+		}
+
+		& > em {
+			${tw`font-italic text-black`}
+		}
+
+		& > a {
+			${tw`font-semibold text-black underline`}
+		}
 	}
 
-	> .introduction {
-		${tw`text-black text-lg md:text-xl`};
+	> img {
+		${tw`w-full h-auto mb-6`};
 	}
 
 	> blockquote {
@@ -35,15 +68,6 @@ const RichTextContainer = styled.div`
 
 		cite {
 			${tw`text-gray-500 not-italic`};
-		}
-
-		&:before {
-			content: '';
-			background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 21"><path fill="%235cb78a" d="M7.61814 0C2.94033 3.29154 0 7.96552 0 13.3636C0 18.1693 3.20764 21 6.81623 21C10.1575 21 12.9642 18.2351 12.9642 14.8777C12.9642 11.652 10.6253 9.47962 7.81862 9.47962C7.15036 9.47962 6.54893 9.61129 6.28162 9.67712C6.94988 7.30721 9.75656 4.47649 11.895 3.4232L7.61814 0ZM22.6539 0C17.9761 3.29154 15.0358 7.96552 15.0358 13.3636C15.0358 18.1693 18.3103 21 21.9189 21C25.1933 21 28 18.2351 28 14.8777C28 11.652 25.7279 9.47962 22.8544 9.47962C22.1862 9.47962 21.5847 9.61129 21.3174 9.67712C22.0525 7.30721 24.7924 4.47649 26.9308 3.4232L22.6539 0Z"/></svg>');
-			background-size: 100%;
-			width: 28px;
-			height: 21px;
-			${tw`block mx-auto`};
 		}
 	}
 
