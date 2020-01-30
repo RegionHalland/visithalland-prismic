@@ -1,6 +1,6 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { withKnobs, text, boolean } from '@storybook/addon-knobs/react'
+import { withKnobs, text } from '@storybook/addon-knobs/react'
 
 import ButtonLink from '../components/ButtonLink'
 
@@ -10,7 +10,5 @@ const to = '/startsida'
 storiesOf('ButtonLink', module)
 	.addDecorator(withKnobs)
 	.add('default', () => {
-		return (
-			<ButtonLink title={text('title', title)} to={boolean('to', to)} />
-		)
+		return <ButtonLink title={text('title', title)} to={text('to', to)} />
 	})
