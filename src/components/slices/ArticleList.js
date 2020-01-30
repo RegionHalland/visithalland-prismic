@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
+import Container from '../Container'
 import ArticleListItem from '../ArticleListItem'
 
 const ArticleList = ({ articles, ...props }) => (
-	<div className="container px-3 md:px-4">
+	<Container className="px-3 md:px-4">
 		{articles.map((article, index) => {
 			return (
 				<ArticleListItem
@@ -14,7 +15,7 @@ const ArticleList = ({ articles, ...props }) => (
 				/>
 			)
 		})}
-	</div>
+	</Container>
 )
 
 ArticleList.propTypes = {
