@@ -5,7 +5,11 @@ import Layout from '../components/Layout'
 import Seo from '../components/Seo'
 import SliceParser from '../components/SliceParser'
 
-import { TextFragment, ArticleHeroFullFragment } from '../fragments'
+import {
+	TextFragment,
+	ArticleHeroFullFragment,
+	ArticleHeroSplitFragment,
+} from '../fragments'
 
 const Content = ({
 	data: {
@@ -32,6 +36,7 @@ export const query = graphql`
 				body {
 					...TextFragment
 					...ArticleHeroFullFragment
+					...ArticleHeroSplitFragment
 				}
 				_meta {
 					firstPublicationDate
@@ -41,6 +46,10 @@ export const query = graphql`
 	}
 `
 
-Content.fragments = [TextFragment, ArticleHeroFullFragment]
+Content.fragments = [
+	TextFragment,
+	ArticleHeroFullFragment,
+	ArticleHeroSplitFragment,
+]
 
 export default Content

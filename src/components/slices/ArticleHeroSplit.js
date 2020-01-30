@@ -7,6 +7,7 @@ import tw from 'tailwind.macro'
 import Container from '../Container'
 import PublicationDate from '../PublicationDate'
 import Author from '../Author'
+import TextRenderer from '../TextRenderer'
 
 const ArticleHeroSplit = ({
 	title,
@@ -32,9 +33,9 @@ const ArticleHeroSplit = ({
 						<h1 className="text-3xl md:text-4xl font-semibold mb-4">
 							{title}
 						</h1>
-						<p className="text-gray-700 text-base">
-							{introduction}
-						</p>
+						<div className="text-gray-700 text-base">
+							<TextRenderer text={introduction} />
+						</div>
 					</div>
 					<Author {...author} />
 				</div>
