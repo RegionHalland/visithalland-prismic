@@ -5,7 +5,7 @@ import Layout from '../components/Layout'
 import Seo from '../components/Seo'
 import SliceParser from '../components/SliceParser'
 
-import { TextFragment } from '../fragments'
+import { TextFragment, ArticleHeroFullFragment } from '../fragments'
 
 const Content = ({
 	data: {
@@ -14,11 +14,13 @@ const Content = ({
 }) => {
 	if (!content) return null
 
+	const { body, _meta: meta } = content
+
 	return (
 		<Layout>
 			<Seo title="Page" />
 			<h1>Hello from Page</h1>
-			<SliceParser slices={content.body} />
+			<SliceParser slices={body} meta={meta} />
 		</Layout>
 	)
 }
@@ -30,12 +32,16 @@ export const query = graphql`
 				title
 				body {
 					...TextFragment
+					...ArticleHeroFullFragment
+				}
+				_meta {
+					firstPublicationDate
 				}
 			}
 		}
 	}
 `
 
-Content.fragments = [TextFragment]
+Content.fragments = [TextFragment, ArticleHeroFullFragment]
 
 export default Content

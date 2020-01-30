@@ -2,17 +2,12 @@ import React from 'react'
 import propTypes from 'prop-types'
 import styled from 'styled-components'
 import tw from 'tailwind.macro'
-import { RichText } from 'prismic-reactjs'
-import { linkResolver } from '../../utils/linkResolver'
+import TextRenderer from '../TextRenderer'
 
 const Text = ({ text }) => {
 	return (
 		<RichTextContainer>
-			<RichText
-				render={text}
-				htmlSerializer={htmlSerializer}
-				linkResolver={linkResolver}
-			/>
+			<TextRenderer text={text} />
 		</RichTextContainer>
 	)
 }
@@ -61,27 +56,8 @@ const RichTextContainer = styled.div`
 	}
 `
 
-// htmlSerializer customizes HTML output
-// https://prismic.io/docs/reactjs/beyond-the-api/html-serializer
-const htmlSerializer = (type, element, content, children, key) => {
-	let props = {}
-
-	if (type === 'hyperlink') {
-		console.log(element)
-	}
-
-	if (type === 'image') {
-		// Don't wrap images in a <p> tag
-		props = { src: element.url, alt: element.alt || '' }
-		return React.createElement('img', Object.assign(props || {}, { key }))
-	}
-
-	// Return null to stick with the default behavior
-	return null
-}
-
 Text.propTypes = {
-	text: propTypes.arrayOf(propTypes.object),
+	text: propTypes.arrayOf(propTypes.object).isRequired,
 }
 
 export default Text
