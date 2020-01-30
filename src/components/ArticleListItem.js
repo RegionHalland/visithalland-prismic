@@ -23,6 +23,7 @@ const ArticleListItem = ({ title, excerpt, image, ...props }) => (
 ArticleListItem.propTypes = {
 	title: PropTypes.string.isRequired,
 	excerpt: PropTypes.string.isRequired,
+	image: PropTypes.object.isRequired,
 }
 
 export default ArticleListItem
