@@ -34,17 +34,27 @@ module.exports = {
 			options: {
 				repositoryName: 'visithalland', // required
 				defaultLang: 'sv-se',
-				langs: ['sv-se', 'no'],
+				langs: ['sv-se', 'no', 'da-dk'],
 				shortenUrlLangs: true,
 				previews: true,
 				pages: [
 					{
 						type: 'Content',
-						match: '/:lang?/:uid',
-						path: '/content', // placeholder page for unpublished documents
+						match: '/:lang?/',
+						path: '/content',
 						component: require.resolve(
 							'./src/templates/content.js',
 						),
+						filter: ({ node }) => node._meta.uid === 'frontpage',
+					},
+					{
+						type: 'Content',
+						match: '/:lang?/:uid',
+						path: '/content',
+						component: require.resolve(
+							'./src/templates/content.js',
+						),
+						filter: ({ node }) => node._meta.uid !== 'frontpage',
 					},
 				],
 			},
