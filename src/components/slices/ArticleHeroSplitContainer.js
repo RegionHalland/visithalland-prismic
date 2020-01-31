@@ -1,8 +1,8 @@
 import React from 'react'
 import ArticleHeroSplit from './ArticleHeroSplit'
 
-const ArticleHeroSplitContainer = ({ slice, meta }) => {
-	if (!slice.primary || !meta) {
+const ArticleHeroSplitContainer = ({ slice, prismicMeta }) => {
+	if (!slice.primary || !prismicMeta) {
 		return null
 	}
 
@@ -38,7 +38,7 @@ const ArticleHeroSplitContainer = ({ slice, meta }) => {
 		<ArticleHeroSplit
 			title={article_hero_split_title[0].text}
 			introduction={article_hero_split_introduction}
-			publicationDate={meta.firstPublicationDate}
+			publicationDate={prismicMeta.firstPublicationDate}
 			image={image}
 			author={author}
 		/>

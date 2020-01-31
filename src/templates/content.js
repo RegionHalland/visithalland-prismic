@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 import Seo from '../components/Seo'
-import SliceParser from '../components/SliceParser'
+import ContentParser from '../components/ContentParser'
 
 import {
 	TextFragment,
@@ -18,12 +18,12 @@ const Content = ({
 }) => {
 	if (!content) return null
 
-	const { body, _meta: meta } = content
+	const { body, _meta } = content
 
 	return (
 		<Layout>
 			<Seo title="Page" />
-			<SliceParser slices={body} meta={meta} />
+			<ContentParser slices={body} prismicMeta={_meta} />
 		</Layout>
 	)
 }
@@ -33,13 +33,30 @@ export const query = graphql`
 		prismic {
 			content(uid: $uid, lang: $lang) {
 				title
+				_meta {
+					firstPublicationDate
+				}
+				meta_description
 				body {
 					...TextFragment
 					...ArticleHeroFullFragment
 					...ArticleHeroSplitFragment
-				}
-				_meta {
-					firstPublicationDate
+					... on PRISMIC_ContentBodyArticle_list {
+						type
+						label
+						fields {
+							article_list_articles {
+								... on PRISMIC_Content {
+									title
+									body {
+										...ArticleHeroFullFragment
+										...ArticleHeroSplitFragment
+										...TextFragment
+									}
+								}
+							}
+						}
+					}
 				}
 			}
 		}
