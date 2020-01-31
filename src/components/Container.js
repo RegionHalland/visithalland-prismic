@@ -2,7 +2,6 @@ import PropTypes from 'prop-types'
 import React from 'react'
 
 import styled from 'styled-components'
-import tw from 'tailwind.macro'
 
 const Container = ({ children, tight, ...props }) => (
 	<StyledContainer tight={tight} {...props}>

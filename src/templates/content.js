@@ -16,7 +16,10 @@ import {
 
 const Content = ({
 	data: {
-		prismic: { content },
+		prismic: {
+			allMenus: { edges },
+			content,
+		},
 	},
 }) => {
 	// Return if page has no content
@@ -40,8 +43,12 @@ const Content = ({
 		image: seo_image,
 	}
 
+	const menus = edges[0] || []
+	const mainMenu = menus.node ? menus.node.main_menu_links : []
+	const topMenu = menus.node ? menus.node.top_menu_links : []
+
 	return (
-		<Layout>
+		<Layout mainMenu={mainMenu} topMenu={topMenu}>
 			<Seo title="Page" />
 			<ContentParser slices={slices} meta={meta} seo={seo} />
 		</Layout>
@@ -51,6 +58,56 @@ const Content = ({
 export const query = graphql`
 	query($uid: String!, $lang: String!) {
 		prismic {
+			allMenus(lang: $lang) {
+				edges {
+					node {
+						name
+						_linkType
+						main_menu_links {
+							main_menu_link_label
+							main_menu_link {
+								... on PRISMIC_Content {
+									title
+									_meta {
+										type
+										uid
+										lang
+									}
+								}
+							}
+						}
+						top_menu_links {
+							top_menu_link {
+								... on PRISMIC_Content {
+									_linkType
+									title
+									seo_description
+									_meta {
+										uid
+										lang
+										type
+									}
+								}
+								... on PRISMIC__ImageLink {
+									_linkType
+									url
+								}
+								... on PRISMIC__FileLink {
+									_linkType
+									url
+									size
+									name
+								}
+								... on PRISMIC__ExternalLink {
+									_linkType
+									url
+								}
+							}
+							top_menu_link_label
+						}
+					}
+				}
+			}
 			content(uid: $uid, lang: $lang) {
 				title
 				_meta {
