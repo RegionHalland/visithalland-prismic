@@ -13,16 +13,12 @@ const TYPE_COMPONENTS = {
 	article_list: ArticleListContainer,
 }
 
-const ContentParser = ({ slices, prismicMeta }) => (
+const ContentParser = ({ slices, meta }) => (
 	<main>
 		{slices.map((slice, index) => {
 			const Component = TYPE_COMPONENTS[slice.type] || null
 			return Component ? (
-				<Component
-					slice={slice}
-					prismicMeta={prismicMeta}
-					key={index}
-				/>
+				<Component slice={slice} meta={meta} key={index} />
 			) : null
 		})}
 	</main>
@@ -30,7 +26,8 @@ const ContentParser = ({ slices, prismicMeta }) => (
 
 ContentParser.propTypes = {
 	slices: propTypes.object.isRequired,
-	prismicMeta: propTypes.object,
+	meta: propTypes.object,
+	seo: propTypes.object,
 }
 
 export default ContentParser

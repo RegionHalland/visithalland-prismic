@@ -16,14 +16,31 @@ const Content = ({
 		prismic: { content },
 	},
 }) => {
-	if (!content) return null
+	// Return if page has no content
+	// TODO: Return 404?
+	if (!content) {
+		return null
+	}
 
-	const { body, _meta } = content
+	// Get slices, meta and SEO-fields
+	// meta contains information like uid, publicationDate etc
+	const {
+		body: slices,
+		_meta: meta,
+		seo_description,
+		seo_imageSharp: seo_image,
+	} = content
+
+	// Create an object for SEO-fields
+	const seo = {
+		description: seo_description,
+		image: seo_image,
+	}
 
 	return (
 		<Layout>
 			<Seo title="Page" />
-			<ContentParser slices={body} prismicMeta={_meta} />
+			<ContentParser slices={body} meta={meta} seo={seo} />
 		</Layout>
 	)
 }
@@ -36,7 +53,9 @@ export const query = graphql`
 				_meta {
 					firstPublicationDate
 				}
-				meta_description
+				seo_description
+				seo_image
+				seo_imageSharp
 				body {
 					...TextFragment
 					...ArticleHeroFullFragment
@@ -48,11 +67,6 @@ export const query = graphql`
 							article_list_articles {
 								... on PRISMIC_Content {
 									title
-									body {
-										...ArticleHeroFullFragment
-										...ArticleHeroSplitFragment
-										...TextFragment
-									}
 								}
 							}
 						}
