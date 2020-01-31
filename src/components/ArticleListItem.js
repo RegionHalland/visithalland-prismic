@@ -1,29 +1,35 @@
-import PropTypes from 'prop-types'
 import React from 'react'
-
+import propTypes from 'prop-types'
 import Link from 'gatsby-link'
 import Img from 'gatsby-image'
 
-const ArticleListItem = ({ title, excerpt, image, ...props }) => (
-	<Link {...props}>
+import TextRenderer from './TextRenderer'
+
+const ArticleListItem = ({ title, excerpt, image, to, ...props }) => (
+	<Link to={to} {...props}>
 		<div className="flex flex-wrap">
 			<div className="w-32 h-48">
-				<Img fluid={image} className="w-full h-full" />
+				{image && <Img fluid={image} className="w-full h-full" />}
 			</div>
 			<div className="flex flex-col md:justify-center flex-1 px-3">
 				<h2 className="font-sans text-black text-xl md:text-3xl leading-tight font-semibold mb-3">
 					{title}
 				</h2>
-				<p className="font-sans text-base text-gray-700">{excerpt}</p>
+				{excerpt && (
+					<div className="font-sans text-base text-gray-700">
+						<TextRenderer text={excerpt} />
+					</div>
+				)}
 			</div>
 		</div>
 	</Link>
 )
 
 ArticleListItem.propTypes = {
-	title: PropTypes.string.isRequired,
-	excerpt: PropTypes.string.isRequired,
-	image: PropTypes.object.isRequired,
+	title: propTypes.string.isRequired,
+	to: propTypes.string.isRequired,
+	excerpt: propTypes.arrayOf(propTypes.object),
+	image: propTypes.object,
 }
 
 export default ArticleListItem

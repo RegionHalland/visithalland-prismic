@@ -1,14 +1,21 @@
 import React from 'react'
-import ArticleHeroSplit from './ArticleHeroSplit'
+import ArticleList from './ArticleList'
 
 const ArticleListContainer = ({ slice, meta, seo }) => {
-	console.log(slice)
+	if (!slice.fields) {
+		return null
+	}
 
-	// const result = slice.fields.map(
-	// 	item => item.article_list_articles._meta.uid,
-	// )
+	const articles = slice.fields.map(({ article_list_articles: item }) => ({
+		title: item.title,
+		excerpt: item.seo_description || null,
+		image: item.seo_featured_imageSharp
+			? item.seo_featured_imageSharp.childImageSharp.fluid
+			: null,
+		to: item._meta.uid,
+	}))
 
-	return <div>hej</div>
+	return <ArticleList articles={articles} />
 }
 
 export default ArticleListContainer

@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+import propTypes from 'prop-types'
 import React from 'react'
 
 import Container from '../Container'
@@ -19,7 +19,7 @@ const ArticleList = ({ articles, ...props }) => (
 )
 
 ArticleList.propTypes = {
-	articles: PropTypes.object.isRequired,
+	articles: propTypes.arrayOf(propTypes.object).isRequired,
 }
 
 export default ArticleList
