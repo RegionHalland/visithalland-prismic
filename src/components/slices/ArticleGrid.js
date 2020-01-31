@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+import propTypes from 'prop-types'
 import React from 'react'
 
 import Container from '../Container'
@@ -24,7 +24,7 @@ const ArticleGrid = ({ articles, ...props }) => {
 }
 
 ArticleGrid.propTypes = {
-	articles: PropTypes.array.isRequired,
+	articles: propTypes.array.isRequired,
 }
 
 export default ArticleGrid

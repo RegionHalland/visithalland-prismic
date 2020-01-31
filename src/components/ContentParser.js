@@ -5,6 +5,7 @@ import TextContainer from './slices/TextContainer'
 import ArticleHeroFullContainer from './slices/ArticleHeroFullContainer'
 import ArticleHeroSplitContainer from './slices/ArticleHeroSplitContainer'
 import ArticleListContainer from './slices/ArticleListContainer'
+import ArticleGridContainer from './slices/ArticleGridContainer'
 import ImageFullWidthContainer from './slices/ImageFullWidthContainer'
 
 const TYPE_COMPONENTS = {
@@ -12,6 +13,7 @@ const TYPE_COMPONENTS = {
 	article_hero_full: ArticleHeroFullContainer,
 	article_hero_split: ArticleHeroSplitContainer,
 	article_list: ArticleListContainer,
+	article_grid: ArticleGridContainer,
 	image_full_width: ImageFullWidthContainer,
 }
 
