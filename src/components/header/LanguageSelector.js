@@ -5,13 +5,13 @@ import Link from 'gatsby-link'
 
 const LanguageSelector = ({ langs }) => (
 	<div className="h-full flex items-center">
-		{langs.map((lang, index) => (
+		{langs.map(lang => (
 			<Link
-				key={index}
+				key={lang.substring(0, 2)}
 				className="font-semibold text-black h-full flex items-center font-sans px-2 md:px-3"
-				to={lang.lang}
+				to={lang === 'sv-se' ? '/' : lang.substring(0, 2)}
 			>
-				{lang.label}
+				{lang.substring(0, 2)}
 			</Link>
 		))}
 	</div>

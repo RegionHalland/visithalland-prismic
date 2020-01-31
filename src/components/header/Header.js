@@ -16,8 +16,6 @@ const Header = ({ langs, links, supportLinks }) => {
 	const [menuOpen, setMenuOpen] = useState(false)
 	const breakpoint = useTailwindBreakpoint()
 
-	console.log(breakpoint)
-
 	const handleClick = () => {
 		setMenuOpen(!menuOpen)
 	}
