@@ -53,9 +53,9 @@ export const query = graphql`
 				_meta {
 					firstPublicationDate
 				}
-				meta_description
-				meta_image
-				meta_imageSharp
+				seo_description
+				seo_image
+				seo_imageSharp
 				body {
 					...TextFragment
 					...ArticleHeroFullFragment
@@ -67,11 +67,6 @@ export const query = graphql`
 							article_list_articles {
 								... on PRISMIC_Content {
 									title
-									body {
-										...ArticleHeroFullFragment
-										...ArticleHeroSplitFragment
-										...TextFragment
-									}
 								}
 							}
 						}
