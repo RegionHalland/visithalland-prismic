@@ -13,19 +13,19 @@ const TYPE_COMPONENTS = {
 	article_list: ArticleListContainer,
 }
 
-const ContentParser = ({ slices, meta }) => (
+const ContentParser = ({ slices, meta, seo }) => (
 	<main>
 		{slices.map((slice, index) => {
 			const Component = TYPE_COMPONENTS[slice.type] || null
 			return Component ? (
-				<Component slice={slice} meta={meta} key={index} />
+				<Component slice={slice} meta={meta} seo={seo} key={index} />
 			) : null
 		})}
 	</main>
 )
 
 ContentParser.propTypes = {
-	slices: propTypes.object.isRequired,
+	slices: propTypes.arrayOf(propTypes.object).isRequired,
 	meta: propTypes.object,
 	seo: propTypes.object,
 }

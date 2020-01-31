@@ -9,6 +9,7 @@ import {
 	TextFragment,
 	ArticleHeroFullFragment,
 	ArticleHeroSplitFragment,
+	ArticleListFragment,
 } from '../fragments'
 
 const Content = ({
@@ -28,7 +29,7 @@ const Content = ({
 		body: slices,
 		_meta: meta,
 		seo_description,
-		seo_imageSharp: seo_image,
+		seo_featured_imageSharp: seo_image,
 	} = content
 
 	// Create an object for SEO-fields
@@ -40,7 +41,7 @@ const Content = ({
 	return (
 		<Layout>
 			<Seo title="Page" />
-			<ContentParser slices={body} meta={meta} seo={seo} />
+			<ContentParser slices={slices} meta={meta} seo={seo} />
 		</Layout>
 	)
 }
@@ -54,23 +55,19 @@ export const query = graphql`
 					firstPublicationDate
 				}
 				seo_description
-				seo_image
-				seo_imageSharp
+				seo_featured_image
+				seo_featured_imageSharp {
+					childImageSharp {
+						fluid(maxWidth: 1900) {
+							...GatsbyImageSharpFluid
+						}
+					}
+				}
 				body {
 					...TextFragment
 					...ArticleHeroFullFragment
 					...ArticleHeroSplitFragment
-					... on PRISMIC_ContentBodyArticle_list {
-						type
-						label
-						fields {
-							article_list_articles {
-								... on PRISMIC_Content {
-									title
-								}
-							}
-						}
-					}
+					...ArticleListFragment
 				}
 			}
 		}
@@ -81,6 +78,7 @@ Content.fragments = [
 	TextFragment,
 	ArticleHeroFullFragment,
 	ArticleHeroSplitFragment,
+	ArticleListFragment,
 ]
 
 export default Content
