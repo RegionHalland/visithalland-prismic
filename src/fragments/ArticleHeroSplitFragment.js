@@ -22,3 +22,5 @@ export const ArticleHeroSplitFragment = graphql`
 		}
 	}
 `
+
+ArticleHeroSplitFragment.fragments = [EditorFragment]
