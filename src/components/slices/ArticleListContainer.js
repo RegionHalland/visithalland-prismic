@@ -1,7 +1,7 @@
 import React from 'react'
 import ArticleHeroSplit from './ArticleHeroSplit'
 
-const ArticleListContainer = ({ slice, prismicMeta }) => {
+const ArticleListContainer = ({ slice, meta, seo }) => {
 	console.log(slice)
 
 	// const result = slice.fields.map(

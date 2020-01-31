@@ -1,8 +1,8 @@
 import React from 'react'
 import ArticleHeroFull from './ArticleHeroFull'
 
-const ArticleHeroFullContainer = ({ slice, prismicMeta }) => {
-	if (!slice.primary || !prismicMeta) {
+const ArticleHeroFullContainer = ({ slice, meta }) => {
+	if (!slice.primary || !meta) {
 		return null
 	}
 
@@ -39,7 +39,7 @@ const ArticleHeroFullContainer = ({ slice, prismicMeta }) => {
 		<ArticleHeroFull
 			title={article_hero_full_title[0].text}
 			introduction={article_hero_full_introduction}
-			publicationDate={prismicMeta.firstPublicationDate}
+			publicationDate={meta.firstPublicationDate}
 			image={image}
 			author={author}
 		/>
