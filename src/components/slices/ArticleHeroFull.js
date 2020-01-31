@@ -21,7 +21,7 @@ const ArticleHeroFull = ({
 }) => (
 	<StyledSection className="w-full font-sans relative">
 		<StyledImageContainer className="absolute top-0 left-0 w-full h-full ">
-			<Img fluid={image} className="w-full h-full" />
+			{image && <Img fluid={image} className="w-full h-full" />}
 		</StyledImageContainer>
 		<Container className="relative h-full flex items-center justify-center">
 			<div className="px-4 w-full md:w-10/12 lg:w-8/12 mx-auto text-center">
@@ -68,7 +68,7 @@ ArticleHeroFull.propTypes = {
 	introduction: propTypes.arrayOf(propTypes.object).isRequired,
 	author: propTypes.object.isRequired,
 	publicationDate: propTypes.string.isRequired,
-	image: propTypes.object.isRequired,
+	image: propTypes.object,
 }
 
 export default ArticleHeroFull
