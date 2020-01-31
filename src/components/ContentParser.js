@@ -5,12 +5,14 @@ import TextContainer from './slices/TextContainer'
 import ArticleHeroFullContainer from './slices/ArticleHeroFullContainer'
 import ArticleHeroSplitContainer from './slices/ArticleHeroSplitContainer'
 import ArticleListContainer from './slices/ArticleListContainer'
+import ImageFullWidthContainer from './slices/ImageFullWidthContainer'
 
 const TYPE_COMPONENTS = {
 	text: TextContainer,
 	article_hero_full: ArticleHeroFullContainer,
 	article_hero_split: ArticleHeroSplitContainer,
 	article_list: ArticleListContainer,
+	image_full_width: ImageFullWidthContainer,
 }
 
 const ContentParser = ({ slices, meta, seo }) => (
