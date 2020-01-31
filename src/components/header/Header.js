@@ -14,7 +14,7 @@ const Header = ({ langs, links, supportLinks }) => (
 		<SupportHeader supportLinks={supportLinks} />
 		<div className="bg-white px-3 md:px-4">
 			<Container className="flex h-16 items-center justify-between ">
-				<Link to="/" className="text-xl font-semibold">
+				<Link to="/" className="text-xl font-semibold text-black">
 					Visithalland
 				</Link>
 				<LanguageSelector langs={langs} />

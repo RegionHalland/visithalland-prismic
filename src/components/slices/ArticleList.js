@@ -5,7 +5,7 @@ import Container from '../Container'
 import ArticleListItem from '../ArticleListItem'
 
 const ArticleList = ({ articles, ...props }) => (
-	<Container className="px-3 md:px-4">
+	<Container tight className="px-3 md:px-4">
 		{articles.map((article, index) => {
 			return (
 				<ArticleListItem

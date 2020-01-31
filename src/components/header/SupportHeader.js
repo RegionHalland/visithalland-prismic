@@ -12,7 +12,7 @@ const SupportHeader = ({ supportLinks }) => (
 				<Link
 					key={index}
 					to={supportLink.slug}
-					className=" py-1 ml-5 text-sm"
+					className="text-gray-600 py-1 ml-5 text-sm"
 				>
 					{supportLink.label}
 				</Link>
