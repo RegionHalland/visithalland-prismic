@@ -15,13 +15,9 @@ const ArticleHeroFullContainer = ({ slice, meta }) => {
 				editor_email,
 				editor_phone,
 				editor_role,
-				editor_imageSharp: {
-					childImageSharp: { fluid: editor_image },
-				},
+				editor_imageSharp: editor_image,
 			},
-			article_hero_full_imageSharp: {
-				childImageSharp: { fluid: image },
-			},
+			article_hero_full_imageSharp: image,
 		},
 	} = slice
 
@@ -31,7 +27,7 @@ const ArticleHeroFullContainer = ({ slice, meta }) => {
 		email: editor_email,
 		phone: editor_phone,
 		role: editor_role,
-		image: editor_image,
+		image: editor_image ? editor_image.childImageSharp.fluid : null,
 		className: 'text-white',
 	}
 
@@ -40,7 +36,7 @@ const ArticleHeroFullContainer = ({ slice, meta }) => {
 			title={article_hero_full_title[0].text}
 			introduction={article_hero_full_introduction}
 			publicationDate={meta.firstPublicationDate}
-			image={image}
+			image={image ? image.childImageSharp.fluid : null}
 			author={author}
 		/>
 	)

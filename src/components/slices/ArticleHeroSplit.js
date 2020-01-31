@@ -38,7 +38,7 @@ const ArticleHeroSplit = ({
 					<Author {...author} />
 				</div>
 				<div className="md:px-3 w-full md:w-6/12 mb-4 md:mb-0">
-					<Img fluid={image} />
+					{image && <Img fluid={image} />}
 				</div>
 			</div>
 		</Container>
@@ -50,7 +50,7 @@ ArticleHeroSplit.propTypes = {
 	introduction: PropTypes.string.isRequired,
 	author: PropTypes.object.isRequired,
 	publicationDate: PropTypes.string.isRequired,
-	image: PropTypes.object.isRequired,
+	image: PropTypes.object,
 }
 
 export default ArticleHeroSplit

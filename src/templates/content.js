@@ -10,6 +10,7 @@ import {
 	ArticleHeroFullFragment,
 	ArticleHeroSplitFragment,
 	ArticleListFragment,
+	ImageFullWidthFragment,
 } from '../fragments'
 
 const Content = ({
@@ -68,6 +69,7 @@ export const query = graphql`
 					...ArticleHeroFullFragment
 					...ArticleHeroSplitFragment
 					...ArticleListFragment
+					...ImageFullWidthFragment
 				}
 			}
 		}
@@ -79,6 +81,7 @@ Content.fragments = [
 	ArticleHeroFullFragment,
 	ArticleHeroSplitFragment,
 	ArticleListFragment,
+	ImageFullWidthFragment,
 ]
 
 export default Content

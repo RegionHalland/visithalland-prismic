@@ -1,8 +1,8 @@
-import PropTypes from 'prop-types'
+import propTypes from 'prop-types'
 import React from 'react'
 import Img from 'gatsby-image'
 
-const ImageFull = ({ image, caption }) => (
+const ImageFullWidth = ({ image, caption }) => (
 	<figure className="w-full h-full">
 		{image && <Img fluid={image} className="w-full h-full mb-2" />}
 		{caption && (
@@ -13,9 +13,9 @@ const ImageFull = ({ image, caption }) => (
 	</figure>
 )
 
-ImageFull.propTypes = {
-	image: PropTypes.object.isRequired,
-	caption: PropTypes.string,
+ImageFullWidth.propTypes = {
+	image: propTypes.object.isRequired,
+	caption: propTypes.string,
 }
 
-export default ImageFull
+export default ImageFullWidth
