@@ -3,12 +3,15 @@ import propTypes from 'prop-types'
 import styled from 'styled-components'
 import tw from 'tailwind.macro'
 import TextRenderer from '../TextRenderer'
+import Container from '../Container'
 
 const Text = ({ text }) => {
 	return (
-		<RichTextContainer>
-			<TextRenderer text={text} />
-		</RichTextContainer>
+		<Container tight>
+			<RichTextContainer>
+				<TextRenderer text={text} />
+			</RichTextContainer>
+		</Container>
 	)
 }
 

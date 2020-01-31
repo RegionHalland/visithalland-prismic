@@ -7,7 +7,7 @@ const LanguageSelector = ({ langs }) => (
 	<div className="h-full flex items-center">
 		{langs.map((lang, index) => (
 			<Link
-				className="font-semibold h-full flex items-center font-sans px-3"
+				className="font-semibold text-black h-full flex items-center font-sans px-3"
 				to={lang.lang}
 			>
 				{lang.label}
