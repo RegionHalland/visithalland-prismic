@@ -12,7 +12,7 @@ const ArticleListItem = ({ title, excerpt, image, to, ...props }) => (
 				<Img fluid={image} className="w-full h-full" />
 			</div>
 			<div className="flex flex-col md:justify-center flex-1 px-3">
-				<h2 className="font-sans text-black text-xl md:text-3xl font-semibold mb-2">
+				<h2 className="font-sans text-black text-xl md:text-3xl leading-tight font-semibold mb-3">
 					{title}
 				</h2>
 				<div className="font-sans text-base text-gray-700">

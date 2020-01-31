@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import tw from 'tailwind.macro'
 
 const Container = ({ children, tight, ...props }) => (
-	<StyledContainer tight {...props}>
+	<StyledContainer tight={tight} {...props}>
 		{children}
 	</StyledContainer>
 )

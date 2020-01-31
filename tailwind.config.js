@@ -95,5 +95,8 @@ module.exports = {
 		transitionDelay: ['responsive'],
 		willChange: ['responsive'],
 	},
-	plugins: [require('tailwindcss-transitions')()],
+	plugins: [
+		require('tailwindcss-transitions')(),
+		require('@digitaliseringsbyran/tailwindcss-screens-in-dom')(),
+	],
 }
