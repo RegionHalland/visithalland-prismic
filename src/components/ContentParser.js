@@ -18,7 +18,14 @@ const ContentParser = ({ slices, meta, seo }) => (
 		{slices.map((slice, index) => {
 			const Component = TYPE_COMPONENTS[slice.type] || null
 			return Component ? (
-				<Component slice={slice} meta={meta} seo={seo} key={index} />
+				<div className="mb-8">
+					<Component
+						slice={slice}
+						meta={meta}
+						seo={seo}
+						key={index}
+					/>
+				</div>
 			) : null
 		})}
 	</main>

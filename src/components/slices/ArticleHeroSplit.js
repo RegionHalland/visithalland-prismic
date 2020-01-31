@@ -1,8 +1,6 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import Img from 'gatsby-image'
-import styled from 'styled-components'
-import tw from 'tailwind.macro'
 
 import Container from '../Container'
 import PublicationDate from '../PublicationDate'
