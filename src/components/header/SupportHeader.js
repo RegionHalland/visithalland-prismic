@@ -4,7 +4,7 @@ import Link from 'gatsby-link'
 import { linkResolver } from '../../utils/linkResolver'
 import Container from '../Container'
 
-const SupportHeader = ({ supportLinks }) => (
+const SupportHeader = ({ supportLinks = [] }) => (
 	<div className="px-3 md:px-4 bg-gray-200 relative z-50">
 		<Container className="flex items-center justify-end">
 			{supportLinks.map(supportLink => {
