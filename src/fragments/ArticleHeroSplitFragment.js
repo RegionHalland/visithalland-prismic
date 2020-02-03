@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+// Disable no-unused-vars as EditorFragment will be "unused"
 import { graphql } from 'gatsby'
 import { EditorFragment } from './EditorFragment'
 
