@@ -2,7 +2,6 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
-import tw from 'tailwind.macro'
 import resolveConfig from 'tailwindcss/resolveConfig'
 
 import Container from '../Container'
