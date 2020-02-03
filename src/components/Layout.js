@@ -14,11 +14,13 @@ import Footer from './Footer'
 const Layout = ({ mainMenu, topMenu, children }) => {
 	return (
 		<div className="font-sans">
-			<Header
-				langs={['sv-se', 'da-dk']}
-				links={mainMenu}
-				supportLinks={topMenu}
-			/>
+			{mainMenu && topMenu && (
+				<Header
+					langs={['sv-se', 'da-dk']}
+					links={mainMenu}
+					supportLinks={topMenu}
+				/>
+			)}
 			<div>{children}</div>
 			<Footer />
 		</div>
