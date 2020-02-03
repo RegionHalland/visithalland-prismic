@@ -69,7 +69,7 @@ const ImageContainer = styled.div`
 
 ArticleHeroSplit.propTypes = {
 	title: PropTypes.string.isRequired,
-	introduction: PropTypes.string.isRequired,
+	introduction: PropTypes.arrayOf(propTypes.object).isRequired,
 	author: PropTypes.object.isRequired,
 	publicationDate: PropTypes.string.isRequired,
 	image: PropTypes.object,
