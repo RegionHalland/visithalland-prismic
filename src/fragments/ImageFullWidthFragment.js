@@ -8,7 +8,7 @@ export const ImageFullWidthFragment = graphql`
 			image_full_width_image
 			image_full_width_imageSharp {
 				childImageSharp {
-					fluid(maxWidth: 400, maxHeight: 250) {
+					fluid(maxWidth: 3000) {
 						...GatsbyImageSharpFluid
 					}
 				}

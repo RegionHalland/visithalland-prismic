@@ -7,7 +7,7 @@ import ArticleImageThumbnail from '../ArticleImageThumbnail'
 const ArticleGrid = ({ articles, ...props }) => {
 	return (
 		<Container tight className="px-3 md:px-4">
-			<div className="flex flex-wrap">
+			<div className="flex flex-wrap md:-mx-3">
 				{articles.map((article, index) => {
 					return (
 						<div

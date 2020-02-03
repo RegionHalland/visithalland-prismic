@@ -1,11 +1,16 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import Img from 'gatsby-image'
+import styled from 'styled-components'
+import tw from 'tailwind.macro'
+import resolveConfig from 'tailwindcss/resolveConfig'
 
 import Container from '../Container'
 import PublicationDate from '../PublicationDate'
 import Author from '../Author'
 import TextRenderer from '../TextRenderer'
+
+const screens = resolveConfig().theme.screens
 
 const ArticleHeroSplit = ({
 	title,
@@ -37,13 +42,31 @@ const ArticleHeroSplit = ({
 					</div>
 					<Author {...author} />
 				</div>
-				<div className="md:px-3 w-full md:w-6/12 mb-4 md:mb-0">
-					{image && <Img fluid={image} />}
-				</div>
+				<ImageContainer className="md:px-3 w-full md:w-6/12 mb-4 md:mb-0 relative">
+					{image && (
+						<Img
+							style={{ position: 'absolute' }}
+							className="h-full w-full bottom-0 top-0 left-0 z-0"
+							objectFit="cover"
+							objectPosition="50% 50%"
+							fluid={image}
+						/>
+					)}
+				</ImageContainer>
 			</div>
 		</Container>
 	</section>
 )
+
+const ImageContainer = styled.div`
+	height: 60vh;
+	@media screen and (min-width: ${screens.md}) {
+		height: 70vh;
+	}
+	@media screen and (min-width: ${screens.xl}) {
+		height: 80vh;
+	}
+`
 
 ArticleHeroSplit.propTypes = {
 	title: PropTypes.string.isRequired,

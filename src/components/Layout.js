@@ -9,6 +9,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import Header from './header/Header'
+import Footer from './Footer'
 
 const Layout = ({ mainMenu, topMenu, children }) => {
 	return (
@@ -19,7 +20,7 @@ const Layout = ({ mainMenu, topMenu, children }) => {
 				supportLinks={topMenu}
 			/>
 			<div>{children}</div>
-			<footer>Footer</footer>
+			<Footer />
 		</div>
 	)
 }
