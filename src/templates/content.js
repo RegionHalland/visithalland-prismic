@@ -43,9 +43,15 @@ const Content = ({
 		image: seo_image,
 	}
 
-	const menus = edges[0] || []
-	const mainMenu = menus.node ? menus.node.main_menu_links : []
-	const topMenu = menus.node ? menus.node.top_menu_links : []
+	// Get main menu items
+	const mainMenu =
+		(edges && edges[0] && edges[0].node && edges[0].node.main_menu_links) ||
+		[]
+
+	// Get top menu items
+	const topMenu =
+		(edges && edges[0] && edges[0].node && edges[0].node.top_menu_links) ||
+		[]
 
 	return (
 		<Layout mainMenu={mainMenu} topMenu={topMenu}>

@@ -1,10 +1,10 @@
-import PropTypes from 'prop-types'
+import propTypes from 'prop-types'
 import React from 'react'
 import Link from 'gatsby-link'
 import { linkResolver } from '../../utils/linkResolver'
 import Container from '../Container'
 
-const Navigation = ({ links = [] }) => (
+const Navigation = ({ links }) => (
 	<div className="px-3 py-6 md:py-0 md:px-4 bg-blue-600 w-full">
 		<Container className="flex flex-col md:flex-row md:items-center">
 			{links.map(link => {
@@ -23,7 +23,7 @@ const Navigation = ({ links = [] }) => (
 )
 
 Navigation.propTypes = {
-	links: PropTypes.array,
+	links: propTypes.array.isRequired,
 }
 
 export default Navigation

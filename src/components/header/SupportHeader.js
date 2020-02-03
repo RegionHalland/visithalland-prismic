@@ -1,10 +1,10 @@
-import PropTypes from 'prop-types'
+import propTypes from 'prop-types'
 import React from 'react'
 import Link from 'gatsby-link'
 import { linkResolver } from '../../utils/linkResolver'
 import Container from '../Container'
 
-const SupportHeader = ({ supportLinks = [] }) => (
+const SupportHeader = ({ supportLinks }) => (
 	<div className="px-3 md:px-4 bg-gray-200 relative z-50">
 		<Container className="flex items-center justify-end">
 			{supportLinks.map(supportLink => {
@@ -36,7 +36,7 @@ const SupportHeader = ({ supportLinks = [] }) => (
 )
 
 SupportHeader.propTypes = {
-	supportLinks: PropTypes.array,
+	supportLinks: propTypes.array.isRequired,
 }
 
 export default SupportHeader

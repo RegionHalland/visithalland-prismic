@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+import propTypes from 'prop-types'
 import React, { useState } from 'react'
 import { useTransition, animated } from 'react-spring'
 import Link from 'gatsby-link'
@@ -69,9 +69,9 @@ const Header = ({ langs, links, supportLinks }) => {
 }
 
 Header.propTypes = {
-	supportLinks: PropTypes.array,
-	links: PropTypes.array,
-	langs: PropTypes.array,
+	supportLinks: propTypes.array.isRequired,
+	links: propTypes.array.isRequired,
+	langs: propTypes.array,
 }
 
 export default Header

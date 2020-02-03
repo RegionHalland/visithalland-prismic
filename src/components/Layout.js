@@ -6,7 +6,7 @@
  */
 
 import React from 'react'
-import PropTypes from 'prop-types'
+import propTypes from 'prop-types'
 
 import Header from './header/Header'
 import Footer from './Footer'
@@ -26,7 +26,9 @@ const Layout = ({ mainMenu, topMenu, children }) => {
 }
 
 Layout.propTypes = {
-	children: PropTypes.node.isRequired,
+	mainMenu: propTypes.array.isRequired,
+	topMenu: propTypes.array.isRequired,
+	children: propTypes.node.isRequired,
 }
 
 export default Layout
