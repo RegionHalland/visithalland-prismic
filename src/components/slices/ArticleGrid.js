@@ -14,7 +14,7 @@ const ArticleGrid = ({ articles, ...props }) => {
 							key={index}
 							className="w-full md:w-6/12 md:px-3 mb-3 md:mb-6"
 						>
-							<ArticleImageThumbnail {...article} to={'/'} />
+							<ArticleImageThumbnail {...article} />
 						</div>
 					)
 				})}

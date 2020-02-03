@@ -15,8 +15,6 @@ const ArticleGridContainer = ({ slice, meta, seo }) => {
 		to: item._meta.uid,
 	}))
 
-	console.log(articles)
-
 	return <ArticleGrid articles={articles} />
 }
 
