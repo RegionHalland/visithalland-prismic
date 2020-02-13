@@ -1,34 +1,37 @@
 import propTypes from 'prop-types'
 import React, { useState } from 'react'
-import { useTransition, animated } from 'react-spring'
-import Link from 'gatsby-link'
+import get from 'lodash.get'
+// import { useTransition, animated } from 'react-spring'
+// import Link from 'gatsby-link'
 
-import useTailwindBreakpoint from '../../hooks/useTailwindBreakpoint'
+// import useTailwindBreakpoint from '../../hooks/useTailwindBreakpoint'
 
-import Container from '../Container'
-import Menu from '../icons/Menu'
+// import Container from '../Container'
+// import Menu from '../icons/Menu'
 
-import SupportHeader from './SupportHeader'
-import Navigation from './Navigation'
-import LanguageSelector from './LanguageSelector'
+// import SupportHeader from './SupportHeader'
+// import Navigation from './Navigation'
+// import LanguageSelector from './LanguageSelector'
 
-const Header = ({ langs, links, supportLinks }) => {
-	const [menuOpen, setMenuOpen] = useState(false)
-	const breakpoint = useTailwindBreakpoint()
+const Header = ({ allMenus }) => {
+	const menus = get(allMenus, 'edges[0].node', {})
+	console.log('menus', menus)
+	// const [menuOpen, setMenuOpen] = useState(false)
+	// const breakpoint = useTailwindBreakpoint()
 
-	const handleClick = () => {
-		setMenuOpen(!menuOpen)
-	}
+	// const handleClick = () => {
+	// 	setMenuOpen(!menuOpen)
+	// }
 
-	const transitions = useTransition(menuOpen, null, {
-		from: { position: 'absolute', transform: 'translate3d(0,-100%,0)' },
-		enter: { transform: 'translate3d(0,0,0)' },
-		leave: { transform: 'translate3d(0,-100%,0)' },
-	})
+	// const transitions = useTransition(menuOpen, null, {
+	// 	from: { position: 'absolute', transform: 'translate3d(0,-100%,0)' },
+	// 	enter: { transform: 'translate3d(0,0,0)' },
+	// 	leave: { transform: 'translate3d(0,-100%,0)' },
+	// })
 
 	return (
 		<header className="font-sans">
-			<SupportHeader supportLinks={supportLinks} />
+			{/* <SupportHeader supportLinks={supportLinks} />
 			<div className="bg-white px-3 md:px-4 z-50 relative">
 				<Container className="flex h-16 items-center justify-between ">
 					<Link to="/" className="text-xl font-semibold text-black">
@@ -63,14 +66,13 @@ const Header = ({ langs, links, supportLinks }) => {
 				</div>
 			) : (
 				<Navigation links={links} />
-			)}
+			)} */}
 		</header>
 	)
 }
 
 Header.propTypes = {
-	supportLinks: propTypes.array.isRequired,
-	links: propTypes.array.isRequired,
+	allMenus: propTypes.object.isRequired,
 	langs: propTypes.array,
 }
 

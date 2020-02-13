@@ -4,12 +4,13 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Seo from '../components/Seo'
 import ContentParser from '../components/ContentParser'
+import Header from '../components/header/Header'
 
-import { ArticleHeroFragment } from '../fragments'
+import { ArticleHeroFragment, MenusFragment } from '../fragments'
 
 const Content = ({
 	data: {
-		prismic: { content },
+		prismic: { content, allMenus },
 	},
 }) => {
 	// Return if page has no content or body (slices)
@@ -36,6 +37,7 @@ const Content = ({
 	return (
 		<Layout>
 			<Seo title="Page" />
+			<Header allMenus={allMenus} />
 			<ContentParser slices={slices} meta={meta} seo={seo} />
 		</Layout>
 	)
@@ -44,6 +46,13 @@ const Content = ({
 export const query = graphql`
 	query($uid: String!, $lang: String!) {
 		prismic {
+			allMenus(lang: $lang) {
+				edges {
+					node {
+						...MenusFragment
+					}
+				}
+			}
 			content(uid: $uid, lang: $lang) {
 				title
 				_meta {
@@ -57,6 +66,6 @@ export const query = graphql`
 	}
 `
 
-Content.fragments = [ArticleHeroFragment]
+Content.fragments = [ArticleHeroFragment, MenusFragment]
 
 export default Content
