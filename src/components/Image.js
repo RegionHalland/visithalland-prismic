@@ -7,10 +7,10 @@ const Image = ({ ...props }) => {
 	}
 
 	return (
-		<div>
-			<img src="https://image.posterlounge.se/img/products/630000/628588/628588_poster_l.jpg" />
-			<small>Photo by Albin Martinsson</small>
-		</div>
+		<img
+			alt="Placeholder"
+			src="https://image.posterlounge.se/img/products/630000/628588/628588_poster_l.jpg"
+		/>
 	)
 }
 
