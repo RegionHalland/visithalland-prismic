@@ -5,26 +5,16 @@ import Layout from '../components/Layout'
 import Seo from '../components/Seo'
 import ContentParser from '../components/ContentParser'
 
-import {
-	TextFragment,
-	ArticleHeroFullFragment,
-	ArticleHeroSplitFragment,
-	ArticleListFragment,
-	ArticleGridFragment,
-	ImageFullWidthFragment,
-} from '../fragments'
+import { ArticleHeroFragment } from '../fragments'
 
 const Content = ({
 	data: {
-		prismic: {
-			allMenus: { edges },
-			content,
-		},
+		prismic: { content },
 	},
 }) => {
-	// Return if page has no content
-	// TODO: Return 404?
-	if (!content) {
+	// Return if page has no content or body (slices)
+	if (!content || !content.body) {
+		// TODO: Return 404?
 		return null
 	}
 
@@ -43,18 +33,8 @@ const Content = ({
 		image: seo_image,
 	}
 
-	// Get main menu items
-	const mainMenu =
-		(edges && edges[0] && edges[0].node && edges[0].node.main_menu_links) ||
-		[]
-
-	// Get top menu items
-	const topMenu =
-		(edges && edges[0] && edges[0].node && edges[0].node.top_menu_links) ||
-		[]
-
 	return (
-		<Layout mainMenu={mainMenu} topMenu={topMenu}>
+		<Layout>
 			<Seo title="Page" />
 			<ContentParser slices={slices} meta={meta} seo={seo} />
 		</Layout>
@@ -64,90 +44,19 @@ const Content = ({
 export const query = graphql`
 	query($uid: String!, $lang: String!) {
 		prismic {
-			allMenus(lang: $lang) {
-				edges {
-					node {
-						name
-						_linkType
-						main_menu_links {
-							main_menu_link_label
-							main_menu_link {
-								... on PRISMIC_Content {
-									title
-									_meta {
-										type
-										uid
-										lang
-									}
-								}
-							}
-						}
-						top_menu_links {
-							top_menu_link {
-								... on PRISMIC_Content {
-									_linkType
-									title
-									seo_description
-									_meta {
-										uid
-										lang
-										type
-									}
-								}
-								... on PRISMIC__ImageLink {
-									_linkType
-									url
-								}
-								... on PRISMIC__FileLink {
-									_linkType
-									url
-									size
-									name
-								}
-								... on PRISMIC__ExternalLink {
-									_linkType
-									url
-								}
-							}
-							top_menu_link_label
-						}
-					}
-				}
-			}
 			content(uid: $uid, lang: $lang) {
 				title
 				_meta {
 					firstPublicationDate
 				}
-				seo_description
-				seo_featured_image
-				seo_featured_imageSharp {
-					childImageSharp {
-						fluid(maxWidth: 1900) {
-							...GatsbyImageSharpFluid
-						}
-					}
-				}
 				body {
-					...TextFragment
-					...ArticleHeroFullFragment
-					...ArticleHeroSplitFragment
-					...ArticleListFragment
-					...ArticleGridFragment
-					...ImageFullWidthFragment
+					...ArticleHeroFragment
 				}
 			}
 		}
 	}
 `
 
-Content.fragments = [
-	TextFragment,
-	ArticleHeroFullFragment,
-	ArticleHeroSplitFragment,
-	ArticleListFragment,
-	ArticleGridFragment,
-	ImageFullWidthFragment,
-]
+Content.fragments = [ArticleHeroFragment]
 
 export default Content

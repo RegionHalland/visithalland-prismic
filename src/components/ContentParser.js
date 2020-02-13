@@ -1,20 +1,10 @@
 import React from 'react'
 import propTypes from 'prop-types'
 
-import TextContainer from './slices/TextContainer'
-import ArticleHeroFullContainer from './slices/ArticleHeroFullContainer'
-import ArticleHeroSplitContainer from './slices/ArticleHeroSplitContainer'
-import ArticleListContainer from './slices/ArticleListContainer'
-import ArticleGridContainer from './slices/ArticleGridContainer'
-import ImageFullWidthContainer from './slices/ImageFullWidthContainer'
+import ArticleHeroContainer from './slices/ArticleHeroContainer'
 
 const TYPE_COMPONENTS = {
-	text: TextContainer,
-	article_hero_full: ArticleHeroFullContainer,
-	article_hero_split: ArticleHeroSplitContainer,
-	article_list: ArticleListContainer,
-	article_grid: ArticleGridContainer,
-	image_full_width: ImageFullWidthContainer,
+	article_hero: ArticleHeroContainer,
 }
 
 const ContentParser = ({ slices, meta, seo }) => (
