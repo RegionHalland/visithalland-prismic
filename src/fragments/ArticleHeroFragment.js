@@ -6,7 +6,6 @@ import { EditorFragment } from './EditorFragment'
 export const ArticleHeroFragment = graphql`
 	fragment ArticleHeroFragment on PRISMIC_ContentBodyArticle_hero {
 		type
-		label
 		primary {
 			article_hero_title
 			article_hero_introduction

@@ -5,7 +5,7 @@ import Layout from '../components/Layout'
 import Seo from '../components/Seo'
 import ContentParser from '../components/ContentParser'
 
-import { ArticleHeroFragment } from '../fragments'
+import { ArticleHeroFragment, FeaturedArticleFragment } from '../fragments'
 
 const Content = ({
 	data: {
@@ -51,12 +51,13 @@ export const query = graphql`
 				}
 				body {
 					...ArticleHeroFragment
+					...FeaturedArticleFragment
 				}
 			}
 		}
 	}
 `
 
-Content.fragments = [ArticleHeroFragment]
+Content.fragments = [ArticleHeroFragment, FeaturedArticleFragment]
 
 export default Content
