@@ -1,25 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import get from 'lodash.get'
 
 import ArticleHeroFull from './ArticleHeroFull'
 import ArticleHeroSplit from './ArticleHeroSplit'
-
-// TODO: Move this if we need it elsewhere
-const getAuthorRelation = obj => {
-	if (!obj) {
-		return {}
-	}
-
-	return {
-		name: obj.editor_name ? obj.editor_name : '',
-		email: obj.editor_email ? obj.editor_email : '',
-		phone: obj.editor_phone ? obj.editor_phone : '',
-		role: obj.editor_role ? obj.editor_role : '',
-		image: obj.editor_imageSharp
-			? obj.editor_imageSharp.childImageSharp.fluid
-			: null,
-	}
-}
 
 const ArticleHeroContainer = ({ slice, meta }) => {
 	if (!slice.primary) {
@@ -27,33 +11,38 @@ const ArticleHeroContainer = ({ slice, meta }) => {
 	}
 
 	const { firstPublicationDate } = meta
-	const {
-		primary: {
-			article_hero_title: title,
-			article_hero_introduction: introduction,
-			article_hero_author,
-			article_hero_variant: variant,
-			article_hero_imageSharp: image,
-		},
-	} = slice
+	const { primary } = slice
 
-	// Prepare the author object
-	const author = getAuthorRelation(article_hero_author)
+	const title = get(primary, 'article_hero_title[0].text', '')
+	const introduction = get(primary, 'article_hero_introduction', [])
+	const variant = get(primary, 'article_hero_variant', 'full')
+	const image = get(primary, 'article_hero_imageSharp.fluid', null)
+	const author = {
+		name: get(primary, 'article_hero_author.editor_name', ''),
+		email: get(primary, 'article_hero_author.editor_email', ''),
+		phone: get(primary, 'article_hero_author.editor_phone', ''),
+		role: get(primary, 'article_hero_author.editor_role', ''),
+		image: get(
+			primary,
+			'article_hero_author.editor_imageSharp.childImageSharp.fluid',
+			null,
+		),
+	}
 
-	// Article Hero Split is selected
+	// Variant "Split" is selected
 	if (variant.toLowerCase() === 'split') {
 		return (
 			<ArticleHeroSplit
-				title={title[0].text}
+				title={title}
 				introduction={introduction}
 				publicationDate={firstPublicationDate}
 				author={author}
-				image={image && image.childImageSharp}
+				image={image}
 			/>
 		)
 	}
 
-	// Article Hero Full (or a variant that does not exist) is selected
+	// Variant "Full" (or a variant that does not exist) is selected
 	return (
 		<ArticleHeroFull
 			title={title[0].text}

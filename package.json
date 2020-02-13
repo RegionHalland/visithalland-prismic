@@ -17,6 +17,7 @@
     "gatsby-source-filesystem": "^2.1.46",
     "gatsby-source-prismic-graphql": "^3.4.1-alpha.0",
     "gatsby-transformer-sharp": "^2.3.13",
+    "lodash.get": "^4.4.2",
     "prismic-reactjs": "^1.2.0",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
