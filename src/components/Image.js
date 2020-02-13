@@ -9,7 +9,7 @@ const Image = ({ ...props }) => {
 	return (
 		<img
 			alt="Placeholder"
-			src="https://image.posterlounge.se/img/products/630000/628588/628588_poster_l.jpg"
+			src="https://static4.businessinsider.com/image/55266e1869bedda02c4a0b93-538/pygmy-marmoset.jpg"
 		/>
 	)
 }
