@@ -15,6 +15,7 @@ export const MenusFragment = graphql`
 			}
 		}
 		support_group {
+			support_link_label
 			support_link {
 				_linkType
 				... on PRISMIC__ExternalLink {
