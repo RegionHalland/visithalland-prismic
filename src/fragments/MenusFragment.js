@@ -5,6 +5,7 @@ export const MenusFragment = graphql`
 		navigation_label
 		support_label
 		navigation_group {
+			navigation_link_label
 			navigation_link {
 				... on PRISMIC_Content {
 					_meta {
@@ -12,7 +13,6 @@ export const MenusFragment = graphql`
 					}
 				}
 			}
-			navigation_link_label
 		}
 		support_group {
 			support_link {
@@ -31,7 +31,6 @@ export const MenusFragment = graphql`
 					}
 				}
 			}
-			support_link_label
 		}
 	}
 `
