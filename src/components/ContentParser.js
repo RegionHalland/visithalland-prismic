@@ -6,6 +6,7 @@ import FeaturedArticleContainer from './slices/FeaturedArticleContainer'
 import ArticleCarouselContainer from './slices/ArticleCarouselContainer'
 import ImageFullWidthContainer from './slices/ImageFullWidthContainer'
 import TextContainer from './slices/TextContainer'
+import ArticleGridContainer from './slices/ArticleGridContainer'
 
 const TYPE_COMPONENTS = {
 	article_hero: ArticleHeroContainer,
