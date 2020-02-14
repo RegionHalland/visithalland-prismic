@@ -12,6 +12,7 @@ const TYPE_COMPONENTS = {
 	article_hero: ArticleHeroContainer,
 	featured_article: FeaturedArticleContainer,
 	article_carousel: ArticleCarouselContainer,
+	article_grid: ArticleGridContainer,
 	full_width_image: ImageFullWidthContainer,
 	text: TextContainer,
 }
