@@ -1,7 +1,4 @@
-const langs = ['sv-se', 'no', 'da-dk']
-
 module.exports = {
-	langs,
 	siteMetadata: {
 		title: 'Gatsby Default Starter',
 		description:
@@ -37,7 +34,7 @@ module.exports = {
 			options: {
 				repositoryName: 'visithalland', // required
 				defaultLang: 'sv-se',
-				langs,
+				langs: require('./src/utils/langs.js'),
 				shortenUrlLangs: true,
 				previews: true,
 				pages: [
