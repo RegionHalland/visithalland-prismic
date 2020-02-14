@@ -4,19 +4,22 @@ import Link from 'gatsby-link'
 import { linkResolver } from '../../utils/linkResolver'
 import Image from '../Image'
 
-const ArticleCarousel = ({ title, image, meta, label }) => (
+const ArticleCarousel = ({ items }) => (
 	<div>
-		<div>{title}</div>
-		<Link to={linkResolver(meta)}>{label}</Link>
-		<Image {...image} className="w-full h-full" />
+		{items.map(({ title, tags, meta, image }) => (
+			<div>
+				<Image fluid={image} />
+				{tags.map(tag => (
+					<span>{tag}</span>
+				))}
+				<Link to={linkResolver(meta)}>{title}</Link>
+			</div>
+		))}
 	</div>
 )
 
 ArticleCarousel.propTypes = {
-	title: PropTypes.string.isRequired,
-	label: PropTypes.string.isRequired,
-	meta: PropTypes.object.isRequired,
-	image: PropTypes.object,
+	items: PropTypes.array.isRequired,
 }
 
 export default ArticleCarousel

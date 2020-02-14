@@ -10,10 +10,16 @@ export const ArticleCarouselFragment = graphql`
 					seo_description
 					_meta {
 						lang
+						tags
 						uid
 					}
+					seo_featured_image
 					seo_featured_imageSharp {
-						id
+						childImageSharp {
+							fluid(maxWidth: 1900) {
+								...GatsbyImageSharpFluid
+							}
+						}
 					}
 				}
 			}
