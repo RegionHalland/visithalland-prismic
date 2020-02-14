@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Image from '../Image'
+import TextRenderer from '../TextRenderer'
 
 const ArticleList = ({ items }) => {
 	return (
@@ -9,7 +10,7 @@ const ArticleList = ({ items }) => {
 				<li key={item.meta.uid}>
 					<Image fluid={item.image} />
 					<span>{item.title}</span>
-					<p>{item.description}</p>
+					<TextRenderer text={item.description} />
 				</li>
 			))}
 		</ul>

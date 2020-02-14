@@ -12,7 +12,7 @@ const ArticleListContainer = ({ slice }) => {
 
 	const items = fields.map(({ article_list_relationship: item }) => ({
 		title: get(item, 'title', ''),
-		description: get(item, 'seo_description', ''),
+		description: get(item, 'seo_description', {}),
 		meta: get(item, '_meta', {}),
 		image: get(item, 'seo_featured_imageSharp.childImageSharp.fluid', null),
 	}))
