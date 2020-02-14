@@ -7,6 +7,7 @@ import ArticleCarouselContainer from './slices/ArticleCarouselContainer'
 import ImageFullWidthContainer from './slices/ImageFullWidthContainer'
 import TextContainer from './slices/TextContainer'
 import ArticleGridContainer from './slices/ArticleGridContainer'
+import InfoBoxContainer from './slices/InfoBoxContainer'
 
 const TYPE_COMPONENTS = {
 	article_hero: ArticleHeroContainer,
@@ -15,6 +16,7 @@ const TYPE_COMPONENTS = {
 	article_grid: ArticleGridContainer,
 	full_width_image: ImageFullWidthContainer,
 	text: TextContainer,
+	info_box: InfoBoxContainer,
 }
 
 const ContentParser = ({ slices, meta, seo }) => (
