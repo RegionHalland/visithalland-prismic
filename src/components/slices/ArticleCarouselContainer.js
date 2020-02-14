@@ -2,27 +2,23 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import get from 'lodash.get'
 
-import FeaturedArticle from './FeaturedArticle'
+import ArticleCarousel from './ArticleCarousel'
 
 const ArticleCarouselContainer = ({ slice }) => {
-	if (!slice.fields) {
+	const { fields } = slice
+
+	if (!fields || !Array.isArray(fields)) {
 		return null
 	}
 
-	console.log(slice.fields)
+	const items = fields.map(({ article_carousel_relationship: item }) => ({
+		title: get(item, 'title', ''),
+		meta: get(item, '_meta', {}),
+		tags: get(item, '_meta.tags', []),
+		image: get(item, 'seo_featured_imageSharp.fluid', null),
+	}))
 
-	// const { primary } = slice
-
-	// const title = get(primary, 'featured_article_relationship.title', '')
-	// const label = get(primary, 'featured_article_button_label', 'Läs mer')
-	// const meta = get(primary, 'featured_article_relationship._meta', {})
-	// const image = get(
-	// 	primary,
-	// 	'featured_article_relationship.seo_featured_imageSharp.childImageSharp.fluid',
-	// 	null,
-	// )
-
-	return <div></div>
+	return <ArticleCarousel items={items} />
 }
 
 ArticleCarouselContainer.propTypes = {
