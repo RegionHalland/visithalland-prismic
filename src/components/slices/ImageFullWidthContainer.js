@@ -16,7 +16,7 @@ const ImageFullWidthContainer = ({ slice }) => {
 			'full_width_image_srcSharp.childImageSharp.fluid',
 			{},
 		),
-		caption: get(primary, 'full_width_image_caption', ''),
+		caption: get(primary, 'full_width_image_caption', null),
 	}
 
 	return <ImageFullWidth {...image} />

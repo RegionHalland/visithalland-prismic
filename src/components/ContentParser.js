@@ -8,15 +8,17 @@ import ImageFullWidthContainer from './slices/ImageFullWidthContainer'
 import TextContainer from './slices/TextContainer'
 import ArticleListContainer from './slices/ArticleListContainer'
 import ArticleGridContainer from './slices/ArticleGridContainer'
+import InfoBoxContainer from './slices/InfoBoxContainer'
 
 const TYPE_COMPONENTS = {
+	article_list: ArticleListContainer,
 	article_hero: ArticleHeroContainer,
-	featured_article: FeaturedArticleContainer,
 	article_carousel: ArticleCarouselContainer,
 	article_grid: ArticleGridContainer,
+	featured_article: FeaturedArticleContainer,
 	full_width_image: ImageFullWidthContainer,
+	info_box: InfoBoxContainer,
 	text: TextContainer,
-	article_list: ArticleListContainer,
 }
 
 const ContentParser = ({ slices, meta, seo }) => (

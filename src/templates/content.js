@@ -15,6 +15,7 @@ import {
 	TextFragment,
 	ArticleListFragment,
 	ArticleGridFragment,
+	InfoBoxFragment,
 } from '../fragments'
 
 const Content = ({
@@ -75,6 +76,7 @@ export const query = graphql`
 					...TextFragment
 					...ArticleListFragment
 					...ArticleGridFragment
+					...InfoBoxFragment
 				}
 			}
 		}
@@ -90,6 +92,7 @@ Content.fragments = [
 	TextFragment,
 	ArticleListFragment,
 	ArticleGridFragment,
+	InfoBoxFragment,
 ]
 
 export default Content

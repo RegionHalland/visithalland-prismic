@@ -6,18 +6,15 @@ import Image from '../Image'
 
 const ArticleGrid = ({ items }) => (
 	<div>
-		{items.map(({ title, tags, meta, image }, index) => {
-			console.log('articlegrid meta:', meta)
-			return (
-				<div key={`${title}-${index}`}>
-					<Image fluid={image} />
-					{tags.map(tag => (
-						<span key={tag}>{tag}</span>
-					))}
-					<Link to={linkResolver(meta)}>{title}</Link>
-				</div>
-			)
-		})}
+		{items.map(({ title, tags, meta, image }, index) => (
+			<div key={`${title}-${index}`}>
+				<Image fluid={image} />
+				{tags.map(tag => (
+					<span key={tag}>{tag}</span>
+				))}
+				<Link to={linkResolver(meta)}>{title}</Link>
+			</div>
+		))}
 	</div>
 )
 
