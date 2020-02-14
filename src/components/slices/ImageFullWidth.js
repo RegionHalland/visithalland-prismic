@@ -5,7 +5,7 @@ import Image from '../Image'
 const ImageFullWidth = ({ image, caption }) => {
 	return (
 		<div>
-			<Image className="h-screen" fluid={image} />
+			<Image fluid={image} />
 			<span className="float-right">{caption}</span>
 		</div>
 	)
