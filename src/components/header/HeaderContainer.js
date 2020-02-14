@@ -3,6 +3,8 @@ import React from 'react'
 import get from 'lodash.get'
 import langs from '../../utils/langs'
 
+import Header from './Header'
+
 const HeaderContainer = ({ allMenus }) => {
 	const menu = get(allMenus, 'edges[0].node', {})
 
@@ -24,34 +26,7 @@ const HeaderContainer = ({ allMenus }) => {
 		})),
 	}
 
-	return (
-		<header className="font-sans">
-			<div className="navigation">
-				{navigation.label}
-				{navigation.items.map(navigationItem => (
-					<li key={navigationItem._meta.uid}>
-						{navigationItem.label}
-					</li>
-				))}
-			</div>
-			<div className="language-selector">
-				Språk | Sprog
-				<ul>
-					{langs.map(lang => (
-						<li key={lang}>{lang}</li>
-					))}
-				</ul>
-			</div>
-			<div className="support">
-				{support.label}
-				{support.items.map(supportItem => (
-					<li key={supportItem.support_link.url}>
-						{supportItem.label}
-					</li>
-				))}
-			</div>
-		</header>
-	)
+	return <Header support={support} navigation={navigation} langs={langs} />
 }
 
 HeaderContainer.propTypes = {

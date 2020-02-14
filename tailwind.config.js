@@ -3,9 +3,15 @@
 
 module.exports = {
 	theme: {
+		screens: {
+			sm: '640px',
+			md: '768px',
+			lg: '1024px',
+			xl: '1300px',
+		},
 		fontFamily: {
 			sans: [
-				'Axiforma',
+				'CircularStd',
 				'-apple-system',
 				'BlinkMacSystemFont',
 				'"Segoe UI"',
@@ -82,7 +88,7 @@ module.exports = {
 				},
 				blue: {
 					600: '#333E66',
-					700: '#1F2744',
+					700: '#05242D',
 				},
 			},
 		},
