@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Seo from '../components/Seo'
 import ContentParser from '../components/ContentParser'
-import Header from '../components/header/Header'
+import HeaderContainer from '../components/header/HeaderContainer'
 
 import {
 	ArticleHeroFragment,
@@ -41,7 +41,7 @@ const Content = ({
 	return (
 		<Layout>
 			<Seo title="Page" />
-			<Header allMenus={allMenus} />
+			<HeaderContainer allMenus={allMenus} />
 			<ContentParser slices={slices} meta={meta} seo={seo} />
 		</Layout>
 	)

@@ -3,7 +3,7 @@ import React from 'react'
 import get from 'lodash.get'
 import { langs } from '../../../gatsby-config'
 
-const Header = ({ allMenus }) => {
+const HeaderContainer = ({ allMenus }) => {
 	const menu = get(allMenus, 'edges[0].node', {})
 
 	// Prepare navigation data
@@ -54,8 +54,8 @@ const Header = ({ allMenus }) => {
 	)
 }
 
-Header.propTypes = {
+HeaderContainer.propTypes = {
 	allMenus: propTypes.object.isRequired,
 }
 
-export default Header
+export default HeaderContainer
