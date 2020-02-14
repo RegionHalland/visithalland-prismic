@@ -1,7 +1,7 @@
 import propTypes from 'prop-types'
 import React from 'react'
 import get from 'lodash.get'
-import { langs } from '../../../gatsby-config'
+import langs from '../../utils/langs'
 
 const HeaderContainer = ({ allMenus }) => {
 	const menu = get(allMenus, 'edges[0].node', {})
