@@ -2,27 +2,27 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import get from 'lodash.get'
 
-import ArticleCarousel from './ArticleCarousel'
+import ArticleGrid from './ArticleGrid'
 
-const ArticleCarouselContainer = ({ slice }) => {
+const ArticleGridContainer = ({ slice }) => {
 	const { fields } = slice
 
 	if (!fields || !Array.isArray(fields)) {
 		return null
 	}
 
-	const items = fields.map(({ article_carousel_relationship: item }) => ({
+	const items = fields.map(({ article_grid_relationship: item }) => ({
 		title: get(item, 'title', ''),
 		meta: get(item, '_meta', {}),
 		tags: get(item, '_meta.tags', []),
 		image: get(item, 'seo_featured_imageSharp.fluid', null),
 	}))
 
-	return <ArticleCarousel items={items} />
+	return <ArticleGrid items={items} />
 }
 
-ArticleCarouselContainer.propTypes = {
+ArticleGridContainer.propTypes = {
 	slice: PropTypes.object.isRequired,
 }
 
-export default ArticleCarouselContainer
+export default ArticleGridContainer

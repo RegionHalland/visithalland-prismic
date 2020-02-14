@@ -1,14 +1,24 @@
 import React from 'react'
-import propTypes from 'prop-types'
+import PropTypes from 'prop-types'
 
 import ArticleHeroContainer from './slices/ArticleHeroContainer'
 import FeaturedArticleContainer from './slices/FeaturedArticleContainer'
 import ArticleCarouselContainer from './slices/ArticleCarouselContainer'
+import ImageFullWidthContainer from './slices/ImageFullWidthContainer'
+import TextContainer from './slices/TextContainer'
+import ArticleListContainer from './slices/ArticleListContainer'
+import ArticleGridContainer from './slices/ArticleGridContainer'
+import InfoBoxContainer from './slices/InfoBoxContainer'
 
 const TYPE_COMPONENTS = {
+	article_list: ArticleListContainer,
 	article_hero: ArticleHeroContainer,
-	featured_article: FeaturedArticleContainer,
 	article_carousel: ArticleCarouselContainer,
+	article_grid: ArticleGridContainer,
+	featured_article: FeaturedArticleContainer,
+	full_width_image: ImageFullWidthContainer,
+	info_box: InfoBoxContainer,
+	text: TextContainer,
 }
 
 const ContentParser = ({ slices, meta, seo }) => (
@@ -25,9 +35,9 @@ const ContentParser = ({ slices, meta, seo }) => (
 )
 
 ContentParser.propTypes = {
-	slices: propTypes.arrayOf(propTypes.object).isRequired,
-	meta: propTypes.object,
-	seo: propTypes.object,
+	slices: PropTypes.arrayOf(PropTypes.object).isRequired,
+	meta: PropTypes.object,
+	seo: PropTypes.object,
 }
 
 export default ContentParser

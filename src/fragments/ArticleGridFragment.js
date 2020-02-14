@@ -1,10 +1,10 @@
 import { graphql } from 'gatsby'
 
-export const ArticleCarouselFragment = graphql`
-	fragment ArticleCarouselFragment on PRISMIC_ContentBodyArticle_carousel {
+export const ArticleGridFragment = graphql`
+	fragment ArticleGridFragment on PRISMIC_ContentBodyArticle_grid {
 		type
 		fields {
-			article_carousel_relationship {
+			article_grid_relationship {
 				... on PRISMIC_Content {
 					title
 					seo_description
