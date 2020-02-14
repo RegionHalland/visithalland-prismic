@@ -10,6 +10,7 @@ import {
 	ArticleHeroFragment,
 	MenusFragment,
 	FeaturedArticleFragment,
+	ArticleCarouselFragment,
 } from '../fragments'
 
 const Content = ({
@@ -65,6 +66,7 @@ export const query = graphql`
 				body {
 					...ArticleHeroFragment
 					...FeaturedArticleFragment
+					...ArticleCarouselFragment
 				}
 			}
 		}
@@ -75,6 +77,7 @@ Content.fragments = [
 	ArticleHeroFragment,
 	MenusFragment,
 	FeaturedArticleFragment,
+	ArticleCarouselFragment,
 ]
 
 export default Content

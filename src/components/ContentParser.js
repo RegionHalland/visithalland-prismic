@@ -3,10 +3,12 @@ import propTypes from 'prop-types'
 
 import ArticleHeroContainer from './slices/ArticleHeroContainer'
 import FeaturedArticleContainer from './slices/FeaturedArticleContainer'
+import ArticleCarouselContainer from './slices/ArticleCarouselContainer'
 
 const TYPE_COMPONENTS = {
 	article_hero: ArticleHeroContainer,
 	featured_article: FeaturedArticleContainer,
+	article_carousel: ArticleCarouselContainer,
 }
 
 const ContentParser = ({ slices, meta, seo }) => (
