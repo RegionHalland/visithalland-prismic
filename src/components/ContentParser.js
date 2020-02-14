@@ -7,11 +7,13 @@ import ArticleCarouselContainer from './slices/ArticleCarouselContainer'
 import ImageFullWidthContainer from './slices/ImageFullWidthContainer'
 import TextContainer from './slices/TextContainer'
 import ArticleListContainer from './slices/ArticleListContainer'
+import ArticleGridContainer from './slices/ArticleGridContainer'
 
 const TYPE_COMPONENTS = {
 	article_hero: ArticleHeroContainer,
 	featured_article: FeaturedArticleContainer,
 	article_carousel: ArticleCarouselContainer,
+	article_grid: ArticleGridContainer,
 	full_width_image: ImageFullWidthContainer,
 	text: TextContainer,
 	article_list: ArticleListContainer,

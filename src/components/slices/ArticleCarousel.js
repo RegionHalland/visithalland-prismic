@@ -6,11 +6,11 @@ import Image from '../Image'
 
 const ArticleCarousel = ({ items }) => (
 	<div>
-		{items.map(({ title, tags, meta, image }) => (
-			<div>
+		{items.map(({ title, tags, meta, image }, index) => (
+			<div key={`${title}-${index}`}>
 				<Image fluid={image} />
 				{tags.map(tag => (
-					<span>{tag}</span>
+					<span key={tag}>{tag}</span>
 				))}
 				<Link to={linkResolver(meta)}>{title}</Link>
 			</div>
