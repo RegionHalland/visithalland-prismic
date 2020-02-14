@@ -12,8 +12,8 @@ const ImageFullWidth = ({ image, caption }) => {
 }
 
 ImageFullWidth.propTypes = {
-	image: PropTypes.object.isRequired,
-	caption: PropTypes.string.isRequired,
+	image: PropTypes.object,
+	caption: PropTypes.string,
 }
 
 export default ImageFullWidth

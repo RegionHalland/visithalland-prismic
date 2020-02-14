@@ -1,5 +1,5 @@
 import React from 'react'
-import propTypes from 'prop-types'
+import PropTypes from 'prop-types'
 import { RichText } from 'prismic-reactjs'
 import { linkResolver } from '../utils/linkResolver'
 
@@ -27,7 +27,7 @@ const htmlSerializer = (type, element, content, children, key) => {
 }
 
 TextRenderer.propTypes = {
-	text: propTypes.arrayOf(propTypes.object).isRequired,
+	text: PropTypes.arrayOf(PropTypes.object),
 }
 
 export default TextRenderer
