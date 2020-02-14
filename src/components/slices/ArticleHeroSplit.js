@@ -24,14 +24,6 @@ const ArticleHeroSplit = ({
 	)
 }
 
-ArticleHeroSplit.defaultProps = {
-	title: '',
-	introduction: [],
-	author: {},
-	publicationDate: '',
-	image: null,
-}
-
 ArticleHeroSplit.propTypes = {
 	title: PropTypes.string,
 	introduction: PropTypes.arrayOf(PropTypes.object),

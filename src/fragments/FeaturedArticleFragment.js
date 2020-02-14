@@ -9,7 +9,17 @@ export const FeaturedArticleFragment = graphql`
 				... on PRISMIC_Content {
 					title
 					seo_description
-					seo_featured_image
+					seo_featured_imageSharp {
+						childImageSharp {
+							fluid(maxWidth: 1900) {
+								...GatsbyImageSharpFluid
+							}
+						}
+					}
+					_meta {
+						uid
+						lang
+					}
 				}
 			}
 		}

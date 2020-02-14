@@ -24,14 +24,6 @@ const ArticleHeroFull = ({
 	)
 }
 
-ArticleHeroFull.defaultProps = {
-	title: '',
-	introduction: [],
-	author: {},
-	publicationDate: '',
-	image: null,
-}
-
 ArticleHeroFull.propTypes = {
 	title: PropTypes.string,
 	introduction: PropTypes.arrayOf(PropTypes.object),
