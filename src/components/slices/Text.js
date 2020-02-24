@@ -3,23 +3,26 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import tw from 'tailwind.macro'
 import TextRenderer from '../TextRenderer'
+import Container from '../Container'
 
 const Text = ({ text }) => (
-	<RichTextContainer>
-		<TextRenderer text={text} />
-	</RichTextContainer>
+	<Container tight>
+		<RichTextContainer>
+			<TextRenderer text={text} />
+		</RichTextContainer>
+	</Container>
 )
 
 const RichTextContainer = styled.div`
 	${tw`font-sans px-3 md:px-4`};
 	> h1 {
-		${tw`font-bold text-2xl md:text-3xl mt-4 mb-4 md:mb-6 text-black`};
+		${tw`font-semibold text-2xl md:text-3xl mt-4 mb-4 md:mb-6 text-black`};
 	}
 	> h2 {
-		${tw`font-bold text-2xl md:text-3xl mt-4 mb-4 md:mb-6 text-black`};
+		${tw`font-semibold text-2xl md:text-3xl mt-4 mb-4 md:mb-6 text-black`};
 	}
 	> h3 {
-		${tw`font-bold text-xl md:text-2xl mt-3 mb-3 md:mb-5 text-black`};
+		${tw`font-semibold text-xl md:text-2xl mt-3 mb-3 md:mb-5 text-black`};
 	}
 	> h4 {
 		${tw`font-semibold text-lg md:text-xl mt-2 mb-3 md:mb-5 text-black`};
@@ -31,7 +34,7 @@ const RichTextContainer = styled.div`
 		${tw`font-semibold text-base mt-1 mb-1 md:mb-3 text-black`};
 	}
 	> p {
-		${tw`text-gray-700 text-base leading-relaxed mb-8`};
+		${tw`text-gray-700 text-base md:text-lg leading-relaxed mb-8`};
 		& > strong {
 			${tw`font-semibold`}
 		}

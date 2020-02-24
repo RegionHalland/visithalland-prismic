@@ -17,7 +17,7 @@ const ArticleHeroFull = ({
 	return (
 		<React.Fragment>
 			<ImageContainer className="h-70vh md:h-70vh lg:h-80vh w-full flex items-center justify-center relative mb-8 px-4 md:px-6">
-				<h1 className="text-4xl md:text-5xl lg:text-6xl text-center leading-tight text-white font-semibold z-10">
+				<h1 className="text-4xl md:text-5xl lg:text-6xl w-full md:w-10/12 text-center leading-tight text-white font-semibold z-10">
 					{title}
 				</h1>
 				<Image
