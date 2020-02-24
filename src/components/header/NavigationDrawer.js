@@ -14,6 +14,7 @@ const NavigationDrawer = ({ toggleMenu, navigation, support, langs }) => {
 		trail: 200,
 		unique: true,
 	})
+
 	return (
 		<NavigationContainer className="flex flex-col flex-1 list-none px-4 md:px-12 pb-24 pt-32 h-full overflow-scroll scrolling-touch bg-blue-700">
 			<div className="mb-12 w-full">
@@ -56,8 +57,8 @@ const NavigationDrawer = ({ toggleMenu, navigation, support, langs }) => {
 					<Link
 						className="block text-lg mb-3"
 						onClick={toggleMenu}
-						key={supportItem.support_link.url}
-						to={supportItem.support_link.url}
+						key={supportItem.url}
+						to={supportItem.url}
 					>
 						{supportItem.label}
 					</Link>

@@ -6,18 +6,6 @@ import Seo from '../components/Seo'
 import ContentParser from '../components/ContentParser'
 import HeaderContainer from '../components/header/HeaderContainer'
 
-import {
-	ArticleHeroFragment,
-	MenusFragment,
-	FeaturedArticleFragment,
-	ArticleCarouselFragment,
-	ImageFullWidthFragment,
-	TextFragment,
-	ArticleListFragment,
-	ArticleGridFragment,
-	InfoBoxFragment,
-} from '../fragments'
-
 const Content = ({
 	data: {
 		prismic: { content, allMenus },
@@ -70,6 +58,8 @@ export const query = graphql`
 				}
 				body {
 					...ArticleHeroFragment
+					...HeroCarouselFragment
+					...PageHeroFragment
 					...FeaturedArticleFragment
 					...ArticleCarouselFragment
 					...ImageFullWidthFragment
@@ -82,17 +72,5 @@ export const query = graphql`
 		}
 	}
 `
-
-Content.fragments = [
-	ArticleHeroFragment,
-	MenusFragment,
-	FeaturedArticleFragment,
-	ArticleCarouselFragment,
-	ImageFullWidthFragment,
-	TextFragment,
-	ArticleListFragment,
-	ArticleGridFragment,
-	InfoBoxFragment,
-]
 
 export default Content
