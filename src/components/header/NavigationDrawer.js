@@ -33,23 +33,21 @@ const NavigationDrawer = ({ toggleMenu, navigation, support, langs }) => {
 					</animated.div>
 				))}
 			</div>
-			{langs.length > 0 && (
-				<div className="mb-12 w-full">
-					<span className="text-base font-medium text-gray-400 block mb-6">
-						Språk
-					</span>
-					{langs.map(lang => (
-						<Link
-							className="mr-6 text-base"
-							onClick={toggleMenu}
-							key={lang}
-							to={lang}
-						>
-							{lang}
-						</Link>
-					))}
-				</div>
-			)}
+			<div className="mb-12 w-full">
+				<span className="text-base font-medium text-gray-400 block mb-6">
+					Språk
+				</span>
+				{langs.map(lang => (
+					<Link
+						className="mr-6 text-base"
+						onClick={toggleMenu}
+						key={lang}
+						to={lang}
+					>
+						{lang}
+					</Link>
+				))}
+			</div>
 			<div className="mb-12 w-full">
 				<span className="text-base font-medium text-gray-400 block mb-6">
 					{support.label}
