@@ -2,21 +2,19 @@ import propTypes from 'prop-types'
 import React from 'react'
 
 import Link from 'gatsby-link'
-import styled from 'styled-components'
-import tw from 'tailwind.macro'
-import { useTransition, animated, config } from 'react-spring'
+import { useTransition, animated } from 'react-spring'
 
 const NavigationDrawer = ({ toggleMenu, navigation, support, langs }) => {
 	const navTransition = useTransition(navigation.items, item => item.label, {
 		from: { transform: 'translateY(50%)', opacity: 0 },
 		enter: { transform: 'translateY(0%)', opacity: 1 },
 		leave: { transform: 'translateY(50%)', opacity: 0 },
-		trail: 100,
+		trail: 200,
 		unique: true,
 	})
 
 	return (
-		<nav className="flex flex-col flex-1 list-none px-4 md:px-12 pt-32 h-full bg-blue-700">
+		<nav className="flex flex-col flex-1 list-none px-4 md:px-12 pb-24 pt-32 h-full overflow-scroll scrolling-touch bg-blue-700">
 			<div className="mb-12 w-full">
 				<span className="text-base font-medium text-gray-400 block mb-6">
 					{navigation.label}
@@ -66,6 +64,13 @@ const NavigationDrawer = ({ toggleMenu, navigation, support, langs }) => {
 			</div>
 		</nav>
 	)
+}
+
+NavigationDrawer.propTypes = {
+	navigation: propTypes.object.isRequired,
+	support: propTypes.object.isRequired,
+	langs: propTypes.array.isRequired,
+	toggleMenu: propTypes.func.isRequired,
 }
 
 export default NavigationDrawer
