@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 
 import ArticleHeroContainer from './slices/ArticleHeroContainer'
 import HeroCarouselContainer from './slices/HeroCarouselContainer'
+import PageHeroContainer from './slices/PageHeroContainer'
 import FeaturedArticleContainer from './slices/FeaturedArticleContainer'
 import ArticleCarouselContainer from './slices/ArticleCarouselContainer'
 import ImageFullWidthContainer from './slices/ImageFullWidthContainer'
@@ -14,6 +15,7 @@ import InfoBoxContainer from './slices/InfoBoxContainer'
 const TYPE_COMPONENTS = {
 	article_list: ArticleListContainer,
 	article_hero: ArticleHeroContainer,
+	page_hero: PageHeroContainer,
 	hero_carousel: HeroCarouselContainer,
 	article_carousel: ArticleCarouselContainer,
 	article_grid: ArticleGridContainer,

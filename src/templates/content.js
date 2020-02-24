@@ -59,6 +59,7 @@ export const query = graphql`
 				body {
 					...ArticleHeroFragment
 					...HeroCarouselFragment
+					...PageHeroFragment
 					...FeaturedArticleFragment
 					...ArticleCarouselFragment
 					...ImageFullWidthFragment
