@@ -2,23 +2,30 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import get from 'lodash.get'
 
-import ArticleGrid from './ArticleGrid'
+import ArticleGridLarge from './ArticleGridLarge'
+import ArticleGridSmall from './ArticleGridSmall'
 
 const ArticleGridContainer = ({ slice }) => {
-	const { fields } = slice
+	const { fields, primary } = slice
 
-	if (!fields || !Array.isArray(fields)) {
+	if (!fields || !Array.isArray(fields) || !primary) {
 		return null
 	}
+
+	const variant = get(primary, 'article_grid_variant', 'small').toLowerCase()
 
 	const items = fields.map(({ article_grid_relationship: item }) => ({
 		title: get(item, 'title', ''),
 		meta: get(item, '_meta', {}),
 		tags: get(item, '_meta.tags', []),
-		image: get(item, 'seo_featured_imageSharp.fluid', null),
+		image: get(item, 'seo_featured_imageSharp.childImageSharp.fluid', null),
 	}))
 
-	return <ArticleGrid items={items} />
+	if (variant === 'large') {
+		return <ArticleGridLarge items={items} />
+	}
+
+	return <ArticleGridSmall items={items} />
 }
 
 ArticleGridContainer.propTypes = {

@@ -1,8 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import styled from 'styled-components'
+import tw from 'tailwind.macro'
 
 import Image from '../Image'
-import PublicationDate from '../PublicationDate'
 import TextRenderer from '../TextRenderer'
 import Author from '../Author'
 
@@ -14,15 +15,57 @@ const ArticleHeroFull = ({
 	image,
 }) => {
 	return (
-		<div>
-			<h1>{title}</h1>
-			<TextRenderer text={introduction} />
-			<PublicationDate publicationDate={publicationDate} />
-			<Image {...image} className="w-full h-full" />
-			<Author {...author} />
-		</div>
+		<React.Fragment>
+			<ImageContainer className="h-70vh md:h-70vh lg:h-80vh w-full flex items-center justify-center relative mb-8 px-4 md:px-6">
+				<h1 className="text-4xl md:text-5xl lg:text-6xl text-center leading-tight text-white font-semibold z-10">
+					{title}
+				</h1>
+				<Image
+					style={{ position: 'absolute' }}
+					className="h-full w-full bottom-0 top-0 left-0 z-0"
+					objectFit="cover"
+					objectPosition="50% 50%"
+					fluid={image}
+				/>
+			</ImageContainer>
+			<div className="px-4 md:px-6 max-w-xl mx-auto">
+				<StyledIntroduction className="mb-2">
+					<TextRenderer
+						className="md:text-center"
+						text={introduction}
+					/>
+				</StyledIntroduction>
+				<Author
+					className="w-full flex md:justify-center mb-16"
+					{...author}
+				/>
+			</div>
+		</React.Fragment>
 	)
 }
+
+const StyledIntroduction = styled.div`
+	> p {
+		${tw`text-gray-700 text-lg md:text-lg md:text-center leading-relaxed mb-8`};
+		& > strong {
+			${tw`font-semibold`}
+		}
+		& > em {
+			${tw`font-italic text-black`}
+		}
+		& > a {
+			${tw`font-semibold text-black underline`}
+		}
+	}
+`
+
+const ImageContainer = styled.div`
+	&:after {
+		content: '';
+		${tw`bg-black h-full w-full absolute top-0 left-0`}
+		opacity:0.1;
+	}
+`
 
 ArticleHeroFull.propTypes = {
 	title: PropTypes.string,

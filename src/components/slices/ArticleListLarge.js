@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Image from '../Image'
 import TextRenderer from '../TextRenderer'
 
-const ArticleList = ({ items }) => {
+const ArticleListLarge = ({ items }) => {
 	return (
 		<ul>
 			{items.map(item => (
@@ -17,8 +17,8 @@ const ArticleList = ({ items }) => {
 	)
 }
 
-ArticleList.propTypes = {
+ArticleListLarge.propTypes = {
 	items: PropTypes.array.isRequired,
 }
 
-export default ArticleList
+export default ArticleListLarge

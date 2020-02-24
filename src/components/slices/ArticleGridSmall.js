@@ -4,7 +4,7 @@ import Link from 'gatsby-link'
 import { linkResolver } from '../../utils/linkResolver'
 import Image from '../Image'
 
-const ArticleGrid = ({ items }) => (
+const ArticleGridSmall = ({ items }) => (
 	<div>
 		{items.map(({ title, tags, meta, image }, index) => (
 			<div key={`${title}-${index}`}>
@@ -18,8 +18,8 @@ const ArticleGrid = ({ items }) => (
 	</div>
 )
 
-ArticleGrid.propTypes = {
+ArticleGridSmall.propTypes = {
 	items: PropTypes.array.isRequired,
 }
 
-export default ArticleGrid
+export default ArticleGridSmall

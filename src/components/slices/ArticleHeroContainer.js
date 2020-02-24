@@ -15,8 +15,16 @@ const ArticleHeroContainer = ({ slice, meta }) => {
 
 	const title = get(primary, 'article_hero_title[0].text', '')
 	const introduction = get(primary, 'article_hero_introduction', [])
-	const variant = get(primary, 'article_hero_variant', 'full')
-	const image = get(primary, 'article_hero_imageSharp.fluid', null)
+	const variant = get(primary, 'article_hero_variant', 'full').toLowerCase()
+	// Get fixed or fluid image based on variant
+	const image = get(
+		primary,
+		`article_hero_imageSharp.childImageSharp.${
+			variant === 'full' ? 'fluid' : 'fixed'
+		}`,
+		null,
+	)
+
 	const author = {
 		name: get(primary, 'article_hero_author.editor_name', ''),
 		email: get(primary, 'article_hero_author.editor_email', ''),
@@ -30,7 +38,7 @@ const ArticleHeroContainer = ({ slice, meta }) => {
 	}
 
 	// Variant "Split" is selected
-	if (variant.toLowerCase() === 'split') {
+	if (variant === 'split') {
 		return (
 			<ArticleHeroSplit
 				title={title}
@@ -41,15 +49,14 @@ const ArticleHeroContainer = ({ slice, meta }) => {
 			/>
 		)
 	}
-
 	// Variant "Full" (or a variant that does not exist) is selected
 	return (
 		<ArticleHeroFull
-			title={title[0].text}
+			title={title}
 			introduction={introduction}
 			publicationDate={firstPublicationDate}
 			author={author}
-			image={image && image.childImageSharp}
+			image={image}
 		/>
 	)
 }

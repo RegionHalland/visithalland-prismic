@@ -3,6 +3,9 @@ import { graphql } from 'gatsby'
 export const ArticleGridFragment = graphql`
 	fragment ArticleGridFragment on PRISMIC_ContentBodyArticle_grid {
 		type
+		primary {
+			article_grid_variant
+		}
 		fields {
 			article_grid_relationship {
 				... on PRISMIC_Content {

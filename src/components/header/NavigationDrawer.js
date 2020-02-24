@@ -1,8 +1,11 @@
 import propTypes from 'prop-types'
 import React from 'react'
+
 import { linkResolver } from '../../utils/linkResolver'
 import Link from 'gatsby-link'
 import { useTransition, animated } from 'react-spring'
+import styled from 'styled-components'
+import BackgroundPattern from '../../images/bg-pattern.svg'
 
 const NavigationDrawer = ({ toggleMenu, navigation, support, langs, meta }) => {
 	const navTransition = useTransition(navigation.items, item => item.label, {
@@ -14,7 +17,7 @@ const NavigationDrawer = ({ toggleMenu, navigation, support, langs, meta }) => {
 	})
 
 	return (
-		<nav className="flex flex-col flex-1 list-none px-4 md:px-12 pb-24 pt-32 h-full overflow-scroll scrolling-touch bg-blue-700">
+		<NavigationContainer className="flex flex-col flex-1 list-none px-4 md:px-12 pb-24 pt-32 h-full overflow-scroll scrolling-touch bg-blue-700">
 			<div className="mb-12 w-full">
 				<span className="text-base font-medium text-gray-400 block mb-6">
 					{navigation.label}
@@ -92,9 +95,13 @@ const NavigationDrawer = ({ toggleMenu, navigation, support, langs, meta }) => {
 					)
 				})}
 			</div>
-		</nav>
+		</NavigationContainer>
 	)
 }
+
+const NavigationContainer = styled.div`
+	background-image: url(${BackgroundPattern});
+`
 
 NavigationDrawer.propTypes = {
 	navigation: propTypes.object.isRequired,

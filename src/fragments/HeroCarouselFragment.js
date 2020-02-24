@@ -1,24 +1,20 @@
 import { graphql } from 'gatsby'
 
-export const ArticleListFragment = graphql`
-	fragment ArticleListFragment on PRISMIC_ContentBodyArticle_list {
+export const HeroCarouselFragment = graphql`
+	fragment HeroCarouselFragment on PRISMIC_ContentBodyHero_carousel {
 		type
-		label
-		primary {
-			article_list_variant
-		}
 		fields {
-			article_list_button_label
-			article_list_relationship {
-				_linkType
+			hero_carousel_button_label
+			hero_carousel_relationship {
 				... on PRISMIC_Content {
 					title
+					seo_description
 					_meta {
-						uid
 						lang
+						tags
+						uid
 					}
 					seo_featured_image
-					seo_description
 					seo_featured_imageSharp {
 						childImageSharp {
 							fluid(maxWidth: 1900) {
