@@ -28,8 +28,6 @@ const HeaderContainer = ({ allMenus }) => {
 		})),
 	}
 
-	console.log(support)
-
 	return <Header support={support} navigation={navigation} langs={langs} />
 }
 
