@@ -6,13 +6,13 @@ import Image from '../Image'
 
 const ArticleGridLarge = ({ items }) => (
 	<div>
-		{items.map(({ title, tags, meta, image }, index) => (
+		{items.map(({ title, tags, meta, image, buttonLabel }, index) => (
 			<div key={`${title}-${index}`}>
 				<Image fluid={image} />
 				{tags.map(tag => (
 					<span key={tag}>{tag}</span>
 				))}
-				<Link to={linkResolver(meta)}>{title}</Link>
+				<Link to={linkResolver(meta)}>{buttonLabel}</Link>
 			</div>
 		))}
 	</div>

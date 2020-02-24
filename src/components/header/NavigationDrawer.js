@@ -1,12 +1,13 @@
 import propTypes from 'prop-types'
 import React from 'react'
-import styled from 'styled-components'
+
+import { linkResolver } from '../../utils/linkResolver'
 import Link from 'gatsby-link'
 import { useTransition, animated } from 'react-spring'
-
+import styled from 'styled-components'
 import BackgroundPattern from '../../images/bg-pattern.svg'
 
-const NavigationDrawer = ({ toggleMenu, navigation, support, langs }) => {
+const NavigationDrawer = ({ toggleMenu, navigation, support, langs, meta }) => {
 	const navTransition = useTransition(navigation.items, item => item.label, {
 		from: { transform: 'translateY(50%)', opacity: 0 },
 		enter: { transform: 'translateY(0%)', opacity: 1 },
@@ -27,7 +28,7 @@ const NavigationDrawer = ({ toggleMenu, navigation, support, langs }) => {
 							onClick={toggleMenu}
 							className="block text-2xl md:text-3xl font-medium mb-3"
 							key={item._meta.uid}
-							to={item._meta.uid}
+							to={linkResolver(item._meta)}
 						>
 							{item.label}
 						</Link>
@@ -38,31 +39,61 @@ const NavigationDrawer = ({ toggleMenu, navigation, support, langs }) => {
 				<span className="text-base font-medium text-gray-400 block mb-6">
 					Språk
 				</span>
-				{langs.map(lang => (
-					<Link
-						className="mr-6 text-base"
-						onClick={toggleMenu}
-						key={lang}
-						to={lang}
-					>
-						{lang}
-					</Link>
-				))}
+				{langs.map(lang => {
+					let altPage = meta.alternateLanguages.find(
+						el => el.lang === lang,
+					)
+					if (!altPage) {
+						altPage = meta.lang === lang ? meta : { lang }
+					}
+
+					return (
+						<Link
+							className="mr-6 text-base"
+							onClick={toggleMenu}
+							key={lang}
+							to={linkResolver(altPage)}
+						>
+							{lang === 'sv-se'
+								? 'Svenska'
+								: lang == 'no'
+								? 'Norsk'
+								: lang == 'da-dk'
+								? 'Dansk'
+								: ''}
+						</Link>
+					)
+				})}
 			</div>
 			<div className="mb-12 w-full">
 				<span className="text-base font-medium text-gray-400 block mb-6">
 					{support.label}
 				</span>
-				{support.items.map(supportItem => (
-					<Link
-						className="block text-lg mb-3"
-						onClick={toggleMenu}
-						key={supportItem.url}
-						to={supportItem.url}
-					>
-						{supportItem.label}
-					</Link>
-				))}
+				{support.items.map(supportItem => {
+					if (supportItem.type === 'Link.document') {
+						return (
+							<Link
+								className="block text-lg mb-3"
+								onClick={toggleMenu}
+								key={supportItem._meta.uid}
+								to={linkResolver(supportItem._meta)}
+							>
+								{supportItem.label}
+							</Link>
+						)
+					}
+					if (supportItem.type === 'Link.image') return null
+					return (
+						<a
+							className="block text-lg mb-3"
+							onClick={toggleMenu}
+							key={supportItem.url}
+							href={supportItem.url}
+						>
+							{supportItem.label}
+						</a>
+					)
+				})}
 			</div>
 		</NavigationContainer>
 	)

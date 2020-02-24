@@ -4,7 +4,11 @@ export const ArticleListFragment = graphql`
 	fragment ArticleListFragment on PRISMIC_ContentBodyArticle_list {
 		type
 		label
+		primary {
+			article_list_variant
+		}
 		fields {
+			article_list_button_label
 			article_list_relationship {
 				_linkType
 				... on PRISMIC_Content {
