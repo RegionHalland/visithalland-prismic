@@ -14,15 +14,11 @@ const ArticleGridContainer = ({ slice }) => {
 
 	const variant = get(primary, 'article_grid_variant', 'small').toLowerCase()
 
-	const items = fields.map(item => ({
-		title: get(item, 'article_grid_relationship.title', ''),
-		meta: get(item, 'article_grid_relationship._meta', {}),
-		tags: get(item, 'article_grid_relationship._meta.tags', []),
-		image: get(
-			item,
-			'article_grid_relationship.seo_featured_imageSharp.fluid',
-			null,
-		),
+	const items = fields.map(({ article_grid_relationship: item }) => ({
+		title: get(item, 'title', ''),
+		meta: get(item, '_meta', {}),
+		tags: get(item, '_meta.tags', []),
+		image: get(item, 'seo_featured_imageSharp.childImageSharp.fluid', null),
 	}))
 
 	if (variant === 'large') {
