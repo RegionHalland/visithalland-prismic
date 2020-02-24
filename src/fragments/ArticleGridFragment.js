@@ -7,7 +7,6 @@ export const ArticleGridFragment = graphql`
 			article_grid_variant
 		}
 		fields {
-			article_grid_button_label
 			article_grid_relationship {
 				... on PRISMIC_Content {
 					title

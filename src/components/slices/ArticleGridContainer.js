@@ -13,11 +13,11 @@ const ArticleGridContainer = ({ slice }) => {
 	}
 
 	const variant = get(primary, 'article_grid_variant', 'small').toLowerCase()
+
 	const items = fields.map(item => ({
 		title: get(item, 'article_grid_relationship.title', ''),
 		meta: get(item, 'article_grid_relationship._meta', {}),
 		tags: get(item, 'article_grid_relationship._meta.tags', []),
-		buttonLabel: get(item, 'article_grid_button_label', ''),
 		image: get(
 			item,
 			'article_grid_relationship.seo_featured_imageSharp.fluid',
