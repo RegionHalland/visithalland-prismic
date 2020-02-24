@@ -5,15 +5,22 @@ import Image from './Image'
 
 const Author = ({ name, role, email, phone, image, ...props }) => (
 	<div {...props}>
-		<Image
-			className="w-full h-full"
-			fluid={image}
-			alt={`Bild på ${name}`}
-		/>
-		<div>{name}</div>
-		<div>{role}</div>
-		<div>{email}</div>
-		<div>{phone}</div>
+		<div className="flex items-center">
+			<div className="h-16 w-16 mr-2 overflow-hidden rounded-full relative">
+				<Image
+					style={{ position: 'absolute' }}
+					className="h-full w-full bottom-0 top-0 left-0 z-0"
+					objectFit="cover"
+					objectPosition="50% 50%"
+					fixed={image}
+					alt={`Bild på ${name}`}
+				/>
+			</div>
+			<div className="">
+				<span className="font-semibold block mb-1">{name}</span>
+				<div className="text-sm text-gray-700 block">{role}</div>
+			</div>
+		</div>
 	</div>
 )
 

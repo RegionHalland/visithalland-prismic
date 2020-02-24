@@ -9,8 +9,11 @@ export const EditorFragment = graphql`
 		editor_image
 		editor_imageSharp {
 			childImageSharp {
-				fluid(maxWidth: 400, maxHeight: 250) {
+				fluid(maxWidth: 300, maxHeight: 300) {
 					...GatsbyImageSharpFluid
+				}
+				fixed(width: 100, height: 100) {
+					...GatsbyImageSharpFixed
 				}
 			}
 		}

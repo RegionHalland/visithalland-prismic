@@ -51,7 +51,7 @@ const Header = ({ navigation, support, langs }) => {
 	)
 
 	return (
-		<StyledHeader className="font-sans text-white px-4 md:px-6">
+		<StyledHeader className="text-white px-4 md:px-6 absolute z-50 w-full">
 			<Container className="h-24 md:h-32 flex justify-between items-center">
 				<Link
 					to="/"
@@ -98,7 +98,7 @@ const Header = ({ navigation, support, langs }) => {
 							<animated.div
 								key={key}
 								style={props}
-								className="fixed bg-gray-200 top-0 right-0 h-screen w-full md:w-6/12 z-40"
+								className="fixed shadow-lg top-0 right-0 h-screen w-full md:w-6/12 z-40"
 							>
 								<NavigationDrawer
 									toggleMenu={toggleMenu}
@@ -115,7 +115,6 @@ const Header = ({ navigation, support, langs }) => {
 }
 
 const StyledHeader = styled.div`
-	position: relative;
 	&:before {
 		${tw`absolute top-0 left-0 right-0 h-64 pointer-events-none`}
 		content: '';
@@ -129,7 +128,7 @@ const StyledHeader = styled.div`
 
 const MenuButton = styled.button`
 	${tw`transition-bg`}
-	${props => (props.scrolled ? tw`bg-blue-700` : 'bg-transparent')};
+	${props => (props.scrolled ? tw`bg-blue-700 shadow-lg` : 'bg-transparent')};
 `
 
 const MenuButtonContainer = styled.div`
