@@ -24,9 +24,11 @@ const HeaderContainer = ({ allMenus }) => {
 		label: menu.support_label,
 		items: supportGroup.map(supportLink => ({
 			label: get(supportLink, 'support_link_label', ''),
-			support_link: get(supportLink, 'support_link', {}),
+			url: get(supportLink, 'support_link.url', ''),
 		})),
 	}
+
+	console.log(support)
 
 	return <Header support={support} navigation={navigation} langs={langs} />
 }
