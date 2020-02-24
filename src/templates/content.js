@@ -58,6 +58,7 @@ export const query = graphql`
 				}
 				body {
 					...ArticleHeroFragment
+					...HeroCarouselFragment
 					...FeaturedArticleFragment
 					...ArticleCarouselFragment
 					...ImageFullWidthFragment
