@@ -6,6 +6,7 @@ import tw from 'tailwind.macro'
 import Image from '../Image'
 import TextRenderer from '../TextRenderer'
 import Author from '../Author'
+import Container from '../Container'
 
 const ArticleHeroFull = ({
 	title,
@@ -16,7 +17,7 @@ const ArticleHeroFull = ({
 }) => {
 	return (
 		<React.Fragment>
-			<ImageContainer className="h-70vh md:h-70vh lg:h-80vh w-full flex items-center justify-center relative mb-8 px-4 md:px-6">
+			<ImageContainer className="h-70vh md:h-70vh lg:h-80vh w-full flex items-center justify-center relative mb-12 px-4 md:px-6">
 				<h1 className="text-4xl md:text-5xl lg:text-6xl w-full md:w-10/12 text-center leading-tight text-white font-semibold z-10">
 					{title}
 				</h1>
@@ -28,25 +29,27 @@ const ArticleHeroFull = ({
 					fluid={image}
 				/>
 			</ImageContainer>
-			<div className="px-4 md:px-6 max-w-xl mx-auto">
-				<StyledIntroduction className="mb-2">
-					<TextRenderer
-						className="md:text-center"
-						text={introduction}
+			<Container className="px-4 md:px-6 mb-20" tight>
+				<div className="w-full md:w-10/12 mx-auto">
+					<StyledIntroduction className="mb-2">
+						<TextRenderer
+							className="md:text-center"
+							text={introduction}
+						/>
+					</StyledIntroduction>
+					<Author
+						className="w-full flex md:justify-center"
+						{...author}
 					/>
-				</StyledIntroduction>
-				<Author
-					className="w-full flex md:justify-center mb-16"
-					{...author}
-				/>
-			</div>
+				</div>
+			</Container>
 		</React.Fragment>
 	)
 }
 
 const StyledIntroduction = styled.div`
 	> p {
-		${tw`text-gray-700 text-lg md:text-lg md:text-center leading-relaxed mb-8`};
+		${tw`text-gray-700 text-xl md:text-xl md:text-center leading-relaxed mb-8`};
 		& > strong {
 			${tw`font-semibold`}
 		}
