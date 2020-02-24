@@ -11,8 +11,6 @@ const HeroCarouselContainer = ({ slice }) => {
 		return null
 	}
 
-	console.log('fields', fields)
-
 	const items = fields.map(item => ({
 		buttonLabel: get(item, 'hero_carousel_button_label', ''),
 		title: get(item, 'hero_carousel_relationship.title', ''),
