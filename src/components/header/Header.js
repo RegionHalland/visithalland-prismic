@@ -1,18 +1,17 @@
 import propTypes from 'prop-types'
 import React, { useState } from 'react'
-
 import Link from 'gatsby-link'
 import styled from 'styled-components'
 import tw from 'tailwind.macro'
-import useTailwindBreakpoint from '../../hooks/useTailwindBreakpoint'
 import { useScrollPosition } from '@n8tb1t/use-scroll-position'
 import { useTransition, animated } from 'react-spring'
-
+import useTailwindBreakpoint from '../../hooks/useTailwindBreakpoint'
+import { linkResolver } from '../../utils/linkResolver'
 import Container from '../Container'
 import Menu from '../icons/Menu'
 import NavigationDrawer from './NavigationDrawer'
 
-const Header = ({ navigation, support, langs }) => {
+const Header = ({ meta, navigation, support, langs }) => {
 	const [scrolled, setScrolled] = useState(true)
 	const [menuOpen, setMenuOpen] = useState(false)
 	const breakpoint = useTailwindBreakpoint()
@@ -66,7 +65,7 @@ const Header = ({ navigation, support, langs }) => {
 								<animated.div key={key} style={props}>
 									<Link
 										className="text-lg inline-block ml-8 focus:outline-none"
-										to={item._meta.uid}
+										to={linkResolver(item._meta)}
 									>
 										{item.label}
 									</Link>
@@ -105,6 +104,7 @@ const Header = ({ navigation, support, langs }) => {
 									navigation={navigation}
 									support={support}
 									langs={langs}
+									meta={meta}
 								/>
 							</animated.div>
 						),

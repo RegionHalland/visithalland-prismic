@@ -10,6 +10,8 @@ export const MenusFragment = graphql`
 				... on PRISMIC_Content {
 					_meta {
 						uid
+						lang
+						type
 					}
 				}
 			}
@@ -29,6 +31,8 @@ export const MenusFragment = graphql`
 				... on PRISMIC_Content {
 					_meta {
 						uid
+						lang
+						type
 					}
 				}
 			}

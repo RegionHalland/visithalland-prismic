@@ -2,10 +2,9 @@ import propTypes from 'prop-types'
 import React from 'react'
 import get from 'lodash.get'
 import langs from '../../utils/langs'
-
 import Header from './Header'
 
-const HeaderContainer = ({ allMenus }) => {
+const HeaderContainer = ({ allMenus, meta }) => {
 	const menu = get(allMenus, 'edges[0].node', {})
 	const navigationGroup = get(menu, 'navigation_group', [])
 	const supportGroup = get(menu, 'support_group', [])
@@ -25,10 +24,19 @@ const HeaderContainer = ({ allMenus }) => {
 		items: supportGroup.map(supportLink => ({
 			label: get(supportLink, 'support_link_label', ''),
 			url: get(supportLink, 'support_link.url', ''),
+			_meta: get(supportLink, 'support_link._meta', ''),
+			type: get(supportLink, 'support_link._linkType', ''),
 		})),
 	}
 
-	return <Header support={support} navigation={navigation} langs={langs} />
+	return (
+		<Header
+			meta={meta}
+			support={support}
+			navigation={navigation}
+			langs={langs}
+		/>
+	)
 }
 
 HeaderContainer.propTypes = {

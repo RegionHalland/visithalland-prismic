@@ -44,10 +44,12 @@ const Content = ({
 		image: seo_image,
 	}
 
+	//console.log('content', content)
+
 	return (
 		<Layout>
 			<Seo title="Page" />
-			<HeaderContainer allMenus={allMenus} />
+			<HeaderContainer allMenus={allMenus} meta={meta} />
 			<ContentParser slices={slices} meta={meta} seo={seo} />
 		</Layout>
 	)
@@ -67,6 +69,15 @@ export const query = graphql`
 				title
 				_meta {
 					firstPublicationDate
+					uid
+					lang
+					type
+					alternateLanguages {
+						uid
+						type
+						lang
+						id
+					}
 				}
 				body {
 					...ArticleHeroFragment
