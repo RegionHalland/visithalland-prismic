@@ -16,7 +16,7 @@ export const ArticleHeroFragment = graphql`
 			article_hero_image
 			article_hero_imageSharp {
 				childImageSharp {
-					fluid(maxWidth: 1900) {
+					fluid(maxWidth: 1920, quality: 100) {
 						...GatsbyImageSharpFluid
 					}
 					fixed(width: 800, height: 800) {
