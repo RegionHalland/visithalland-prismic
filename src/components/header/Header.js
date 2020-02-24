@@ -5,13 +5,15 @@ import Link from 'gatsby-link'
 import styled from 'styled-components'
 import tw from 'tailwind.macro'
 import useTailwindBreakpoint from '../../hooks/useTailwindBreakpoint'
-import { useTransition, animated, config } from 'react-spring'
+import { useScrollPosition } from '@n8tb1t/use-scroll-position'
+import { useTransition, animated } from 'react-spring'
 
 import Container from '../Container'
 import Menu from '../icons/Menu'
 import NavigationDrawer from './NavigationDrawer'
 
 const Header = ({ navigation, support, langs }) => {
+	const [scrolled, setScrolled] = useState(true)
 	const [menuOpen, setMenuOpen] = useState(false)
 	const breakpoint = useTailwindBreakpoint()
 
@@ -19,11 +21,21 @@ const Header = ({ navigation, support, langs }) => {
 		setMenuOpen(!menuOpen)
 	}
 
+	useScrollPosition(
+		({ currPos }) => {
+			const offset = currPos.y
+			setScrolled(offset < -25)
+		},
+		[scrolled],
+		false,
+		false,
+		300,
+	)
+
 	const drawerTransition = useTransition(menuOpen, null, {
 		from: { transform: 'translateX(100%)' },
 		enter: { transform: 'translateX(0%)' },
 		leave: { transform: 'translateX(100%)' },
-		config: config.slow,
 	})
 
 	const navTransition = useTransition(
@@ -41,12 +53,15 @@ const Header = ({ navigation, support, langs }) => {
 	return (
 		<StyledHeader className="font-sans text-white px-4 md:px-6">
 			<Container className="h-24 md:h-32 flex justify-between items-center">
-				<div className="font-semibold text-xl md:text-2xl z-50 relative">
+				<Link
+					to="/"
+					className="font-semibold text-xl md:text-2xl z-50 relative"
+				>
 					Visithalland.com
-				</div>
+				</Link>
 				{breakpoint === 'lg' ||
 					(breakpoint === 'xl' && (
-						<nav className="mr-10 md:mr-24 flex-1 flex-row flex justify-end list-none z-50 relative">
+						<nav className="mr-10 md:mr-48 flex-1 flex-row flex justify-end list-none z-50 relative">
 							{navTransition.map(({ item, key, props }) => (
 								<animated.div key={key} style={props}>
 									<Link
@@ -63,12 +78,18 @@ const Header = ({ navigation, support, langs }) => {
 					offset={breakpoint === 'xl' ? 1 : 0}
 					className="h-24 md:h-32 mr-4 md:mr-6 flex items-center z-50"
 				>
-					<button
+					<MenuButton
+						scrolled={scrolled}
 						onClick={toggleMenu}
-						className="p-3 rounded-full focus:outline-none"
+						className="flex items-center px-4 p-2 rounded-full focus:outline-none"
 					>
-						<Menu height={24} width={24} className="text-white" />
-					</button>
+						<span className="text-lg mr-2">Meny</span>
+						<Menu
+							height={24}
+							width={24}
+							className="text-white align-bottom mt-1"
+						/>
+					</MenuButton>
 				</MenuButtonContainer>
 
 				{drawerTransition.map(
@@ -106,8 +127,13 @@ const StyledHeader = styled.div`
 	}
 `
 
+const MenuButton = styled.button`
+	${tw`transition-bg`}
+	${props => (props.scrolled ? tw`bg-blue-700` : 'bg-transparent')};
+`
+
 const MenuButtonContainer = styled.div`
-	position: fixed;
+	${tw`fixed`};
 	right: ${props =>
 		props.offset ? 'calc(calc(100vw - 1300px) / 2)' : '0px'};
 `
