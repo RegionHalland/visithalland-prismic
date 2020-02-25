@@ -1,19 +1,23 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Image from '../Image'
-import TextRenderer from '../TextRenderer'
+import Container from '../Container'
+
+import ArticleListItemSmall from '../ArticleListItemSmall'
 
 const ArticleListSmall = ({ items }) => {
 	return (
-		<ul>
+		<Container tight className="px-4 md:px-6">
 			{items.map(item => (
-				<li key={item.meta.uid}>
-					<Image fluid={item.image} />
-					<span>{item.title}</span>
-					<TextRenderer text={item.description} />
-				</li>
+				<ArticleListItemSmall
+					className="mb-6 block"
+					key={item.meta.uid}
+					image={item.image}
+					title={item.title}
+					excerpt={item.description}
+					to={item.meta.uid}
+				/>
 			))}
-		</ul>
+		</Container>
 	)
 }
 

@@ -14,7 +14,7 @@ const Text = ({ text }) => (
 )
 
 const RichTextContainer = styled.div`
-	${tw`font-sans px-3 md:px-4`};
+	${tw`font-sans px-4 md:px-6`};
 	> h1 {
 		${tw`font-semibold text-2xl md:text-3xl mt-4 mb-4 md:mb-6 text-black`};
 	}
