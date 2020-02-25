@@ -64,8 +64,16 @@ const Seo = ({ description, lang, meta, title, image }) => {
 								content: metaDescription,
 							},
 							{
+								property: `og:image`,
+								content: imageSeo.href,
+							},
+							{
 								property: `og:type`,
 								content: `website`,
+							},
+							{
+								property: `twitter:image`,
+								content: imageSeo.href,
 							},
 							{
 								name: `twitter:card`,
