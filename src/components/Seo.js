@@ -69,7 +69,7 @@ const Seo = ({ description, lang, meta, title, image }) => {
 							},
 							{
 								property: `og:type`,
-								content: `website`,
+								content: `article`,
 							},
 							{
 								property: `twitter:image`,
