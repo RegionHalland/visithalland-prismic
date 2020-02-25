@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 import { withPreview } from 'gatsby-source-prismic-graphql'
 
-const Seo = ({ description, lang, meta, title }) => {
+const Seo = ({ description, lang, meta, title, image }) => {
 	const siteQuery = graphql`
 		query {
 			site {
@@ -12,6 +12,7 @@ const Seo = ({ description, lang, meta, title }) => {
 					title
 					description
 					author
+					baseUrl
 				}
 			}
 		}
@@ -21,6 +22,21 @@ const Seo = ({ description, lang, meta, title }) => {
 		<StaticQuery
 			query={siteQuery.toString()}
 			render={withPreview(data => {
+				const defaults = data.site.siteMetadata
+
+				if (defaults.baseUrl === '' && typeof window !== 'undefined') {
+					defaults.baseUrl = window.location.origin
+				}
+
+				if (defaults.baseUrl === '' || !defaults.baseUrl) {
+					console.error('Please set a baseUrl in your site metadata!')
+					return null
+				}
+
+				const imageSeo = image
+					? new URL(image, defaults.baseUrl)
+					: false
+
 				const metaDescription =
 					description || data.site.siteMetadata.description
 				return (
@@ -34,6 +50,10 @@ const Seo = ({ description, lang, meta, title }) => {
 							{
 								name: `description`,
 								content: metaDescription,
+							},
+							{
+								name: `image`,
+								content: imageSeo.href,
 							},
 							{
 								property: `og:title`,

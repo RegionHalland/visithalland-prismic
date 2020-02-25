@@ -30,13 +30,18 @@ const Content = ({
 
 	// Create an object for SEO-fields
 	const seo = {
-		description: get(seo_description, '[0].text', null),
+		description: seo_description,
 		image: seo_image,
 	}
 
 	return (
 		<Layout>
-			<Seo description={seo.description} lang={meta.lang} title={title} />
+			<Seo
+				description={get(seo, 'description[0].text', null)}
+				image={get(seo, 'image.childImageSharp.fixed.src', null)}
+				lang={meta.lang}
+				title={title}
+			/>
 			<HeaderContainer allMenus={allMenus} meta={meta} />
 			<ContentParser slices={slices} meta={meta} seo={seo} />
 		</Layout>
@@ -62,7 +67,7 @@ export const query = graphql`
 						fluid(maxWidth: 1920, quality: 100) {
 							...GatsbyImageSharpFluid
 						}
-						fixed(width: 800, height: 800) {
+						fixed(width: 1280, height: 720) {
 							...GatsbyImageSharpFixed
 						}
 					}

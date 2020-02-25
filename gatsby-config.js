@@ -4,6 +4,10 @@ module.exports = {
 		description:
 			'En reseguide som hjälper dig att hitta till det bästa i Halland. Visithalland.com utvecklas och drivs av Region Halland.',
 		author: '@gatsbyjs',
+		baseUrl:
+			process.env.NODE_ENV === 'development'
+				? 'http://localhost:8000'
+				: 'https://visithalland-beta.netlify.com', // no trailing slash!
 	},
 	plugins: [
 		'gatsby-plugin-react-helmet',
