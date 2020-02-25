@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import get from 'lodash.get'
 
 import Layout from '../components/Layout'
 import Seo from '../components/Seo'
@@ -24,6 +25,7 @@ const Content = ({
 		_meta: meta,
 		seo_description,
 		seo_featured_imageSharp: seo_image,
+		title,
 	} = content
 
 	// Create an object for SEO-fields
@@ -32,11 +34,14 @@ const Content = ({
 		image: seo_image,
 	}
 
-	//console.log('content', content)
-
 	return (
 		<Layout>
-			<Seo title="Page" />
+			<Seo
+				description={get(seo, 'description[0].text', null)}
+				image={get(seo, 'image.childImageSharp.fixed.src', null)}
+				lang={meta.lang}
+				title={title}
+			/>
 			<HeaderContainer allMenus={allMenus} meta={meta} />
 			<ContentParser slices={slices} meta={meta} seo={seo} />
 		</Layout>
@@ -55,6 +60,18 @@ export const query = graphql`
 			}
 			content(uid: $uid, lang: $lang) {
 				title
+				seo_description
+				seo_featured_image
+				seo_featured_imageSharp {
+					childImageSharp {
+						fluid(maxWidth: 1920, quality: 100) {
+							...GatsbyImageSharpFluid
+						}
+						fixed(width: 1200, height: 628) {
+							...GatsbyImageSharpFixed
+						}
+					}
+				}
 				_meta {
 					firstPublicationDate
 					uid

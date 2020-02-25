@@ -56,9 +56,9 @@ const NavigationDrawer = ({ toggleMenu, navigation, support, langs, meta }) => {
 						>
 							{lang === 'sv-se'
 								? 'Svenska'
-								: lang == 'no'
+								: lang === 'no'
 								? 'Norsk'
-								: lang == 'da-dk'
+								: lang === 'da-dk'
 								? 'Dansk'
 								: ''}
 						</Link>

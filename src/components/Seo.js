@@ -1,77 +1,102 @@
-/**
- * SEO component that queries for data with
- *  Gatsby's useStaticQuery React hook
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
-// import React from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
-// import Helmet from 'react-helmet'
-// import { useStaticQuery, graphql } from 'gatsby'
+import Helmet from 'react-helmet'
+import { StaticQuery, graphql } from 'gatsby'
+import { withPreview } from 'gatsby-source-prismic-graphql'
 
-const Seo = ({ description, lang, meta, title }) => {
-	return null
+const Seo = ({ description, lang, meta, title, image }) => {
+	const siteQuery = graphql`
+		query {
+			site {
+				siteMetadata {
+					title
+					description
+					author
+					baseUrl
+				}
+			}
+		}
+	`
 
-	// const { site } = useStaticQuery(
-	// 	graphql`
-	// 		query {
-	// 			site {
-	// 				siteMetadata {
-	// 					title
-	// 					description
-	// 					author
-	// 				}
-	// 			}
-	// 		}
-	// 	`,
-	// )
+	return (
+		<StaticQuery
+			query={siteQuery.toString()}
+			render={withPreview(data => {
+				const defaults = data.site.siteMetadata
 
-	// const metaDescription = description || site.siteMetadata.description
+				if (defaults.baseUrl === '' && typeof window !== 'undefined') {
+					defaults.baseUrl = window.location.origin
+				}
 
-	// return (
-	// 	<Helmet
-	// 		htmlAttributes={{
-	// 			lang,
-	// 		}}
-	// 		title={title}
-	// 		titleTemplate={`%s | ${site.siteMetadata.title}`}
-	// 		meta={[
-	// 			{
-	// 				name: `description`,
-	// 				content: metaDescription,
-	// 			},
-	// 			{
-	// 				property: `og:title`,
-	// 				content: title,
-	// 			},
-	// 			{
-	// 				property: `og:description`,
-	// 				content: metaDescription,
-	// 			},
-	// 			{
-	// 				property: `og:type`,
-	// 				content: `website`,
-	// 			},
-	// 			{
-	// 				name: `twitter:card`,
-	// 				content: `summary`,
-	// 			},
-	// 			{
-	// 				name: `twitter:creator`,
-	// 				content: site.siteMetadata.author,
-	// 			},
-	// 			{
-	// 				name: `twitter:title`,
-	// 				content: title,
-	// 			},
-	// 			{
-	// 				name: `twitter:description`,
-	// 				content: metaDescription,
-	// 			},
-	// 		].concat(meta)}
-	// 	/>
-	// )
+				if (defaults.baseUrl === '' || !defaults.baseUrl) {
+					console.error('Please set a baseUrl in your site metadata!')
+					return null
+				}
+
+				const imageSeo = image
+					? new URL(image, defaults.baseUrl)
+					: false
+
+				const metaDescription =
+					description || data.site.siteMetadata.description
+				return (
+					<Helmet
+						htmlAttributes={{
+							lang,
+						}}
+						title={title}
+						titleTemplate={`%s | ${data.site.siteMetadata.title}`}
+						meta={[
+							{
+								name: `description`,
+								content: metaDescription,
+							},
+							{
+								name: `image`,
+								content: imageSeo.href,
+							},
+							{
+								property: `og:title`,
+								content: title,
+							},
+							{
+								property: `og:description`,
+								content: metaDescription,
+							},
+							{
+								property: `og:image`,
+								content: imageSeo.href,
+							},
+							{
+								property: `og:type`,
+								content: `website`,
+							},
+							{
+								property: `twitter:image`,
+								content: imageSeo.href,
+							},
+							{
+								name: `twitter:card`,
+								content: `summary`,
+							},
+							{
+								name: `twitter:creator`,
+								content: data.site.siteMetadata.author,
+							},
+							{
+								name: `twitter:title`,
+								content: title,
+							},
+							{
+								name: `twitter:description`,
+								content: metaDescription,
+							},
+						].concat(meta)}
+					/>
+				)
+			}, siteQuery)}
+		/>
+	)
 }
 
 Seo.defaultProps = {

@@ -12,7 +12,7 @@ const ArticleGridContainer = ({ slice }) => {
 		return null
 	}
 
-	const variant = get(primary, 'article_grid_variant', 'small').toLowerCase()
+	const variant = get(primary, 'article_grid_variant', 'small')
 
 	const items = fields.map(({ article_grid_relationship: item }) => ({
 		title: get(item, 'title', ''),
@@ -21,7 +21,7 @@ const ArticleGridContainer = ({ slice }) => {
 		image: get(item, 'seo_featured_imageSharp.childImageSharp.fluid', null),
 	}))
 
-	if (variant === 'large') {
+	if (variant && variant.toLowerCase() === 'large') {
 		return <ArticleGridLarge items={items} />
 	}
 

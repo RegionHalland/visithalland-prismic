@@ -16,6 +16,6 @@ export function linkResolver(doc) {
 		return doc.lang === 'sv-se' ? '' : `/${langShortener(doc.lang)}`
 
 	// Return the startpage if we fail for some reason
-	console.log('LinkResolver failed. Could not generate link based on:', doc)
+	//console.log('LinkResolver failed. Could not generate link based on:', doc)
 	return '/'
 }
