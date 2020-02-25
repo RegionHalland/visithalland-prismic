@@ -1,17 +1,27 @@
-import React from 'react'
 import propTypes from 'prop-types'
+import React from 'react'
+import styled from 'styled-components'
+
+import Image from './Image'
 import Link from 'gatsby-link'
-import Img from 'gatsby-image'
 
 import TextRenderer from './TextRenderer'
 
 const ArticleListItemSmall = ({ title, excerpt, image, to, ...props }) => (
-	<Link to={to} {...props}>
+	<StyledLink to={to} {...props}>
 		<div className="flex flex-wrap">
-			<div className="w-32 h-48 md:w-48 md:h-64">
-				{image && <Img fluid={image} className="w-full h-full" />}
+			<div className="w-32 h-48 md:w-48 md:h-64 overflow-hidden rounded relative">
+				{image && (
+					<StyledImage
+						style={{ position: 'absolute' }}
+						className="h-full w-full bottom-0 top-0 left-0 z-0"
+						objectFit="cover"
+						objectPosition="50% 50%"
+						fluid={image}
+					/>
+				)}
 			</div>
-			<div className="flex flex-col md:justify-center flex-1 pl-3 md:pl-4 ">
+			<div className="flex flex-col md:justify-center flex-1 pl-4 md:pl-6 ">
 				<h2 className="text-black text-xl md:text-3xl leading-tight font-semibold mb-3">
 					{title}
 				</h2>
@@ -22,8 +32,18 @@ const ArticleListItemSmall = ({ title, excerpt, image, to, ...props }) => (
 				)}
 			</div>
 		</div>
-	</Link>
+	</StyledLink>
 )
+
+const StyledImage = styled(Image)`
+	transition: transform 0.25s;
+`
+
+const StyledLink = styled(Link)`
+	&:hover ${StyledImage} {
+		transform: scale(1.1);
+	}
+`
 
 ArticleListItemSmall.propTypes = {
 	title: propTypes.string.isRequired,
