@@ -53,7 +53,11 @@ const Header = ({ meta, navigation, support, langs }) => {
 		<StyledHeader className="text-white px-4 md:px-6 absolute z-50 w-full">
 			<Container className="h-24 md:h-32 flex justify-between items-center">
 				<Link
-					to={linkResolver(meta)}
+					to={linkResolver({
+						lang: meta.lang,
+						type: 'content',
+						uid: 'frontpage',
+					})}
 					className="font-semibold text-xl md:text-2xl z-50 relative"
 				>
 					Visithalland.com
