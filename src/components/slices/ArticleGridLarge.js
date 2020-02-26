@@ -33,7 +33,7 @@ const ArticleGridLarge = ({ items }) => (
 		<div className="flex flex-wrap -mx-2">
 			{items.map(({ title, tags, meta, image }, index) => (
 				<div
-					key={`${title}-${index}`}
+					key={`${meta.uid}-${index}`}
 					className={`px-2 mb-3 w-full md:w-6/12 ${
 						gridOrder[index] === 'large' ? 'lg:w-8/12' : 'lg:w-4/12'
 					}`}
