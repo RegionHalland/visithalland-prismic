@@ -6,19 +6,6 @@ import Layout from '../components/Layout'
 import Seo from '../components/Seo'
 import ContentParser from '../components/ContentParser'
 import HeaderContainer from '../components/header/HeaderContainer'
-import {
-	ArticleHeroFragment,
-	HeroCarouselFragment,
-	PageHeroFragment,
-	MenusFragment,
-	FeaturedArticleFragment,
-	ArticleCarouselFragment,
-	ImageFullWidthFragment,
-	TextFragment,
-	ArticleListFragment,
-	ArticleGridFragment,
-	InfoBoxFragment,
-} from '../fragments'
 
 const Content = ({
 	data: {
@@ -113,19 +100,5 @@ export const query = graphql`
 		}
 	}
 `
-
-Content.fragments = [
-	ArticleHeroFragment,
-	HeroCarouselFragment,
-	PageHeroFragment,
-	MenusFragment,
-	FeaturedArticleFragment,
-	ArticleCarouselFragment,
-	ImageFullWidthFragment,
-	TextFragment,
-	ArticleListFragment,
-	ArticleGridFragment,
-	InfoBoxFragment,
-]
 
 export default Content
