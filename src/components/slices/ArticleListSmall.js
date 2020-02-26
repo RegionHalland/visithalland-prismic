@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Container from '../Container'
+import { linkResolver } from '../../utils/linkResolver'
 
 import ArticleListItemSmall from '../ArticleListItemSmall'
 
@@ -14,7 +15,7 @@ const ArticleListSmall = ({ items }) => {
 					image={item.image}
 					title={item.title}
 					excerpt={item.description}
-					to={item.meta.uid}
+					to={linkResolver(item.meta)}
 				/>
 			))}
 		</Container>

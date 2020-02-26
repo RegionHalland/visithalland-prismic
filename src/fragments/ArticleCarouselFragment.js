@@ -9,8 +9,12 @@ export const ArticleCarouselFragment = graphql`
 					title
 					seo_description
 					_meta {
+						firstPublicationDate
+						id
 						lang
+						lastPublicationDate
 						tags
+						type
 						uid
 					}
 					seo_featured_image

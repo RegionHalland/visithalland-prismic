@@ -18,6 +18,7 @@ import {
 	ArticleListFragment,
 	ArticleGridFragment,
 	InfoBoxFragment,
+	EditorFragment,
 } from '../fragments'
 
 const Content = ({
@@ -115,6 +116,7 @@ export const query = graphql`
 `
 
 Content.fragments = [
+	EditorFragment,
 	ArticleHeroFragment,
 	HeroCarouselFragment,
 	PageHeroFragment,
