@@ -20,7 +20,7 @@ const Seo = ({ description, lang, meta, title, image }) => {
 
 	return (
 		<StaticQuery
-			query={siteQuery.toString()}
+			query={siteQuery}
 			render={withPreview(data => {
 				const defaults = data.site.siteMetadata
 
