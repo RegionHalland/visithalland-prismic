@@ -14,8 +14,13 @@ export const ArticleListFragment = graphql`
 				... on PRISMIC_Content {
 					title
 					_meta {
-						uid
+						firstPublicationDate
+						id
 						lang
+						lastPublicationDate
+						tags
+						type
+						uid
 					}
 					seo_featured_image
 					seo_description
