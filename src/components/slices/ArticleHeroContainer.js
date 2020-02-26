@@ -32,7 +32,7 @@ const ArticleHeroContainer = ({ slice, meta }) => {
 		role: get(primary, 'article_hero_author.editor_role', ''),
 		image: get(
 			primary,
-			'article_hero_author.editor_imageSharp.childImageSharp.fluid',
+			'article_hero_author.editor_imageSharp.childImageSharp.fixed',
 			null,
 		),
 	}
