@@ -3,7 +3,7 @@
 import { graphql } from 'gatsby'
 import { EditorFragment } from './EditorFragment'
 
-export const ArticleHeroFragment = graphql`
+const ArticleHeroFragment = graphql`
 	fragment ArticleHeroFragment on PRISMIC_ContentBodyArticle_hero {
 		type
 		primary {
@@ -11,7 +11,23 @@ export const ArticleHeroFragment = graphql`
 			article_hero_introduction
 			article_hero_variant
 			article_hero_author {
-				...EditorFragment
+				... on PRISMIC_Editor {
+					editor_name
+					editor_email
+					editor_phone
+					editor_role
+					editor_image
+					editor_imageSharp {
+						childImageSharp {
+							fluid(maxWidth: 300, maxHeight: 300) {
+								...GatsbyImageSharpFluid
+							}
+							fixed(width: 100, height: 100) {
+								...GatsbyImageSharpFixed
+							}
+						}
+					}
+				}
 			}
 			article_hero_image
 			article_hero_imageSharp {
@@ -27,3 +43,5 @@ export const ArticleHeroFragment = graphql`
 		}
 	}
 `
+
+export { ArticleHeroFragment }
