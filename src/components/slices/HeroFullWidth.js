@@ -8,7 +8,7 @@ import TextRenderer from '../TextRenderer'
 import Author from '../Author'
 import Container from '../Container'
 
-const ArticleHeroFull = ({
+const HeroFullWidth = ({
 	title,
 	introduction,
 	author,
@@ -70,7 +70,7 @@ const ImageContainer = styled.div`
 	}
 `
 
-ArticleHeroFull.propTypes = {
+HeroFullWidth.propTypes = {
 	title: PropTypes.string,
 	introduction: PropTypes.arrayOf(PropTypes.object),
 	author: PropTypes.object,
@@ -78,4 +78,4 @@ ArticleHeroFull.propTypes = {
 	image: PropTypes.object,
 }
 
-export default ArticleHeroFull
+export default HeroFullWidth

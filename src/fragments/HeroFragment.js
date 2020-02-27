@@ -3,18 +3,18 @@
 import { graphql } from 'gatsby'
 import { EditorFragment } from './EditorFragment'
 
-export const ArticleHeroFragment = graphql`
-	fragment ArticleHeroFragment on PRISMIC_ContentBodyArticle_hero {
+export const HeroFragment = graphql`
+	fragment HeroFragment on PRISMIC_ContentBodyHero {
 		type
 		primary {
-			article_hero_title
-			article_hero_introduction
-			article_hero_variant
-			article_hero_author {
+			hero_title
+			hero_introduction
+			hero_variant
+			hero_author {
 				...EditorFragment
 			}
-			article_hero_image
-			article_hero_imageSharp {
+			hero_image
+			hero_imageSharp {
 				childImageSharp {
 					fluid(maxWidth: 1920, quality: 100) {
 						...GatsbyImageSharpFluid

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import Image from '../Image'
 import TextRenderer from '../TextRenderer'
 
-const PageHero = ({ title, introduction, image }) => {
+const HeroFullScreen = ({ title, introduction, image }) => {
 	return (
 		<div className="bg-red-500">
 			<h1>{title}</h1>
@@ -14,10 +14,10 @@ const PageHero = ({ title, introduction, image }) => {
 	)
 }
 
-PageHero.propTypes = {
+HeroFullScreen.propTypes = {
 	title: PropTypes.string,
 	introduction: PropTypes.arrayOf(PropTypes.object),
 	image: PropTypes.object,
 }
 
-export default PageHero
+export default HeroFullScreen

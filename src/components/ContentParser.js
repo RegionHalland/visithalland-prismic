@@ -1,9 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import ArticleHeroContainer from './slices/ArticleHeroContainer'
+import HeroContainer from './slices/HeroContainer'
 import HeroCarouselContainer from './slices/HeroCarouselContainer'
-import PageHeroContainer from './slices/PageHeroContainer'
 import FeaturedArticleContainer from './slices/FeaturedArticleContainer'
 import ArticleCarouselContainer from './slices/ArticleCarouselContainer'
 import ImageFullWidthContainer from './slices/ImageFullWidthContainer'
@@ -14,8 +13,7 @@ import InfoBoxContainer from './slices/InfoBoxContainer'
 
 const TYPE_COMPONENTS = {
 	article_list: ArticleListContainer,
-	article_hero: ArticleHeroContainer,
-	page_hero: PageHeroContainer,
+	hero: HeroContainer,
 	hero_carousel: HeroCarouselContainer,
 	article_carousel: ArticleCarouselContainer,
 	article_grid: ArticleGridContainer,
@@ -29,6 +27,7 @@ const ContentParser = ({ slices, meta, seo }) => (
 	<main>
 		{slices.map((slice, index) => {
 			const Component = TYPE_COMPONENTS[slice.type] || null
+			console.log(slice.type)
 			return Component ? (
 				<div className="mb-8" key={index}>
 					<Component slice={slice} meta={meta} seo={seo} />

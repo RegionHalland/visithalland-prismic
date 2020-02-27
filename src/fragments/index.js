@@ -1,6 +1,5 @@
-export { ArticleHeroFragment } from './ArticleHeroFragment'
+export { HeroFragment } from './HeroFragment'
 export { HeroCarouselFragment } from './HeroCarouselFragment'
-export { PageHeroFragment } from './PageHeroFragment'
 export { FeaturedArticleFragment } from './FeaturedArticleFragment'
 export { ArticleCarouselFragment } from './ArticleCarouselFragment'
 export { MenusFragment } from './MenusFragment'

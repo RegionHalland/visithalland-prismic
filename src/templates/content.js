@@ -7,9 +7,8 @@ import Seo from '../components/Seo'
 import ContentParser from '../components/ContentParser'
 import HeaderContainer from '../components/header/HeaderContainer'
 import {
-	ArticleHeroFragment,
+	HeroFragment,
 	HeroCarouselFragment,
-	PageHeroFragment,
 	MenusFragment,
 	FeaturedArticleFragment,
 	ArticleCarouselFragment,
@@ -99,9 +98,8 @@ export const query = graphql`
 					}
 				}
 				body {
-					...ArticleHeroFragment
+					...HeroFragment
 					...HeroCarouselFragment
-					...PageHeroFragment
 					...FeaturedArticleFragment
 					...ArticleCarouselFragment
 					...ImageFullWidthFragment
@@ -117,9 +115,8 @@ export const query = graphql`
 
 Content.fragments = [
 	EditorFragment,
-	ArticleHeroFragment,
+	HeroFragment,
 	HeroCarouselFragment,
-	PageHeroFragment,
 	MenusFragment,
 	FeaturedArticleFragment,
 	ArticleCarouselFragment,

@@ -6,13 +6,7 @@ import PublicationDate from '../PublicationDate'
 import TextRenderer from '../TextRenderer'
 import Author from '../Author'
 
-const ArticleHeroSplit = ({
-	title,
-	introduction,
-	author,
-	publicationDate,
-	image,
-}) => {
+const HeroSplit = ({ title, introduction, author, publicationDate, image }) => {
 	return (
 		<div>
 			<h1>{title}</h1>
@@ -24,7 +18,7 @@ const ArticleHeroSplit = ({
 	)
 }
 
-ArticleHeroSplit.propTypes = {
+HeroSplit.propTypes = {
 	title: PropTypes.string,
 	introduction: PropTypes.arrayOf(PropTypes.object),
 	author: PropTypes.object,
@@ -32,4 +26,4 @@ ArticleHeroSplit.propTypes = {
 	image: PropTypes.object,
 }
 
-export default ArticleHeroSplit
+export default HeroSplit
