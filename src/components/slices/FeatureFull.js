@@ -4,7 +4,7 @@ import Link from 'gatsby-link'
 import { linkResolver } from '../../utils/linkResolver'
 import Image from '../Image'
 
-const FeaturedArticle = ({ title, image, meta, label }) => (
+const FeatureFull = ({ title, image, meta, label }) => (
 	<div>
 		<div>{title}</div>
 		<Link to={linkResolver(meta)}>{label}</Link>
@@ -12,11 +12,13 @@ const FeaturedArticle = ({ title, image, meta, label }) => (
 	</div>
 )
 
-FeaturedArticle.propTypes = {
+FeatureFull.propTypes = {
 	title: PropTypes.string.isRequired,
-	label: PropTypes.string.isRequired,
-	meta: PropTypes.object.isRequired,
+	linkType: PropTypes.string.isRequired,
+	buttonLabel: PropTypes.string.isRequired,
 	image: PropTypes.object,
+	meta: PropTypes.object.isRequired,
+	url: PropTypes.string,
 }
 
-export default FeaturedArticle
+export default FeatureFull

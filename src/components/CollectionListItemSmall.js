@@ -7,7 +7,7 @@ import Link from 'gatsby-link'
 
 import TextRenderer from './TextRenderer'
 
-const ArticleListItemSmall = ({ title, excerpt, image, to, ...props }) => (
+const CollectionListItemSmall = ({ title, excerpt, image, to, ...props }) => (
 	<StyledLink to={to} {...props}>
 		<div className="flex flex-wrap">
 			<div className="w-32 h-48 md:w-48 md:h-64 overflow-hidden rounded relative">
@@ -45,11 +45,11 @@ const StyledLink = styled(Link)`
 	}
 `
 
-ArticleListItemSmall.propTypes = {
+CollectionListItemSmall.propTypes = {
 	title: propTypes.string.isRequired,
 	to: propTypes.string.isRequired,
 	excerpt: propTypes.arrayOf(propTypes.object),
 	image: propTypes.object,
 }
 
-export default ArticleListItemSmall
+export default CollectionListItemSmall

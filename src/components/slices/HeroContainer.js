@@ -16,15 +16,8 @@ const HeroContainer = ({ slice, meta }) => {
 
 	const title = get(primary, 'hero_title[0].text', '')
 	const introduction = get(primary, 'hero_introduction', [])
-	const variant = get(primary, 'hero_variant', 'full').toLowerCase()
-	// Get fixed or fluid image based on variant
-	const image = get(
-		primary,
-		`hero_imageSharp.childImageSharp.${
-			variant === 'full' ? 'fluid' : 'fixed'
-		}`,
-		null,
-	)
+	const variant = get(primary, 'hero_variant', 'full width').toLowerCase()
+	const image = get(primary, 'hero_imageSharp.childImageSharp.fluid', null)
 
 	const author = {
 		name: get(primary, 'hero_author.editor_name', ''),

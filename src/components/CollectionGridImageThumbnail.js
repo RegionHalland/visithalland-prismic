@@ -6,7 +6,14 @@ import tw from 'tailwind.macro'
 import Image from './Image'
 import Link from 'gatsby-link'
 
-const ArticleImageThumbnail = ({ title, image, tags, to, size, ...props }) => (
+const CollectionGridImageThumbnail = ({
+	title,
+	image,
+	tags,
+	to,
+	size,
+	...props
+}) => (
 	<StyledLink
 		to={to}
 		{...props}
@@ -60,11 +67,11 @@ const StyledLink = styled(Link)`
 	}
 `
 
-ArticleImageThumbnail.propTypes = {
+CollectionGridImageThumbnail.propTypes = {
 	to: propTypes.string.isRequired,
 	size: propTypes.string,
 	title: propTypes.string.isRequired,
 	image: propTypes.object,
 }
 
-export default ArticleImageThumbnail
+export default CollectionGridImageThumbnail

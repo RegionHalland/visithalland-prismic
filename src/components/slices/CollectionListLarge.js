@@ -3,15 +3,15 @@ import PropTypes from 'prop-types'
 import Container from '../Container'
 import { linkResolver } from '../../utils/linkResolver'
 
-import ArticleListItemSmall from '../ArticleListItemSmall'
+import CollectionListItemSmall from '../CollectionListItemSmall'
 
-const ArticleListSmall = ({ items }) => {
+const CollectionListLarge = ({ items }) => {
 	return (
 		<Container tight className="px-4 md:px-6">
-			{items.map(item => (
-				<ArticleListItemSmall
+			{items.map((item, index) => (
+				<CollectionListItemSmall
 					className="mb-6 block"
-					key={item.meta.uid}
+					key={`${index}-${item.meta.uid}`}
 					image={item.image}
 					title={item.title}
 					excerpt={item.description}
@@ -22,8 +22,8 @@ const ArticleListSmall = ({ items }) => {
 	)
 }
 
-ArticleListSmall.propTypes = {
+CollectionListLarge.propTypes = {
 	items: PropTypes.array.isRequired,
 }
 
-export default ArticleListSmall
+export default CollectionListLarge

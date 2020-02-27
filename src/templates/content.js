@@ -8,15 +8,11 @@ import ContentParser from '../components/ContentParser'
 import HeaderContainer from '../components/header/HeaderContainer'
 import {
 	HeroFragment,
-	HeroCarouselFragment,
-	MenusFragment,
-	FeaturedArticleFragment,
-	ArticleCarouselFragment,
-	ImageFullWidthFragment,
+	ImageFragment,
+	FeatureFragment,
+	CollectionFragment,
 	TextFragment,
-	ArticleListFragment,
-	ArticleGridFragment,
-	InfoBoxFragment,
+	MenusFragment,
 	EditorFragment,
 } from '../fragments'
 
@@ -99,14 +95,10 @@ export const query = graphql`
 				}
 				body {
 					...HeroFragment
-					...HeroCarouselFragment
-					...FeaturedArticleFragment
-					...ArticleCarouselFragment
-					...ImageFullWidthFragment
+					...ImageFragment
+					...FeatureFragment
+					...CollectionFragment
 					...TextFragment
-					...ArticleListFragment
-					...ArticleGridFragment
-					...InfoBoxFragment
 				}
 			}
 		}
@@ -114,17 +106,13 @@ export const query = graphql`
 `
 
 Content.fragments = [
-	EditorFragment,
 	HeroFragment,
-	HeroCarouselFragment,
-	MenusFragment,
-	FeaturedArticleFragment,
-	ArticleCarouselFragment,
-	ImageFullWidthFragment,
+	ImageFragment,
+	FeatureFragment,
+	CollectionFragment,
 	TextFragment,
-	ArticleListFragment,
-	ArticleGridFragment,
-	InfoBoxFragment,
+	MenusFragment,
+	EditorFragment,
 ]
 
 export default Content

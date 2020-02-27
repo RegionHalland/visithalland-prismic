@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { linkResolver } from '../../utils/linkResolver'
-import ArticleImageThumbnail from '../ArticleImageThumbnail'
+import CollectionGridImageThumbnail from '../CollectionGridImageThumbnail'
 import Container from '../Container'
 
 const gridOrder = [
@@ -28,7 +28,7 @@ const gridOrder = [
 	'small',
 ]
 
-const ArticleGridLarge = ({ items }) => (
+const CollectionGridLarge = ({ items }) => (
 	<Container className="px-4 md:px-6">
 		<div className="flex flex-wrap -mx-2">
 			{items.map(({ title, tags, meta, image }, index) => (
@@ -38,7 +38,7 @@ const ArticleGridLarge = ({ items }) => (
 						gridOrder[index] === 'large' ? 'lg:w-8/12' : 'lg:w-4/12'
 					}`}
 				>
-					<ArticleImageThumbnail
+					<CollectionGridImageThumbnail
 						title={title}
 						image={image}
 						tags={tags}
@@ -51,8 +51,8 @@ const ArticleGridLarge = ({ items }) => (
 	</Container>
 )
 
-ArticleGridLarge.propTypes = {
+CollectionGridLarge.propTypes = {
 	items: PropTypes.array.isRequired,
 }
 
-export default ArticleGridLarge
+export default CollectionGridLarge
