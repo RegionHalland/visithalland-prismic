@@ -12,13 +12,13 @@ const Author = ({ name, role, email, phone, image, ...props }) => (
 					className="h-full w-full bottom-0 top-0 left-0 z-0"
 					objectFit="cover"
 					objectPosition="50% 50%"
-					fixed={image}
+					fluid={image}
 					alt={`Bild på ${name}`}
 				/>
 			</div>
 			<div className="">
 				<span className="font-semibold block mb-1">{name}</span>
-				<div className="text-sm text-gray-700 block">{role}</div>
+				<div className="text-sm opacity-75 block">{role}</div>
 			</div>
 		</div>
 	</div>

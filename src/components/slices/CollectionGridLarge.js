@@ -31,7 +31,7 @@ const gridOrder = [
 const CollectionGridLarge = ({ items }) => (
 	<Container className="px-4 md:px-6">
 		<div className="flex flex-wrap -mx-2">
-			{items.map(({ title, tags, meta, image }, index) => (
+			{items.map(({ title, tags, meta, image, url }, index) => (
 				<div
 					key={`${meta.uid}-${index}`}
 					className={`px-2 mb-3 w-full md:w-6/12 ${
@@ -43,6 +43,7 @@ const CollectionGridLarge = ({ items }) => (
 						image={image}
 						tags={tags}
 						to={linkResolver(meta)}
+						url={url}
 						size={gridOrder[index] === 'large' ? 'large' : 'small'}
 					/>
 				</div>

@@ -6,6 +6,7 @@ import Layout from '../components/Layout'
 import Seo from '../components/Seo'
 import ContentParser from '../components/ContentParser'
 import HeaderContainer from '../components/header/HeaderContainer'
+import Footer from '../components/Footer'
 import {
 	HeroFragment,
 	ImageFragment,
@@ -53,6 +54,7 @@ const Content = ({
 			/>
 			<HeaderContainer allMenus={allMenus} meta={meta} />
 			<ContentParser slices={slices} meta={meta} seo={seo} />
+			<Footer />
 		</Layout>
 	)
 }

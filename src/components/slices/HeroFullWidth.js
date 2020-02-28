@@ -18,7 +18,7 @@ const HeroFullWidth = ({
 	return (
 		<React.Fragment>
 			<ImageContainer className="h-70vh md:h-70vh lg:h-80vh w-full flex items-center justify-center relative mb-12 px-4 md:px-6">
-				<h1 className="text-4xl md:text-5xl lg:text-6xl w-full md:w-10/12 text-center leading-tight text-white font-semibold z-10">
+				<h1 className="text-4xl md:text-5xl lg:text-6xl w-full leading-tight text-white font-semibold  md:w-6/12 text-center relative z-10">
 					{title}
 				</h1>
 				<Image
@@ -31,16 +31,20 @@ const HeroFullWidth = ({
 			</ImageContainer>
 			<Container className="px-4 md:px-6 mb-20" tight>
 				<div className="w-full md:w-10/12 mx-auto">
-					<StyledIntroduction className="mb-2">
-						<TextRenderer
-							className="md:text-center"
-							text={introduction}
+					{introduction && (
+						<StyledIntroduction className="mb-2">
+							<TextRenderer
+								className="md:text-center"
+								text={introduction}
+							/>
+						</StyledIntroduction>
+					)}
+					{author.name && (
+						<Author
+							className="w-full flex md:justify-center"
+							{...author}
 						/>
-					</StyledIntroduction>
-					<Author
-						className="w-full flex md:justify-center"
-						{...author}
-					/>
+					)}
 				</div>
 			</Container>
 		</React.Fragment>
@@ -49,9 +53,9 @@ const HeroFullWidth = ({
 
 const StyledIntroduction = styled.div`
 	> p {
-		${tw`text-gray-700 text-xl md:text-xl md:text-center leading-relaxed mb-8`};
+		${tw`text-gray-700 text-xl md:text-center leading-relaxed mb-8`};
 		& > strong {
-			${tw`font-semibold`}
+			${tw`font-semibold text-black`}
 		}
 		& > em {
 			${tw`font-italic text-black`}

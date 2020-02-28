@@ -16,25 +16,43 @@ const Text = ({ text }) => (
 const RichTextContainer = styled.div`
 	${tw`font-sans px-4 md:px-6`};
 	> h1 {
-		${tw`font-semibold text-2xl md:text-3xl mt-4 mb-4 md:mb-6 text-black`};
+		${tw`font-semibold text-2xl md:text-3xl mt-10 mb-4 md:mb-4 text-black`};
+		& > a {
+			${tw`underline`}
+		}
 	}
 	> h2 {
-		${tw`font-semibold text-2xl md:text-3xl mt-4 mb-4 md:mb-6 text-black`};
+		${tw`font-semibold text-2xl md:text-3xl mt-10 mb-4 md:mb-4 text-black`};
+		& > a {
+			${tw`underline`}
+		}
 	}
 	> h3 {
-		${tw`font-semibold text-xl md:text-2xl mt-3 mb-3 md:mb-5 text-black`};
+		${tw`font-semibold text-xl md:text-2xl mt-10 mb-3 md:mb-5 text-black`};
+		& > a {
+			${tw`underline`}
+		}
 	}
 	> h4 {
-		${tw`font-semibold text-lg md:text-xl mt-2 mb-3 md:mb-5 text-black`};
+		${tw`font-semibold text-lg md:text-xl mt-10 mb-3 md:mb-5 text-black`};
+		& > a {
+			${tw`underline`}
+		}
 	}
 	> h5 {
-		${tw`font-semibold text-base md:text-lg mt-1 mb-2 md:mb-4 text-black`};
+		${tw`font-semibold text-base md:text-lg mt-6 mb-2 md:mb-4 text-black`};
+		& > a {
+			${tw`underline`}
+		}
 	}
 	> h6 {
-		${tw`font-semibold text-base mt-1 mb-1 md:mb-3 text-black`};
+		${tw`font-semibold text-base mt-6 mb-2 md:mb-3 text-black`};
+		& > a {
+			${tw`underline`}
+		}
 	}
 	> p {
-		${tw`text-gray-700 text-base md:text-lg leading-relaxed mb-8`};
+		${tw`text-gray-700 text-base md:text-lg leading-relaxed mb-6`};
 		& > strong {
 			${tw`font-semibold`}
 		}
