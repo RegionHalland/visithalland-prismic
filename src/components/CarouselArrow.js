@@ -4,16 +4,18 @@ import ArrowLeft from './icons/ArrowLeft'
 import ArrowRight from './icons/ArrowRight'
 
 const CarouselArrow = ({ onClick, direction }) => (
-	<button
-		className="flex items-center justify-center h-12 w-12 rounded-full bg-blue-700"
-		onClick={onClick}
-	>
-		{direction === 'left' ? (
-			<ArrowLeft className="absolute w-4 h-4 text-white" />
-		) : (
-			<ArrowRight className="absolute w-4 h-4 text-white" />
-		)}
-	</button>
+	<div className="px-4">
+		<button
+			className="flex items-center justify-center focus:outline-none active:outline-none h-12 w-12 rounded-full bg-blue-700"
+			onClick={onClick}
+		>
+			{direction === 'left' ? (
+				<ArrowLeft className="absolute w-4 h-4 text-white" />
+			) : (
+				<ArrowRight className="absolute w-4 h-4 text-white" />
+			)}
+		</button>
+	</div>
 )
 
 CarouselArrow.propTypes = {

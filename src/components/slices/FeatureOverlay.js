@@ -6,7 +6,6 @@ import Image from '../Image'
 import ButtonLink from '../ButtonLink'
 import Container from '../Container'
 import styled from 'styled-components'
-import tw from 'tailwind.macro'
 import BackgroundPattern from '../../images/bg-pattern.svg'
 
 const FeatureOverlay = ({ title, image, meta, buttonLabel, url }) => (

@@ -16,7 +16,7 @@ const TYPE_COMPONENTS = {
 }
 
 const ContentParser = ({ slices, meta, seo }) => (
-	<main>
+	<main className="overflow-hidden">
 		{slices.map((slice, index) => {
 			const Component = TYPE_COMPONENTS[slice.type] || null
 			return Component ? (
