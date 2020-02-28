@@ -55,7 +55,7 @@ const StyledIntroduction = styled.div`
 	> p {
 		${tw`text-gray-700 text-xl md:text-center leading-relaxed mb-8`};
 		& > strong {
-			${tw`font-semibold`}
+			${tw`font-semibold text-black`}
 		}
 		& > em {
 			${tw`font-italic text-black`}

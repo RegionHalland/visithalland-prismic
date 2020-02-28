@@ -8,7 +8,13 @@ import Author from '../Author'
 import Container from '../Container'
 import ArrowDown from '../icons/ArrowDown'
 
-const HeroFullScreen = ({ title, introduction, image }) => {
+const HeroFullScreen = ({
+	title,
+	introduction,
+	author,
+	publicationDate,
+	image,
+}) => {
 	return (
 		<ImageContainer className="h-100vh w-full flex items-end justify-center relative mb-12 px-4 md:px-6">
 			<Container className="z-10 relative" tight>

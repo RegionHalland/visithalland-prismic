@@ -2,13 +2,33 @@ import propTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 
+import ConditionalWrapper from './ConditionalWrapper'
 import Image from './Image'
 import Link from 'gatsby-link'
 
 import TextRenderer from './TextRenderer'
 
-const CollectionListItemSmall = ({ title, excerpt, image, to, ...props }) => (
-	<StyledLink to={to} {...props}>
+const CollectionListItemSmall = ({
+	title,
+	excerpt,
+	image,
+	to,
+	url,
+	...props
+}) => (
+	<ConditionalWrapper
+		condition={url}
+		ifWrapper={children => (
+			<StyledHref {...props} href={url}>
+				{children}
+			</StyledHref>
+		)}
+		elseWrapper={children => (
+			<StyledLink to={to} {...props}>
+				{children}
+			</StyledLink>
+		)}
+	>
 		<div className="flex flex-wrap">
 			<div className="w-32 h-48 md:w-48 md:h-64 overflow-hidden rounded relative">
 				{image && (
@@ -32,7 +52,7 @@ const CollectionListItemSmall = ({ title, excerpt, image, to, ...props }) => (
 				)}
 			</div>
 		</div>
-	</StyledLink>
+	</ConditionalWrapper>
 )
 
 const StyledImage = styled(Image)`
@@ -40,6 +60,12 @@ const StyledImage = styled(Image)`
 `
 
 const StyledLink = styled(Link)`
+	&:hover ${StyledImage} {
+		transform: scale(1.1);
+	}
+`
+
+const StyledHref = styled.a`
 	&:hover ${StyledImage} {
 		transform: scale(1.1);
 	}
