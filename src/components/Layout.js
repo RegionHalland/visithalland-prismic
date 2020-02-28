@@ -1,11 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { ParallaxProvider } from 'react-scroll-parallax'
 
 const Layout = ({ children }) => {
 	return (
-		<div className="font-sans">
-			<div>{children}</div>
-		</div>
+		<ParallaxProvider>
+			<div className="font-sans">
+				<div>{children}</div>
+			</div>
+		</ParallaxProvider>
 	)
 }
 
