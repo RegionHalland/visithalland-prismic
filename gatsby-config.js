@@ -34,7 +34,7 @@ module.exports = {
 		},
 		'gatsby-plugin-postcss',
 		{
-			resolve: 'gatsby-source-prismic-graphql',
+			resolve: '@digitaliseringsbyran/gatsby-source-prismic-graphql',
 			options: {
 				repositoryName: 'visithalland', // required
 				defaultLang: 'sv-se',

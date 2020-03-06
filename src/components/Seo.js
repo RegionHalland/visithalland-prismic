@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
-import { withPreview } from 'gatsby-source-prismic-graphql'
+import { withPreview } from '@digitaliseringsbyran/gatsby-source-prismic-graphql'
 
 const Seo = ({ description, lang, meta, title, image }) => {
 	const siteQuery = graphql`

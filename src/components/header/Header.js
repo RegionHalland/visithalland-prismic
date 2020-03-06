@@ -131,7 +131,6 @@ const StyledHeader = styled.div`
 `
 
 const MenuButton = styled.button`
-	${tw`transition-bg`}
 	${props => (props.scrolled ? tw`bg-blue-700 shadow-lg` : 'bg-transparent')};
 `
 
