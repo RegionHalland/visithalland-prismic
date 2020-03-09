@@ -64,7 +64,7 @@ const Header = ({ meta, navigation, support, langs }) => {
 				</Link>
 				{breakpoint === 'lg' ||
 					(breakpoint === 'xl' && (
-						<nav className="mr-10 md:mr-48 flex-1 flex-row flex justify-end list-none z-50 relative">
+						<nav className="mr-10 md:mr-48 flex-1 flex-row flex w-full justify-end list-none z-50 relative">
 							{navTransition.map(({ item, key, props }) => (
 								<animated.div key={key} style={props}>
 									<Link
