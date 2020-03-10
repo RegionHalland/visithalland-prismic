@@ -76,7 +76,10 @@ const StyledImage = styled(Image)`
 `
 
 const StyledHref = styled.a`
-	height: 500px;
+	height: 400px;
+	@media (min-width: ${config.theme.screens.lg}) {
+		height: 500px;
+	}
 	&:after {
 		content: '';
 		${tw`bg-black h-full w-full absolute top-0 left-0`}
