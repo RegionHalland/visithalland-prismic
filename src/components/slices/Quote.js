@@ -10,7 +10,7 @@ import BackgroundPattern from '../../images/bg-pattern.svg'
 
 const Quote = ({ quote, byline, image, meta, buttonLabel, url }) => (
 	<div className="bg-sand-300 py-12 mt-32">
-		<Container className="px-4 lg:px-6 flex flex-wrap -mx-3">
+		<Container className="px-4 lg:px-6 flex flex-wrap -mx-3" tight>
 			<div className="h-40vh lg:h-60vh w-full md:w-6/12 px-3 rounded overflow-hidden relative -mt-32 mb-6 md:mb-0">
 				<Image
 					style={{ position: 'absolute' }}
@@ -22,7 +22,7 @@ const Quote = ({ quote, byline, image, meta, buttonLabel, url }) => (
 			</div>
 
 			<div className="w-full md:w-6/12 md:pl-6">
-				<blockquote className="text-2xl md:text-3xl lg:text-4xl mx-auto mb-6 w-full leading-tight text-black font-semibold">
+				<blockquote className="text-2xl md:text-3xl mx-auto mb-6 w-full leading-tight text-black font-semibold">
 					“{quote}”
 				</blockquote>
 				<span className="block mb-6 text-lg text-gray-600">
