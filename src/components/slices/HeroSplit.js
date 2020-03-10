@@ -30,7 +30,7 @@ const HeroSplit = ({
 									muted
 									loop
 									autoplay="autoplay"
-									playsinline
+									playsInline
 									className="absolute h-full w-full bottom-0 top-0 left-0 z-0 object-cover"
 									src={video}
 								></video>
