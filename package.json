@@ -8,6 +8,7 @@
     "@digitaliseringsbyran/gatsby-source-prismic-graphql": "^3.5.4",
     "@digitaliseringsbyran/tailwindcss-screens-in-dom": "^0.1.1",
     "@n8tb1t/use-scroll-position": "^1.0.43",
+    "@regionhalland/react-embed": "^3.0.1",
     "@storybook/addon-knobs": "^5.3.9",
     "date-fns": "^2.9.0",
     "gatsby": "^2.19.5",
