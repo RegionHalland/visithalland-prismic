@@ -14,6 +14,7 @@ const HeroFullWidth = ({
 	author,
 	publicationDate,
 	image,
+	video,
 }) => {
 	return (
 		<React.Fragment>
@@ -21,13 +22,25 @@ const HeroFullWidth = ({
 				<h1 className="text-4xl md:text-5xl lg:text-6xl w-full leading-tight text-white font-semibold  md:w-6/12 text-center relative z-10">
 					{title}
 				</h1>
-				<Image
-					style={{ position: 'absolute' }}
-					className="h-full w-full bottom-0 top-0 left-0 z-0"
-					objectFit="cover"
-					objectPosition="50% 50%"
-					fluid={image}
-				/>
+				{video && (
+					<video
+						loop
+						muted
+						autoplay="autoplay"
+						playsinline
+						className="absolute h-full w-full bottom-0 top-0 left-0 z-0 object-cover"
+						src={video}
+					></video>
+				)}
+				{!video && (
+					<Image
+						style={{ position: 'absolute' }}
+						className="h-full w-full bottom-0 top-0 left-0 z-0"
+						objectFit="cover"
+						objectPosition="50% 50%"
+						fluid={image}
+					/>
+				)}
 			</ImageContainer>
 			<Container className="px-4 md:px-6 mb-20" tight>
 				<div className="w-full md:w-10/12 mx-auto">

@@ -10,7 +10,14 @@ import TextRenderer from '../TextRenderer'
 import Author from '../Author'
 import Container from '../Container'
 
-const HeroSplit = ({ title, introduction, author, publicationDate, image }) => {
+const HeroSplit = ({
+	title,
+	introduction,
+	author,
+	publicationDate,
+	image,
+	video,
+}) => {
 	return (
 		<div className="lg:px-6">
 			<Container className="flex flex-wrap md:flex-row-reverse">
@@ -18,13 +25,25 @@ const HeroSplit = ({ title, introduction, author, publicationDate, image }) => {
 				<div className="w-full lg:w-6/12 pl-4 lg:pl-0">
 					<Parallax y={[10, -10]}>
 						<ImageContainer className="h-70vh md:h-80vh lg:h-90vh w-full lg:w-50vw mt-24 md:mt-32 mb-8 relative">
-							<Image
-								style={{ position: 'absolute' }}
-								className="h-full w-full bottom-0 top-0 left-0 z-0"
-								objectFit="cover"
-								objectPosition="50% 50%"
-								fluid={image}
-							/>
+							{video && (
+								<video
+									muted
+									loop
+									autoplay="autoplay"
+									playsinline
+									className="absolute h-full w-full bottom-0 top-0 left-0 z-0 object-cover"
+									src={video}
+								></video>
+							)}
+							{!video && (
+								<Image
+									style={{ position: 'absolute' }}
+									className="h-full w-full bottom-0 top-0 left-0 z-0"
+									objectFit="cover"
+									objectPosition="50% 50%"
+									fluid={image}
+								/>
+							)}
 						</ImageContainer>
 					</Parallax>
 				</div>

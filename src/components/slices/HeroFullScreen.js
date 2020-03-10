@@ -14,6 +14,7 @@ const HeroFullScreen = ({
 	author,
 	publicationDate,
 	image,
+	video,
 }) => {
 	return (
 		<ImageContainer className="h-100vh w-full flex items-end justify-center relative mb-12 px-4 md:px-6">
@@ -36,13 +37,25 @@ const HeroFullScreen = ({
 					<ArrowDown height={16} width={16} className="text-white" />
 				</div>
 			</Container>
-			<Image
-				style={{ position: 'absolute' }}
-				className="h-full w-full bottom-0 top-0 left-0 z-0"
-				objectFit="cover"
-				objectPosition="50% 50%"
-				fluid={image}
-			/>
+			{video && (
+				<video
+					loop
+					muted
+					autoplay="autoplay"
+					playsinline
+					className="absolute h-full w-full bottom-0 top-0 left-0 z-0 object-cover"
+					src={video}
+				></video>
+			)}
+			{!video && (
+				<Image
+					style={{ position: 'absolute' }}
+					className="h-full w-full bottom-0 top-0 left-0 z-0"
+					objectFit="cover"
+					objectPosition="50% 50%"
+					fluid={image}
+				/>
+			)}
 		</ImageContainer>
 	)
 }
