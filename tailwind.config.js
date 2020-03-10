@@ -82,11 +82,6 @@ module.exports = {
 	},
 	variants: {
 		// all the following default to ['responsive']
-		transitionProperty: ['responsive'],
-		transitionDuration: ['responsive'],
-		transitionTimingFunction: ['responsive'],
-		transitionDelay: ['responsive'],
-		willChange: ['responsive'],
 	},
 	plugins: [
 		require('tailwindcss-transitions')(),

@@ -26,7 +26,11 @@ const FeatureContainer = ({ slice }) => {
 	)
 	const image = featureImage
 		? featureImage
-		: get(primary, 'feature_imageSharp.childImageSharp.fluid', null)
+		: get(
+				primary,
+				'feature_link.seo_featured_imageSharp.childImageSharp.fluid',
+				null,
+		  )
 	const meta = get(primary, 'feature_link._meta', {})
 	const url = get(primary, 'feature_link.url', '')
 

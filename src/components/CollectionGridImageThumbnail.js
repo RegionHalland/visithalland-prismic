@@ -3,9 +3,14 @@ import React from 'react'
 import styled from 'styled-components'
 import tw from 'tailwind.macro'
 
+import resolveConfig from 'tailwindcss/resolveConfig'
+import tailwindConfig from '../../tailwind.config.js'
+
 import Image from './Image'
 import ConditionalWrapper from './ConditionalWrapper'
 import Link from 'gatsby-link'
+
+const config = resolveConfig(tailwindConfig)
 
 const CollectionGridImageThumbnail = ({
 	title,
@@ -49,11 +54,7 @@ const CollectionGridImageThumbnail = ({
 						</span>
 					))}
 				</div>
-				<h2
-					className={`font-sans text-white font-semibold mb-2 text-3xl leading-tight ${
-						size === 'large' ? ' lg:text-4xl' : ' lg:text-3xl'
-					}`}
-				>
+				<h2 className="font-sans text-white font-semibold mb-2 leading-tight">
 					{title}
 				</h2>
 			</div>
@@ -88,7 +89,10 @@ const StyledHref = styled.a`
 `
 
 const StyledLink = styled(Link)`
-	height: 500px;
+	height: 400px;
+	@media (min-width: ${config.theme.screens.lg}) {
+		height: 500px;
+	}
 	&:after {
 		content: '';
 		${tw`bg-black h-full w-full absolute top-0 left-0`}
