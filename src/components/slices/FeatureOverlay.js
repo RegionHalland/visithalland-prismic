@@ -9,8 +9,8 @@ import styled from 'styled-components'
 import BackgroundPattern from '../../images/bg-pattern.svg'
 
 const FeatureOverlay = ({ title, image, meta, buttonLabel, url }) => (
-	<React.Fragment>
-		<div className="h-60vh lg:h-70vh w-full flex items-end relative px-4 md:px-6 -mb-32">
+	<Container className="lg:px-6">
+		<div className="h-60vh lg:h-60vh w-full flex items-end relative px-4 lg:rounded overflow-hidden md:px-6 -mb-32">
 			<Image
 				style={{ position: 'absolute' }}
 				className="h-full w-full bottom-0 top-0 left-0 z-0"
@@ -21,7 +21,7 @@ const FeatureOverlay = ({ title, image, meta, buttonLabel, url }) => (
 		</div>
 		<Parallax y={[10, -10]} className="w-full">
 			<Container className="z-10 relative w-full relative flex justify-start px-4 md:px-6">
-				<Overlay className="bg-blue-600 py-6 px-8 md:py-8 md:px-10 w-full md:w-8/12 lg:w-6/12">
+				<Overlay className="bg-blue-600 py-6 px-8 md:py-8 md:px-10 w-full overflow-hidden rounded md:w-8/12 lg:w-6/12">
 					<h1 className="text-2xl md:text-4xl mx-auto mb-6 w-full leading-tight text-white font-semibold">
 						{title}
 					</h1>
@@ -33,7 +33,7 @@ const FeatureOverlay = ({ title, image, meta, buttonLabel, url }) => (
 				</Overlay>
 			</Container>
 		</Parallax>
-	</React.Fragment>
+	</Container>
 )
 
 const Overlay = styled.div`

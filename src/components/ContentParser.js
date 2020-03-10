@@ -6,6 +6,7 @@ import FeatureContainer from './slices/FeatureContainer'
 import ImageContainer from './slices/ImageContainer'
 import TextContainer from './slices/TextContainer'
 import CollectionContainer from './slices/CollectionContainer'
+import QuoteContainer from './slices/QuoteContainer'
 
 const TYPE_COMPONENTS = {
 	hero: HeroContainer,
@@ -13,6 +14,7 @@ const TYPE_COMPONENTS = {
 	feature: FeatureContainer,
 	collection: CollectionContainer,
 	text: TextContainer,
+	quote: QuoteContainer,
 }
 
 const ContentParser = ({ slices, meta, seo }) => (
