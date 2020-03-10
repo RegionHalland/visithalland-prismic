@@ -16,6 +16,7 @@ const HeroContainer = ({ slice, meta }) => {
 
 	const title = get(primary, 'hero_title[0].text', '')
 	const introduction = get(primary, 'hero_introduction', [])
+	const video = get(primary, 'hero_video', [])
 	const variant = get(primary, 'hero_variant', 'full width').toLowerCase()
 	const image = get(primary, 'hero_imageSharp.childImageSharp.fluid', null)
 
@@ -40,6 +41,7 @@ const HeroContainer = ({ slice, meta }) => {
 				publicationDate={firstPublicationDate}
 				author={author}
 				image={image}
+				video={video}
 			/>
 		)
 	}
@@ -51,6 +53,7 @@ const HeroContainer = ({ slice, meta }) => {
 				publicationDate={firstPublicationDate}
 				author={author}
 				image={image}
+				video={video}
 			/>
 		)
 	}
@@ -62,6 +65,7 @@ const HeroContainer = ({ slice, meta }) => {
 			publicationDate={firstPublicationDate}
 			author={author}
 			image={image}
+			video={video}
 		/>
 	)
 }

@@ -10,6 +10,7 @@ export const HeroFragment = graphql`
 			hero_title
 			hero_introduction
 			hero_variant
+			hero_video
 			hero_author {
 				...EditorFragment
 			}
