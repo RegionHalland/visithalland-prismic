@@ -15,6 +15,7 @@ import {
 	TextFragment,
 	MenusFragment,
 	EditorFragment,
+	EmbedFragment,
 	QuoteFragment,
 } from '../fragments'
 
@@ -102,6 +103,7 @@ export const query = graphql`
 					...FeatureFragment
 					...CollectionFragment
 					...TextFragment
+					...EmbedFragment
 					...QuoteFragment
 				}
 			}
@@ -117,6 +119,7 @@ Content.fragments = [
 	TextFragment,
 	MenusFragment,
 	EditorFragment,
+	EmbedFragment,
 	QuoteFragment,
 ]
 
