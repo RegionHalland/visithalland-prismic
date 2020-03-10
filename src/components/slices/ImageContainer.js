@@ -14,7 +14,7 @@ const ImageContainer = ({ slice }) => {
 
 	const variant = get(primary, 'image_variant', 'small').toLowerCase()
 	const caption = get(primary, 'image_caption', null)
-	const image = get(primary, 'image_imageSharp.childImageSharp.fluid', {})
+	const image = get(primary, 'image_imageSharp.childImageSharp.fluid', null)
 
 	if (variant === 'large') {
 		return <ImageLarge caption={caption} image={image} />
