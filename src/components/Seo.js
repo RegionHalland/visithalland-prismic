@@ -12,7 +12,7 @@ const Seo = ({ description, lang, meta, title, image }) => {
 					title
 					description
 					author
-					baseUrl
+					siteUrl
 				}
 			}
 		}
@@ -24,17 +24,17 @@ const Seo = ({ description, lang, meta, title, image }) => {
 			render={withPreview(data => {
 				const defaults = data.site.siteMetadata
 
-				if (defaults.baseUrl === '' && typeof window !== 'undefined') {
-					defaults.baseUrl = window.location.origin
+				if (defaults.siteUrl === '' && typeof window !== 'undefined') {
+					defaults.siteUrl = window.location.origin
 				}
 
-				if (defaults.baseUrl === '' || !defaults.baseUrl) {
-					console.error('Please set a baseUrl in your site metadata!')
+				if (defaults.siteUrl === '' || !defaults.siteUrl) {
+					console.error('Please set a siteUrl in your site metadata!')
 					return null
 				}
 
 				const imageSeo = image
-					? new URL(image, defaults.baseUrl)
+					? new URL(image, defaults.siteUrl)
 					: false
 
 				const metaDescription =

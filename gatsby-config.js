@@ -4,7 +4,7 @@ module.exports = {
 		description:
 			'En reseguide som hjälper dig att hitta till det bästa i Halland. Visithalland.com utvecklas och drivs av Region Halland.',
 		author: '@gatsbyjs',
-		baseUrl:
+		siteUrl:
 			process.env.NODE_ENV === 'development'
 				? 'http://localhost:8000'
 				: 'https://visithalland-beta.netlify.com', // no trailing slash!
@@ -63,6 +63,7 @@ module.exports = {
 				],
 			},
 		},
+		'gatsby-plugin-sitemap',
 		// this (optional) plugin enables Progressive Web App + Offline functionality
 		// To learn more, visit: https://gatsby.dev/offline
 		// 'gatsby-plugin-offline',
