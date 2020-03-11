@@ -6,7 +6,7 @@ import FeatureContainer from './slices/FeatureContainer'
 import ImageContainer from './slices/ImageContainer'
 import TextContainer from './slices/TextContainer'
 import CollectionContainer from './slices/CollectionContainer'
-import EmbedContainer from './slices/EmbedContainer'
+import VideoContainer from './slices/VideoContainer'
 import QuoteContainer from './slices/QuoteContainer'
 
 const TYPE_COMPONENTS = {
@@ -15,7 +15,7 @@ const TYPE_COMPONENTS = {
 	feature: FeatureContainer,
 	collection: CollectionContainer,
 	text: TextContainer,
-	embed: EmbedContainer,
+	video: VideoContainer,
 	quote: QuoteContainer,
 }
 
