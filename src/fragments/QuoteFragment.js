@@ -11,10 +11,10 @@ export const QuoteFragment = graphql`
 			quote_image
 			quote_imageSharp {
 				childImageSharp {
-					fluid(maxWidth: 1920) {
+					fluid(maxWidth: 1920, quality: 80) {
 						...GatsbyImageSharpFluid
 					}
-					fixed(width: 800, height: 800) {
+					fixed(width: 800, height: 800, quality: 80) {
 						...GatsbyImageSharpFixed
 					}
 				}

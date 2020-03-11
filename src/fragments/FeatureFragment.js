@@ -11,10 +11,10 @@ export const FeatureFragment = graphql`
 			feature_image
 			feature_imageSharp {
 				childImageSharp {
-					fluid(maxWidth: 1920, quality: 100) {
+					fluid(maxWidth: 1920, quality: 80) {
 						...GatsbyImageSharpFluid
 					}
-					fixed(width: 800, height: 800) {
+					fixed(width: 800, height: 800, quality: 80) {
 						...GatsbyImageSharpFixed
 					}
 				}
@@ -32,10 +32,10 @@ export const FeatureFragment = graphql`
 					seo_featured_image
 					seo_featured_imageSharp {
 						childImageSharp {
-							fluid(maxWidth: 1920, quality: 100) {
+							fluid(maxWidth: 1920, quality: 80) {
 								...GatsbyImageSharpFluid
 							}
-							fixed(width: 800, height: 800) {
+							fixed(width: 800, height: 800, quality: 80) {
 								...GatsbyImageSharpFixed
 							}
 						}
