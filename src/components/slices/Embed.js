@@ -6,7 +6,9 @@ import ReactEmbed from '@regionhalland/react-embed'
 
 const Embed = ({ url }) => (
 	<Container className="flex justify-center px-4 md:px-6" tight>
-		<ReactEmbed url={url} options={{ controls: true }} />
+		{typeof window !== 'undefined' && (
+			<ReactEmbed url={url} options={{ controls: true }} />
+		)}
 	</Container>
 )
 
