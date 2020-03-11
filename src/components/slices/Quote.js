@@ -32,11 +32,13 @@ const Quote = ({ quote, byline, image, meta, buttonLabel, url }) => (
 				<span className="block mb-6 text-lg text-gray-600">
 					- {byline}
 				</span>
-				<ButtonLink
-					title={buttonLabel}
-					to={linkResolver(meta)}
-					url={url}
-				/>
+				{(meta.uid || url) && (
+					<ButtonLink
+						title={buttonLabel}
+						to={linkResolver(meta)}
+						url={url}
+					/>
+				)}
 			</div>
 		</Container>
 	</div>
