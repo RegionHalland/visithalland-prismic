@@ -8,6 +8,7 @@ export const MenusFragment = graphql`
 			navigation_link_label
 			navigation_link {
 				... on PRISMIC_Content {
+					title
 					_meta {
 						uid
 						lang

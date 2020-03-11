@@ -12,10 +12,22 @@ const HeaderContainer = ({ allMenus, meta }) => {
 	// Prepare navigation data
 	const navigation = {
 		label: menu.navigation_label,
-		items: navigationGroup.map(navigationLink => ({
-			label: get(navigationLink, 'navigation_link_label', ''),
-			_meta: get(navigationLink, 'navigation_link._meta', {}),
-		})),
+		items: navigationGroup.map(navigationLink => {
+			const navigationLabel = get(
+				navigationLink,
+				'navigation_link_label',
+				null,
+			)
+
+			const title = navigationLabel
+				? navigationLabel
+				: get(navigationLink, 'navigation_link.title', '')
+
+			return {
+				label: title,
+				_meta: get(navigationLink, 'navigation_link._meta', {}),
+			}
+		}),
 	}
 
 	// Prepare support data
