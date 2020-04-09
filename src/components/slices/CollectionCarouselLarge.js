@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Carousel from 'nuka-carousel'
 
-import ButtonLink from '../ButtonLink'
+import Button from '../Button'
 import styled from 'styled-components'
 import tw from 'tailwind.macro'
 
@@ -48,7 +48,7 @@ const CollectionCarouselLarge = ({ items }) => {
 						<h1 className="text-4xl md:text-5xl md:w-10/12 mx-auto mb-6 w-full text-center leading-tight text-white font-semibold">
 							{title}
 						</h1>
-						<ButtonLink
+						<Button
 							title="Läs mer"
 							to={linkResolver(meta)}
 							url={url}

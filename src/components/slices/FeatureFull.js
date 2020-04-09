@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { linkResolver } from '../../utils/linkResolver'
 import Image from '../Image'
-import ButtonLink from '../ButtonLink'
+import Button from '../Button'
 import Container from '../Container'
 import styled from 'styled-components'
 import tw from 'tailwind.macro'
@@ -13,7 +13,7 @@ const FeatureFull = ({ title, image, meta, buttonLabel, url }) => (
 			<h1 className="text-4xl md:text-5xl md:w-10/12 mx-auto mb-6 w-full text-center leading-tight text-white font-semibold">
 				{title}
 			</h1>
-			<ButtonLink title={buttonLabel} to={linkResolver(meta)} url={url} />
+			<Button title={buttonLabel} to={linkResolver(meta)} url={url} />
 		</Container>
 		<Image
 			style={{ position: 'absolute' }}

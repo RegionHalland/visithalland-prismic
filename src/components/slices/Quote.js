@@ -6,7 +6,7 @@ import resolveConfig from 'tailwindcss/resolveConfig'
 import tailwindConfig from '../../../tailwind.config.js'
 
 import Image from '../Image'
-import ButtonLink from '../ButtonLink'
+import Button from '../Button'
 import Container from '../Container'
 import styled from 'styled-components'
 
@@ -33,7 +33,7 @@ const Quote = ({ quote, byline, image, meta, buttonLabel, url }) => (
 					- {byline}
 				</span>
 				{(meta.uid || url) && (
-					<ButtonLink
+					<Button
 						title={buttonLabel}
 						to={linkResolver(meta)}
 						url={url}

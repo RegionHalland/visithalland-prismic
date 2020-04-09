@@ -9,6 +9,7 @@ import tailwindConfig from '../../tailwind.config.js'
 import Image from './Image'
 import ConditionalWrapper from './ConditionalWrapper'
 import Link from 'gatsby-link'
+import ArrowRight from './icons/ArrowRight'
 
 const config = resolveConfig(tailwindConfig)
 
@@ -43,7 +44,7 @@ const CollectionGridImageThumbnail = ({
 		)}
 	>
 		<React.Fragment>
-			<div className="absolute bottom-0 left-0 right-0 h-full w-full flex items-center justify-center text-center p-3 z-10">
+			<div className="absolute bottom-0 left-0 right-0 h-full w-full flex items-center flex-col justify-center text-center p-3 z-10">
 				<div>
 					{tags.map((tag, index) => (
 						<span
@@ -57,6 +58,9 @@ const CollectionGridImageThumbnail = ({
 				<h2 className="font-sans text-white font-semibold mb-2 leading-tight">
 					{title}
 				</h2>
+				<LinkIndicator>
+					<ArrowRight className="absolute w-4 h-4 text-white" />
+				</LinkIndicator>
 			</div>
 			{image && (
 				<StyledImage
@@ -75,6 +79,12 @@ const StyledImage = styled(Image)`
 	transition: transform 0.25s;
 `
 
+const LinkIndicator = styled.div`
+	${tw`h-10 w-10 bg-coral-500 opacity-0 rounded-full flex items-center justify-center`};
+	transform: translateY(100%);
+	transition: opacity 0.25s, transform 0.25s;
+`
+
 const StyledHref = styled.a`
 	height: 400px;
 	@media (min-width: ${config.theme.screens.lg}) {
@@ -86,8 +96,15 @@ const StyledHref = styled.a`
 		opacity:0.1;
 	}
 
-	&:hover ${StyledImage} {
-		transform: scale(1.05);
+	&:hover {
+		${StyledImage} {
+			transform: scale(1.05);
+		}
+
+		${LinkIndicator} {
+			transform: translateY(0%);
+			opacity: 1;
+		}
 	}
 `
 
@@ -102,8 +119,15 @@ const StyledLink = styled(Link)`
 		opacity:0.1;
 	}
 
-	&:hover ${StyledImage} {
-		transform: scale(1.05);
+	&:hover {
+		${StyledImage} {
+			transform: scale(1.05);
+		}
+
+		${LinkIndicator} {
+			transform: translateY(0%);
+			opacity: 1;
+		}
 	}
 `
 
