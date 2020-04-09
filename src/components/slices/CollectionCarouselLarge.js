@@ -18,6 +18,7 @@ const CollectionCarouselLarge = ({ items }) => {
 			className="focus:outline-none"
 			frameOverflow="visible"
 			slidesToShow={1}
+			wrapAround={true}
 			renderBottomCenterControls={() => null}
 			renderCenterLeftControls={({ previousSlide }) => (
 				<CarouselArrow onClick={previousSlide} direction="left" />
