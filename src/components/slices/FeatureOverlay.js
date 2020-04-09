@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { linkResolver } from '../../utils/linkResolver'
 import { Parallax } from 'react-scroll-parallax'
 import Image from '../Image'
-import ButtonLink from '../ButtonLink'
+import Button from '../Button'
 import Container from '../Container'
 import styled from 'styled-components'
 import BackgroundPattern from '../../images/bg-pattern.svg'
@@ -25,7 +25,7 @@ const FeatureOverlay = ({ title, image, meta, buttonLabel, url }) => (
 					<h1 className="text-2xl md:text-4xl mx-auto mb-6 w-full leading-tight text-white font-semibold">
 						{title}
 					</h1>
-					<ButtonLink
+					<Button
 						title={buttonLabel}
 						to={linkResolver(meta)}
 						url={url}
