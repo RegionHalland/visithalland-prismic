@@ -3,10 +3,17 @@ import PropTypes from 'prop-types'
 import Image from '../Image'
 import Container from '../Container'
 
-const ImageFullWidth = ({ image, caption }) => {
+const ImageFullWidth = ({ image, caption, alt, copyright }) => {
 	return (
 		<div>
-			<Image className="mb-2" fluid={image} />
+			<div className="relative">
+				<Image
+					className="mb-2"
+					fluid={image}
+					alt={alt}
+					copyright={copyright}
+				/>
+			</div>
 			<Container>
 				<div className="px-4 md:px-6 xl:p-0 w-full">
 					<span className="text-sm md:text-base text-gray-600">

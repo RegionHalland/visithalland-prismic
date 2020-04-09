@@ -15,6 +15,8 @@ const HeroFullWidth = ({
 	publicationDate,
 	image,
 	video,
+	alt,
+	copyright,
 }) => {
 	return (
 		<React.Fragment>
@@ -39,6 +41,7 @@ const HeroFullWidth = ({
 						objectFit="cover"
 						objectPosition="50% 50%"
 						fluid={image}
+						alt={alt}
 					/>
 				)}
 			</ImageContainer>

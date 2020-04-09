@@ -17,6 +17,8 @@ const HeroSplit = ({
 	publicationDate,
 	image,
 	video,
+	alt,
+	copyright,
 }) => {
 	return (
 		<div className="lg:px-6">
@@ -42,6 +44,8 @@ const HeroSplit = ({
 									objectFit="cover"
 									objectPosition="50% 50%"
 									fluid={image}
+									alt={alt}
+									copyright={copyright}
 								/>
 							)}
 						</ImageContainer>

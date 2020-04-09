@@ -15,6 +15,8 @@ const HeroFullScreen = ({
 	publicationDate,
 	image,
 	video,
+	alt,
+	copyright,
 }) => {
 	return (
 		<ImageContainer className="h-100vh w-full flex items-end justify-center relative mb-12 px-4 md:px-6">
@@ -54,6 +56,8 @@ const HeroFullScreen = ({
 					objectFit="cover"
 					objectPosition="50% 50%"
 					fluid={image}
+					alt={alt}
+					copyright={copyright}
 				/>
 			)}
 		</ImageContainer>
