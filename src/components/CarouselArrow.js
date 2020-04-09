@@ -6,7 +6,7 @@ import ArrowRight from './icons/ArrowRight'
 const CarouselArrow = ({ onClick, direction }) => (
 	<div className="px-4">
 		<button
-			className="flex items-center justify-center focus:outline-none active:outline-none h-12 w-12 rounded-full bg-blue-700"
+			className="flex items-center justify-center focus:outline-none active:outline-none h-10 w-10 rounded-full bg-blue-600 hover:bg-blue-700 focus:bg-blue-700"
 			onClick={onClick}
 		>
 			{direction === 'left' ? (
