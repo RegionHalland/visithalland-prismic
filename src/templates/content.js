@@ -5,6 +5,7 @@ import get from 'lodash.get'
 import Layout from '../components/Layout'
 import Seo from '../components/Seo'
 import ContentParser from '../components/ContentParser'
+import AnnouncementContainer from '../components/AnnouncementContainer'
 import HeaderContainer from '../components/header/HeaderContainer'
 import FooterContainer from '../components/FooterContainer'
 import {
@@ -22,7 +23,7 @@ import {
 
 const Content = ({
 	data: {
-		prismic: { content, allMenus },
+		prismic: { content, allMenus, allAnnouncements },
 	},
 }) => {
 	// Return if page has no content or body (slices)
@@ -55,6 +56,7 @@ const Content = ({
 				lang={meta.lang}
 				title={title}
 			/>
+			<AnnouncementContainer announcements={allAnnouncements} />
 			<HeaderContainer allMenus={allMenus} meta={meta} />
 			<ContentParser slices={slices} meta={meta} seo={seo} />
 			<FooterContainer allMenus={allMenus} meta={meta} />
@@ -69,6 +71,17 @@ export const query = graphql`
 				edges {
 					node {
 						...MenusFragment
+					}
+				}
+			}
+			allAnnouncements {
+				edges {
+					node {
+						announcement_content
+						announcement_active
+						_meta {
+							id
+						}
 					}
 				}
 			}
