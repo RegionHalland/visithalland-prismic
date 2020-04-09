@@ -7,6 +7,7 @@ export const FeatureFragment = graphql`
 		primary {
 			feature_variant
 			feature_title
+			feature_body
 			feature_button_label
 			feature_image
 			feature_imageSharp {

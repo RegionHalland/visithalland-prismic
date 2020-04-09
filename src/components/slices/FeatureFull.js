@@ -3,16 +3,20 @@ import PropTypes from 'prop-types'
 import { linkResolver } from '../../utils/linkResolver'
 import Image from '../Image'
 import Button from '../Button'
+import TextRenderer from '../TextRenderer'
 import Container from '../Container'
 import styled from 'styled-components'
 import tw from 'tailwind.macro'
 
-const FeatureFull = ({ title, image, meta, buttonLabel, url }) => (
+const FeatureFull = ({ title, body, image, meta, alt, buttonLabel, url }) => (
 	<ImageContainer className="h-60vh lg:h-70vh w-full flex items-center justify-center relative px-4 md:px-6">
 		<Container className="z-10 relative w-full text-center">
 			<h1 className="text-4xl md:text-5xl md:w-10/12 mx-auto mb-6 w-full text-center leading-tight text-white font-semibold">
 				{title}
 			</h1>
+			<div className="text-white mb-6 md:w-8/12 mx-auto">
+				<TextRenderer text={body}></TextRenderer>
+			</div>
 			<Button title={buttonLabel} to={linkResolver(meta)} url={url} />
 		</Container>
 		<Image
@@ -21,6 +25,7 @@ const FeatureFull = ({ title, image, meta, buttonLabel, url }) => (
 			objectFit="cover"
 			objectPosition="50% 50%"
 			fluid={image}
+			alt={alt}
 		/>
 	</ImageContainer>
 )

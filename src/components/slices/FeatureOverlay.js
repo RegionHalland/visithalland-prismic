@@ -5,10 +5,19 @@ import { Parallax } from 'react-scroll-parallax'
 import Image from '../Image'
 import Button from '../Button'
 import Container from '../Container'
+import TextRenderer from '../TextRenderer'
 import styled from 'styled-components'
 import BackgroundPattern from '../../images/bg-pattern.svg'
 
-const FeatureOverlay = ({ title, image, meta, buttonLabel, url }) => (
+const FeatureOverlay = ({
+	title,
+	body,
+	image,
+	alt,
+	meta,
+	buttonLabel,
+	url,
+}) => (
 	<Container className="lg:px-6">
 		<div className="h-60vh lg:h-60vh w-full flex items-end relative px-4 lg:rounded overflow-hidden md:px-6 -mb-32">
 			<Image
@@ -17,6 +26,7 @@ const FeatureOverlay = ({ title, image, meta, buttonLabel, url }) => (
 				objectFit="cover"
 				objectPosition="50% 50%"
 				fluid={image}
+				alt={alt}
 			/>
 		</div>
 		<Parallax y={[10, -10]} className="w-full">
@@ -25,6 +35,9 @@ const FeatureOverlay = ({ title, image, meta, buttonLabel, url }) => (
 					<h1 className="text-2xl md:text-4xl mx-auto mb-6 w-full leading-tight text-white font-semibold">
 						{title}
 					</h1>
+					<div className="text-white mb-6">
+						<TextRenderer text={body}></TextRenderer>
+					</div>
 					<Button
 						title={buttonLabel}
 						to={linkResolver(meta)}
