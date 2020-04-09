@@ -20,6 +20,7 @@
     "gatsby-source-filesystem": "^2.1.46",
     "gatsby-transformer-sharp": "^2.3.13",
     "lodash.get": "^4.4.2",
+    "lodash.union": "^4.6.0",
     "nuka-carousel": "^4.6.3",
     "prismic-reactjs": "^1.2.0",
     "prop-types": "^15.7.2",
