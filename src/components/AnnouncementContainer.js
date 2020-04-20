@@ -1,13 +1,15 @@
 import React from 'react'
 import union from 'lodash.union'
-import { useStateWithLocalStorage } from '../hooks/useStateWithLocalStorage'
+import { useStateWithSessionStorage } from '../hooks/useStateWithSessionStorage'
 import PropTypes from 'prop-types'
 import get from 'lodash.get'
 
 import Announcement from './Announcement'
 
 const AnnouncementContainer = ({ announcements }) => {
-	const [viewed, setViewed] = useStateWithLocalStorage('viewedAnnouncements')
+	const [viewed, setViewed] = useStateWithSessionStorage(
+		'viewedAnnouncements',
+	)
 	const { edges } = announcements
 
 	// Return if there are no announcements

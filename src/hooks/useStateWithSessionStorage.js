@@ -1,15 +1,15 @@
 import { useState, useEffect } from 'react'
 
-export const useStateWithLocalStorage = key => {
+export const useStateWithSessionStorage = key => {
 	const [value, setValue] = useState(
 		JSON.parse(
-			typeof window !== 'undefined' && window.localStorage.getItem(key),
+			typeof window !== 'undefined' && window.sessionStorage.getItem(key),
 		) || [],
 	)
 
 	useEffect(() => {
 		typeof window !== 'undefined' &&
-			window.localStorage.setItem(key, JSON.stringify(value))
+			window.sessionStorage.setItem(key, JSON.stringify(value))
 	}, [key, value])
 
 	return [value, setValue]
