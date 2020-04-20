@@ -20,6 +20,16 @@ const HeroCarouselContainer = ({ slice }) => {
 			'hero_carousel_relationship.seo_featured_imageSharp.fluid',
 			null,
 		),
+		copyright: get(
+			primary,
+			'hero_carousel_relationship.seo_featured_image.copyright',
+			null,
+		),
+		alt: get(
+			primary,
+			'hero_carousel_relationship.seo_featured_image.alt',
+			null,
+		),
 	}))
 
 	return <HeroCarousel items={items} />

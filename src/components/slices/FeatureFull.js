@@ -8,7 +8,16 @@ import Container from '../Container'
 import styled from 'styled-components'
 import tw from 'tailwind.macro'
 
-const FeatureFull = ({ title, body, image, meta, alt, buttonLabel, url }) => (
+const FeatureFull = ({
+	title,
+	body,
+	image,
+	copyright,
+	meta,
+	alt,
+	buttonLabel,
+	url,
+}) => (
 	<ImageContainer className="h-60vh lg:h-70vh w-full flex items-center justify-center relative px-4 md:px-6">
 		<Container className="z-10 relative w-full text-center">
 			<h1 className="text-4xl md:text-5xl md:w-10/12 mx-auto mb-6 w-full text-center leading-tight text-white font-semibold">
@@ -25,6 +34,7 @@ const FeatureFull = ({ title, body, image, meta, alt, buttonLabel, url }) => (
 			objectFit="cover"
 			objectPosition="50% 50%"
 			fluid={image}
+			copyright={copyright}
 			alt={alt}
 		/>
 	</ImageContainer>

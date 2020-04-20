@@ -12,7 +12,16 @@ import styled from 'styled-components'
 
 const config = resolveConfig(tailwindConfig)
 
-const Quote = ({ quote, byline, image, meta, buttonLabel, url }) => (
+const Quote = ({
+	quote,
+	byline,
+	image,
+	copyright,
+	alt,
+	meta,
+	buttonLabel,
+	url,
+}) => (
 	<div className="bg-sand-300 py-12 mt-32">
 		<Container className="px-4 lg:px-6 flex flex-wrap -mx-3" tight>
 			<ImageContainer className="w-full md:w-6/12 px-3 rounded overflow-hidden relative -mt-32 mb-6 md:mb-0">
@@ -22,6 +31,8 @@ const Quote = ({ quote, byline, image, meta, buttonLabel, url }) => (
 					objectFit="cover"
 					objectPosition="50% 50%"
 					fluid={image}
+					copyright={copyright}
+					alt={alt}
 				/>
 			</ImageContainer>
 

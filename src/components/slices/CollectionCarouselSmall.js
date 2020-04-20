@@ -31,19 +31,26 @@ const CollectionCarouselSmall = ({ items }) => {
 					<CarouselArrow onClick={nextSlide} direction="right" />
 				)}
 			>
-				{items.map(({ title, tags, meta, image, url }, index) => (
-					<div className="px-2 text-2xl focus:outline-none">
-						<CollectionGridImageThumbnail
-							key={`${index}-${meta.uid}`}
-							title={title}
-							image={image}
-							tags={tags}
-							url={url}
-							to={linkResolver(meta)}
-							index={index}
-						/>
-					</div>
-				))}
+				{items.map(
+					(
+						{ title, tags, meta, image, copyright, alt, url },
+						index,
+					) => (
+						<div className="px-2 text-2xl focus:outline-none">
+							<CollectionGridImageThumbnail
+								key={`${index}-${meta.uid}`}
+								title={title}
+								image={image}
+								copyright={copyright}
+								alt={alt}
+								tags={tags}
+								url={url}
+								to={linkResolver(meta)}
+								index={index}
+							/>
+						</div>
+					),
+				)}
 			</Carousel>
 		</Container>
 	)

@@ -16,6 +16,8 @@ const QuoteContainer = ({ slice }) => {
 	const byline = get(primary, 'quote_byline', null)
 	const buttonLabel = get(primary, 'quote_button_label', '')
 	const image = get(primary, 'quote_imageSharp.childImageSharp.fluid', null)
+	const copyright = get(primary, 'quote_image.copyright', null)
+	const alt = get(primary, 'quote_image.alt', null)
 	const meta = get(primary, 'quote_link._meta', {})
 	const url = get(primary, 'quote_link.url', '')
 
@@ -26,6 +28,8 @@ const QuoteContainer = ({ slice }) => {
 			linkType={linkType}
 			buttonLabel={buttonLabel}
 			image={image}
+			copyright={copyright}
+			alt={alt}
 			meta={meta}
 			url={url}
 		/>

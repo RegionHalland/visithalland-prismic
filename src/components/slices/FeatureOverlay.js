@@ -13,6 +13,7 @@ const FeatureOverlay = ({
 	title,
 	body,
 	image,
+	copyright,
 	alt,
 	meta,
 	buttonLabel,
@@ -26,6 +27,7 @@ const FeatureOverlay = ({
 				objectFit="cover"
 				objectPosition="50% 50%"
 				fluid={image}
+				copyright={copyright}
 				alt={alt}
 			/>
 		</div>

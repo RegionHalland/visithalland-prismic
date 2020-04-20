@@ -23,6 +23,7 @@ const CollectionContainer = ({ slice }) => {
 	).toLowerCase()
 
 	const items = fields.map(item => {
+		console.log('item', item)
 		const collectionTitle = get(item, 'collection_title', null)
 		const title = collectionTitle
 			? collectionTitle
@@ -43,6 +44,13 @@ const CollectionContainer = ({ slice }) => {
 					'collection_link.seo_featured_imageSharp.childImageSharp.fluid',
 					null,
 			  )
+		const copyright = collectionImage
+			? get(item, 'collection_image.copyright', null)
+			: get(item, 'collection_link.seo_featured_image.copyright', null)
+		const alt = collectionImage
+			? get(item, 'collection_image.alt', null)
+			: get(item, 'collection_link.seo_featured_image.alt', null)
+
 		const meta = get(item, 'collection_link._meta', {})
 		const url = get(item, 'collection_link.url', '')
 		const tags = get(item, 'collection_link._meta.tags', [])
@@ -51,6 +59,8 @@ const CollectionContainer = ({ slice }) => {
 			title,
 			description,
 			image,
+			copyright,
+			alt,
 			meta,
 			url,
 			tags,

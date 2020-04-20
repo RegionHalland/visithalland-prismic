@@ -16,6 +16,8 @@ const config = resolveConfig(tailwindConfig)
 const CollectionGridImageThumbnail = ({
 	title,
 	image,
+	copyright,
+	alt,
 	tags,
 	to,
 	size,
@@ -69,6 +71,8 @@ const CollectionGridImageThumbnail = ({
 					objectFit="cover"
 					objectPosition="50% 50%"
 					fluid={image}
+					copyright={copyright}
+					alt={alt}
 				/>
 			)}
 		</React.Fragment>

@@ -12,6 +12,8 @@ const CollectionListItemLarge = ({
 	title,
 	excerpt,
 	image,
+	copyright,
+	alt,
 	to,
 	url,
 	...props
@@ -39,6 +41,8 @@ const CollectionListItemLarge = ({
 							objectFit="cover"
 							objectPosition="50% 50%"
 							fluid={image}
+							copyright={copyright}
+							alt={alt}
 						/>
 					)}
 				</div>

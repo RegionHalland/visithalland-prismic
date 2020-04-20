@@ -15,17 +15,24 @@ const config = resolveConfig(tailwindConfig)
 const CollectionGridLarge = ({ items }) => (
 	<Container className="px-4 md:px-6">
 		<div className="flex flex-wrap -mx-2">
-			{items.map(({ title, tags, meta, image, url }, index) => (
-				<GridItem key={`${meta.uid}-${index}`} className="px-2 mb-3">
-					<CollectionGridImageThumbnail
-						title={title}
-						image={image}
-						tags={tags}
-						to={linkResolver(meta)}
-						url={url}
-					/>
-				</GridItem>
-			))}
+			{items.map(
+				({ title, tags, meta, image, alt, copyright, url }, index) => (
+					<GridItem
+						key={`${meta.uid}-${index}`}
+						className="px-2 mb-3"
+					>
+						<CollectionGridImageThumbnail
+							title={title}
+							image={image}
+							copyright={copyright}
+							alt={alt}
+							tags={tags}
+							to={linkResolver(meta)}
+							url={url}
+						/>
+					</GridItem>
+				),
+			)}
 		</div>
 	</Container>
 )

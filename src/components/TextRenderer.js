@@ -17,6 +17,7 @@ const htmlSerializer = (type, element, content, children, key) => {
 	let props = {}
 
 	if (type === 'image') {
+		console.log('element', element)
 		// Don't wrap images in a <p> tag
 		props = { src: element.url, alt: element.alt || '' }
 		return React.createElement('img', Object.assign(props || {}, { key }))

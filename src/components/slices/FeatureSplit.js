@@ -5,7 +5,16 @@ import Image from '../Image'
 import Button from '../Button'
 import TextRenderer from '../TextRenderer'
 
-const FeatureSplit = ({ title, body, image, alt, meta, buttonLabel, url }) => (
+const FeatureSplit = ({
+	title,
+	body,
+	image,
+	alt,
+	meta,
+	buttonLabel,
+	url,
+	copyright,
+}) => (
 	<div className="flex">
 		<div className="flex-1 bg-coral-500">
 			<h1 className="text-2xl md:text-4xl mx-auto mb-6 w-full leading-tight text-white font-semibold">
@@ -21,6 +30,7 @@ const FeatureSplit = ({ title, body, image, alt, meta, buttonLabel, url }) => (
 				objectPosition="50% 50%"
 				fluid={image}
 				alt={alt}
+				copyright={copyright}
 			/>
 		</div>
 	</div>

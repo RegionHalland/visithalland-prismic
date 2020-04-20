@@ -15,11 +15,15 @@ const ListContainer = ({ slice }) => {
 		const title = get(item, 'list_title', null)
 		const text = get(item, 'list_text', null)
 		const image = get(item, 'list_imageSharp.childImageSharp.fluid', null)
+		const copyright = get(item, 'list_image.copyright', null)
+		const alt = get(item, 'list_imageSharp.alt', null)
 
 		return {
 			title,
 			text,
 			image,
+			copyright,
+			alt,
 		}
 	})
 

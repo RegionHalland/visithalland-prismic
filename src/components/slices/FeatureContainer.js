@@ -31,7 +31,11 @@ const FeatureContainer = ({ slice }) => {
 				'feature_link.seo_featured_imageSharp.childImageSharp.fluid',
 				null,
 		  )
-	const alt = get(primary, 'feature_link.seo_featured_image.alt', {})
+	const copyright = featureImage
+		? get(primary, 'feature_image.copyright', null)
+		: get(primary, 'feature_link.seo_featured_image.copyright', null)
+
+	const alt = get(primary, 'feature_link.seo_featured_image.alt', null)
 	const meta = get(primary, 'feature_link._meta', {})
 	const url = get(primary, 'feature_link.url', '')
 
@@ -43,6 +47,7 @@ const FeatureContainer = ({ slice }) => {
 				linkType={linkType}
 				buttonLabel={buttonLabel}
 				image={image}
+				copyright={copyright}
 				alt={alt}
 				meta={meta}
 				url={url}
@@ -58,6 +63,7 @@ const FeatureContainer = ({ slice }) => {
 				linkType={linkType}
 				buttonLabel={buttonLabel}
 				image={image}
+				copyright={copyright}
 				alt={alt}
 				meta={meta}
 				url={url}
@@ -72,6 +78,7 @@ const FeatureContainer = ({ slice }) => {
 			linkType={linkType}
 			buttonLabel={buttonLabel}
 			image={image}
+			copyright={copyright}
 			alt={alt}
 			meta={meta}
 			url={url}

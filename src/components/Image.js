@@ -6,9 +6,11 @@ const Image = ({ ...props }) => {
 		return (
 			<div>
 				<Img {...props} />
-				<div className="absolute z-50 bottom-0 mb-4 mr-4 rounded-full right-0 text-white text-xs px-4 py-2 bg-blue-600">
-					{props.copyright}
-				</div>
+				{props.copyright && (
+					<div className="absolute z-50 bottom-0 mb-4 mr-4 rounded-full right-0 text-white text-xs px-4 py-2 bg-blue-600">
+						{props.copyright}
+					</div>
+				)}
 			</div>
 		)
 	}

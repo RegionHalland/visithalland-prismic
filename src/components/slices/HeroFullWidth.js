@@ -42,6 +42,7 @@ const HeroFullWidth = ({
 						objectPosition="50% 50%"
 						fluid={image}
 						alt={alt}
+						copyright={copyright}
 					/>
 				)}
 			</ImageContainer>

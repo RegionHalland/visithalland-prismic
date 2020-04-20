@@ -6,13 +6,15 @@ import Image from '../Image'
 
 const HeroCarousel = ({ items }) => (
 	<div className="HAHAHAHAHAHAH">
-		{items.map(({ title, buttonLabel, meta, image }, index) => (
-			<div key={`${title}-${index}`}>
-				<h2>{title}</h2>
-				<Image fluid={image} />
-				<Link to={linkResolver(meta)}>{buttonLabel}</Link>
-			</div>
-		))}
+		{items.map(
+			({ title, buttonLabel, meta, image, alt, copyright }, index) => (
+				<div key={`${title}-${index}`}>
+					<h2>{title}</h2>
+					<Image fluid={image} alt={alt} copyright={copyright} />
+					<Link to={linkResolver(meta)}>{buttonLabel}</Link>
+				</div>
+			),
+		)}
 	</div>
 )
 

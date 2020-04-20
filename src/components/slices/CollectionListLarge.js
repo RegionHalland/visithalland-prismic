@@ -13,6 +13,8 @@ const CollectionListLarge = ({ items }) => {
 					className="mb-16 md:mb-8 block"
 					key={`${index}-${item.meta.uid}`}
 					image={item.image}
+					copyright={item.copyright}
+					alt={item.alt}
 					title={item.title}
 					excerpt={item.description}
 					url={item.url}

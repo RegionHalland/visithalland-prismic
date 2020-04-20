@@ -28,6 +28,8 @@ const List = ({ items }) => {
 									objectFit="cover"
 									objectPosition="50% 50%"
 									fluid={item.image}
+									copyright={item.copyright}
+									alt={item.alt}
 								/>
 							)}
 						</div>
