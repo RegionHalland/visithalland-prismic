@@ -1,10 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import styled from 'styled-components'
 import { linkResolver } from '../../utils/linkResolver'
 import Image from '../Image'
 import ImageCopyright from '../ImageCopyright'
 import Button from '../Button'
 import TextRenderer from '../TextRenderer'
+import Container from '../Container'
 
 const FeatureSplitShadow = ({
 	title,
@@ -16,26 +18,49 @@ const FeatureSplitShadow = ({
 	url,
 	copyright,
 }) => (
-	<div className="flex">
-		<div className="flex-1 bg-coral-500">
-			<h1 className="text-2xl md:text-4xl mx-auto mb-6 w-full leading-tight text-white font-semibold">
-				{title}
-			</h1>
-			<TextRenderer text={body}></TextRenderer>
-			<Button title={buttonLabel} to={linkResolver(meta)} url={url} />
-		</div>
-		<div className="flex-1 relative">
-			<Image
-				className="h-full w-full bottom-0 top-0 left-0 z-0"
-				objectFit="cover"
-				objectPosition="50% 50%"
-				fluid={image}
-				alt={alt}
-			/>
-			<ImageCopyright credits={copyright} />
-		</div>
-	</div>
+	<Container className="px-4 md:px-6">
+		<BoxShadow className="flex flex-col md:flex-row">
+			<div className="flex flex-1 items-center justify-center order-2 md:order-1">
+				<div className="text-center p-8">
+					{meta.tags.length > 0 && (
+						<div>
+							{meta.tags.map((tag, index) => (
+								<span className="text-gray-500" key={tag}>
+									{tag}
+									{!!(index < meta.tags.length - 1) && (
+										<span>, </span>
+									)}
+								</span>
+							))}
+						</div>
+					)}
+					<h1 className="text-2xl md:text-4xl mx-auto mb-6 w-full leading-tight text-black font-semibold max-w-lg">
+						{title}
+					</h1>
+					<Button
+						title={buttonLabel}
+						to={linkResolver(meta)}
+						url={url}
+					/>
+				</div>
+			</div>
+			<div className="relative flex-1 order-1 md:order-2">
+				<Image
+					className="h-full w-full bottom-0 top-0 left-0 z-0"
+					objectFit="contain"
+					objectPosition="50% 50%"
+					fluid={image}
+					alt={alt}
+				/>
+				<ImageCopyright credits={copyright} />
+			</div>
+		</BoxShadow>
+	</Container>
 )
+
+const BoxShadow = styled.div`
+	box-shadow: 10px 10px 0 0 #85a197;
+`
 
 FeatureSplitShadow.propTypes = {
 	title: PropTypes.string.isRequired,
