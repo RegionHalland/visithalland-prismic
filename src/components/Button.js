@@ -27,23 +27,53 @@ const Button = ({ title, url, to, onClick, ...props }) => {
 }
 
 const StyledLink = styled(Link)`
-	${tw`inline-block rounded-full bg-blue-700 text-base lg:text-lg focus:outline-none hover:bg-blue-600 active:bg-blue-600 focus:bg-blue-600 px-8 font-sans py-4 text-white`};
+	${({ colorscheme }) => {
+		switch (colorscheme) {
+			case 'green':
+				return tw`bg-green-500 hover:bg-green-600 active:bg-green-500 focus:bg-blue-500 text-white`
+			default:
+				return tw`bg-blue-700 hover:bg-blue-600 active:bg-blue-600 focus:bg-blue-600 text-white`
+		}
+	}}
+
+	${tw`inline-block rounded-full text-base lg:text-lg focus:outline-none px-8 font-sans py-4`};
+
 	&:disabled {
-		${tw`bg-gray-500 hover:bg-gray-400 focus:bg-gray-400 active:bg-gray-400`};
+		${tw`text-white bg-gray-500 hover:bg-gray-400 focus:bg-gray-400 active:bg-gray-400`};
 	}
 `
 
 const StyledHref = styled.a`
-	${tw`inline-block rounded-full bg-blue-700 text-base lg:text-lg focus:outline-none hover:bg-blue-600 active:bg-blue-600 focus:bg-blue-600 px-8 font-sans py-4 text-white`};
+	${({ colorscheme }) => {
+		switch (colorscheme) {
+			case 'green':
+				return tw`bg-green-500 hover:bg-green-600 active:bg-green-500 focus:bg-blue-500 text-white`
+			default:
+				return tw`bg-blue-700 hover:bg-blue-600 active:bg-blue-600 focus:bg-blue-600 text-white`
+		}
+	}}
+
+	${tw`inline-block rounded-full text-base lg:text-lg focus:outline-none px-8 font-sans py-4`};
+
 	&:disabled {
-		${tw`bg-gray-500 hover:bg-gray-400 focus:bg-gray-400 active:bg-gray-400`};
+		${tw`text-white bg-gray-500 hover:bg-gray-400 focus:bg-gray-400 active:bg-gray-400`};
 	}
 `
 
 const StyledButton = styled.button`
-	${tw`inline-block rounded-full bg-blue-700 text-base lg:text-lg focus:outline-none hover:bg-blue-600 active:bg-blue-600 focus:bg-blue-600 px-8 font-sans py-4 text-white`};
+	${({ colorscheme }) => {
+		switch (colorscheme) {
+			case 'green':
+				return tw`bg-green-500 hover:bg-green-600 active:bg-green-500 focus:bg-blue-500 text-white`
+			default:
+				return tw`bg-blue-700 hover:bg-blue-600 active:bg-blue-600 focus:bg-blue-600 text-white`
+		}
+	}}
+
+	${tw`inline-block rounded-full text-base lg:text-lg focus:outline-none px-8 font-sans py-4`};
+
 	&:disabled {
-		${tw`bg-gray-500 hover:bg-gray-400 focus:bg-gray-400 active:bg-gray-400`};
+		${tw`text-white bg-gray-500 hover:bg-gray-400 focus:bg-gray-400 active:bg-gray-400`};
 	}
 `
 
