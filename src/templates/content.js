@@ -14,7 +14,6 @@ import {
 	FeatureFragment,
 	CollectionFragment,
 	TextFragment,
-	MenusFragment,
 	EditorFragment,
 	VideoFragment,
 	QuoteFragment,
@@ -23,7 +22,7 @@ import {
 
 const Content = ({
 	data: {
-		prismic: { content, allMenus, allAnnouncements },
+		prismic: { content, allAnnouncements },
 	},
 }) => {
 	// Return if page has no content or body (slices)
@@ -57,9 +56,9 @@ const Content = ({
 				title={title}
 			/>
 			<AnnouncementContainer announcements={allAnnouncements} />
-			<HeaderContainer allMenus={allMenus} meta={meta} />
+			<HeaderContainer meta={meta} />
 			<ContentParser slices={slices} meta={meta} seo={seo} />
-			<FooterContainer allMenus={allMenus} meta={meta} />
+			<FooterContainer meta={meta} />
 		</Layout>
 	)
 }
@@ -67,13 +66,6 @@ const Content = ({
 export const query = graphql`
 	query($uid: String!, $lang: String!) {
 		prismic {
-			allMenus(lang: $lang) {
-				edges {
-					node {
-						...MenusFragment
-					}
-				}
-			}
 			allAnnouncements {
 				edges {
 					node {
@@ -132,7 +124,6 @@ Content.fragments = [
 	FeatureFragment,
 	CollectionFragment,
 	TextFragment,
-	MenusFragment,
 	EditorFragment,
 	VideoFragment,
 	QuoteFragment,
