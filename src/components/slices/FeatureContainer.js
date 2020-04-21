@@ -4,14 +4,15 @@ import get from 'lodash.get'
 
 import FeatureFull from './FeatureFull'
 import FeatureOverlay from './FeatureOverlay'
-import FeatureSplit from './FeatureSplit'
+import FeatureSplitColor from './FeatureSplitColor'
+import FeatureSplitShadow from './FeatureSplitShadow'
 
 const FeatureContainer = ({ slice }) => {
 	if (!slice.primary) {
 		return null
 	}
 	const { primary } = slice
-	const variant = get(primary, 'feature_variant', 'small').toLowerCase()
+	const variant = get(primary, 'feature_variant', '').toLowerCase()
 	const linkType = get(primary, 'feature_link._linkType', '')
 	const featureTitle = get(primary, 'feature_title', null)
 	const title = featureTitle
@@ -55,9 +56,25 @@ const FeatureContainer = ({ slice }) => {
 		)
 	}
 
-	if (variant === 'split') {
+	if (variant === 'split color') {
 		return (
-			<FeatureSplit
+			<FeatureSplitColor
+				title={title}
+				body={body}
+				linkType={linkType}
+				buttonLabel={buttonLabel}
+				image={image}
+				copyright={copyright}
+				alt={alt}
+				meta={meta}
+				url={url}
+			/>
+		)
+	}
+
+	if (variant === 'split shadow') {
+		return (
+			<FeatureSplitShadow
 				title={title}
 				body={body}
 				linkType={linkType}

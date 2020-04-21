@@ -5,7 +5,7 @@ import Image from '../Image'
 import Button from '../Button'
 import TextRenderer from '../TextRenderer'
 
-const FeatureSplit = ({
+const FeatureSplitShadow = ({
 	title,
 	body,
 	image,
@@ -23,7 +23,7 @@ const FeatureSplit = ({
 			<TextRenderer text={body}></TextRenderer>
 			<Button title={buttonLabel} to={linkResolver(meta)} url={url} />
 		</div>
-		<div className="flex-1">
+		<div className="flex-1 relative">
 			<Image
 				className="h-full w-full bottom-0 top-0 left-0 z-0"
 				objectFit="cover"
@@ -36,7 +36,7 @@ const FeatureSplit = ({
 	</div>
 )
 
-FeatureSplit.propTypes = {
+FeatureSplitShadow.propTypes = {
 	title: PropTypes.string.isRequired,
 	linkType: PropTypes.string.isRequired,
 	buttonLabel: PropTypes.string.isRequired,
@@ -45,4 +45,4 @@ FeatureSplit.propTypes = {
 	url: PropTypes.string,
 }
 
-export default FeatureSplit
+export default FeatureSplitShadow

@@ -29,6 +29,7 @@ export const FeatureFragment = graphql`
 						uid
 						lang
 						type
+						tags
 					}
 					seo_featured_image
 					seo_featured_imageSharp {
