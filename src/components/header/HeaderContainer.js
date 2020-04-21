@@ -5,7 +5,6 @@ import langs from '../../utils/langs'
 import Header from './Header'
 
 const HeaderContainer = ({ menu, meta }) => {
-	console.log('menu in header', menu)
 	// Prepare main navigation
 	const mainNavigation = {
 		featured_label: menu.menu_featured_label,
