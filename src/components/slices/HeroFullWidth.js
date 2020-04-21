@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import tw from 'tailwind.macro'
 
 import Image from '../Image'
+import ImageCopyright from '../ImageCopyright'
 import TextRenderer from '../TextRenderer'
 import Author from '../Author'
 import Container from '../Container'
@@ -35,15 +36,17 @@ const HeroFullWidth = ({
 					></video>
 				)}
 				{!video && (
-					<Image
-						style={{ position: 'absolute' }}
-						className="h-full w-full bottom-0 top-0 left-0 z-0"
-						objectFit="cover"
-						objectPosition="50% 50%"
-						fluid={image}
-						alt={alt}
-						copyright={copyright}
-					/>
+					<div>
+						<Image
+							style={{ position: 'absolute' }}
+							className="h-full w-full bottom-0 top-0 left-0 z-0"
+							objectFit="cover"
+							objectPosition="50% 50%"
+							fluid={image}
+							alt={alt}
+						/>
+						<ImageCopyright credits={copyright} />
+					</div>
 				)}
 			</ImageContainer>
 			<Container className="px-4 md:px-6 mb-20" tight>

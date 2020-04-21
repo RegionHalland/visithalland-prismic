@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { linkResolver } from '../../utils/linkResolver'
 import { Parallax } from 'react-scroll-parallax'
 import Image from '../Image'
+import ImageCopyright from '../ImageCopyright'
 import Button from '../Button'
 import Container from '../Container'
 import TextRenderer from '../TextRenderer'
@@ -21,15 +22,17 @@ const FeatureOverlay = ({
 }) => (
 	<Container className="lg:px-6">
 		<div className="h-60vh lg:h-60vh w-full flex items-end relative px-4 lg:rounded overflow-hidden md:px-6 -mb-32">
-			<Image
-				style={{ position: 'absolute' }}
-				className="h-full w-full bottom-0 top-0 left-0 z-0"
-				objectFit="cover"
-				objectPosition="50% 50%"
-				fluid={image}
-				copyright={copyright}
-				alt={alt}
-			/>
+			<div>
+				<Image
+					style={{ position: 'absolute' }}
+					className="h-full w-full bottom-0 top-0 left-0 z-0"
+					objectFit="cover"
+					objectPosition="50% 50%"
+					fluid={image}
+					alt={alt}
+				/>
+				<ImageCopyright credits={copyright} />
+			</div>
 		</div>
 		<Parallax y={[10, -10]} className="w-full">
 			<Container className="z-10 relative w-full relative flex justify-start px-4 md:px-6">

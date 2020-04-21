@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { linkResolver } from '../../utils/linkResolver'
 import Image from '../Image'
+import ImageCopyright from '../ImageCopyright'
 import Button from '../Button'
 import TextRenderer from '../TextRenderer'
 import Container from '../Container'
@@ -28,15 +29,17 @@ const FeatureFull = ({
 			</div>
 			<Button title={buttonLabel} to={linkResolver(meta)} url={url} />
 		</Container>
-		<Image
-			style={{ position: 'absolute' }}
-			className="h-full w-full bottom-0 top-0 left-0 z-0"
-			objectFit="cover"
-			objectPosition="50% 50%"
-			fluid={image}
-			copyright={copyright}
-			alt={alt}
-		/>
+		<div>
+			<Image
+				style={{ position: 'absolute' }}
+				className="h-full w-full bottom-0 top-0 left-0 z-0"
+				objectFit="cover"
+				objectPosition="50% 50%"
+				fluid={image}
+				alt={alt}
+			/>
+			<ImageCopyright credits={copyright} />
+		</div>
 	</ImageContainer>
 )
 

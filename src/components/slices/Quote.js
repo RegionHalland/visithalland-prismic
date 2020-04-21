@@ -6,6 +6,7 @@ import resolveConfig from 'tailwindcss/resolveConfig'
 import tailwindConfig from '../../../tailwind.config.js'
 
 import Image from '../Image'
+import ImageCopyright from '../ImageCopyright'
 import Button from '../Button'
 import Container from '../Container'
 import styled from 'styled-components'
@@ -25,15 +26,17 @@ const Quote = ({
 	<div className="bg-sand-300 py-12 mt-32">
 		<Container className="px-4 lg:px-6 flex flex-wrap -mx-3" tight>
 			<ImageContainer className="w-full md:w-6/12 px-3 rounded overflow-hidden relative -mt-32 mb-6 md:mb-0">
-				<Image
-					style={{ position: 'absolute' }}
-					className="h-full w-full bottom-0 top-0 left-0 z-0"
-					objectFit="cover"
-					objectPosition="50% 50%"
-					fluid={image}
-					copyright={copyright}
-					alt={alt}
-				/>
+				<div>
+					<Image
+						style={{ position: 'absolute' }}
+						className="h-full w-full bottom-0 top-0 left-0 z-0"
+						objectFit="cover"
+						objectPosition="50% 50%"
+						fluid={image}
+						alt={alt}
+					/>
+					<ImageCopyright credits={copyright} />
+				</div>
 			</ImageContainer>
 
 			<div className="w-full md:w-6/12 md:pl-6">

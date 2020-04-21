@@ -3,14 +3,18 @@ import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import { linkResolver } from '../../utils/linkResolver'
 import Image from '../Image'
+import ImageCopyright from '../ImageCopyright'
 
 const HeroCarousel = ({ items }) => (
-	<div className="HAHAHAHAHAHAH">
+	<div>
 		{items.map(
 			({ title, buttonLabel, meta, image, alt, copyright }, index) => (
 				<div key={`${title}-${index}`}>
 					<h2>{title}</h2>
-					<Image fluid={image} alt={alt} copyright={copyright} />
+					<div>
+						<Image fluid={image} alt={alt} />
+						<ImageCopyright credits={copyright} />
+					</div>
 					<Link to={linkResolver(meta)}>{buttonLabel}</Link>
 				</div>
 			),

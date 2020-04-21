@@ -6,6 +6,7 @@ import { Parallax } from 'react-scroll-parallax'
 
 import BackgroundPattern from '../../images/bg-pattern.svg'
 import Image from '../Image'
+import ImageCopyright from '../ImageCopyright'
 import TextRenderer from '../TextRenderer'
 import Author from '../Author'
 import Container from '../Container'
@@ -38,15 +39,17 @@ const HeroSplit = ({
 								></video>
 							)}
 							{!video && (
-								<Image
-									style={{ position: 'absolute' }}
-									className="h-full w-full bottom-0 top-0 left-0 z-0"
-									objectFit="cover"
-									objectPosition="50% 50%"
-									fluid={image}
-									alt={alt}
-									copyright={copyright}
-								/>
+								<div>
+									<Image
+										style={{ position: 'absolute' }}
+										className="h-full w-full bottom-0 top-0 left-0 z-0"
+										objectFit="cover"
+										objectPosition="50% 50%"
+										fluid={image}
+										alt={alt}
+									/>
+									<ImageCopyright credits={copyright} />
+								</div>
 							)}
 						</ImageContainer>
 					</Parallax>

@@ -4,6 +4,7 @@ import styled from 'styled-components'
 
 import ConditionalWrapper from './ConditionalWrapper'
 import Image from './Image'
+import ImageCopyright from './ImageCopyright'
 import Link from 'gatsby-link'
 
 import TextRenderer from './TextRenderer'
@@ -35,15 +36,17 @@ const CollectionListItemLarge = ({
 			<div className="w-full md:w-5/12  md:px-3 mb-6">
 				<div className="w-full h-40vh overflow-hidden relative">
 					{image && (
-						<StyledImage
-							style={{ position: 'absolute' }}
-							className="h-full w-full bottom-0 md:rounded top-0 left-0 z-0"
-							objectFit="cover"
-							objectPosition="50% 50%"
-							fluid={image}
-							copyright={copyright}
-							alt={alt}
-						/>
+						<div>
+							<StyledImage
+								style={{ position: 'absolute' }}
+								className="h-full w-full bottom-0 md:rounded top-0 left-0 z-0"
+								objectFit="cover"
+								objectPosition="50% 50%"
+								fluid={image}
+								alt={alt}
+							/>
+							<ImageCopyright credits={copyright} />
+						</div>
 					)}
 				</div>
 			</div>

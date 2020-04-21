@@ -6,6 +6,7 @@ import tw from 'tailwind.macro'
 import Container from '../Container'
 
 import Image from '../Image'
+import ImageCopyright from '../ImageCopyright'
 
 import TextRenderer from '../TextRenderer'
 
@@ -22,15 +23,17 @@ const List = ({ items }) => {
 					<div className="w-full md:w-6/12  md:px-3 mb-6">
 						<div className="w-full h-30vh md:h-40vh overflow-hidden relative">
 							{item.image && (
-								<Image
-									style={{ position: 'absolute' }}
-									className="h-full w-full bottom-0 md:rounded top-0 left-0 z-0"
-									objectFit="cover"
-									objectPosition="50% 50%"
-									fluid={item.image}
-									copyright={item.copyright}
-									alt={item.alt}
-								/>
+								<div>
+									<Image
+										style={{ position: 'absolute' }}
+										className="h-full w-full bottom-0 md:rounded top-0 left-0 z-0"
+										objectFit="cover"
+										objectPosition="50% 50%"
+										fluid={item.image}
+										alt={item.alt}
+									/>
+									<ImageCopyright credits={item.copyright} />
+								</div>
 							)}
 						</div>
 					</div>

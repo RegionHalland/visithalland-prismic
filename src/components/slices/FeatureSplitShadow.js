@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { linkResolver } from '../../utils/linkResolver'
 import Image from '../Image'
+import ImageCopyright from '../ImageCopyright'
 import Button from '../Button'
 import TextRenderer from '../TextRenderer'
 
@@ -30,8 +31,8 @@ const FeatureSplitShadow = ({
 				objectPosition="50% 50%"
 				fluid={image}
 				alt={alt}
-				copyright={copyright}
 			/>
+			<ImageCopyright credits={copyright} />
 		</div>
 	</div>
 )

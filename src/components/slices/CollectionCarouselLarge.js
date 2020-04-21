@@ -7,6 +7,7 @@ import styled from 'styled-components'
 import tw from 'tailwind.macro'
 
 import Image from '../Image'
+import ImageCopyright from '../ImageCopyright'
 import Container from '../Container'
 import CarouselArrow from '../CarouselArrow'
 
@@ -55,15 +56,17 @@ const CollectionCarouselLarge = ({ items }) => {
 								url={url}
 							/>
 						</Container>
-						<Image
-							style={{ position: 'absolute' }}
-							className="h-full w-full bottom-0 top-0 left-0 z-0"
-							objectFit="cover"
-							objectPosition="50% 50%"
-							fluid={image}
-							copyright={copyright}
-							alt={alt}
-						/>
+						<div>
+							<Image
+								style={{ position: 'absolute' }}
+								className="h-full w-full bottom-0 top-0 left-0 z-0"
+								objectFit="cover"
+								objectPosition="50% 50%"
+								fluid={image}
+								alt={alt}
+							/>
+							<ImageCopyright credits={copyright} />
+						</div>
 					</ImageContainer>
 				),
 			)}

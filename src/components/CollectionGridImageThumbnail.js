@@ -7,6 +7,7 @@ import resolveConfig from 'tailwindcss/resolveConfig'
 import tailwindConfig from '../../tailwind.config.js'
 
 import Image from './Image'
+import ImageCopyright from './ImageCopyright'
 import ConditionalWrapper from './ConditionalWrapper'
 import Link from 'gatsby-link'
 import ArrowRight from './icons/ArrowRight'
@@ -65,15 +66,17 @@ const CollectionGridImageThumbnail = ({
 				</LinkIndicator>
 			</div>
 			{image && (
-				<StyledImage
-					style={{ position: 'absolute' }}
-					className="h-full w-full bottom-0 top-0 left-0 z-0"
-					objectFit="cover"
-					objectPosition="50% 50%"
-					fluid={image}
-					copyright={copyright}
-					alt={alt}
-				/>
+				<div>
+					<StyledImage
+						style={{ position: 'absolute' }}
+						className="h-full w-full bottom-0 top-0 left-0 z-0"
+						objectFit="cover"
+						objectPosition="50% 50%"
+						fluid={image}
+						alt={alt}
+					/>
+					<ImageCopyright credits={copyright} />
+				</div>
 			)}
 		</React.Fragment>
 	</ConditionalWrapper>

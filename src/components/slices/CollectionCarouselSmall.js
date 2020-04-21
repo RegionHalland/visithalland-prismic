@@ -5,7 +5,6 @@ import Link from 'gatsby-link'
 import styled from 'styled-components'
 import tw from 'tailwind.macro'
 
-import Image from '../Image'
 import Container from '../Container'
 import CarouselArrow from '../CarouselArrow'
 import ConditionalWrapper from '../ConditionalWrapper'
