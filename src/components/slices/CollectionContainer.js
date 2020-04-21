@@ -23,7 +23,6 @@ const CollectionContainer = ({ slice }) => {
 	).toLowerCase()
 
 	const items = fields.map(item => {
-		console.log('item', item)
 		const collectionTitle = get(item, 'collection_title', null)
 		const title = collectionTitle
 			? collectionTitle
