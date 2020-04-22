@@ -88,7 +88,7 @@ export const query = graphql`
 				seo_featured_image
 				seo_featured_imageSharp {
 					childImageSharp {
-						fluid(maxWidth: 1920, quality: 80) {
+						fluid(maxWidth: 960, quality: 80) {
 							...GatsbyImageSharpFluid
 						}
 						fixed(width: 1200, height: 628, quality: 80) {
