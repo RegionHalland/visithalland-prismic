@@ -7,11 +7,13 @@ import Container from '../Container'
 
 const SectionHeaderLine = ({ title, body }) => {
 	return (
-		<Container className="flex content-center items-center px-4 md:px-6">
-			<TitleContainer>
-				<TextRenderer text={title} />
-			</TitleContainer>
-			<div className="flex-grow bg-green-600 h-1"></div>
+		<Container>
+			<div className="flex content-center items-center px-4 md:px-6">
+				<TitleContainer>
+					<TextRenderer text={title} />
+				</TitleContainer>
+				<div className="flex-grow bg-green-600 h-1"></div>
+			</div>
 		</Container>
 	)
 }

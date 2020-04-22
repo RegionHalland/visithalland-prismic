@@ -8,16 +8,18 @@ import ArrowDown from '../icons/ArrowDown'
 
 const SectionHeaderCentered = ({ title, body }) => {
 	return (
-		<Container className="text-center flex items-center flex-col px-4 md:px-6 md:w-6/12">
-			<TitleContainer>
-				<TextRenderer text={title} />
-			</TitleContainer>
-			<div className="bg-green-600 w-6 h-1 mb-4"></div>
-			<div className="text-gray-600 mb-6">
-				<TextRenderer text={body} />
-			</div>
-			<div className="h-16 w-10 mx-auto rounded-full bg-green-600 flex items-center justify-center">
-				<ArrowDown height={16} width={16} className="text-white" />
+		<Container>
+			<div className="text-center flex items-center mx-auto flex-col px-4 md:px-6 md:w-6/12">
+				<TitleContainer>
+					<TextRenderer text={title} />
+				</TitleContainer>
+				<div className="bg-green-600 w-6 h-1 mb-4"></div>
+				<div className="text-gray-600 mb-6">
+					<TextRenderer text={body} />
+				</div>
+				<div className="h-16 w-10 mx-auto rounded-full bg-green-600 flex items-center justify-center">
+					<ArrowDown height={16} width={16} className="text-white" />
+				</div>
 			</div>
 		</Container>
 	)
