@@ -11,7 +11,7 @@ module.exports = {
 		},
 		fontFamily: {
 			sans: [
-				'CircularStd',
+				'Larsseit',
 				'-apple-system',
 				'BlinkMacSystemFont',
 				'"Segoe UI"',
