@@ -18,6 +18,21 @@ export const MenuFragment = graphql`
 						... on PRISMIC_Content {
 							title
 							seo_description
+							seo_featured_image
+							seo_featured_imageSharp {
+								childImageSharp {
+									fluid(maxWidth: 1920, quality: 80) {
+										...GatsbyImageSharpFluid
+									}
+									fixed(
+										width: 800
+										height: 800
+										quality: 80
+									) {
+										...GatsbyImageSharpFixed
+									}
+								}
+							}
 							_meta {
 								uid
 								lang
