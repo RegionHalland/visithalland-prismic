@@ -3,43 +3,85 @@ import React from 'react'
 import Link from 'gatsby-link'
 import styled from 'styled-components'
 import tw from 'tailwind.macro'
+import { useTransition, animated, config } from 'react-spring'
 
 import ArrowRightIcon from './icons/ArrowRightIcon'
 
-const FancyLink = ({ title, url, to, onClick, active, ...props }) => {
+const FancyLink = ({
+	title,
+	url,
+	to,
+	onClick,
+	active,
+	colorscheme,
+	...props
+}) => {
+	const transitions = useTransition(active, null, {
+		from: { opacity: 0, transform: 'translateX(-100%)' },
+		enter: { opacity: 1, transform: 'translateX(0%)' },
+		leave: { opacity: 0, transform: 'translateX(100%)' },
+		initial: null,
+		config: config.stiff,
+	})
 	return (
 		<StyledLink className="focus:outline-none" onClick={onClick} {...props}>
-			<StyledTitle>{title}</StyledTitle>
-			<StyledIcon className="h-6 w-6 mr-2 flex items-center justify-center rounded-full bg-green-500">
-				<StyledIconComponent
-					height={10}
-					width={10}
-					className="text-green-200"
-				/>
-			</StyledIcon>
+			<StyledIconContainer className="h-6 w-6 flex mr-2 items-center justify-center rounded-full bg-green-500">
+				{transitions.map(({ item, key, props }) =>
+					item ? (
+						<AnimationContainer style={props} key={key}>
+							<ArrowRightIcon
+								height={10}
+								width={10}
+								className="text-green-200"
+							/>
+						</AnimationContainer>
+					) : (
+						<AnimationContainer style={props} key={key}>
+							<ArrowRightIcon
+								height={10}
+								width={10}
+								className="text-green-200"
+							/>
+						</AnimationContainer>
+					),
+				)}
+			</StyledIconContainer>
+			<StyledTitle colorscheme={colorscheme}>{title}</StyledTitle>
 		</StyledLink>
 	)
 }
 
 const StyledTitle = styled.span`
+	${({ colorscheme }) => {
+		switch (colorscheme) {
+			case 'white':
+				return tw`text-white`
+			default:
+				return tw`text-black`
+		}
+	}}
 	${tw`block`};
 	transition: transform 0.25s, opacity 0.25s;
 `
-const StyledIcon = styled.span`
-	${tw`h-6 w-6 bg-green-500`};
+
+const StyledIconContainer = styled.span`
+	${tw`h-6 w-6 bg-green-500 relative overflow-hidden`};
 `
+
+const StyledAnimationContainer = styled.div`
+	${tw`absolute h-full w-full flex items-center justify-center`};
+`
+
+const AnimationContainer = animated(StyledAnimationContainer)
 
 const StyledLink = styled.button`
-	${tw`relative focus:outline-none font-medium inline-flex`};
+	${tw`relative focus:outline-none font-medium inline-flex py-2`};
 `
-
-const StyledIconComponent = styled(ArrowRightIcon)``
 
 FancyLink.propTypes = {
 	title: PropTypes.string.isRequired,
 	onClick: PropTypes.func,
-	active: PropTypes.func,
-	onMouseLeave: PropTypes.func,
+	active: PropTypes.bool,
 }
 
 export default FancyLink
