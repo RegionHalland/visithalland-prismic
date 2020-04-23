@@ -1,15 +1,30 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Truncate from 'react-truncate'
 import { RichText } from 'prismic-reactjs'
 import { linkResolver } from '../utils/linkResolver'
 
-const TextRenderer = ({ text }) => (
-	<RichText
-		render={text}
-		htmlSerializer={htmlSerializer}
-		linkResolver={linkResolver}
-	/>
-)
+const TextRenderer = ({ text, lines, ellipsis = '...' }) => {
+	if (lines && typeof lines === 'number') {
+		return (
+			<Truncate lines={3} ellipsis={<span>{ellipsis}</span>}>
+				<RichText
+					render={text}
+					htmlSerializer={htmlSerializer}
+					linkResolver={linkResolver}
+				/>
+			</Truncate>
+		)
+	}
+
+	return (
+		<RichText
+			render={text}
+			htmlSerializer={htmlSerializer}
+			linkResolver={linkResolver}
+		/>
+	)
+}
 
 // htmlSerializer customizes HTML output
 // https://prismic.io/docs/reactjs/beyond-the-api/html-serializer
@@ -29,6 +44,8 @@ const htmlSerializer = (type, element, content, children, key) => {
 
 TextRenderer.propTypes = {
 	text: PropTypes.arrayOf(PropTypes.object),
+	lines: PropTypes.number,
+	ellipsis: PropTypes.string,
 }
 
 export default TextRenderer
