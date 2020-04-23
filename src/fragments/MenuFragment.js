@@ -36,6 +36,7 @@ export const MenuFragment = graphql`
 							_meta {
 								uid
 								lang
+								type
 							}
 						}
 					}

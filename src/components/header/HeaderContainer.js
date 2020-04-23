@@ -9,17 +9,29 @@ const HeaderContainer = ({ menu, meta }) => {
 	const mainNavigation = {
 		featured_label: menu.menu_featured_label,
 		misc_label: menu.menu_misc_label,
-		items: menu.nav.map((navigationLink, index) => {
-			console.log(navigationLink)
-			return {
-				label: get(navigationLink, 'primary.menu_item_label', null),
-				id: index,
-				subItems: navigationLink.fields.map(subItem => ({
-					label: get(subItem, 'menu_sub_item_link.title', null),
-					meta: get(subItem, 'menu_sub_item_link._meta', null),
-				})),
-			}
-		}),
+		items: menu.nav.map((item, index) => ({
+			label: get(item, 'primary.menu_item_label', null),
+			id: index,
+			subItems: item.fields.map(subItem => ({
+				title: get(subItem, 'menu_sub_item_link.title', null),
+				description: get(
+					subItem,
+					'menu_sub_item_link.seo_description',
+					[],
+				),
+				image: get(
+					subItem,
+					'menu_sub_item_link.seo_featured_imageSharp.childImageSharp.fluid',
+					null,
+				),
+				imageCopyright: get(
+					subItem,
+					'menu_sub_item_link.seo_featured_image.copyright',
+					null,
+				),
+				meta: get(subItem, 'menu_sub_item_link._meta', null),
+			})),
+		})),
 	}
 
 	// Prepare top navigation
