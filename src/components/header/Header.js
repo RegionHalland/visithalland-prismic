@@ -6,6 +6,7 @@ import Container from '../Container'
 import Image from '../Image'
 import ImageCopyright from '../ImageCopyright'
 import TextRenderer from '../TextRenderer'
+import CloseIcon from '../icons/CloseIcon'
 import Button from '../Button'
 import Link from 'gatsby-link'
 import { linkResolver } from '../../utils/linkResolver'
@@ -34,14 +35,10 @@ const Header = ({ meta, mainNavigation, topNavigation, langs }) => {
 		<React.Fragment>
 			<TopNavigation items={topNavigation} />
 			<header className="sticky top-0 z-50">
-				<BackgroundPattern className="relative bg-blue-700">
+				<BackgroundPattern className="bg-blue-700">
 					<Container className="flex flex-wrap justify-between px-4 md:px-6 py-4 md:py-6">
 						<Link
-							to={linkResolver({
-								lang: meta.lang,
-								type: 'content',
-								uid: 'frontpage',
-							})}
+							to={linkResolver({ lang: meta.lang })}
 							className="text-white leading-none font-semibold text-xl md:text-2xl md:pr-4 lg:pr-8"
 						>
 							Visithalland.com
@@ -71,7 +68,7 @@ const Header = ({ meta, mainNavigation, topNavigation, langs }) => {
 							))}
 						</ul>
 					</Container>
-					<ul className="flex w-full md:hidden bg-blue-600 px-4 py-3">
+					<ul className="flex md:hidden overflow-x-scroll relative w-full bg-blue-600 px-4 py-3 ">
 						{mainNavigation.items.map(({ label, id }) => (
 							<li key={id}>
 								<NavItem
@@ -89,10 +86,11 @@ const Header = ({ meta, mainNavigation, topNavigation, langs }) => {
 						<Container className="md:px-6">
 							<DropdownInner className="flex flex-col">
 								<button
-									className="flex justify-between focus:outline-none w-full  bg-blue-700 text-white font-bold py-3 px-4"
+									className="flex justify-between items-center focus:outline-none w-full bg-blue-700 text-white font-bold py-3 px-4 leading-none"
 									onClick={closeMenu}
 								>
-									Stäng meny
+									<span>Stäng meny</span>
+									<CloseIcon width={16} height={16} />
 								</button>
 								<div className="flex flex-1 flex-wrap">
 									<FeaturedArticle
