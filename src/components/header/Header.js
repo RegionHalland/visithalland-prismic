@@ -46,17 +46,18 @@ const Header = ({ meta, mainNavigation, topNavigation, langs }) => {
 						>
 							Visithalland.com
 						</Link>
-						<div className="hidden md:flex flex-1 px-4 lg:px-8">
+						<ul className="hidden md:flex flex-1 px-4 lg:px-8">
 							{mainNavigation.items.map(({ label, id }) => (
-								<NavItem
-									key={id}
-									active={activeId === id}
-									onClick={() => menuItemPress(id)}
-								>
-									{label}
-								</NavItem>
+								<li key={id}>
+									<NavItem
+										active={activeId === id}
+										onClick={() => menuItemPress(id)}
+									>
+										{label}
+									</NavItem>
+								</li>
 							))}
-						</div>
+						</ul>
 						<ul className="flex md:pl-4 lg:pl-8">
 							{langs.map(item => (
 								<li key={item}>
@@ -70,13 +71,25 @@ const Header = ({ meta, mainNavigation, topNavigation, langs }) => {
 							))}
 						</ul>
 					</Container>
+					<ul className="flex w-full md:hidden bg-blue-600 px-4 py-3">
+						{mainNavigation.items.map(({ label, id }) => (
+							<li key={id}>
+								<NavItem
+									active={activeId === id}
+									onClick={() => menuItemPress(id)}
+								>
+									{label}
+								</NavItem>
+							</li>
+						))}
+					</ul>
 				</BackgroundPattern>
 				{typeof activeId === 'number' && (
 					<DropdownContainer className="absolute z-50 bottom-0 w-full">
 						<Container className="md:px-6">
 							<DropdownInner className="flex flex-col">
 								<button
-									className="flex justify-between focus:outline-none w-full py-3 px-4 bg-gray-200"
+									className="flex justify-between focus:outline-none w-full  bg-blue-700 text-white font-bold py-3 px-4"
 									onClick={closeMenu}
 								>
 									Stäng meny
@@ -127,8 +140,8 @@ const FeaturedArticle = ({ label, article }) => {
 				<h3 className="font-bold text-3xl leading-tight mb-3">
 					{article.title}
 				</h3>
-				<div className="text-black mb-3 leading-normal">
-					<TextRenderer text={article.description} />
+				<div className="text-black mb-6 leading-normal">
+					<TextRenderer lines={3} text={article.description} />
 				</div>
 				<Button
 					title="Läs mer"
@@ -164,7 +177,7 @@ const NavItem = styled.button`
 		content: '';
 		transition: transform 0.2s ease-in-out;
 		transform: ${({ active }) =>
-			active ? 'translateY(12px) scale(1)' : 'translateY(12px) scale(0)'};
+			active ? 'translateY(16px) scale(1)' : 'translateY(16px) scale(0)'};
 		${tw`block absolute left-0 right-0 bottom-0 mx-auto bg-white rounded-full w-2 h-2`};
 	}
 `
