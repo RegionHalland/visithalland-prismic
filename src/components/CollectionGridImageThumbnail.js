@@ -10,7 +10,7 @@ import Image from './Image'
 import ImageCopyright from './ImageCopyright'
 import ConditionalWrapper from './ConditionalWrapper'
 import Link from 'gatsby-link'
-import ArrowRight from './icons/ArrowRight'
+import ArrowRightIcon from './icons/ArrowRightIcon'
 
 const config = resolveConfig(tailwindConfig)
 
@@ -62,7 +62,7 @@ const CollectionGridImageThumbnail = ({
 					{title}
 				</h2>
 				<LinkIndicator>
-					<ArrowRight className="absolute w-4 h-4 text-white" />
+					<ArrowRightIcon className="absolute w-4 h-4 text-white" />
 				</LinkIndicator>
 			</div>
 			{image && (

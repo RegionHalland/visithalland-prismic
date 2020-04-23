@@ -7,7 +7,7 @@ import ImageCopyright from '../ImageCopyright'
 import TextRenderer from '../TextRenderer'
 import Author from '../Author'
 import Container from '../Container'
-import ArrowDown from '../icons/ArrowDown'
+import ArrowDownIcon from '../icons/ArrowDownIcon'
 
 const HeroFullScreen = ({
 	title,
@@ -37,7 +37,11 @@ const HeroFullScreen = ({
 					/>
 				)}
 				<div className="h-12 w-12 mx-auto rounded-full bg-blue-700 flex items-center justify-center mb-16">
-					<ArrowDown height={16} width={16} className="text-white" />
+					<ArrowDownIcon
+						height={16}
+						width={16}
+						className="text-white"
+					/>
 				</div>
 			</Container>
 			{video && (

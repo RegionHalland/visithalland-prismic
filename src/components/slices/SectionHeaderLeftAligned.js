@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import tw from 'tailwind.macro'
 import TextRenderer from '../TextRenderer'
 import Container from '../Container'
-import ArrowDown from '../icons/ArrowDown'
+import ArrowDownIcon from '../icons/ArrowDownIcon'
 
 const SectionHeaderLeftAligned = ({ title, body }) => {
 	return (
@@ -19,7 +19,11 @@ const SectionHeaderLeftAligned = ({ title, body }) => {
 					</div>
 				</div>
 				<div className="h-16 w-10 mx-auto rounded-full bg-green-600 flex items-center justify-center">
-					<ArrowDown height={16} width={16} className="text-white" />
+					<ArrowDownIcon
+						height={16}
+						width={16}
+						className="text-white"
+					/>
 				</div>
 			</div>
 		</Container>

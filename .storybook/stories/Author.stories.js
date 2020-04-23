@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { withKnobs, text, object } from '@storybook/addon-knobs/react'
 
-import Author from '../components/Author'
+import Author from '../../src/components/Author'
 import PlaceholderImage from './assets/placeholder.jpg'
 
 const Placeholder = {
