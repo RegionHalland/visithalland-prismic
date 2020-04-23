@@ -1,12 +1,14 @@
 import PropTypes from 'prop-types'
 import React from 'react'
+import styled from 'styled-components'
+import tw from 'tailwind.macro'
 
 import Image from './Image'
 
-const Author = ({ name, role, email, phone, image, ...props }) => (
-	<div {...props}>
+const Author = ({ name, role, email, phone, image, colorscheme, ...props }) => (
+	<Container colorscheme={colorscheme} {...props}>
 		<div className="flex items-center">
-			<div className="h-16 w-16 mr-2 border-coral-500 border-4 overflow-hidden rounded-full relative">
+			<div className="h-16 w-16 mr-4 bg-gray-200 overflow-hidden rounded-full relative">
 				<Image
 					style={{ position: 'absolute' }}
 					className="h-full w-full bottom-0 top-0 left-0 z-0"
@@ -16,13 +18,24 @@ const Author = ({ name, role, email, phone, image, ...props }) => (
 					alt={`Bild på ${name}`}
 				/>
 			</div>
-			<div className="">
-				<span className="font-semibold block mb-1">{name}</span>
-				<div className="text-sm opacity-75 block">{role}</div>
+			<div>
+				<span className="font-medium text-base block">{name}</span>
+				<div className="text-sm opacity-50 block">{role}</div>
 			</div>
 		</div>
-	</div>
+	</Container>
 )
+
+const Container = styled.div`
+	${({ colorscheme }) => {
+		switch (colorscheme) {
+			case 'white':
+				return tw`text-white`
+			default:
+				return tw`text-black`
+		}
+	}}
+`
 
 Author.defaultProps = {
 	name: '',
