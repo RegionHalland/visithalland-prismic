@@ -19,6 +19,7 @@ import {
 	QuoteFragment,
 	ListFragment,
 	MenuFragment,
+	SectionHeaderFragment,
 } from '../fragments'
 
 const Content = ({
@@ -87,7 +88,7 @@ export const query = graphql`
 				seo_featured_image
 				seo_featured_imageSharp {
 					childImageSharp {
-						fluid(maxWidth: 1920, quality: 80) {
+						fluid(maxWidth: 960, quality: 80) {
 							...GatsbyImageSharpFluid
 						}
 						fixed(width: 1200, height: 628, quality: 80) {
@@ -116,6 +117,7 @@ export const query = graphql`
 					...VideoFragment
 					...QuoteFragment
 					...ListFragment
+					...SectionHeaderFragment
 				}
 			}
 		}
@@ -133,6 +135,7 @@ Content.fragments = [
 	QuoteFragment,
 	ListFragment,
 	MenuFragment,
+	SectionHeaderFragment,
 ]
 
 export default Content

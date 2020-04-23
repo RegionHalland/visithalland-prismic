@@ -10,10 +10,10 @@ export const ListFragment = graphql`
 			list_image
 			list_imageSharp {
 				childImageSharp {
-					fluid(maxWidth: 1920, quality: 80) {
+					fluid(maxWidth: 400, quality: 80) {
 						...GatsbyImageSharpFluid
 					}
-					fixed(width: 800, height: 800, quality: 80) {
+					fixed(width: 400, height: 400, quality: 80) {
 						...GatsbyImageSharpFixed
 					}
 				}

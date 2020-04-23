@@ -7,7 +7,7 @@ module.exports = {
 		siteUrl:
 			process.env.NODE_ENV === 'development'
 				? 'http://localhost:8000'
-				: 'https://visithalland-beta.netlify.com', // no trailing slash!
+				: 'https://beta.visithalland.com', // no trailing slash!
 	},
 	plugins: [
 		'gatsby-plugin-react-helmet',

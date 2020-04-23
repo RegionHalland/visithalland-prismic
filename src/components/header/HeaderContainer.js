@@ -9,7 +9,7 @@ const HeaderContainer = ({ menu, meta }) => {
 	const mainNavigation = {
 		featured_label: menu.menu_featured_label,
 		misc_label: menu.menu_misc_label,
-		items: menu.nav.map((item, index) => ({
+		items: get(menu, 'nav', []).map((item, index) => ({
 			label: get(item, 'primary.menu_item_label', null),
 			id: index,
 			subItems: item.fields.map(subItem => ({
@@ -35,9 +35,9 @@ const HeaderContainer = ({ menu, meta }) => {
 	}
 
 	// Prepare top navigation
-	const topNavigation = menu.top_menu_links.map(el => ({
-		label: el.top_menu_link_label,
-		link: el.top_menu_link,
+	const topNavigation = get(menu, 'top_menu_links', []).map(el => ({
+		label: get(el, 'top_menu_link_label', null),
+		link: get(el, 'primary.top_menu_link', {}),
 	}))
 
 	return (
