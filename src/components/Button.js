@@ -5,73 +5,70 @@ import Link from 'gatsby-link'
 import styled from 'styled-components'
 import tw from 'tailwind.macro'
 
-const Button = ({ title, url, to, onClick, ...props }) => {
+const Button = ({ title, url, to, onClick, colorscheme, ...props }) => {
 	if (onClick)
 		return (
-			<StyledButton onClick={onClick} {...props}>
-				{title}
-			</StyledButton>
+			<button className="focus:outline-none" onClick={onClick} {...props}>
+				<StyledButton data-title={title} colorscheme={colorscheme}>
+					<StyledTitle>{title}</StyledTitle>
+				</StyledButton>
+			</button>
 		)
 
 	if (url)
 		return (
-			<StyledHref href={url} {...props}>
-				{title}
-			</StyledHref>
+			<a className="focus:outline-none" href={url} {...props}>
+				<StyledButton data-title={title} colorscheme={colorscheme}>
+					<StyledTitle>{title}</StyledTitle>
+				</StyledButton>
+			</a>
 		)
 	return (
-		<StyledLink to={to} {...props}>
-			{title}
-		</StyledLink>
+		<Link className="focus:outline-none" to={to} {...props}>
+			<StyledButton data-title={title} colorscheme={colorscheme}>
+				<StyledTitle>{title}</StyledTitle>
+			</StyledButton>
+		</Link>
 	)
 }
 
-const StyledLink = styled(Link)`
-	${({ colorscheme }) => {
-		switch (colorscheme) {
-			case 'green':
-				return tw`bg-green-500 hover:bg-green-600 active:bg-green-500 focus:bg-blue-500 text-white`
-			default:
-				return tw`bg-blue-700 hover:bg-blue-600 active:bg-blue-600 focus:bg-blue-600 text-white`
-		}
-	}}
-
-	${tw`inline-block rounded-full text-base lg:text-lg focus:outline-none px-8 font-sans py-4`};
-
-	&:disabled {
-		${tw`text-white bg-gray-500 hover:bg-gray-400 focus:bg-gray-400 active:bg-gray-400`};
-	}
+const StyledTitle = styled.span`
+	${tw`block`};
+	transition: transform 0.25s, opacity 0.25s;
 `
 
-const StyledHref = styled.a`
+const StyledButton = styled.div`
 	${({ colorscheme }) => {
 		switch (colorscheme) {
 			case 'green':
-				return tw`bg-green-500 hover:bg-green-600 active:bg-green-500 focus:bg-blue-500 text-white`
+				return tw`bg-green-600 hover:bg-green-500 active:bg-green-500 focus:bg-blue-500 text-white`
 			default:
 				return tw`bg-blue-700 hover:bg-blue-600 active:bg-blue-600 focus:bg-blue-600 text-white`
 		}
 	}}
-
-	${tw`inline-block rounded-full text-base lg:text-lg focus:outline-none px-8 font-sans py-4`};
-
-	&:disabled {
-		${tw`text-white bg-gray-500 hover:bg-gray-400 focus:bg-gray-400 active:bg-gray-400`};
+	${tw`relative inline-block overflow-hidden rounded-full text-sm md:text-base focus:outline-none px-6 md:px-8 font-sans py-3 md:py-4 font-medium`};
+	transition: background 0.25s;
+	&:before {
+		content: attr(data-title);
+		${tw`absolute text-center w-full h-full flex items-center justify-center`}
+		transform: translate(-50%, -100%);
+		opacity: 0;
+		top: 50%;
+		left: 50%;
+		transition: transform 0.25s, opacity 0.25s;
 	}
-`
 
-const StyledButton = styled.button`
-	${({ colorscheme }) => {
-		switch (colorscheme) {
-			case 'green':
-				return tw`bg-green-500 hover:bg-green-600 active:bg-green-500 focus:bg-blue-500 text-white`
-			default:
-				return tw`bg-blue-700 hover:bg-blue-600 active:bg-blue-600 focus:bg-blue-600 text-white`
+	&:hover {
+		${StyledTitle} {
+			transform: translateY(100%);
+			opacity: 0;
 		}
-	}}
 
-	${tw`inline-block rounded-full text-base lg:text-lg focus:outline-none px-8 font-sans py-4`};
-
+		&:before {
+			transform: translate(-50%, -50%);
+			opacity: 1;
+		}
+	}
 	&:disabled {
 		${tw`text-white bg-gray-500 hover:bg-gray-400 focus:bg-gray-400 active:bg-gray-400`};
 	}
@@ -79,6 +76,10 @@ const StyledButton = styled.button`
 
 Button.propTypes = {
 	title: PropTypes.string.isRequired,
+	url: PropTypes.string,
+	to: PropTypes.string,
+	colorscheme: PropTypes.string,
+	onClick: PropTypes.func,
 }
 
 export default Button
