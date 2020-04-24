@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
-import { withKnobs, text, object } from '@storybook/addon-knobs/react'
+import { withKnobs, text, object, array } from '@storybook/addon-knobs/react'
 
-import Author from '../../src/components/Author'
+import ArticleListItem from '../../src/components/ArticleListItem'
 import PlaceholderImage from './assets/placeholder.jpg'
 
 const Placeholder = {
@@ -15,24 +15,18 @@ const Placeholder = {
 	sizes: '(max-width: 960px) 100vw, 960px',
 }
 
-storiesOf('Author', module)
+storiesOf('ArticleListItem', module)
 	.addDecorator(withKnobs)
 	.add('default', () => {
 		return (
-			<Author
-				name={text('name', 'Lisa Söderholm')}
-				role={text('role', 'Webbredaktör')}
+			<ArticleListItem
+				title={text('title', 'Skördetid i Halland')}
 				image={Placeholder}
-			/>
-		)
-	})
-	.add('light', () => {
-		return (
-			<Author
-				colorscheme={text('colorscheme', 'white')}
-				name={text('name', 'Lisa Söderholm')}
-				role={text('role', 'Webbredaktör')}
-				image={Placeholder}
+				copyright={text('copyright', 'David Öhlin')}
+				alt={text('alt', 'En fin bild')}
+				tags={array('tags', ['Natur och Friluftsliv'])}
+				to={text('to', '/')}
+				className="text-4xl h-500px md:h-600px"
 			/>
 		)
 	})

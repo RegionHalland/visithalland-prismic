@@ -1,14 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Carousel from 'nuka-carousel'
-import Link from 'gatsby-link'
-import styled from 'styled-components'
-import tw from 'tailwind.macro'
 
 import Container from '../Container'
 import CarouselArrow from '../CarouselArrow'
-import ConditionalWrapper from '../ConditionalWrapper'
-import CollectionGridImageThumbnail from '../CollectionGridImageThumbnail'
+import ArticleCard from '../ArticleCard'
 
 import useTailwindBreakpoint from '../../hooks/useTailwindBreakpoint'
 import { linkResolver } from '../../utils/linkResolver'
@@ -36,7 +32,7 @@ const CollectionCarouselSmall = ({ items }) => {
 						index,
 					) => (
 						<div className="px-2 text-2xl focus:outline-none">
-							<CollectionGridImageThumbnail
+							<ArticleCard
 								key={`${index}-${meta.uid}`}
 								title={title}
 								image={image}
@@ -54,11 +50,6 @@ const CollectionCarouselSmall = ({ items }) => {
 		</Container>
 	)
 }
-
-const ImageContainer = styled.div`
-	padding-bottom: 100%;
-	${tw`relative`};
-`
 
 CollectionCarouselSmall.propTypes = {
 	items: PropTypes.array.isRequired,

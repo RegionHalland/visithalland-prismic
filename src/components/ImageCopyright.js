@@ -5,8 +5,8 @@ const ImageCopyright = ({ credits }) => {
 	if (!credits) return null
 
 	return (
-		<div className="absolute z-10 bottom-0 right-0 mb-4 mr-4 leading-none text-white text-xs">
-			{credits}
+		<div className="absolute z-50 bottom-0 right-0 mb-4 mr-4 leading-none text-white text-xs">
+			© {credits}
 		</div>
 	)
 }

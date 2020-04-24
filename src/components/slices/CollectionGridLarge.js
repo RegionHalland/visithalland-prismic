@@ -7,7 +7,7 @@ import tw from 'tailwind.macro'
 import resolveConfig from 'tailwindcss/resolveConfig'
 import tailwindConfig from '../../../tailwind.config.js'
 
-import CollectionGridImageThumbnail from '../CollectionGridImageThumbnail'
+import ArticleCard from '../ArticleCard'
 import Container from '../Container'
 
 const config = resolveConfig(tailwindConfig)
@@ -21,7 +21,7 @@ const CollectionGridLarge = ({ items }) => (
 						key={`${meta.uid}-${index}`}
 						className="px-2 mb-3"
 					>
-						<CollectionGridImageThumbnail
+						<ArticleCard
 							title={title}
 							image={image}
 							copyright={copyright}
