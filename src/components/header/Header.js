@@ -193,4 +193,3 @@ const BackgroundPattern = styled.div`
 `
 
 export default Header
-© 2020 GitHub, Inc.
