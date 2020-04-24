@@ -10,7 +10,7 @@ import Link from 'gatsby-link'
 
 import FancyLink from './FancyLink'
 
-const ArticleCardSmall = ({
+const ArticleCard = ({
 	title,
 	image,
 	copyright,
@@ -26,12 +26,12 @@ const ArticleCardSmall = ({
 		<ConditionalWrapper
 			condition={url}
 			ifWrapper={children => (
-				<a {...props} href={url}>
+				<a {...props} href={url} className="focus:outline-none">
 					{children}
 				</a>
 			)}
 			elseWrapper={children => (
-				<Link to={to} {...props}>
+				<Link to={to} {...props} className="focus:outline-none">
 					{children}
 				</Link>
 			)}
@@ -42,17 +42,16 @@ const ArticleCardSmall = ({
 				className={className}
 			>
 				<div className="absolute bottom-0 left-0 right-0 h-full w-full flex items-center flex-col justify-center text-center p-3 z-10">
-					<div>
-						{tags.map((tag, index) => (
-							<span
-								key={index}
-								className="text-gray-200 font-medium inline-block mr-2 text-base mb-2"
-							>
-								{tag}
-							</span>
-						))}
-					</div>
-					<h2 className="text-white font-bold mb-2 leading-tight">
+					{tags.map((tag, index) => (
+						<span
+							key={index}
+							className="text-gray-200 font-medium inline-block mr-2 text-base mb-1"
+						>
+							{tag}
+						</span>
+					))}
+
+					<h2 className="text-white font-bold mb-4 leading-tight">
 						{title}
 					</h2>
 					<FancyLink
@@ -80,7 +79,7 @@ const ArticleCardSmall = ({
 }
 
 const StyledImage = styled(Image)`
-	transition: transform 0.75s;
+	transition: transform 0.5s;
 `
 
 const ArticleCardContainer = styled.div`
@@ -94,19 +93,20 @@ const ArticleCardContainer = styled.div`
 
 	&:hover {
 		${StyledImage} {
-			transform: scale(1.05);
+			transform: scale(1.025);
 		}
 	}
 `
 
-ArticleCardSmall.propTypes = {
+ArticleCard.propTypes = {
+	title: propTypes.string.isRequired,
 	to: propTypes.string,
 	url: propTypes.string,
 	tags: propTypes.array,
 	copyright: propTypes.string,
-	title: propTypes.string.isRequired,
 	className: propTypes.string,
 	image: propTypes.object,
+	alt: propTypes.string,
 }
 
-export default ArticleCardSmall
+export default ArticleCard

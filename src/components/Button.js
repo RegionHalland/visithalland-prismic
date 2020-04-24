@@ -51,7 +51,7 @@ const StyledButton = styled.div`
 	&:before {
 		content: attr(data-title);
 		${tw`absolute text-center w-full h-full flex items-center justify-center`}
-		transform: translate(-50%, -100%);
+		transform: translate(-50%, -150%);
 		opacity: 0;
 		top: 50%;
 		left: 50%;
@@ -60,7 +60,7 @@ const StyledButton = styled.div`
 
 	&:hover {
 		${StyledTitle} {
-			transform: translateY(100%);
+			transform: translateY(150%);
 			opacity: 0;
 		}
 

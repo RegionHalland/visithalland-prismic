@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { withKnobs, text, object, array } from '@storybook/addon-knobs/react'
 
-import ArticleCard from '../../src/components/ArticleCard'
+import ArticleListItem from '../../src/components/ArticleListItem'
 import PlaceholderImage from './assets/placeholder.jpg'
 
 const Placeholder = {
@@ -15,46 +15,18 @@ const Placeholder = {
 	sizes: '(max-width: 960px) 100vw, 960px',
 }
 
-storiesOf('ArticleCard', module)
+storiesOf('ArticleListItem', module)
 	.addDecorator(withKnobs)
 	.add('default', () => {
 		return (
-			<ArticleCard
+			<ArticleListItem
 				title={text('title', 'Skördetid i Halland')}
 				image={Placeholder}
 				copyright={text('copyright', 'David Öhlin')}
 				alt={text('alt', 'En fin bild')}
 				tags={array('tags', ['Natur och Friluftsliv'])}
 				to={text('to', '/')}
-				className="text-4xl h-500px"
-			/>
-		)
-	})
-
-	.add('rounded', () => {
-		return (
-			<ArticleCard
-				title={text('title', 'Skördetid i Halland')}
-				image={Placeholder}
-				copyright={text('copyright', 'David Öhlin')}
-				alt={text('alt', 'En fin bild')}
-				tags={array('tags', ['Natur och Friluftsliv'])}
-				to={text('to', '/')}
-				className="text-4xl h-500px md:h-600px rounded"
-			/>
-		)
-	})
-
-	.add('full', () => {
-		return (
-			<ArticleCard
-				title={text('title', 'Skördetid i Halland')}
-				image={Placeholder}
-				copyright={text('copyright', 'David Öhlin')}
-				alt={text('alt', 'En fin bild')}
-				tags={array('tags', ['Natur och Friluftsliv'])}
-				to={text('to', '/')}
-				className="text-5xl h-600px md:h-900px"
+				className="text-4xl h-500px md:h-600px"
 			/>
 		)
 	})

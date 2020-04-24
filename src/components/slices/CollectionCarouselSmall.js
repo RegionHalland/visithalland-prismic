@@ -1,13 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Carousel from 'nuka-carousel'
-import Link from 'gatsby-link'
-import styled from 'styled-components'
-import tw from 'tailwind.macro'
 
 import Container from '../Container'
 import CarouselArrow from '../CarouselArrow'
-import ConditionalWrapper from '../ConditionalWrapper'
 import ArticleCard from '../ArticleCard'
 
 import useTailwindBreakpoint from '../../hooks/useTailwindBreakpoint'
@@ -54,11 +50,6 @@ const CollectionCarouselSmall = ({ items }) => {
 		</Container>
 	)
 }
-
-const ImageContainer = styled.div`
-	padding-bottom: 100%;
-	${tw`relative`};
-`
 
 CollectionCarouselSmall.propTypes = {
 	items: PropTypes.array.isRequired,
