@@ -1,9 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
+import { navigate } from 'gatsby'
 
 import Container from '../Container'
 import Image from '../Image'
 import ImageCopyright from '../ImageCopyright'
+import ListHeader from '../ListHeader'
 import FancyLink from '../FancyLink'
 import TextRenderer from '../TextRenderer'
 import CloseIcon from '../icons/CloseIcon'
@@ -52,7 +54,9 @@ const FeaturedArticle = ({ label, article }) => (
 			<ImageCopyright credits={article.imageCopyright} />
 		</div>
 		<div className="flex-1 p-6">
-			<span>{label}</span>
+			<div className="mb-3 lg:mb-6">
+				<ListHeader title={label} />
+			</div>
 			<h3 className="font-bold text-3xl leading-tight mb-3">
 				{article.title}
 			</h3>
@@ -68,31 +72,46 @@ const FeaturedArticle = ({ label, article }) => (
 	</div>
 )
 
+const poop = {
+	title: 'Naturupplevelser',
+	description: null,
+	imageCopyright: 'Foto: Jonathan Strömberg',
+	meta: { uid: 'naturupplevelser', lang: 'sv-se', type: 'content' },
+}
+
 const ArticleList = ({ label, articles }) => {
+	articles = Array(20).fill(poop)
+
 	return (
-		<div className="w-full md:flex-1 bg-green-200 p-6">
-			<span>{label}</span>
+		<ArticleListContainer className="w-full md:flex-1 bg-green-200 p-6 overflow-y-auto">
+			<div className="mb-3 lg:mb-6">
+				<ListHeader title={label} />
+			</div>
 			<ul>
 				{articles.map(item => (
 					<li key={item.meta.uid}>
 						<FancyLink
 							title={item.title}
 							size="large"
-							to={linkResolver(item.meta)}
-						></FancyLink>
+							onClick={() => navigate(linkResolver(item.meta))}
+						/>
 					</li>
 				))}
 			</ul>
-		</div>
+		</ArticleListContainer>
 	)
 }
+
+const ArticleListContainer = styled.div`
+	max-height: 440px;
+`
 
 const DropdownContainer = styled.div`
 	transform: translateY(100%);
 `
 
 const DropdownInner = styled.div`
-	min-height: 440px;
+	height: 440px;
 `
 
 export default Dropdown

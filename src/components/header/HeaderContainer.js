@@ -7,8 +7,8 @@ import Header from './Header'
 const HeaderContainer = ({ menu, meta }) => {
 	// Prepare main navigation
 	const mainNavigation = {
-		featured_label: menu.menu_featured_label,
-		misc_label: menu.menu_misc_label,
+		featured_label: get(menu, 'menu_featured_label', null),
+		misc_label: get(menu, 'menu_misc_label', null),
 		items: get(menu, 'nav', []).map((item, index) => ({
 			label: get(item, 'primary.menu_item_label', null),
 			id: index,
