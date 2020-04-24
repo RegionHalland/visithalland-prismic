@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import { navigate } from 'gatsby'
+import resolveConfig from 'tailwindcss/resolveConfig'
+import tailwindConfig from '../../../tailwind.config.js'
 
 import Container from '../Container'
 import Image from '../Image'
@@ -11,6 +13,8 @@ import TextRenderer from '../TextRenderer'
 import CloseIcon from '../icons/CloseIcon'
 import Button from '../Button'
 import { linkResolver } from '../../utils/linkResolver'
+
+const config = resolveConfig(tailwindConfig)
 
 const Dropdown = ({
 	featuredLabel,
@@ -23,11 +27,11 @@ const Dropdown = ({
 		<Container className="lg:px-6">
 			<DropdownInner className="flex flex-col">
 				<button
-					className="flex justify-between items-center focus:outline-none w-full bg-blue-700 text-white font-bold py-3 px-4 leading-none"
+					className="flex justify-between items-center focus:outline-none w-full bg-blue-700 text-white text-sm md:text-base font-bold py-3 px-4 leading-none "
 					onClick={close}
 				>
 					<span>Stäng meny</span>
-					<CloseIcon width={16} height={16} />
+					<CloseIcon width={14} height={14} />
 				</button>
 				<div className="flex flex-1 flex-wrap">
 					<FeaturedArticle
@@ -53,14 +57,14 @@ const FeaturedArticle = ({ label, article }) => (
 			/>
 			<ImageCopyright credits={article.imageCopyright} />
 		</div>
-		<div className="flex-1 p-6">
+		<div className="flex-1 pt-2 pb-4 px-4 md:p-6">
 			<div className="mb-3 lg:mb-6">
 				<ListHeader title={label} />
 			</div>
-			<h3 className="font-bold text-3xl leading-tight mb-3">
+			<h3 className="font-bold text-2xl md:text-3xl leading-tight mb-3 break-words">
 				{article.title}
 			</h3>
-			<div className="text-black mb-6 leading-normal">
+			<div className="hidden md:block text-black mb-6 leading-normal">
 				<TextRenderer lines={3} text={article.description} />
 			</div>
 			<Button
@@ -72,38 +76,32 @@ const FeaturedArticle = ({ label, article }) => (
 	</div>
 )
 
-const poop = {
-	title: 'Naturupplevelser',
-	description: null,
-	imageCopyright: 'Foto: Jonathan Strömberg',
-	meta: { uid: 'naturupplevelser', lang: 'sv-se', type: 'content' },
-}
-
-const ArticleList = ({ label, articles }) => {
-	articles = Array(20).fill(poop)
-
-	return (
-		<ArticleListContainer className="w-full md:flex-1 bg-green-200 p-6 overflow-y-auto">
-			<div className="mb-3 lg:mb-6">
-				<ListHeader title={label} />
-			</div>
-			<ul>
-				{articles.map(item => (
-					<li key={item.meta.uid}>
-						<FancyLink
-							title={item.title}
-							size="large"
-							onClick={() => navigate(linkResolver(item.meta))}
-						/>
-					</li>
-				))}
-			</ul>
-		</ArticleListContainer>
-	)
-}
+const ArticleList = ({ label, articles }) => (
+	<ArticleListContainer className="w-full md:flex-1 bg-green-200 p-6 overflow-y-auto">
+		<div className="mb-3 lg:mb-6">
+			<ListHeader title={label} />
+		</div>
+		<ul>
+			{articles.map(item => (
+				<li key={item.meta.uid}>
+					<FancyLink
+						title={item.title}
+						size="large"
+						onClick={() => navigate(linkResolver(item.meta))}
+					/>
+				</li>
+			))}
+		</ul>
+	</ArticleListContainer>
+)
 
 const ArticleListContainer = styled.div`
-	max-height: 440px;
+	max-height: 15rem;
+
+	@media (min-width: ${config.theme.screens.md}) {
+		height: 24rem;
+		max-height: none;
+	}
 `
 
 const DropdownContainer = styled.div`
@@ -111,7 +109,7 @@ const DropdownContainer = styled.div`
 `
 
 const DropdownInner = styled.div`
-	height: 440px;
+	max-height: 24rem;
 `
 
 export default Dropdown
