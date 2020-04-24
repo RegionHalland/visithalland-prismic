@@ -9,6 +9,8 @@ import ConditionalWrapper from './ConditionalWrapper'
 import Link from 'gatsby-link'
 
 import FancyLink from './FancyLink'
+import Container from './Container'
+import TextRenderer from './TextRenderer'
 
 const ArticleCard = ({
 	title,
@@ -16,6 +18,7 @@ const ArticleCard = ({
 	copyright,
 	alt,
 	tags,
+	excerpt,
 	to,
 	url,
 	className,
@@ -41,25 +44,32 @@ const ArticleCard = ({
 				onMouseLeave={() => setActive(!active)}
 				className={className}
 			>
-				<div className="absolute bottom-0 left-0 right-0 h-full w-full flex items-center flex-col justify-center text-center p-3 z-10">
-					{tags.map((tag, index) => (
-						<span
-							key={index}
-							className="text-gray-200 font-medium inline-block mr-2 text-base mb-1"
-						>
-							{tag}
-						</span>
-					))}
+				<div className="absolute bottom-0 left-0 right-0 h-full w-full flex items-center flex-col justify-center text-center p-4 z-10">
+					<Container tight>
+						{tags.map((tag, index) => (
+							<span
+								key={index}
+								className="text-gray-200 font-medium inline-block mr-2 text-base mb-1"
+							>
+								{tag}
+							</span>
+						))}
 
-					<h2 className="text-white font-bold mb-4 leading-tight">
-						{title}
-					</h2>
-					<FancyLink
-						colorscheme="white"
-						active={active}
-						external={url}
-						title="Läs mer"
-					/>
+						<h2 className="text-white font-bold mb-4 leading-tight max-w-sm md:max-w-xl">
+							{title}
+						</h2>
+						{excerpt && (
+							<div className="text-base md:text-lg text-white max-w-sm md:max-w-xl mb-1">
+								<TextRenderer lines={4} text={excerpt} />
+							</div>
+						)}
+						<FancyLink
+							colorscheme="white"
+							active={active}
+							external={url}
+							title="Läs mer"
+						/>
+					</Container>
 				</div>
 				{image && (
 					<div>
@@ -103,6 +113,7 @@ ArticleCard.propTypes = {
 	title: propTypes.string.isRequired,
 	to: propTypes.string,
 	url: propTypes.string,
+	excerpt: propTypes.object,
 	tags: propTypes.array,
 	copyright: propTypes.string,
 	className: propTypes.string,
