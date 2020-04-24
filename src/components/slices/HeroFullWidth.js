@@ -22,7 +22,7 @@ const HeroFullWidth = ({
 	return (
 		<React.Fragment>
 			<ImageContainer className="h-70vh md:h-70vh lg:h-80vh w-full flex items-center justify-center relative mb-12 px-4 md:px-6">
-				<h1 className="text-4xl md:text-5xl lg:text-6xl w-full leading-tight text-white font-semibold  md:w-6/12 text-center relative z-10">
+				<h1 className="text-4xl md:text-5xl lg:text-6xl w-full leading-tight text-white font-medium  md:w-6/12 text-center relative z-10">
 					{title}
 				</h1>
 				{video && (
@@ -75,13 +75,13 @@ const StyledIntroduction = styled.div`
 	> p {
 		${tw`text-gray-700 text-xl md:text-center leading-relaxed mb-8`};
 		& > strong {
-			${tw`font-semibold text-black`}
+			${tw`font-medium text-black`}
 		}
 		& > em {
 			${tw`font-italic text-black`}
 		}
 		& > a {
-			${tw`font-semibold text-black underline`}
+			${tw`font-medium text-black underline`}
 		}
 	}
 `

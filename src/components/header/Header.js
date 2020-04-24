@@ -170,7 +170,6 @@ const NavItem = styled.button`
 	transition: color 0.2s ease-in-out;
 	${tw`relative leading-none font-medium hover:text-white focus:text-white focus:outline-none mr-6`};
 	${({ active }) => (active ? tw`text-white` : tw`text-gray-500`)};
-
 	&:after {
 		content: '';
 		transition: transform 0.2s ease-in-out;
@@ -194,3 +193,4 @@ const BackgroundPattern = styled.div`
 `
 
 export default Header
+© 2020 GitHub, Inc.

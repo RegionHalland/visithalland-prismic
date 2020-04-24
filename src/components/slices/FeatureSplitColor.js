@@ -33,7 +33,7 @@ const FeatureSplitColor = ({
 							))}
 						</div>
 					)}
-					<h1 className="text-2xl md:text-4xl mx-auto mb-4 w-full leading-tight text-white font-semibold max-w-lg">
+					<h1 className="text-2xl md:text-4xl mx-auto mb-4 w-full leading-tight text-white font-medium max-w-lg">
 						{title}
 					</h1>
 					{body && (

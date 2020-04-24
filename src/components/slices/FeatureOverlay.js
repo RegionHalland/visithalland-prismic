@@ -37,7 +37,7 @@ const FeatureOverlay = ({
 		<Parallax y={[10, -10]} className="w-full">
 			<Container className="z-10 relative w-full relative flex justify-start px-4 md:px-6">
 				<Overlay className="bg-blue-600 py-6 px-8 md:py-8 md:px-10 w-full overflow-hidden rounded md:w-8/12 lg:w-6/12">
-					<h1 className="text-2xl md:text-4xl mx-auto mb-6 w-full leading-tight text-white font-semibold">
+					<h1 className="text-2xl md:text-4xl mx-auto mb-6 w-full leading-tight text-white font-medium">
 						{title}
 					</h1>
 					<div className="text-white mb-6">

@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { withKnobs, text, object } from '@storybook/addon-knobs/react'
 
-import Button from '../components/Button'
+import Button from '../../src/components/Button'
 
 storiesOf('Button', module)
 	.addDecorator(withKnobs)
@@ -23,7 +23,7 @@ storiesOf('Button', module)
 			/>
 		)
 	})
-	.add('Link', () => {
+	.add('link', () => {
 		return <Button to="/" title={text('title', 'Gå till artikel')} />
 	})
 	.add('green', () => {
@@ -31,6 +31,15 @@ storiesOf('Button', module)
 			<Button
 				colorscheme="green"
 				to="/"
+				title={text('title', 'Gå till artikel')}
+			/>
+		)
+	})
+	.add('disabled', () => {
+		return (
+			<Button
+				disabled
+				onClick={() => alert('Clicked it')}
 				title={text('title', 'Gå till artikel')}
 			/>
 		)

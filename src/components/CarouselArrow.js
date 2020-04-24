@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import ArrowLeft from './icons/ArrowLeft'
-import ArrowRight from './icons/ArrowRight'
+import ArrowLeftIcon from './icons/ArrowLeftIcon'
+import ArrowRightIcon from './icons/ArrowRightIcon'
 
 const CarouselArrow = ({ onClick, direction }) => (
 	<div className="px-4">
@@ -10,9 +10,9 @@ const CarouselArrow = ({ onClick, direction }) => (
 			onClick={onClick}
 		>
 			{direction === 'left' ? (
-				<ArrowLeft className="absolute w-4 h-4 text-white" />
+				<ArrowLeftIcon className="absolute w-4 h-4 text-white" />
 			) : (
-				<ArrowRight className="absolute w-4 h-4 text-white" />
+				<ArrowRightIcon className="absolute w-4 h-4 text-white" />
 			)}
 		</button>
 	</div>

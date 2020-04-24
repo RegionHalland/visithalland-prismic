@@ -44,7 +44,7 @@ const CollectionListItemSmall = ({
 				)}
 			</div>
 			<div className="flex flex-col md:justify-center flex-1 pl-4 md:pl-6 ">
-				<h2 className="text-black text-xl md:text-3xl leading-tight font-semibold mb-3">
+				<h2 className="text-black text-xl md:text-3xl leading-tight font-medium mb-3">
 					{title}
 				</h2>
 				{excerpt && (

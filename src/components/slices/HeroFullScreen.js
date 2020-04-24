@@ -7,7 +7,7 @@ import ImageCopyright from '../ImageCopyright'
 import TextRenderer from '../TextRenderer'
 import Author from '../Author'
 import Container from '../Container'
-import ArrowDown from '../icons/ArrowDown'
+import ArrowDownIcon from '../icons/ArrowDownIcon'
 
 const HeroFullScreen = ({
 	title,
@@ -22,7 +22,7 @@ const HeroFullScreen = ({
 	return (
 		<ImageContainer className="h-100vh w-full flex items-end justify-center relative mb-12 px-4 md:px-6">
 			<Container className="z-10 relative" tight>
-				<h1 className="text-4xl md:text-5xl lg:text-6xl mb-8 w-full lg:w-10/12 mx-auto text-center leading-tight text-white font-semibold">
+				<h1 className="text-4xl md:text-5xl lg:text-6xl mb-8 w-full lg:w-10/12 mx-auto text-center leading-tight text-white font-medium">
 					{title}
 				</h1>
 				{introduction && (
@@ -37,7 +37,11 @@ const HeroFullScreen = ({
 					/>
 				)}
 				<div className="h-12 w-12 mx-auto rounded-full bg-blue-700 flex items-center justify-center mb-16">
-					<ArrowDown height={16} width={16} className="text-white" />
+					<ArrowDownIcon
+						height={16}
+						width={16}
+						className="text-white"
+					/>
 				</div>
 			</Container>
 			{video && (
@@ -71,13 +75,13 @@ const StyledIntroduction = styled.div`
 	> p {
 		${tw`text-white hidden md:block text-xl text-center leading-relaxed mb-8`};
 		& > strong {
-			${tw`font-semibold`}
+			${tw`font-medium`}
 		}
 		& > em {
 			${tw`font-italic text-black`}
 		}
 		& > a {
-			${tw`font-semibold text-black underline`}
+			${tw`font-medium text-black underline`}
 		}
 	}
 `

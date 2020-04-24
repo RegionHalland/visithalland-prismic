@@ -69,9 +69,6 @@ const StyledButton = styled.div`
 			opacity: 1;
 		}
 	}
-	&:disabled {
-		${tw`text-white bg-gray-500 hover:bg-gray-400 focus:bg-gray-400 active:bg-gray-400`};
-	}
 `
 
 Button.propTypes = {

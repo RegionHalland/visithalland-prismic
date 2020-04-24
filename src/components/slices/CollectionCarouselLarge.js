@@ -39,7 +39,7 @@ const CollectionCarouselLarge = ({ items }) => {
 								<div>
 									{tags.map(item => (
 										<span
-											className="inline-block text-gray-500 font-semibold mr-1"
+											className="inline-block text-gray-500 font-medium mr-1"
 											key={item}
 										>
 											{item}
@@ -47,7 +47,7 @@ const CollectionCarouselLarge = ({ items }) => {
 									))}
 								</div>
 							)}
-							<h1 className="text-4xl md:text-5xl md:w-10/12 mx-auto mb-6 w-full text-center leading-tight text-white font-semibold">
+							<h1 className="text-4xl md:text-5xl md:w-10/12 mx-auto mb-6 w-full text-center leading-tight text-white font-medium">
 								{title}
 							</h1>
 							<Button

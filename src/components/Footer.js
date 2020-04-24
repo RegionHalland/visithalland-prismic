@@ -18,7 +18,7 @@ const Footer = ({ meta, langs }) => {
 							type: 'content',
 							uid: 'frontpage',
 						})}
-						className="font-semibold text-xl md:text-2xl mb-4 block z-50 relative"
+						className="font-medium text-xl md:text-2xl mb-4 block z-50 relative"
 					>
 						Visithalland.com
 					</Link>

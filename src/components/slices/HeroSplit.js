@@ -56,7 +56,7 @@ const HeroSplit = ({
 				</div>
 				<div className="w-full lg:w-6/12 px-4 lg:px-0 flex items-end lg:pb-32">
 					<div className="w-full mx-auto">
-						<h1 className="text-4xl md:text-5xl lg:text-6xl w-full lg:w-10/12 leading-tight font-semibold mb-8">
+						<h1 className="text-4xl md:text-5xl lg:text-6xl w-full lg:w-10/12 leading-tight font-medium mb-8">
 							{title}
 						</h1>
 						{introduction && (
@@ -81,13 +81,13 @@ const StyledIntroduction = styled.div`
 	> p {
 		${tw`text-gray-700 text-xl leading-relaxed mb-8`};
 		& > strong {
-			${tw`font-semibold text-black`}
+			${tw`font-medium text-black`}
 		}
 		& > em {
 			${tw`font-italic text-black`}
 		}
 		& > a {
-			${tw`font-semibold text-black underline`}
+			${tw`font-medium text-black underline`}
 		}
 	}
 `
