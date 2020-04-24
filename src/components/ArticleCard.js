@@ -21,7 +21,7 @@ const ArticleCard = ({
 	className,
 	...props
 }) => {
-	const [active, setActive] = useState()
+	const [active, setActive] = useState(false)
 	return (
 		<ConditionalWrapper
 			condition={url}

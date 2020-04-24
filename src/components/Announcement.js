@@ -7,7 +7,7 @@ import BellIcon from './icons/BellIcon'
 import FancyLink from './FancyLink'
 
 const Announcement = ({ content, id, onClose }) => {
-	const [active, setActive] = useState()
+	const [active, setActive] = useState(false)
 	return (
 		<div className="flex items-start md:items-center text-blue-700 bg-gray-200 justify-between px-4 py-2 text-base">
 			<BellIcon className="text-gray-600 mr-4 mt-2 h-4 w-4 md:mt-0" />
