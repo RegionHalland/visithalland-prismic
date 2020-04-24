@@ -2,7 +2,6 @@ import React from 'react'
 import propTypes from 'prop-types'
 import styled from 'styled-components'
 import Container from '../Container'
-import { linkResolver } from '../../utils/linkResolver'
 
 const TopNavigation = ({ items }) => (
 	<nav className="relative bg-blue-600">

@@ -1,22 +1,20 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import tw from 'tailwind.macro'
+
 import TopNavigation from './TopNavigation'
+import LanguageMenu from './LanguageMenu'
+
 import Container from '../Container'
 import Image from '../Image'
 import ImageCopyright from '../ImageCopyright'
+import FancyLink from '../FancyLink'
 import TextRenderer from '../TextRenderer'
 import CloseIcon from '../icons/CloseIcon'
 import Button from '../Button'
 import Link from 'gatsby-link'
 import { linkResolver } from '../../utils/linkResolver'
 import pattern from '../../images/bg-pattern.png'
-
-const LANG_TITLES = {
-	'sv-se': 'Sv',
-	'da-dk': 'Dk',
-	no: 'No',
-}
 
 const Header = ({ meta, mainNavigation, topNavigation, langs }) => {
 	const [activeId, setActiveId] = useState(null)
@@ -55,18 +53,7 @@ const Header = ({ meta, mainNavigation, topNavigation, langs }) => {
 								</li>
 							))}
 						</ul>
-						<ul className="flex md:pl-4 lg:pl-8">
-							{langs.map(item => (
-								<li key={item}>
-									<Link
-										className="ml-4 font-bold text-white hover:text-gray-300"
-										to={linkResolver(meta)}
-									>
-										{LANG_TITLES[item]}
-									</Link>
-								</li>
-							))}
-						</ul>
+						<LanguageMenu languages={langs} meta={meta} />
 					</Container>
 					<ul className="flex md:hidden overflow-x-scroll relative w-full bg-blue-600 px-4 py-3 ">
 						{mainNavigation.items.map(({ label, id }) => (
@@ -158,7 +145,11 @@ const ArticleList = ({ label, articles }) => {
 			<ul>
 				{articles.map(item => (
 					<li key={item.meta.uid}>
-						<Link to={linkResolver(item.meta)}>{item.title}</Link>
+						<FancyLink
+							title={item.title}
+							size="large"
+							to={linkResolver(item.meta)}
+						></FancyLink>
 					</li>
 				))}
 			</ul>
