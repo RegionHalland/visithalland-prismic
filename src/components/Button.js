@@ -46,7 +46,7 @@ const StyledButton = styled.div`
 				return tw`bg-blue-700 hover:bg-blue-600 active:bg-blue-600 focus:bg-blue-600 text-white`
 		}
 	}}
-	${tw`relative inline-block overflow-hidden rounded-full text-sm md:text-base focus:outline-none px-6 md:px-8 font-sans py-3 md:py-4 font-medium`};
+	${tw`relative inline-block overflow-hidden rounded-full text-sm md:text-base focus:outline-none px-6 md:px-6 font-sans py-3 md:py-3 font-medium`};
 	transition: background 0.25s;
 	&:before {
 		content: attr(data-title);

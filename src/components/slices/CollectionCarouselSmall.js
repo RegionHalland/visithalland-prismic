@@ -3,8 +3,11 @@ import PropTypes from 'prop-types'
 import Carousel from 'nuka-carousel'
 
 import Container from '../Container'
-import CarouselArrow from '../CarouselArrow'
 import ArticleCard from '../ArticleCard'
+
+import ArrowRightIcon from '../icons/ArrowRightIcon'
+import ArrowLeftIcon from '../icons/ArrowLeftIcon'
+import IconButton from '../IconButton'
 
 import useTailwindBreakpoint from '../../hooks/useTailwindBreakpoint'
 import { linkResolver } from '../../utils/linkResolver'
@@ -20,10 +23,20 @@ const CollectionCarouselSmall = ({ items }) => {
 				slidesToShow={breakpoint === 'xs' ? 1 : 2}
 				renderBottomCenterControls={() => null}
 				renderCenterLeftControls={({ previousSlide }) => (
-					<CarouselArrow onClick={previousSlide} direction="left" />
+					<IconButton
+						onClick={previousSlide}
+						icon={
+							<ArrowLeftIcon className="h-3 w-3 text-gray-400" />
+						}
+					/>
 				)}
 				renderCenterRightControls={({ nextSlide }) => (
-					<CarouselArrow onClick={nextSlide} direction="right" />
+					<IconButton
+						onClick={nextSlide}
+						icon={
+							<ArrowRightIcon className="h-3 w-3 text-gray-400" />
+						}
+					/>
 				)}
 			>
 				{items.map(

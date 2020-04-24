@@ -9,7 +9,9 @@ import tw from 'tailwind.macro'
 import Image from '../Image'
 import ImageCopyright from '../ImageCopyright'
 import Container from '../Container'
-import CarouselArrow from '../CarouselArrow'
+import ArrowRightIcon from '../icons/ArrowRightIcon'
+import ArrowLeftIcon from '../icons/ArrowLeftIcon'
+import IconButton from '../IconButton'
 
 import { linkResolver } from '../../utils/linkResolver'
 
@@ -22,10 +24,16 @@ const CollectionCarouselLarge = ({ items }) => {
 			wrapAround={true}
 			renderBottomCenterControls={() => null}
 			renderCenterLeftControls={({ previousSlide }) => (
-				<CarouselArrow onClick={previousSlide} direction="left" />
+				<IconButton
+					onClick={previousSlide}
+					icon={<ArrowLeftIcon className="h-3 w-3 text-gray-400" />}
+				/>
 			)}
 			renderCenterRightControls={({ nextSlide }) => (
-				<CarouselArrow onClick={nextSlide} direction="right" />
+				<IconButton
+					onClick={nextSlide}
+					icon={<ArrowRightIcon className="h-3 w-3 text-gray-400" />}
+				/>
 			)}
 		>
 			{items.map(
