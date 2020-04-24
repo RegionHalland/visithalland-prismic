@@ -29,6 +29,7 @@ const CollectionGridLarge = ({ items }) => (
 							tags={tags}
 							to={linkResolver(meta)}
 							url={url}
+							className="h-400px md:h-500px rounded"
 						/>
 					</GridItem>
 				),
