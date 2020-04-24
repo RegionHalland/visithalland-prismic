@@ -9,8 +9,6 @@ import LinkIcon from './icons/LinkIcon'
 
 const FancyLink = ({
 	title,
-	url,
-	to,
 	onClick,
 	active,
 	colorscheme,
