@@ -3,13 +3,13 @@ import PropTypes from 'prop-types'
 import Container from '../Container'
 import { linkResolver } from '../../utils/linkResolver'
 
-import CollectionListItemSmall from '../CollectionListItemSmall'
+import ArticleListItem from '../ArticleListItem'
 
 const CollectionListSmall = ({ items }) => {
 	return (
 		<Container tight className="px-4 md:px-6">
 			{items.map((item, index) => (
-				<CollectionListItemSmall
+				<ArticleListItem
 					className="mb-6 block"
 					key={`${index}-${item.meta.uid}`}
 					image={item.image}

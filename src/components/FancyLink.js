@@ -5,6 +5,7 @@ import tw from 'tailwind.macro'
 import { useTransition, animated, config } from 'react-spring'
 
 import ArrowRightIcon from './icons/ArrowRightIcon'
+import LinkIcon from './icons/LinkIcon'
 
 const FancyLink = ({
 	title,
@@ -14,6 +15,7 @@ const FancyLink = ({
 	active,
 	colorscheme,
 	size,
+	external,
 	...props
 }) => {
 	const transitions = useTransition(active, null, {
@@ -29,19 +31,35 @@ const FancyLink = ({
 				{transitions.map(({ item, key, props }) =>
 					item ? (
 						<AnimationContainer style={props} key={key}>
-							<ArrowRightIcon
-								height={10}
-								width={10}
-								className="text-green-200"
-							/>
+							{external ? (
+								<LinkIcon
+									height={10}
+									width={10}
+									className="text-green-200"
+								/>
+							) : (
+								<ArrowRightIcon
+									height={10}
+									width={10}
+									className="text-green-200"
+								/>
+							)}
 						</AnimationContainer>
 					) : (
 						<AnimationContainer style={props} key={key}>
-							<ArrowRightIcon
-								height={10}
-								width={10}
-								className="text-green-200"
-							/>
+							{external ? (
+								<LinkIcon
+									height={10}
+									width={10}
+									className="text-green-200"
+								/>
+							) : (
+								<ArrowRightIcon
+									height={10}
+									width={10}
+									className="text-green-200"
+								/>
+							)}
 						</AnimationContainer>
 					),
 				)}
@@ -91,6 +109,7 @@ const StyledLink = styled.button`
 
 FancyLink.propTypes = {
 	title: PropTypes.string.isRequired,
+	external: PropTypes.bool,
 	colorscheme: PropTypes.string,
 	size: PropTypes.string,
 	onClick: PropTypes.func,

@@ -16,6 +16,16 @@ storiesOf('FancyLink', module)
 			/>
 		)
 	})
+	.add('external', () => {
+		return (
+			<FancyLink
+				active={boolean('active', true)}
+				external={boolean('external', true)}
+				onClick={() => console.log('Clicked it')}
+				title={text('title', 'Gå till artikel')}
+			/>
+		)
+	})
 	.add('large', () => {
 		return (
 			<FancyLink

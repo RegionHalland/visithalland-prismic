@@ -15,6 +15,15 @@ const Placeholder = {
 	sizes: '(max-width: 960px) 100vw, 960px',
 }
 
+const TextObject = [
+	{
+		type: 'paragraph',
+		text:
+			'Att leta upp det perfekta picknick-stället är ett spännande vardagsäventyr för både stora och små. Snöra på dig skorna och packa ner termos och ett par bullar och ge dig ut i naturen. Vi har guiden till några av Hallands vackraste vyer.',
+		spans: [{ start: 0, end: 99, type: 'strong' }],
+	},
+]
+
 storiesOf('ArticleListItem', module)
 	.addDecorator(withKnobs)
 	.add('default', () => {
@@ -22,11 +31,36 @@ storiesOf('ArticleListItem', module)
 			<ArticleListItem
 				title={text('title', 'Skördetid i Halland')}
 				image={Placeholder}
+				excerpt={TextObject}
+				alt={text('alt', 'En fin bild')}
+				tags={array('tags', ['Natur och Friluftsliv'])}
+				to={text('to', '/')}
+			/>
+		)
+	})
+	.add('external', () => {
+		return (
+			<ArticleListItem
+				title={text('title', 'Skördetid i Halland')}
+				image={Placeholder}
+				excerpt={TextObject}
+				alt={text('alt', 'En fin bild')}
+				tags={array('tags', ['Natur och Friluftsliv'])}
+				url={text('url', 'www.aftonbladet.se')}
+			/>
+		)
+	})
+	.add('large', () => {
+		return (
+			<ArticleListItem
+				title={text('title', 'Skördetid i Halland')}
+				image={Placeholder}
+				excerpt={TextObject}
 				copyright={text('copyright', 'David Öhlin')}
 				alt={text('alt', 'En fin bild')}
 				tags={array('tags', ['Natur och Friluftsliv'])}
 				to={text('to', '/')}
-				className="text-4xl h-500px md:h-600px"
+				size={text('size', 'large')}
 			/>
 		)
 	})
