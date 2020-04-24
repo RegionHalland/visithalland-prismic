@@ -21,19 +21,19 @@ const SectionHeaderLine = ({ title, body }) => {
 const TitleContainer = styled.div`
 	${tw`font-sans pr-6 flex-grow-0`};
 	h2 {
-		${tw`font-semibold text-2xl md:text-3xl text-black`};
+		${tw`font-medium text-2xl md:text-3xl text-black`};
 	}
 	h3 {
-		${tw`font-semibold text-xl md:text-2xl text-black`};
+		${tw`font-medium text-xl md:text-2xl text-black`};
 	}
 	h4 {
-		${tw`font-semibold text-lg md:text-xl text-black`};
+		${tw`font-medium text-lg md:text-xl text-black`};
 	}
 	h5 {
-		${tw`font-semibold text-base md:text-lg text-black`};
+		${tw`font-medium text-base md:text-lg text-black`};
 	}
 	h6 {
-		${tw`font-semibold text-base text-black`};
+		${tw`font-medium text-base text-black`};
 	}
 `
 

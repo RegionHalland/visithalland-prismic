@@ -7,7 +7,7 @@ const ListHeader = ({ title, colorscheme, ...props }) => {
 	return (
 		<header className="inline-flex items-center">
 			<span className="h-1 w-6 block bg-green-500 rounded-tr rounded-br mr-3" />
-			<StyledTitle>{title}</StyledTitle>
+			<StyledTitle colorscheme={colorscheme}>{title}</StyledTitle>
 		</header>
 	)
 }

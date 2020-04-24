@@ -58,7 +58,7 @@ const CollectionGridImageThumbnail = ({
 						</span>
 					))}
 				</div>
-				<h2 className="font-sans text-white font-semibold mb-2 leading-tight">
+				<h2 className="font-sans text-white font-medium mb-2 leading-tight">
 					{title}
 				</h2>
 				<LinkIndicator>

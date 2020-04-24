@@ -32,19 +32,19 @@ const SectionHeaderCentered = ({ title, body }) => {
 const TitleContainer = styled.div`
 	${tw`font-sans`};
 	h2 {
-		${tw`font-semibold text-2xl md:text-3xl mt-10 mb-4 md:mb-4 text-black`};
+		${tw`font-medium text-2xl md:text-3xl mt-10 mb-4 md:mb-4 text-black`};
 	}
 	h3 {
-		${tw`font-semibold text-xl md:text-2xl mt-10 mb-3 md:mb-5 text-black`};
+		${tw`font-medium text-xl md:text-2xl mt-10 mb-3 md:mb-5 text-black`};
 	}
 	h4 {
-		${tw`font-semibold text-lg md:text-xl mt-10 mb-3 md:mb-5 text-black`};
+		${tw`font-medium text-lg md:text-xl mt-10 mb-3 md:mb-5 text-black`};
 	}
 	h5 {
-		${tw`font-semibold text-base md:text-lg mt-6 mb-2 md:mb-4 text-black`};
+		${tw`font-medium text-base md:text-lg mt-6 mb-2 md:mb-4 text-black`};
 	}
 	h6 {
-		${tw`font-semibold text-base mt-6 mb-2 md:mb-3 text-black`};
+		${tw`font-medium text-base mt-6 mb-2 md:mb-3 text-black`};
 	}
 `
 

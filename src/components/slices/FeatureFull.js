@@ -21,7 +21,7 @@ const FeatureFull = ({
 }) => (
 	<ImageContainer className="h-60vh lg:h-70vh w-full flex items-center justify-center relative px-4 md:px-6">
 		<Container className="z-10 relative w-full text-center">
-			<h1 className="text-4xl md:text-5xl md:w-10/12 mx-auto mb-6 w-full text-center leading-tight text-white font-semibold">
+			<h1 className="text-4xl md:text-5xl md:w-10/12 mx-auto mb-6 w-full text-center leading-tight text-white font-medium">
 				{title}
 			</h1>
 			<div className="text-white mb-6 md:w-8/12 mx-auto">

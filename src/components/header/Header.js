@@ -1,4 +1,4 @@
-import React from 'react'
+aimport React from 'react'
 import Link from 'gatsby-link'
 import styled from 'styled-components'
 import tw from 'tailwind.macro'
@@ -15,7 +15,7 @@ const Header = ({ meta, mainNavigation, topNavigation, langs }) => {
 						type: 'content',
 						uid: 'frontpage',
 					})}
-					className="font-semibold text-xl md:text-2xl z-50 relative"
+					className="font-medium text-xl md:text-2xl z-50 relative"
 				>
 					Visithalland.com
 				</Link>

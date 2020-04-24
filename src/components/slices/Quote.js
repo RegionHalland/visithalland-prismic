@@ -40,7 +40,7 @@ const Quote = ({
 			</ImageContainer>
 
 			<div className="w-full md:w-6/12 md:pl-6">
-				<blockquote className="text-2xl md:text-3xl mx-auto mb-6 w-full leading-tight text-black font-semibold">
+				<blockquote className="text-2xl md:text-3xl mx-auto mb-6 w-full leading-tight text-black font-medium">
 					“{quote}”
 				</blockquote>
 				<span className="block mb-6 text-lg text-gray-600">
