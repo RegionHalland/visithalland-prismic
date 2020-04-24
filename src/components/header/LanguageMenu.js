@@ -10,7 +10,7 @@ const TITLES = {
 }
 
 const LanguageMenu = ({ languages, meta }) => (
-	<ul className="flex md:pl-4 lg:pl-8">
+	<ul className="flex lg:pl-8 pr-4 lg:pr-0 py-6 lg:py-0 order-2 lg:order-3">
 		{languages.map(item => (
 			<li key={item}>
 				<Link

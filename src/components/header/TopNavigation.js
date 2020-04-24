@@ -6,7 +6,7 @@ import Container from '../Container'
 const TopNavigation = ({ items }) => (
 	<nav className="relative bg-blue-600">
 		<StyledContainer className="px-4 md:px-6">
-			<ul className="flex relative md:justify-end py-2 md:py-3 overflow-x-scroll">
+			<ul className="flex relative md:justify-end py-2 md:py-3 overflow-x-scroll scrolling-touch">
 				{items.map((el, index) => (
 					<li key={el.label} className="leading-none">
 						<a
