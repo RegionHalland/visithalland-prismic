@@ -92,6 +92,7 @@ const StyledLink = styled.button`
 
 FancyLink.propTypes = {
 	title: PropTypes.string.isRequired,
+	colorscheme: PropTypes.string,
 	size: PropTypes.string,
 	onClick: PropTypes.func,
 	active: PropTypes.bool,
