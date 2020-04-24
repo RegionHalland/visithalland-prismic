@@ -1,11 +1,10 @@
 import React from 'react'
 import propTypes from 'prop-types'
-import styled from 'styled-components'
 import Container from '../Container'
 
 const TopNavigation = ({ items }) => (
 	<nav className="relative bg-blue-600">
-		<StyledContainer className="px-4 md:px-6">
+		<Container className="px-4 md:px-6">
 			<ul className="flex relative md:justify-end py-2 md:py-3 overflow-x-scroll scrolling-touch">
 				{items.map((el, index) => (
 					<li key={el.label} className="leading-none">
@@ -18,26 +17,9 @@ const TopNavigation = ({ items }) => (
 					</li>
 				))}
 			</ul>
-		</StyledContainer>
+		</Container>
 	</nav>
 )
-
-// Add a fade to the right end of the container on smaller devices
-const StyledContainer = styled(Container)`
-	@media (max-width: 767px) {
-		&:after {
-			content: '';
-			display: block;
-			position: fixed;
-			right: 1rem;
-			top: 0;
-			width: 2rem;
-			height: 40px;
-			pointer-events: none;
-			background: linear-gradient(to left, #1b3c45, rgba(27, 60, 69, 0));
-		}
-	}
-`
 
 TopNavigation.propTypes = {
 	items: propTypes.arrayOf(propTypes.object),
