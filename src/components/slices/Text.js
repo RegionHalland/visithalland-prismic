@@ -16,31 +16,31 @@ const Text = ({ text }) => (
 const RichTextContainer = styled.div`
 	${tw`font-sans px-4 md:px-6`};
 	> h1 {
-		${tw`font-medium text-2xl md:text-3xl mt-10 mb-4 md:mb-4 text-black`};
+		${tw`font-bold text-2xl md:text-3xl mt-10 mb-4 md:mb-4 text-black`};
 		& > a {
 			${tw`underline`}
 		}
 	}
 	> h2 {
-		${tw`font-medium text-2xl md:text-3xl mt-10 mb-4 md:mb-4 text-black`};
+		${tw`font-bold text-2xl md:text-3xl mt-10 mb-4 md:mb-4 text-black`};
 		& > a {
 			${tw`underline`}
 		}
 	}
 	> h3 {
-		${tw`font-medium text-xl md:text-2xl mt-10 mb-3 md:mb-5 text-black`};
+		${tw`font-bold text-xl md:text-2xl mt-10 mb-3 md:mb-5 text-black`};
 		& > a {
 			${tw`underline`}
 		}
 	}
 	> h4 {
-		${tw`font-medium text-lg md:text-xl mt-10 mb-3 md:mb-5 text-black`};
+		${tw`font-bold text-lg md:text-xl mt-10 mb-3 md:mb-5 text-black`};
 		& > a {
 			${tw`underline`}
 		}
 	}
 	> h5 {
-		${tw`font-medium text-base md:text-lg mt-6 mb-2 md:mb-4 text-black`};
+		${tw`font-bold text-base md:text-lg mt-6 mb-2 md:mb-4 text-black`};
 		& > a {
 			${tw`underline`}
 		}

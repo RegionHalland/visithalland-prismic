@@ -38,7 +38,7 @@ const ArticleCard = ({
 		>
 			<ArticleCardContainer
 				onMouseEnter={() => setActive()}
-				onMouseEnter={() => setActive(!active)}
+				onMouseLeave={() => setActive(!active)}
 				className={className}
 			>
 				<div className="absolute bottom-0 left-0 right-0 h-full w-full flex items-center flex-col justify-center text-center p-3 z-10">

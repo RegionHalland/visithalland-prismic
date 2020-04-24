@@ -1,5 +1,6 @@
 import React from 'react'
 import { addDecorator, configure } from '@storybook/react'
+import Container from '../src/components/Container'
 import '../src/styles/index.css'
 
 //https://www.gatsbyjs.org/docs/visual-testing-with-storybook/#setting-up-your-environment
@@ -11,7 +12,11 @@ global.___loader = {
 	hovering: () => {},
 }
 
-addDecorator(storyFn => <div className="p-8 font-sans">{storyFn()}</div>)
+addDecorator(storyFn => (
+	<Container tight>
+		<div className="p-8 font-sans">{storyFn()}</div>
+	</Container>
+))
 
 // Gatsby internal mocking to prevent unnecessary errors in storybook testing environment
 global.__PATH_PREFIX__ = ''
