@@ -14,6 +14,7 @@ const FancyLink = ({
 	onClick,
 	active,
 	colorscheme,
+	size,
 	...props
 }) => {
 	const transitions = useTransition(active, null, {
@@ -46,7 +47,9 @@ const FancyLink = ({
 					),
 				)}
 			</StyledIconContainer>
-			<StyledTitle colorscheme={colorscheme}>{title}</StyledTitle>
+			<StyledTitle size={size} colorscheme={colorscheme}>
+				{title}
+			</StyledTitle>
 		</StyledLink>
 	)
 }
@@ -58,6 +61,15 @@ const StyledTitle = styled.span`
 				return tw`text-white`
 			default:
 				return tw`text-black`
+		}
+	}}
+
+	${({ size }) => {
+		switch (size) {
+			case 'large':
+				return tw`text-lg`
+			default:
+				return tw`text-base`
 		}
 	}}
 	${tw`block`};
@@ -75,11 +87,12 @@ const StyledAnimationContainer = styled.div`
 const AnimationContainer = animated(StyledAnimationContainer)
 
 const StyledLink = styled.button`
-	${tw`relative focus:outline-none font-medium inline-flex py-2`};
+	${tw`relative focus:outline-none font-medium inline-flex items-center py-2`};
 `
 
 FancyLink.propTypes = {
 	title: PropTypes.string.isRequired,
+	size: PropTypes.string,
 	onClick: PropTypes.func,
 	active: PropTypes.bool,
 }
