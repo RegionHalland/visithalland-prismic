@@ -39,10 +39,10 @@ module.exports = {
 			colors: {
 				black: '#1B1B1B',
 				gray: {
-					200: '#F5F5F9',
-					300: '#E1E1EB',
-					400: '#CDCDD4',
-					500: '#9C9CA5',
+					200: '#F2F6FC',
+					300: '#E8F3FE',
+					400: '#CAD2E7',
+					500: '#9AA6B9',
 					600: '#5C666D',
 					700: '#33343A',
 				},

@@ -32,33 +32,17 @@ const FancyLink = ({
 					item ? (
 						<AnimationContainer style={props} key={key}>
 							{external ? (
-								<LinkIcon
-									height={10}
-									width={10}
-									className="text-green-200"
-								/>
+								<LinkIcon className="text-green-200 h-3 w-3" />
 							) : (
-								<ArrowRightIcon
-									height={10}
-									width={10}
-									className="text-green-200"
-								/>
+								<ArrowRightIcon className="text-green-200 h-2 w-2" />
 							)}
 						</AnimationContainer>
 					) : (
 						<AnimationContainer style={props} key={key}>
 							{external ? (
-								<LinkIcon
-									height={10}
-									width={10}
-									className="text-green-200"
-								/>
+								<LinkIcon className="text-green-200 h-3 w-3" />
 							) : (
-								<ArrowRightIcon
-									height={10}
-									width={10}
-									className="text-green-200"
-								/>
+								<ArrowRightIcon className="text-green-200 h-2 w-2" />
 							)}
 						</AnimationContainer>
 					),
@@ -84,9 +68,9 @@ const StyledTitle = styled.span`
 	${({ size }) => {
 		switch (size) {
 			case 'large':
-				return tw`text-lg`
+				return tw`text-base md:text-lg`
 			default:
-				return tw`text-base`
+				return tw`text-sm md:text-base`
 		}
 	}}
 	${tw`block`};
@@ -94,7 +78,7 @@ const StyledTitle = styled.span`
 `
 
 const StyledIconContainer = styled.span`
-	${tw`h-6 w-6 bg-green-500 relative overflow-hidden`};
+	${tw`h-5 w-5 md:h-6 md:w-6 bg-green-500 relative overflow-hidden`};
 `
 
 const StyledAnimationContainer = styled.div`
