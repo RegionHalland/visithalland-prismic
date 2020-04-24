@@ -30,7 +30,19 @@ storiesOf('ArticleCard', module)
 			/>
 		)
 	})
-
+	.add('external', () => {
+		return (
+			<ArticleCard
+				title={text('title', 'Skördetid i Halland')}
+				image={Placeholder}
+				copyright={text('copyright', 'David Öhlin')}
+				alt={text('alt', 'En fin bild')}
+				tags={array('tags', ['Natur och Friluftsliv'])}
+				url={text('url', 'www.aftonbladet.se')}
+				className="text-4xl h-500px"
+			/>
+		)
+	})
 	.add('rounded', () => {
 		return (
 			<ArticleCard
@@ -44,7 +56,6 @@ storiesOf('ArticleCard', module)
 			/>
 		)
 	})
-
 	.add('full', () => {
 		return (
 			<ArticleCard

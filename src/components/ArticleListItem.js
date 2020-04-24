@@ -70,7 +70,7 @@ const ArticleListItem = ({
 							<TextRenderer lines={5} text={excerpt} />
 						</div>
 					)}
-					<FancyLink active={active} title="Läs mer" />
+					<FancyLink external={url} active={active} title="Läs mer" />
 				</ContentContainer>
 			</ArticleListItemContainer>
 		</ConditionalWrapper>

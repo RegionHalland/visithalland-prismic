@@ -57,6 +57,7 @@ const ArticleCard = ({
 					<FancyLink
 						colorscheme="white"
 						active={active}
+						external={url}
 						title="Läs mer"
 					/>
 				</div>

@@ -38,6 +38,18 @@ storiesOf('ArticleListItem', module)
 			/>
 		)
 	})
+	.add('external', () => {
+		return (
+			<ArticleListItem
+				title={text('title', 'Skördetid i Halland')}
+				image={Placeholder}
+				excerpt={TextObject}
+				alt={text('alt', 'En fin bild')}
+				tags={array('tags', ['Natur och Friluftsliv'])}
+				url={text('url', 'www.aftonbladet.se')}
+			/>
+		)
+	})
 	.add('large', () => {
 		return (
 			<ArticleListItem
