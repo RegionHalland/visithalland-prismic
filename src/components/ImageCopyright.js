@@ -6,7 +6,7 @@ const ImageCopyright = ({ credits }) => {
 
 	return (
 		<div className="absolute z-50 bottom-0 right-0 mb-4 mr-4 leading-none text-white text-xs">
-			{credits}
+			© {credits}
 		</div>
 	)
 }
