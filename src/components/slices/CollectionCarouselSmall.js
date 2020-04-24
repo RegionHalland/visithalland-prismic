@@ -23,20 +23,24 @@ const CollectionCarouselSmall = ({ items }) => {
 				slidesToShow={breakpoint === 'xs' ? 1 : 2}
 				renderBottomCenterControls={() => null}
 				renderCenterLeftControls={({ previousSlide }) => (
-					<IconButton
-						onClick={previousSlide}
-						icon={
-							<ArrowLeftIcon className="h-3 w-3 text-gray-400" />
-						}
-					/>
+					<div className="pl-3 md:pl-0">
+						<IconButton
+							onClick={previousSlide}
+							icon={
+								<ArrowLeftIcon className="h-3 w-3 text-gray-400" />
+							}
+						/>
+					</div>
 				)}
 				renderCenterRightControls={({ nextSlide }) => (
-					<IconButton
-						onClick={nextSlide}
-						icon={
-							<ArrowRightIcon className="h-3 w-3 text-gray-400" />
-						}
-					/>
+					<div className="pr-3 md:pr-0">
+						<IconButton
+							onClick={nextSlide}
+							icon={
+								<ArrowRightIcon className="h-3 w-3 text-gray-400" />
+							}
+						/>
+					</div>
 				)}
 			>
 				{items.map(

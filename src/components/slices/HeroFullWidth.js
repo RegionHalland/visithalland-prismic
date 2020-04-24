@@ -13,7 +13,6 @@ const HeroFullWidth = ({
 	title,
 	introduction,
 	author,
-	publicationDate,
 	image,
 	video,
 	alt,
@@ -22,8 +21,8 @@ const HeroFullWidth = ({
 	console.log(introduction)
 	return (
 		<React.Fragment>
-			<ImageContainer className="h-70vh md:h-70vh lg:h-80vh w-full flex items-center justify-center relative mb-12 px-4 md:px-6">
-				<h1 className="text-4xl md:text-5xl lg:text-6xl w-full leading-tight text-white font-medium  md:w-6/12 text-center relative z-10">
+			<ImageContainer className="h-70vh md:h-60vh lg:h-70vh w-full flex items-center justify-center relative mb-12 px-4 md:px-6">
+				<h1 className="text-4xl md:text-5xl lg:text-6xl w-full leading-tight text-white font-bold  md:w-6/12 text-center relative z-10">
 					{title}
 				</h1>
 				{video && (
@@ -99,7 +98,6 @@ HeroFullWidth.propTypes = {
 	title: PropTypes.string,
 	introduction: PropTypes.arrayOf(PropTypes.object),
 	author: PropTypes.object,
-	publicationDate: PropTypes.string.isRequired,
 	image: PropTypes.object,
 }
 

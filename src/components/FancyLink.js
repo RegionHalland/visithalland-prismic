@@ -86,7 +86,7 @@ const StyledAnimationContainer = styled.div`
 const AnimationContainer = animated(StyledAnimationContainer)
 
 const StyledLink = styled.button`
-	${tw`relative focus:outline-none font-medium inline-flex items-center py-2`};
+	${tw`relative focus:outline-none font-medium inline-flex items-center`};
 `
 
 FancyLink.propTypes = {

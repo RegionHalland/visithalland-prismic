@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import Link from 'gatsby-link'
 
 import styled from 'styled-components'
 import tw from 'tailwind.macro'
@@ -18,11 +17,6 @@ const IconButton = ({ icon, onClick, colorscheme, ...props }) => {
 		</StyledButton>
 	)
 }
-
-const StyledTitle = styled.span`
-	${tw`block`};
-	transition: transform 0.25s, opacity 0.25s;
-`
 
 const StyledIcon = styled.div`
 	transition: transform 0.25s, opacity 0.25s;

@@ -5,11 +5,15 @@ import Link from 'gatsby-link'
 import styled from 'styled-components'
 import tw from 'tailwind.macro'
 
-const Button = ({ title, url, to, onClick, colorscheme, ...props }) => {
+const Button = ({ title, url, to, onClick, colorscheme, size, ...props }) => {
 	if (onClick)
 		return (
 			<button className="focus:outline-none" onClick={onClick} {...props}>
-				<StyledButton data-title={title} colorscheme={colorscheme}>
+				<StyledButton
+					size={size}
+					data-title={title}
+					colorscheme={colorscheme}
+				>
 					<StyledTitle>{title}</StyledTitle>
 				</StyledButton>
 			</button>
@@ -18,14 +22,22 @@ const Button = ({ title, url, to, onClick, colorscheme, ...props }) => {
 	if (url)
 		return (
 			<a className="focus:outline-none" href={url} {...props}>
-				<StyledButton data-title={title} colorscheme={colorscheme}>
+				<StyledButton
+					size={size}
+					data-title={title}
+					colorscheme={colorscheme}
+				>
 					<StyledTitle>{title}</StyledTitle>
 				</StyledButton>
 			</a>
 		)
 	return (
 		<Link className="focus:outline-none" to={to} {...props}>
-			<StyledButton data-title={title} colorscheme={colorscheme}>
+			<StyledButton
+				size={size}
+				data-title={title}
+				colorscheme={colorscheme}
+			>
 				<StyledTitle>{title}</StyledTitle>
 			</StyledButton>
 		</Link>
@@ -46,7 +58,15 @@ const StyledButton = styled.div`
 				return tw`bg-blue-700 hover:bg-blue-600 active:bg-blue-600 focus:bg-blue-600 text-white`
 		}
 	}}
-	${tw`relative inline-block overflow-hidden rounded-full text-sm md:text-base focus:outline-none px-6 md:px-6 font-sans py-3 md:py-3 font-medium`};
+	${({ size }) => {
+		switch (size) {
+			case 'large':
+				return tw`text-base md:text-base px-6 md:px-8 py-4 md:py-5`
+			default:
+				return tw` text-sm md:text-base px-6 md:px-6 py-3 md:py-3`
+		}
+	}}
+	${tw`relative inline-block overflow-hidden rounded-full focus:outline-none font-medium`};
 	transition: background 0.25s;
 	&:before {
 		content: attr(data-title);
@@ -76,6 +96,7 @@ Button.propTypes = {
 	url: PropTypes.string,
 	to: PropTypes.string,
 	colorscheme: PropTypes.string,
+	size: PropTypes.string,
 	onClick: PropTypes.func,
 }
 

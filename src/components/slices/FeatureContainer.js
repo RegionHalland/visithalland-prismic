@@ -39,6 +39,7 @@ const FeatureContainer = ({ slice }) => {
 	const alt = get(primary, 'feature_link.seo_featured_image.alt', null)
 	const meta = get(primary, 'feature_link._meta', {})
 	const url = get(primary, 'feature_link.url', '')
+	const tags = get(primary, 'collection_link._meta.tags', [])
 
 	if (variant === 'overlay') {
 		return (
@@ -52,6 +53,7 @@ const FeatureContainer = ({ slice }) => {
 				alt={alt}
 				meta={meta}
 				url={url}
+				tags={tags}
 			/>
 		)
 	}
@@ -68,6 +70,7 @@ const FeatureContainer = ({ slice }) => {
 				alt={alt}
 				meta={meta}
 				url={url}
+				tags={tags}
 			/>
 		)
 	}
@@ -84,6 +87,7 @@ const FeatureContainer = ({ slice }) => {
 				alt={alt}
 				meta={meta}
 				url={url}
+				tags={tags}
 			/>
 		)
 	}
@@ -99,6 +103,7 @@ const FeatureContainer = ({ slice }) => {
 			alt={alt}
 			meta={meta}
 			url={url}
+			tags={tags}
 		/>
 	)
 }

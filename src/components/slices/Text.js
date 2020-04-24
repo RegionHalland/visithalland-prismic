@@ -22,25 +22,25 @@ const RichTextContainer = styled.div`
 		}
 	}
 	> h2 {
-		${tw`font-bold text-2xl md:text-3xl mt-10 mb-4 md:mb-4 text-black`};
+		${tw`font-bold text-2xl md:text-3xl mt-10 mb-3 md:mb-3 text-black`};
 		& > a {
 			${tw`underline`}
 		}
 	}
 	> h3 {
-		${tw`font-bold text-xl md:text-2xl mt-10 mb-3 md:mb-5 text-black`};
+		${tw`font-bold text-xl md:text-2xl mt-10 mb-3 md:mb-3 text-black`};
 		& > a {
 			${tw`underline`}
 		}
 	}
 	> h4 {
-		${tw`font-bold text-lg md:text-xl mt-10 mb-3 md:mb-5 text-black`};
+		${tw`font-bold text-lg md:text-xl mt-10 mb-3 md:mb-3 text-black`};
 		& > a {
 			${tw`underline`}
 		}
 	}
 	> h5 {
-		${tw`font-bold text-base md:text-lg mt-6 mb-2 md:mb-4 text-black`};
+		${tw`font-bold text-base md:text-lg mt-6 mb-2 md:mb-3 text-black`};
 		& > a {
 			${tw`underline`}
 		}

@@ -28,6 +28,7 @@ const CollectionGridSmall = ({ items }) => (
 							alt={alt}
 							tags={tags}
 							to={linkResolver(meta)}
+							className="h-400px md:h-500px rounded"
 						/>
 					</GridItem>
 				),

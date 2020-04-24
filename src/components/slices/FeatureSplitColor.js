@@ -21,7 +21,7 @@ const FeatureSplitColor = ({
 		<div className="flex flex-col md:flex-row">
 			<div className="flex flex-1 items-center justify-center bg-green-600 order-2 md:order-1">
 				<div className="text-center p-8">
-					{meta.tags.length > 0 && (
+					{meta.tags && meta.tags.length > 0 && (
 						<div>
 							{meta.tags.map((tag, index) => (
 								<span className="text-gray-200" key={tag}>
