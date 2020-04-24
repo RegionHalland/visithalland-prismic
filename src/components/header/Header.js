@@ -19,20 +19,18 @@ const Header = ({ meta, mainNavigation, topNavigation, langs }) => {
 		)
 	}
 
-	const closeMenu = () => {
-		setActiveId(null)
-	}
+	const closeMenu = () => setActiveId(null)
 
 	return (
 		<React.Fragment>
 			<TopNavigation items={topNavigation} />
 			<header className="sticky top-0 z-50">
 				<BackgroundPattern>
-					<Container className="flex flex-wrap justify-between px-4 md:px-6 py-4 md:py-6">
+					<Container className="flex flex-wrap justify-between items-center lg:px-6 lg:py-6">
 						<HeaderLogo meta={meta} />
-						<ul className="hidden lg:flex flex-1 px-6 lg:px-8">
+						<MainNav className="list-reset relative flex overflow-x-scroll scrolling-touch w-full lg:flex-1 order-3 bg-blue-600 lg:bg-transparent px-4 lg:px-8 py-3 lg:py-0">
 							{mainNavigation.items.map(({ label, id }) => (
-								<li key={id}>
+								<li className="flex-shrink-0" key={id}>
 									<NavItem
 										title={label}
 										active={activeId === id}
@@ -40,20 +38,9 @@ const Header = ({ meta, mainNavigation, topNavigation, langs }) => {
 									/>
 								</li>
 							))}
-						</ul>
+						</MainNav>
 						<LanguageMenu languages={langs} meta={meta} />
 					</Container>
-					<ul className="flex lg:hidden overflow-x-scroll relative w-full bg-blue-600 px-4 md:px-6 py-3 ">
-						{mainNavigation.items.map(({ label, id }) => (
-							<li key={id}>
-								<NavItem
-									title={label}
-									active={activeId === id}
-									onClick={() => navItemPress(id)}
-								/>
-							</li>
-						))}
-					</ul>
 				</BackgroundPattern>
 				{typeof activeId === 'number' && (
 					<Dropdown
@@ -73,6 +60,16 @@ const Header = ({ meta, mainNavigation, topNavigation, langs }) => {
 		</React.Fragment>
 	)
 }
+
+const MainNav = styled.ul`
+	-ms-overflow-style: none;
+
+	&::-webkit-scrollbar {
+		width: 0px;
+		height: 0px;
+		background: transparent;
+	}
+`
 
 const BackgroundPattern = styled.div`
 	background-image: url(${pattern});
