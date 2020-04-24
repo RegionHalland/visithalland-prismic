@@ -8,7 +8,7 @@ import tw from 'tailwind.macro'
 import Container from '../Container'
 import CarouselArrow from '../CarouselArrow'
 import ConditionalWrapper from '../ConditionalWrapper'
-import CollectionGridImageThumbnail from '../CollectionGridImageThumbnail'
+import ArticleCard from '../ArticleCard'
 
 import useTailwindBreakpoint from '../../hooks/useTailwindBreakpoint'
 import { linkResolver } from '../../utils/linkResolver'
@@ -36,7 +36,7 @@ const CollectionCarouselSmall = ({ items }) => {
 						index,
 					) => (
 						<div className="px-2 text-2xl focus:outline-none">
-							<CollectionGridImageThumbnail
+							<ArticleCard
 								key={`${index}-${meta.uid}`}
 								title={title}
 								image={image}
