@@ -34,7 +34,7 @@ const StyledContainer = styled(Container)`
 			width: 2rem;
 			height: 40px;
 			pointer-events: none;
-			background: linear-gradient(to left, #11313a, rgba(17, 49, 58, 0));
+			background: linear-gradient(to left, #1b3c45, rgba(27, 60, 69, 0));
 		}
 	}
 `
