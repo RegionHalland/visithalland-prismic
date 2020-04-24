@@ -64,7 +64,7 @@ const FeaturedArticle = ({ label, article }) => (
 			<h3 className="font-bold text-2xl md:text-3xl leading-tight mb-3 break-words">
 				{article.title}
 			</h3>
-			<div className="hidden md:block text-black mb-6 leading-normal">
+			<div className="text-black mb-6 leading-normal">
 				<TextRenderer lines={3} text={article.description} />
 			</div>
 			<Button
@@ -83,7 +83,7 @@ const ArticleList = ({ label, articles }) => (
 		</div>
 		<ul>
 			{articles.map(item => (
-				<li key={item.meta.uid}>
+				<li key={item.meta.uid} className="mb-3">
 					<FancyLink
 						title={item.title}
 						size="large"

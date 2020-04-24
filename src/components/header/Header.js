@@ -6,6 +6,7 @@ import HeaderLogo from './HeaderLogo'
 import NavItem from './NavItem'
 import LanguageMenu from './LanguageMenu'
 import Dropdown from './Dropdown'
+import tw from 'tailwind.macro'
 
 import Container from '../Container'
 import pattern from '../../images/bg-pattern.png'
@@ -28,7 +29,7 @@ const Header = ({ meta, mainNavigation, topNavigation, langs }) => {
 				<BackgroundPattern>
 					<Container className="flex flex-wrap justify-between items-center lg:px-6 lg:py-6">
 						<HeaderLogo meta={meta} />
-						<MainNav className="relative flex overflow-x-scroll scrolling-touch w-full lg:flex-1 order-3 bg-blue-600 lg:bg-transparent px-4 lg:px-8 py-2 lg:py-0">
+						<MainNav className="relative flex overflow-x-scroll scrolling-touch w-full lg:flex-1 order-3 bg-blue-700 lg:bg-transparent px-4 lg:px-8 py-2 lg:py-0">
 							{mainNavigation.items.map(({ label, id }) => (
 								<li className="flex-shrink-0" key={id}>
 									<NavItem
@@ -73,7 +74,7 @@ const MainNav = styled.ul`
 
 const BackgroundPattern = styled.div`
 	background-image: url(${pattern});
-	background-color: #05242d;
+	${tw`bg-blue-800`}
 	background-size: 250px 250px;
 `
 
