@@ -71,7 +71,7 @@ const StyledTitle = styled.span`
 				return tw`text-sm md:text-base`
 		}
 	}}
-	${tw`block`};
+	${tw`flex-1 text-left leading-tight`};
 	transition: transform 0.25s, opacity 0.25s;
 `
 
