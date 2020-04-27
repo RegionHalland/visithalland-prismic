@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
+import { useTransition, animated, config } from 'react-spring'
 
 import TopNavigation from './TopNavigation'
 import HeaderLogo from './HeaderLogo'
@@ -12,15 +13,44 @@ import Container from '../Container'
 import pattern from '../../images/bg-pattern.png'
 
 const Header = ({ meta, mainNavigation, topNavigation, langs }) => {
-	const [activeId, setActiveId] = useState(null)
+	const [dropdownOpen, setDropdownOpen] = useState(false)
+	const [dropdownId, setDropdownId] = useState(null)
+	const [submenuId, setSubmenuId] = useState(null)
 
-	const navItemPress = id => {
-		return setActiveId(
-			typeof activeId === 'number' && activeId === id ? null : id,
+	const handleClick = id => {
+		return setDropdownId(
+			typeof dropdownId === 'number' && dropdownId === id ? null : id,
 		)
 	}
 
-	const closeMenu = () => setActiveId(null)
+	const closeDropdown = () => {
+		setDropdownId(null)
+	}
+
+	// Handle open/closed state
+	useEffect(() => {
+		if (typeof dropdownId === 'number' && !dropdownOpen) {
+			setDropdownOpen(true)
+		} else if (dropdownId == null && dropdownOpen) {
+			setDropdownOpen(false)
+		}
+	}, [dropdownId, dropdownOpen])
+
+	// Set submenu id based on the dropdown id
+	useEffect(() => {
+		if (typeof dropdownId === 'number' && dropdownId !== submenuId) {
+			setSubmenuId(dropdownId)
+		}
+	}, [dropdownId, submenuId])
+
+	const transition = useTransition(dropdownOpen, null, {
+		from: { opacity: 0, transform: 'translateX(-100%)' },
+		enter: { opacity: 1, transform: 'translateX(0%)' },
+		leave: { opacity: 0, transform: 'translateX(100%)' },
+		initial: null,
+		unique: true,
+		config: config.stiff,
+	})
 
 	return (
 		<React.Fragment>
@@ -29,13 +59,13 @@ const Header = ({ meta, mainNavigation, topNavigation, langs }) => {
 				<BackgroundPattern>
 					<Container className="flex flex-wrap justify-between items-center lg:px-6 lg:py-6">
 						<HeaderLogo meta={meta} />
-						<MainNav className="relative flex overflow-x-scroll scrolling-touch w-full lg:flex-1 order-3 bg-blue-700 lg:bg-transparent px-4 lg:px-8 py-2 lg:py-0">
+						<MainNav>
 							{mainNavigation.items.map(({ label, id }) => (
 								<li className="flex-shrink-0" key={id}>
 									<NavItem
 										title={label}
-										active={activeId === id}
-										onClick={() => navItemPress(id)}
+										active={dropdownId === id}
+										onClick={() => handleClick(id)}
 									/>
 								</li>
 							))}
@@ -43,26 +73,38 @@ const Header = ({ meta, mainNavigation, topNavigation, langs }) => {
 						<LanguageMenu languages={langs} meta={meta} />
 					</Container>
 				</BackgroundPattern>
-				{typeof activeId === 'number' && (
-					<Dropdown
-						featuredLabel={mainNavigation.featured_label}
-						featuredArticle={
-							mainNavigation.items.find(x => x.id === activeId)
-								.subItems[0]
-						}
-						miscArticles={mainNavigation.items
-							.find(x => x.id === activeId)
-							.subItems.filter((x, index) => index !== 0)}
-						miscLabel={mainNavigation.misc_label}
-						close={closeMenu}
-					/>
-				)}
+				<DropdownPosition>
+					{transition.map(
+						({ item, key, props }) =>
+							item && (
+								<animated.div key={key} style={props}>
+									<Dropdown
+										closeDropdown={closeDropdown}
+										submenuId={submenuId}
+										submenus={mainNavigation.items}
+									/>
+								</animated.div>
+							),
+					)}
+				</DropdownPosition>
 			</header>
 		</React.Fragment>
 	)
 }
 
+const DropdownPosition = styled.div`
+	${tw`absolute z-50 bottom-0 w-full`};
+	transform: translateY(100%);
+`
+
+const BackgroundPattern = styled.div`
+	background-image: url(${pattern});
+	${tw`bg-blue-800`}
+	background-size: 250px 250px;
+`
+
 const MainNav = styled.ul`
+	${tw`relative flex overflow-x-scroll scrolling-touch w-full lg:flex-1 order-3 bg-blue-700 lg:bg-transparent px-4 lg:px-8 py-2 lg:py-0`};
 	-ms-overflow-style: none;
 
 	&::-webkit-scrollbar {
@@ -70,12 +112,6 @@ const MainNav = styled.ul`
 		height: 0px;
 		background: transparent;
 	}
-`
-
-const BackgroundPattern = styled.div`
-	background-image: url(${pattern});
-	${tw`bg-blue-800`}
-	background-size: 250px 250px;
 `
 
 export default Header
