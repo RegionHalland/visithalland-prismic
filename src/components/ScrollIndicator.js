@@ -43,8 +43,7 @@ const StyledIndicator = styled.div`
 `
 
 const StyledIcon = styled(ArrowDownIcon)`
-	animation: ${IndicatorAnimation} 3.25s infinite
-		cubic-bezier(0.16, 1, 0.3, 1);
+	animation: ${IndicatorAnimation} 2s infinite cubic-bezier(0.83, 0, 0.17, 1);
 `
 
 ScrollIndicator.propTypes = {
