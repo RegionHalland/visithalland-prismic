@@ -37,7 +37,7 @@ const Footer = ({ mainNavigation, meta, langs }) => {
 							</div>
 							{mainNavigation.items[id].subItems.map(
 								({ title, meta }) => (
-									<div className="mb-3">
+									<div className="mb-3" key={meta.uid}>
 										<FancyLink
 											title={title}
 											colorscheme="white"
