@@ -22,9 +22,9 @@ const HeroSplit = ({
 	return (
 		<React.Fragment>
 			<Container>
-				<div className="flex flex-wrap -mx-3 py-12 px-4 lg:px-6">
+				<div className="flex flex-wrap -mx-3 py-12 lg:py-16  px-4 lg:px-6">
 					<div className="w-full md:w-6/12 px-3">
-						<h1 className="text-4xl md:text-5xl lg:text-6xl text-black w-full max-w-2xl leading-tight font-bold mb-8 break-words">
+						<h1 className="text-4xl md:text-5xl lg:text-6xl text-black w-full max-w-2xl md:pr-4 leading-tight font-bold mb-8 break-words">
 							{title}
 						</h1>
 					</div>
@@ -44,7 +44,7 @@ const HeroSplit = ({
 				</div>
 			</Container>
 			<div className="w-full mb-8 md:mb-0">
-				<ImageContainer className="h-60vh md:h-60vh lg:h-70vh w-full relative">
+				<div className="h-60vh md:h-60vh lg:h-70vh w-full relative">
 					{video && (
 						<video
 							muted
@@ -68,7 +68,7 @@ const HeroSplit = ({
 							<ImageCopyright credits={copyright} />
 						</div>
 					)}
-				</ImageContainer>
+				</div>
 			</div>
 		</React.Fragment>
 	)
@@ -86,14 +86,6 @@ const StyledIntroduction = styled.div`
 		& > a {
 			${tw`font-medium underline`}
 		}
-	}
-`
-
-const ImageContainer = styled.div`
-	&:after {
-		content: '';
-		${tw`bg-black h-full w-full absolute top-0 left-0`}
-		opacity:0.1;
 	}
 `
 
