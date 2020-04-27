@@ -9,7 +9,7 @@ import BackgroundPattern from '../images/bg-pattern.svg'
 
 const Footer = ({ meta, langs }) => {
 	return (
-		<FooterContainer className="text-white bg-blue-600 px-4 md:px-6 pt-24 pb-48 absolute z-10 w-full">
+		<FooterContainer className="text-white bg-blue-800 px-4 md:px-6 pt-24 pb-48 absolute z-10 w-full">
 			<Container className="flex flex-wrap">
 				<div className="w-full md:w-4/12 mb-8">
 					<Link
@@ -18,7 +18,7 @@ const Footer = ({ meta, langs }) => {
 							type: 'content',
 							uid: 'frontpage',
 						})}
-						className="font-medium text-xl md:text-2xl mb-4 block z-50 relative"
+						className="font-bold text-xl md:text-2xl mb-4 block z-50 relative"
 					>
 						Visithalland.com
 					</Link>
