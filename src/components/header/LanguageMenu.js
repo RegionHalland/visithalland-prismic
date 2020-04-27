@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Link from 'gatsby-link'
+import NavItem from './NavItem'
+import { navigate } from 'gatsby'
 import { linkResolver } from '../../utils/linkResolver'
 
 const TITLES = {
@@ -19,12 +20,11 @@ const LanguageMenu = ({ languages, meta }) => (
 
 			return (
 				<li key={item}>
-					<Link
-						className="ml-4 font-bold text-white hover:text-gray-300"
-						to={linkResolver(altPage)}
-					>
-						{TITLES[item]}
-					</Link>
+					<NavItem
+						title={TITLES[item]}
+						active={item === meta.lang}
+						onClick={() => navigate(linkResolver(altPage))}
+					/>
 				</li>
 			)
 		})}
