@@ -56,7 +56,7 @@ const TitleContainer = styled.div`
 `
 
 SectionHeaderLine.propTypes = {
-	title: PropTypes.object.isRequired,
+	title: PropTypes.array.isRequired,
 }
 
 export default SectionHeaderLine

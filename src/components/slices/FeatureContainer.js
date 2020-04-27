@@ -12,7 +12,6 @@ const FeatureContainer = ({ slice }) => {
 	}
 	const { primary } = slice
 	const variant = get(primary, 'feature_variant', '').toLowerCase()
-	const linkType = get(primary, 'feature_link._linkType', '')
 	const featureTitle = get(primary, 'feature_title', null)
 	const title = featureTitle
 		? featureTitle
@@ -45,7 +44,6 @@ const FeatureContainer = ({ slice }) => {
 			<FeatureSplitColor
 				title={title}
 				body={body}
-				linkType={linkType}
 				buttonLabel={buttonLabel}
 				image={image}
 				copyright={copyright}
@@ -62,7 +60,6 @@ const FeatureContainer = ({ slice }) => {
 			<FeatureSplitShadow
 				title={title}
 				body={body}
-				linkType={linkType}
 				buttonLabel={buttonLabel}
 				image={image}
 				copyright={copyright}
@@ -78,7 +75,6 @@ const FeatureContainer = ({ slice }) => {
 		<FeatureFull
 			title={title}
 			body={body}
-			linkType={linkType}
 			buttonLabel={buttonLabel}
 			image={image}
 			copyright={copyright}

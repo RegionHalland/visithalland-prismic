@@ -34,6 +34,7 @@ FeatureFull.propTypes = {
 	linkType: PropTypes.string.isRequired,
 	buttonLabel: PropTypes.string.isRequired,
 	image: PropTypes.object,
+	body: PropTypes.array,
 	meta: PropTypes.object.isRequired,
 	url: PropTypes.string,
 }

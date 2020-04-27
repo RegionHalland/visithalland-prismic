@@ -124,7 +124,7 @@ ArticleCard.propTypes = {
 	title: propTypes.string.isRequired,
 	to: propTypes.string,
 	url: propTypes.string,
-	excerpt: propTypes.object,
+	excerpt: propTypes.array,
 	tags: propTypes.array,
 	copyright: propTypes.string,
 	className: propTypes.string,

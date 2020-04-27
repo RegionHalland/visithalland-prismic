@@ -93,10 +93,10 @@ const BoxContainer = styled.div``
 
 FeatureSplitColor.propTypes = {
 	title: PropTypes.string.isRequired,
-	linkType: PropTypes.string.isRequired,
 	buttonLabel: PropTypes.string.isRequired,
 	image: PropTypes.object,
 	meta: PropTypes.object.isRequired,
+	body: PropTypes.array,
 	url: PropTypes.string,
 }
 

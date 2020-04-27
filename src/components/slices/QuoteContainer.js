@@ -11,7 +11,6 @@ const QuoteContainer = ({ slice }) => {
 
 	const { primary } = slice
 
-	const linkType = get(primary, 'quote._linkType', '')
 	const quote = get(primary, 'quote_text', null)
 	const byline = get(primary, 'quote_byline', null)
 	const buttonLabel = get(primary, 'quote_button_label', '')
@@ -25,7 +24,6 @@ const QuoteContainer = ({ slice }) => {
 		<Quote
 			quote={quote}
 			byline={byline}
-			linkType={linkType}
 			buttonLabel={buttonLabel}
 			image={image}
 			copyright={copyright}
