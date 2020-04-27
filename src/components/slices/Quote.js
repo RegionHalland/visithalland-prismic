@@ -42,37 +42,43 @@ const Quote = ({
 				onMouseEnter={() => setActive()}
 				onMouseLeave={() => setActive(!active)}
 			>
-				<ConditionalWrapper
-					condition={url}
-					ifWrapper={children => (
-						<a {...props} href={url} className="focus:outline-none">
-							{children}
-						</a>
-					)}
-					elseWrapper={children => (
-						<Link
-							to={linkResolver(meta)}
-							{...props}
-							className="focus:outline-none"
-						>
-							{children}
-						</Link>
-					)}
-				>
-					<div className="p-6 bg-white relative z-20">
-						<blockquote className="text-2xl md:text-3xl mx-auto w-full mb-6 text-black font-bold">
-							“{quote}”
-						</blockquote>
-						<span className="block mb-6 text-base text-gray-600">
-							- {byline}
-						</span>
-						<FancyLink
-							active={active}
-							external={url}
-							title={buttonLabel ? buttonLabel : 'Läs mer'}
-						/>
-					</div>
-				</ConditionalWrapper>
+				<div className="p-6 bg-white relative z-20">
+					<blockquote className="text-2xl md:text-3xl mx-auto w-full mb-6 text-black font-bold">
+						“{quote}”
+					</blockquote>
+					<span className="block mb-6 text-base text-gray-600">
+						- {byline}
+					</span>
+					<ConditionalWrapper
+						condition={url}
+						ifWrapper={children => (
+							<a
+								{...props}
+								href={url}
+								className="focus:outline-none"
+							>
+								{children}
+							</a>
+						)}
+						elseWrapper={children => (
+							<Link
+								to={linkResolver(meta)}
+								{...props}
+								className="focus:outline-none"
+							>
+								{children}
+							</Link>
+						)}
+					>
+						{url && meta.uid && (
+							<FancyLink
+								active={active}
+								external={url}
+								title={buttonLabel ? buttonLabel : 'Läs mer'}
+							/>
+						)}
+					</ConditionalWrapper>
+				</div>
 			</QuoteContainer>
 		</Container>
 	)
