@@ -31,6 +31,17 @@ const Button = ({ title, url, to, onClick, colorscheme, size, ...props }) => {
 				</StyledButton>
 			</a>
 		)
+
+	if (!url && !to)
+		return (
+			<StyledButton
+				size={size}
+				data-title={title}
+				colorscheme={colorscheme}
+			>
+				<StyledTitle>{title}</StyledTitle>
+			</StyledButton>
+		)
 	return (
 		<Link className="focus:outline-none" to={to} {...props}>
 			<StyledButton

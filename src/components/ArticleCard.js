@@ -9,6 +9,7 @@ import ConditionalWrapper from './ConditionalWrapper'
 import Link from 'gatsby-link'
 
 import FancyLink from './FancyLink'
+import Button from './Button'
 import Container from './Container'
 import TextRenderer from './TextRenderer'
 
@@ -22,6 +23,8 @@ const ArticleCard = ({
 	to,
 	url,
 	className,
+	button,
+	buttonLabel,
 	...props
 }) => {
 	const [active, setActive] = useState(false)
@@ -49,7 +52,7 @@ const ArticleCard = ({
 						{tags.map((tag, index) => (
 							<span
 								key={index}
-								className="text-gray-200 font-medium inline-block mr-2 text-base mb-1"
+								className="text-gray-200 font-medium inline-block text-base mb-1"
 							>
 								{tag}
 							</span>
@@ -63,12 +66,20 @@ const ArticleCard = ({
 								<TextRenderer lines={4} text={excerpt} />
 							</div>
 						)}
-						<FancyLink
-							colorscheme="white"
-							active={active}
-							external={url}
-							title="Läs mer"
-						/>
+						{button ? (
+							<Button
+								className="mt-2"
+								colorscheme="green"
+								title={buttonLabel ? buttonLabel : 'Läs mer'}
+							/>
+						) : (
+							<FancyLink
+								colorscheme="white"
+								active={active}
+								external={url}
+								title={buttonLabel ? buttonLabel : 'Läs mer'}
+							/>
+						)}
 					</Container>
 				</div>
 				{image && (
