@@ -8,7 +8,7 @@ import Image from './Image'
 const Author = ({ name, role, email, phone, image, colorscheme, ...props }) => (
 	<Container colorscheme={colorscheme} {...props}>
 		<div className="flex items-center">
-			<div className="h-16 w-16 mr-4 bg-gray-200 overflow-hidden rounded-full relative">
+			<div className="h-16 w-16 mr-4 overflow-hidden rounded-full relative">
 				<Image
 					style={{ position: 'absolute' }}
 					className="h-full w-full bottom-0 top-0 left-0 z-0"

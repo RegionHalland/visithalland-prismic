@@ -25,7 +25,6 @@ const body = [
 ]
 
 const author = {
-	colorscheme: 'white',
 	name: 'Lisa Söderholm',
 	role: 'Webbredaktör',
 	image: image,

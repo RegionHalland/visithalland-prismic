@@ -21,7 +21,7 @@ const Video = ({ url }) => (
 )
 
 const VideoContainer = styled.div`
-	${tw`relative overflow-hidden rounded`};
+	${tw`relative overflow-hidden`};
 	padding-top: 56.25%;
 `
 

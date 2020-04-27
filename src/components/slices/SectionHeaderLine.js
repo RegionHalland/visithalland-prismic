@@ -6,9 +6,8 @@ import Container from '../Container'
 import TextRenderer from '../TextRenderer'
 
 const SectionHeaderLine = ({ title }) => {
-	console.log(title)
 	return (
-		<Container>
+		<Container tight>
 			<div className="flex items-center px-4 md:px-6">
 				<TitleContainer>
 					<TextRenderer text={title} />

@@ -20,9 +20,31 @@ const HeroSplit = ({
 	copyright,
 }) => {
 	return (
-		<Container className="flex flex-wrap">
-			<div className="w-full md:w-6/12 mb-8 lg:mb-0">
-				<ImageContainer className="h-70vh md:h-80vh lg:h-90vh w-full relative">
+		<React.Fragment>
+			<Container>
+				<div className="flex flex-wrap -mx-3 py-12 px-4 lg:px-6">
+					<div className="w-full md:w-6/12 px-3">
+						<h1 className="text-4xl md:text-5xl lg:text-6xl text-black w-full max-w-2xl leading-tight font-bold mb-8 break-words">
+							{title}
+						</h1>
+					</div>
+					<div className="w-full md:w-6/12 px-3">
+						{introduction && (
+							<StyledIntroduction className="mb-2 max-w-2xl md:mt-2 lg:mt-3">
+								<TextRenderer
+									className="md:text-center"
+									text={introduction}
+								/>
+							</StyledIntroduction>
+						)}
+						{author && (
+							<Author className="w-full flex" {...author} />
+						)}
+					</div>
+				</div>
+			</Container>
+			<div className="w-full mb-8 md:mb-0">
+				<ImageContainer className="h-60vh md:h-60vh lg:h-70vh w-full relative">
 					{video && (
 						<video
 							muted
@@ -48,35 +70,21 @@ const HeroSplit = ({
 					)}
 				</ImageContainer>
 			</div>
-			<div className="w-full md:w-6/12 flex flex-col justify-center px-4 lg:px-8">
-				<h1 className="text-4xl md:text-5xl lg:text-6xl w-full lg:w-10/12 leading-tight font-bold mb-8">
-					{title}
-				</h1>
-				{introduction && (
-					<StyledIntroduction className="mb-2 max-w-2xl">
-						<TextRenderer
-							className="md:text-center"
-							text={introduction}
-						/>
-					</StyledIntroduction>
-				)}
-				{author && <Author className="w-full flex" {...author} />}
-			</div>
-		</Container>
+		</React.Fragment>
 	)
 }
 
 const StyledIntroduction = styled.div`
 	> p {
-		${tw`text-gray-700 text-xl leading-relaxed mb-8`};
+		${tw`text-black text-lg md:text-xl leading-relaxed mb-8`};
 		& > strong {
-			${tw`font-medium text-black`}
+			${tw`font-medium`}
 		}
 		& > em {
-			${tw`font-italic text-black`}
+			${tw`font-italic`}
 		}
 		& > a {
-			${tw`font-medium text-black underline`}
+			${tw`font-medium underline`}
 		}
 	}
 `
