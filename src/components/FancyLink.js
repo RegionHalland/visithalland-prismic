@@ -66,7 +66,7 @@ const StyledTitle = styled.span`
 	${({ size }) => {
 		switch (size) {
 			case 'large':
-				return tw`text-base md:text-lg`
+				return tw`text-lg`
 			default:
 				return tw`text-sm md:text-base`
 		}
