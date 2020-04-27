@@ -5,7 +5,7 @@ import { withKnobs, text, object, array } from '@storybook/addon-knobs/react'
 
 import Announcement from '../../src/components/Announcement'
 
-const TextObject = [
+const body = [
 	{
 		type: 'paragraph',
 		text:
@@ -21,7 +21,7 @@ storiesOf('Announcement', module)
 			<Announcement
 				key={1}
 				id={1}
-				content={TextObject}
+				content={body}
 				onClose={() => alert('I was clicked')}
 			/>
 		)

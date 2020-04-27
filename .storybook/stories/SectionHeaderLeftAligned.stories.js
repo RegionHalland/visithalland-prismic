@@ -5,7 +5,7 @@ import { withKnobs, text, object } from '@storybook/addon-knobs/react'
 
 import SectionHeaderLeftAligned from '../../src/components/slices/SectionHeaderLeftAligned'
 
-const TitleObject = [
+const title = [
 	{
 		type: 'heading2',
 		text: 'Section Title',
@@ -13,7 +13,7 @@ const TitleObject = [
 	},
 ]
 
-const TextObject = [
+const body = [
 	{
 		type: 'paragraph',
 		text:
@@ -27,8 +27,8 @@ storiesOf('SectionHeaderLeftAligned', module)
 	.add('default', () => {
 		return (
 			<SectionHeaderLeftAligned
-				title={object('title', TitleObject)}
-				body={TextObject}
+				title={object('title', title)}
+				body={body}
 			/>
 		)
 	})

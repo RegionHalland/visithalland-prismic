@@ -3,7 +3,8 @@ import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { withKnobs, text, object, array } from '@storybook/addon-knobs/react'
 
-import HeroFullScreen from '../../src/components/slices/HeroFullScreen'
+import Quote from '../../src/components/slices/Quote'
+
 import placeholder from './assets/placeholder.jpg'
 
 const image = {
@@ -15,44 +16,43 @@ const image = {
 	sizes: '(max-width: 960px) 100vw, 960px',
 }
 
-const body = [
-	{
-		type: 'paragraph',
-		text:
-			'Att leta upp det perfekta picknick-stället är ett spännande vardagsäventyr för både stora och små. Snöra på dig skorna och packa ner termos och ett par bullar och ge dig ut i naturen. Vi har guiden till några av Hallands vackraste vyer.',
-		spans: [{ start: 0, end: 99, type: 'strong' }],
-	},
-]
-
-const author = {
-	colorscheme: 'white',
-	name: 'Lisa Söderholm',
-	role: 'Webbredaktör',
-	image: image,
+const meta = {
+	lang: 'sv-se',
+	type: 'content',
+	uid: 'det-basta-med-halland-ar-mojligheten-att-hitta-sma',
 }
 
-storiesOf('HeroFullScreen', module)
+storiesOf('Quote', module)
 	.addDecorator(withKnobs)
-	.add('default', () => {
+	.add('link', () => {
 		return (
-			<HeroFullScreen
-				title={text('title', 'Naturupplevelser i Halland')}
-				introduction={object('introduction', body)}
-				author={author}
+			<Quote
+				quote={text(
+					'quote',
+					'Jag hade aldrig hört talas om Halland innan, nu älskar jag det.',
+				)}
+				byline={text('byline', 'Jonas Svensson')}
 				image={image}
-				alt={text('alt', 'Beskrivning av bild')}
-				copyright={text('copyright', 'Anders Alm')}
+				copyright={text('copyright', 'Lisa Söderholm')}
+				alt={text('alt', 'Bild på kvinna vid klippa')}
+				buttonLabel={text('buttonLabel', 'Läs om Jonas semester')}
+				meta={meta}
 			/>
 		)
 	})
-	.add('no author', () => {
+	.add('url', () => {
 		return (
-			<HeroFullScreen
-				title={text('title', 'Naturupplevelser i Halland')}
-				introduction={object('introduction', body)}
+			<Quote
+				quote={text(
+					'quote',
+					'Jag hade aldrig hört talas om Halland innan, nu älskar jag det.',
+				)}
+				byline={text('byline', 'Jonas Svensson')}
 				image={image}
-				alt={text('alt', 'Beskrivning av bild')}
-				copyright={text('copyright', 'Anders Alm')}
+				copyright={text('copyright', 'Lisa Söderholm')}
+				alt={text('alt', 'Bild på kvinna vid klippa')}
+				buttonLabel={text('buttonLabel', 'Läs om Jonas semester')}
+				url={text('url', 'https://www.aftonbladet.se')}
 			/>
 		)
 	})

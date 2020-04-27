@@ -5,7 +5,7 @@ import { withKnobs, text, object } from '@storybook/addon-knobs/react'
 
 import SectionHeaderCentered from '../../src/components/slices/SectionHeaderCentered'
 
-const TitleObject = [
+const title = [
 	{
 		type: 'heading2',
 		text: 'Section Title',
@@ -13,7 +13,7 @@ const TitleObject = [
 	},
 ]
 
-const TextObject = [
+const body = [
 	{
 		type: 'paragraph',
 		text:
@@ -26,9 +26,6 @@ storiesOf('SectionHeaderCentered', module)
 	.addDecorator(withKnobs)
 	.add('default', () => {
 		return (
-			<SectionHeaderCentered
-				title={object('title', TitleObject)}
-				body={TextObject}
-			/>
+			<SectionHeaderCentered title={object('title', title)} body={body} />
 		)
 	})

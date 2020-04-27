@@ -5,7 +5,7 @@ import { withKnobs, text, object } from '@storybook/addon-knobs/react'
 
 import SectionHeaderLine from '../../src/components/slices/SectionHeaderLine'
 
-const TitleObject = [
+const title = [
 	{
 		type: 'heading2',
 		text: 'Section Title',
@@ -16,5 +16,5 @@ const TitleObject = [
 storiesOf('SectionHeaderLine', module)
 	.addDecorator(withKnobs)
 	.add('default', () => {
-		return <SectionHeaderLine title={object('title', TitleObject)} />
+		return <SectionHeaderLine title={object('title', title)} />
 	})
