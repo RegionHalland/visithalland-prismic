@@ -54,6 +54,7 @@ const CollectionCarouselSmall = ({ items }) => {
 								title={title}
 								image={image}
 								copyright={copyright}
+								className="h-500px md:h-500px w-full text-2xl  md:text-3xl"
 								alt={alt}
 								tags={tags}
 								url={url}
