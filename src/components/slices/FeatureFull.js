@@ -24,6 +24,8 @@ const FeatureFull = ({
 		className="h-500px md:h-900px w-full text-3xl  md:text-5xl"
 		url={url}
 		to={linkResolver(meta)}
+		buttonLabel={buttonLabel}
+		button
 	/>
 )
 
