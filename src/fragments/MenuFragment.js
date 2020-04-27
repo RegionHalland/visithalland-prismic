@@ -21,15 +21,15 @@ export const MenuFragment = graphql`
 							seo_featured_image
 							seo_featured_imageSharp {
 								childImageSharp {
-									fluid(maxWidth: 1920, quality: 80) {
-										...GatsbyImageSharpFluid
+									fluid(maxWidth: 400, quality: 60) {
+										...GatsbyImageSharpFluid_withWebp
 									}
 									fixed(
 										width: 800
 										height: 800
-										quality: 80
+										quality: 60
 									) {
-										...GatsbyImageSharpFixed
+										...GatsbyImageSharpFixed_withWebp
 									}
 								}
 							}

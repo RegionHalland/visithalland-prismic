@@ -9,8 +9,8 @@ export const ImageFragment = graphql`
 			image_image
 			image_imageSharp {
 				childImageSharp {
-					fluid(maxWidth: 960, quality: 80) {
-						...GatsbyImageSharpFluid
+					fluid(maxWidth: 800, quality: 60) {
+						...GatsbyImageSharpFluid_withWebp
 					}
 				}
 			}
