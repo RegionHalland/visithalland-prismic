@@ -58,7 +58,7 @@ const FeatureSplitShadow = ({
 									{tag}
 								</span>
 							))}
-							<h1 className="text-3xl md:text-4xl mx-auto mb-4 lg:mb-6 w-full leading-tight text-black font-bold max-w-lg">
+							<h1 className="text-2xl md:text-4xl mx-auto mb-4 lg:mb-6 w-full leading-tight text-black font-bold max-w-lg">
 								{title}
 							</h1>
 							<div className="bg-green-600 w-6 h-1 mb-4 lg:mb-6 rounded mx-auto" />
@@ -74,7 +74,7 @@ const FeatureSplitShadow = ({
 							/>
 						</div>
 					</div>
-					<div className="relative h-300px md:h-500px  z-10 flex-1 order-1 md:order-2">
+					<div className="relative h-400px md:h-500px  z-10 flex-1 order-1 md:order-2">
 						<Image
 							className="h-full w-full bottom-0 top-0 left-0 z-0"
 							objectFit="contain"

@@ -60,7 +60,7 @@ const Content = ({
 			<AnnouncementContainer announcements={allAnnouncements} />
 			<HeaderContainer menu={menu} meta={meta} />
 			<ContentParser slices={slices} meta={meta} seo={seo} />
-			<FooterContainer meta={meta} />
+			<FooterContainer menu={menu} meta={meta} />
 		</Layout>
 	)
 }

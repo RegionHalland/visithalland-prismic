@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import get from 'lodash.get'
 
 import FeatureFull from './FeatureFull'
-import FeatureOverlay from './FeatureOverlay'
 import FeatureSplitColor from './FeatureSplitColor'
 import FeatureSplitShadow from './FeatureSplitShadow'
 
@@ -40,23 +39,6 @@ const FeatureContainer = ({ slice }) => {
 	const meta = get(primary, 'feature_link._meta', {})
 	const url = get(primary, 'feature_link.url', '')
 	const tags = get(primary, 'collection_link._meta.tags', [])
-
-	if (variant === 'overlay') {
-		return (
-			<FeatureOverlay
-				title={title}
-				body={body}
-				linkType={linkType}
-				buttonLabel={buttonLabel}
-				image={image}
-				copyright={copyright}
-				alt={alt}
-				meta={meta}
-				url={url}
-				tags={tags}
-			/>
-		)
-	}
 
 	if (variant === 'split color') {
 		return (

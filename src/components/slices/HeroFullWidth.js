@@ -19,7 +19,6 @@ const HeroFullWidth = ({
 	alt,
 	copyright,
 }) => {
-	console.log(introduction)
 	return (
 		<React.Fragment>
 			<ImageContainer className="h-70vh md:h-60vh lg:h-70vh w-full flex items-center justify-center relative mb-10 px-4 md:px-6">

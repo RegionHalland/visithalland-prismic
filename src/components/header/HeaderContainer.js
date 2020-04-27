@@ -37,7 +37,7 @@ const HeaderContainer = ({ menu, meta }) => {
 	// Prepare top navigation
 	const topNavigation = get(menu, 'top_menu_links', []).map(el => ({
 		label: get(el, 'top_menu_link_label', null),
-		link: get(el, 'primary.top_menu_link', {}),
+		link: get(el, 'top_menu_link', {}),
 	}))
 
 	return (
