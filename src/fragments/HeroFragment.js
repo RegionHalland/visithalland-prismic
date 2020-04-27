@@ -17,11 +17,11 @@ export const HeroFragment = graphql`
 			hero_image
 			hero_imageSharp {
 				childImageSharp {
-					fluid(maxWidth: 960, quality: 80) {
-						...GatsbyImageSharpFluid
+					fluid(maxWidth: 1280, quality: 60) {
+						...GatsbyImageSharpFluid_withWebp
 					}
-					fixed(width: 400, height: 400, quality: 80) {
-						...GatsbyImageSharpFixed
+					fixed(width: 400, height: 400, quality: 60) {
+						...GatsbyImageSharpFixed_withWebp
 					}
 				}
 			}
