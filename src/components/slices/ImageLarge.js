@@ -7,8 +7,12 @@ import Container from '../Container'
 const ImageLarge = ({ image, caption, copyright, alt }) => {
 	return (
 		<Container className="lg:px-6">
-			<div className="relative lg:rounded overflow-hidden">
-				<Image className="mb-2" fluid={image} alt={alt} />
+			<div className="relative">
+				<Image
+					className="mb-2 lg:rounded overflow-hidden"
+					fluid={image}
+					alt={alt}
+				/>
 				<ImageCopyright credits={copyright} />
 			</div>
 			<div className="px-4 md:px-6 lg:p-0 w-full">
