@@ -2,44 +2,62 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import tw from 'tailwind.macro'
-import TextRenderer from '../TextRenderer'
 import Container from '../Container'
+import TextRenderer from '../TextRenderer'
 
-const SectionHeaderLine = ({ title, body }) => {
+const SectionHeaderLine = ({ title }) => {
+	console.log(title)
 	return (
 		<Container>
-			<div className="flex content-center items-center px-4 md:px-6">
+			<div className="flex items-center px-4 md:px-6">
 				<TitleContainer>
 					<TextRenderer text={title} />
 				</TitleContainer>
-				<div className="flex-grow bg-green-600 h-1"></div>
+				<hr className="h-1 rounded-tr rounded-br w-full border-none outline-none flex-1 bg-green-500" />
 			</div>
 		</Container>
 	)
 }
 
 const TitleContainer = styled.div`
-	${tw`font-sans pr-6 flex-grow-0`};
-	h2 {
-		${tw`font-medium text-2xl md:text-3xl text-black`};
+	${tw`font-sans mr-6`};
+	> h1 {
+		${tw`font-bold text-2xl md:text-3xl text-black`};
 	}
-	h3 {
-		${tw`font-medium text-xl md:text-2xl text-black`};
+	> h2 {
+		${tw`font-bold text-2xl md:text-3xl text-black`};
+		& > a {
+			${tw`underline`}
+		}
 	}
-	h4 {
-		${tw`font-medium text-lg md:text-xl text-black`};
+	> h3 {
+		${tw`font-bold text-xl md:text-2xl text-black`};
+		& > a {
+			${tw`underline`}
+		}
 	}
-	h5 {
-		${tw`font-medium text-base md:text-lg text-black`};
+	> h4 {
+		${tw`font-bold text-lg md:text-xl text-black`};
+		& > a {
+			${tw`underline`}
+		}
 	}
-	h6 {
+	> h5 {
+		${tw`font-bold text-base md:text-lg text-black`};
+		& > a {
+			${tw`underline`}
+		}
+	}
+	> h6 {
 		${tw`font-medium text-base text-black`};
+		& > a {
+			${tw`underline`}
+		}
 	}
 `
 
 SectionHeaderLine.propTypes = {
 	title: PropTypes.object.isRequired,
-	body: PropTypes.object,
 }
 
 export default SectionHeaderLine
