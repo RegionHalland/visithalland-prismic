@@ -7,7 +7,7 @@ import ImageCopyright from '../ImageCopyright'
 import TextRenderer from '../TextRenderer'
 import Author from '../Author'
 import Container from '../Container'
-import ArrowDownIcon from '../icons/ArrowDownIcon'
+import ScrollIndicator from '../ScrollIndicator'
 
 const HeroFullScreen = ({
 	title,
@@ -20,8 +20,8 @@ const HeroFullScreen = ({
 	copyright,
 }) => {
 	return (
-		<ImageContainer className="h-70vh md:h-70vh lg:h-80vh w-full flex items-end justify-start relative mb-12 px-4 md:px-6">
-			<Container className="z-10 relative bg-gray w-full">
+		<ImageContainer className="h-70vh md:h-70vh lg:h-80vh w-full flex items-end justify-start relative mb-12">
+			<Container className="z-10 relative bg-gray w-full  px-4 md:px-6">
 				<h1 className="text-4xl md:text-5xl lg:text-6xl max-w-2xl mb-8 w-full leading-tight text-white font-bold">
 					{title}
 				</h1>
@@ -30,19 +30,10 @@ const HeroFullScreen = ({
 						<TextRenderer text={introduction} />
 					</StyledIntroduction>
 				)}
-				{author.name && (
-					<Author
-						className="w-full flex justify-center text-white mb-12"
-						{...author}
-					/>
+				{author && (
+					<Author className="mb-12" colorscheme="white" {...author} />
 				)}
-				<div className="h-12 w-12 rounded-full bg-blue-700 flex items-center justify-center mb-16">
-					<ArrowDownIcon
-						height={16}
-						width={16}
-						className="text-white"
-					/>
-				</div>
+				<ScrollIndicator className="-mb-6 md:-mb-8 shadow-lg" />
 			</Container>
 			{video && (
 				<video

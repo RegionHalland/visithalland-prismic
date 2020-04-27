@@ -12,11 +12,7 @@ global.___loader = {
 	hovering: () => {},
 }
 
-addDecorator(storyFn => (
-	<Container tight>
-		<div className="p-8 font-sans">{storyFn()}</div>
-	</Container>
-))
+addDecorator(storyFn => <div className="p-8 font-sans">{storyFn()}</div>)
 
 // Gatsby internal mocking to prevent unnecessary errors in storybook testing environment
 global.__PATH_PREFIX__ = ''

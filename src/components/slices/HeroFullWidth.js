@@ -8,6 +8,7 @@ import ImageCopyright from '../ImageCopyright'
 import TextRenderer from '../TextRenderer'
 import Author from '../Author'
 import Container from '../Container'
+import ScrollIndicator from '../ScrollIndicator'
 
 const HeroFullWidth = ({
 	title,
@@ -21,10 +22,13 @@ const HeroFullWidth = ({
 	console.log(introduction)
 	return (
 		<React.Fragment>
-			<ImageContainer className="h-70vh md:h-60vh lg:h-70vh w-full flex items-center justify-center relative mb-12 px-4 md:px-6">
-				<h1 className="text-4xl md:text-5xl lg:text-6xl w-full leading-tight text-white font-bold  md:w-6/12 text-center relative z-10">
-					{title}
-				</h1>
+			<ImageContainer className="h-70vh md:h-60vh lg:h-70vh w-full flex items-center justify-center relative mb-10 px-4 md:px-6">
+				<div className="flex justify-center flex-col items-center w-full">
+					<h1 className="text-4xl md:text-5xl lg:text-6xl w-full leading-tight text-white font-bold  mb-4 md:w-6/12 text-center relative z-10">
+						{title}
+					</h1>
+					<ScrollIndicator className="shadow-lg relative z-10 mx-auto" />
+				</div>
 				{video && (
 					<video
 						loop
@@ -52,7 +56,7 @@ const HeroFullWidth = ({
 			<Container className="px-4 md:px-6 mb-20" tight>
 				<div className="w-full md:w-10/12 mx-auto">
 					{introduction && (
-						<StyledIntroduction className="mb-2">
+						<StyledIntroduction>
 							<TextRenderer
 								className="md:text-center"
 								text={introduction}
@@ -73,7 +77,7 @@ const HeroFullWidth = ({
 
 const StyledIntroduction = styled.div`
 	> p {
-		${tw`text-gray-700 text-xl md:text-center leading-relaxed mb-8`};
+		${tw`text-gray-700 text-xl md:text-center leading-relaxed mb-10`};
 		& > strong {
 			${tw`font-medium text-black`}
 		}
