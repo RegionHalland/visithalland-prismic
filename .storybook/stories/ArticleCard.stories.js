@@ -1,7 +1,13 @@
 import React, { useState } from 'react'
 import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
-import { withKnobs, text, object, array } from '@storybook/addon-knobs/react'
+import {
+	withKnobs,
+	text,
+	object,
+	array,
+	boolean,
+} from '@storybook/addon-knobs/react'
 
 import ArticleCard from '../../src/components/ArticleCard'
 import placeholder from './assets/placeholder.jpg'
@@ -36,6 +42,7 @@ storiesOf('ArticleCard', module)
 				tags={array('tags', ['Natur och Friluftsliv'])}
 				to={text('to', '/')}
 				className="text-4xl h-500px"
+				buttonLabel={text('buttonLabel', 'Gå till artikel')}
 			/>
 		)
 	})
@@ -76,6 +83,21 @@ storiesOf('ArticleCard', module)
 				tags={array('tags', ['Natur och Friluftsliv'])}
 				to={text('to', '/')}
 				className="text-3xl md:text-5xl h-600px md:h-900px"
+			/>
+		)
+	})
+	.add('with button', () => {
+		return (
+			<ArticleCard
+				title={text('title', 'Skördetid i Halland')}
+				image={image}
+				copyright={text('copyright', 'David Öhlin')}
+				alt={text('alt', 'En fin bild')}
+				tags={array('tags', ['Natur och Friluftsliv'])}
+				to={text('to', '/')}
+				className="text-3xl md:text-5xl h-600px md:h-900px"
+				button={boolean('button', true)}
+				buttonLabel={text('buttonLabel', 'Gå till artikel')}
 			/>
 		)
 	})
