@@ -102,9 +102,9 @@ const ImageContainer = styled.div`
 	${({ size }) => {
 		switch (size) {
 			case 'large':
-				return tw`w-full md:w-6/12 px-3 mb-6 h-500px lg:h-600px`
+				return tw`w-full rounded overflow-hidden md:w-6/12 px-3 mb-6 h-500px lg:h-600px`
 			default:
-				return tw`w-5/12 md:w-4/12 px-3 h-200px md:h-300px`
+				return tw`w-5/12 rounded overflow-hidden md:w-4/12 px-3 h-200px md:h-300px`
 		}
 	}}
 `

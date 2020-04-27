@@ -25,7 +25,7 @@ const Quote = ({
 	const [active, setActive] = useState(false)
 	return (
 		<Container className="px-4 lg:px-6 flex flex-wrap items-center">
-			<div className="w-full h-500px md:h-500px lg:h-600px md:w-6/12 px-3 overflow-hidden relative">
+			<div className="w-full h-500px md:h-500px lg:h-600px md:w-6/12 px-3 overflow-hidden rounded relative">
 				<Image
 					style={{ position: 'absolute' }}
 					className="h-full w-full bottom-0 top-0 left-0 z-0"

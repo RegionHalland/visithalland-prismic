@@ -45,7 +45,7 @@ const FeatureSplitColor = ({
 				<BoxContainer
 					onMouseEnter={() => setActive()}
 					onMouseLeave={() => setActive(!active)}
-					className="flex flex-col md:flex-row relative"
+					className="flex rounded overflow-hidden flex-col md:flex-row relative"
 				>
 					<div className="flex flex-1 relative bg-green-200 z-10 items-center justify-center order-2 md:order-1">
 						<div className="text-center p-8">

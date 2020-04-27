@@ -38,7 +38,7 @@ const List = ({ items }) => {
 						</div>
 					</div>
 					<div className="w-full md:w-6/12 flex flex-col px-3">
-						<h2 className="text-black text-2xl md:text-3xl leading-tight font-medium mb-3">
+						<h2 className="text-black text-2xl md:text-3xl leading-tight font-bold mb-3">
 							{item.title}
 						</h2>
 						{item.text && (
