@@ -62,7 +62,7 @@ const ArticleCard = ({
 							{title}
 						</h2>
 						{excerpt && (
-							<div className="text-base md:text-lg text-white max-w-sm md:max-w-xl mb-1">
+							<div className="text-base md:text-lg text-white max-w-sm md:max-w-xl mb-4">
 								<TextRenderer lines={4} text={excerpt} />
 							</div>
 						)}
