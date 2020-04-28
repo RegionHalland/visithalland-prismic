@@ -23,8 +23,6 @@ const Quote = ({
 	...props
 }) => {
 	const [active, setActive] = useState(false)
-
-	console.log(meta, url)
 	return (
 		<Container className="px-4 lg:px-6 flex flex-wrap items-center">
 			<div className="w-full h-500px md:h-500px lg:h-600px md:w-6/12 px-3 overflow-hidden rounded relative">
@@ -94,7 +92,7 @@ const QuoteContainer = styled.div`
 Quote.propTypes = {
 	quote: PropTypes.string.isRequired,
 	byline: PropTypes.string,
-	buttonLabel: PropTypes.string.isRequired,
+	buttonLabel: PropTypes.string,
 	image: PropTypes.object,
 	meta: PropTypes.object,
 	url: PropTypes.string,

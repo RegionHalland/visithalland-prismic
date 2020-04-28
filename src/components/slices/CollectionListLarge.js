@@ -17,6 +17,7 @@ const CollectionListLarge = ({ items }) => {
 					copyright={item.copyright}
 					alt={item.alt}
 					title={item.title}
+					meta={item.meta}
 					excerpt={item.description}
 					url={item.url}
 					to={linkResolver(item.meta)}

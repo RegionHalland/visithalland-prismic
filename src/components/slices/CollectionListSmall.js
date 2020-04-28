@@ -16,6 +16,7 @@ const CollectionListSmall = ({ items }) => {
 					title={item.title}
 					excerpt={item.description}
 					url={item.url}
+					meta={item.meta}
 					to={linkResolver(item.meta)}
 				/>
 			))}

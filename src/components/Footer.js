@@ -7,6 +7,7 @@ import Container from './Container'
 import FancyLink from './FancyLink'
 import ListHeader from './ListHeader'
 import { navigate } from 'gatsby'
+import Logo from './assets/Logo'
 
 import BackgroundPattern from '../images/bg-pattern.svg'
 
@@ -21,9 +22,9 @@ const Footer = ({ mainNavigation, meta, langs }) => {
 							type: 'content',
 							uid: 'frontpage',
 						})}
-						className="font-bold text-xl md:text-2xl mb-4 block z-50 relative"
+						className="mb-4 block relative"
 					>
-						Visithalland.com
+						<Logo width={150} height="auto" />
 					</Link>
 				</div>
 				<div className="w-full lg:w-8/12 flex flex-wrap -mx-3">

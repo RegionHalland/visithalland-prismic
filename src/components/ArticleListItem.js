@@ -22,6 +22,8 @@ const ArticleListItem = ({
 	url,
 	size,
 	className,
+	alternate,
+	meta,
 	...props
 }) => {
 	const [active, setActive] = useState(false)
@@ -42,6 +44,7 @@ const ArticleListItem = ({
 			<ArticleListItemContainer
 				onMouseEnter={() => setActive()}
 				onMouseLeave={() => setActive(!active)}
+				alternate={alternate}
 			>
 				<ImageContainer size={size}>
 					<div className="w-full h-full relative overflow-hidden">
@@ -70,7 +73,13 @@ const ArticleListItem = ({
 							<TextRenderer lines={5} text={excerpt} />
 						</div>
 					)}
-					<FancyLink external={url} active={active} title="Läs mer" />
+					{(url || meta.uid) && (
+						<FancyLink
+							external={typeof url === 'string'}
+							active={active}
+							title="Läs mer"
+						/>
+					)}
 				</ContentContainer>
 			</ArticleListItemContainer>
 		</ConditionalWrapper>
@@ -83,6 +92,8 @@ const StyledImage = styled(Image)`
 
 const ArticleListItemContainer = styled.div`
 	${tw`flex flex-wrap`}
+	${props =>
+		props.alternate ? tw`md:flex-row-reverse bg-blue-200 ` : tw`flex-row`}
 	&:hover ${StyledImage} {
 		transform: scale(1.025);
 	}
@@ -91,6 +102,8 @@ const ArticleListItemContainer = styled.div`
 const ContentContainer = styled.div`
 	${({ size }) => {
 		switch (size) {
+			case 'square':
+				return tw`w-full md:w-6/12 px-6 md:px-8 mb-10 lg:mb-0 flex flex-col md:justify-center`
 			case 'large':
 				return tw`w-full md:w-6/12 px-3 flex flex-col md:justify-center`
 			default:
@@ -101,6 +114,8 @@ const ContentContainer = styled.div`
 const ImageContainer = styled.div`
 	${({ size }) => {
 		switch (size) {
+			case 'square':
+				return tw`w-full overflow-hidden md:w-6/12 mb-6 md:mb-0 h-400px lg:h-400px`
 			case 'large':
 				return tw`w-full rounded overflow-hidden md:w-6/12 px-3 mb-6 h-500px lg:h-600px`
 			default:
@@ -113,6 +128,9 @@ ArticleListItem.propTypes = {
 	title: propTypes.string.isRequired,
 	excerpt: propTypes.arrayOf(propTypes.object),
 	image: propTypes.object,
+	meta: propTypes.object,
+	size: propTypes.string,
+	alternate: propTypes.bool,
 	to: propTypes.string,
 	url: propTypes.string,
 	copyright: propTypes.string,

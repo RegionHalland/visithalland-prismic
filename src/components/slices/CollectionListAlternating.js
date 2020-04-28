@@ -7,16 +7,20 @@ import ArticleListItem from '../ArticleListItem'
 
 const CollectionListAlternating = ({ items }) => {
 	return (
-		<Container tight className="px-4 md:px-6">
+		<Container tight>
 			{items.map((item, index) => (
 				<ArticleListItem
-					className="mb-6 block"
+					className="block"
 					key={`${index}-${item.meta.uid}`}
 					image={item.image}
+					copyright={item.copyright}
 					title={item.title}
 					excerpt={item.description}
 					url={item.url}
+					meta={item.meta}
 					to={linkResolver(item.meta)}
+					alternate={index % 2 === 0}
+					size="square"
 				/>
 			))}
 		</Container>
