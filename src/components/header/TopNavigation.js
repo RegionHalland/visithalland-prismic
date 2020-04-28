@@ -4,7 +4,7 @@ import Container from '../Container'
 
 const TopNavigation = ({ items }) => {
 	return (
-		<nav className="relative bg-blue-700">
+		<nav className="relative bg-blue-700 z-50">
 			<Container className="px-4 md:px-6">
 				<ul className="flex relative md:justify-end py-2 md:py-2 overflow-x-scroll scrolling-touch">
 					{items.map((el, index) => (

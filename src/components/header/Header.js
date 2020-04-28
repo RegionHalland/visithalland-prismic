@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
-import { useTransition, animated, config } from 'react-spring'
+import { useTransition, animated } from 'react-spring'
 
 import TopNavigation from './TopNavigation'
 import HeaderLogo from './HeaderLogo'
@@ -44,18 +44,17 @@ const Header = ({ meta, mainNavigation, topNavigation, langs }) => {
 	}, [dropdownId, submenuId])
 
 	const transition = useTransition(dropdownOpen, null, {
-		from: { opacity: 0, transform: 'translateX(-100%)' },
-		enter: { opacity: 1, transform: 'translateX(0%)' },
-		leave: { opacity: 0, transform: 'translateX(100%)' },
+		from: { transform: 'translateY(-100%)' },
+		enter: { transform: 'translateY(0%)' },
+		leave: { transform: 'translateY(-100%)' },
 		initial: null,
 		unique: true,
-		config: config.stiff,
 	})
 
 	return (
 		<React.Fragment>
 			<TopNavigation items={topNavigation} />
-			<header className="sticky top-0 z-50">
+			<header className="sticky top-0 z-40">
 				<BackgroundPattern>
 					<Container className="flex flex-wrap justify-between items-center lg:px-6 lg:py-6">
 						<HeaderLogo meta={meta} />
@@ -93,13 +92,13 @@ const Header = ({ meta, mainNavigation, topNavigation, langs }) => {
 }
 
 const DropdownPosition = styled.div`
-	${tw`absolute z-50 bottom-0 w-full`};
+	${tw`absolute z-40 bottom-0 w-full`};
 	transform: translateY(100%);
 `
 
 const BackgroundPattern = styled.div`
 	background-image: url(${pattern});
-	${tw`bg-blue-800`}
+	${tw`bg-blue-800 z-50 relative`}
 	background-size: 250px 250px;
 `
 

@@ -1,17 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
-import resolveConfig from 'tailwindcss/resolveConfig'
 import { navigate } from 'gatsby'
 
 import ListHeader from '../ListHeader'
 import FancyLink from '../FancyLink'
 import { linkResolver } from '../../utils/linkResolver'
-import tailwindConfig from '../../../tailwind.config.js'
-
-const twConfig = resolveConfig(tailwindConfig)
 
 const ArticleList = ({ label, articles }) => (
-	<ArticleListContainer className="w-full md:flex-1 bg-green-200 p-6 overflow-y-auto">
+	<div className="w-full h-full flex-1 bg-green-200 p-6">
 		<div className="mb-3 lg:mb-6">
 			<ListHeader title={label} />
 		</div>
@@ -26,16 +22,7 @@ const ArticleList = ({ label, articles }) => (
 				</li>
 			))}
 		</ul>
-	</ArticleListContainer>
+	</div>
 )
-
-const ArticleListContainer = styled.div`
-	max-height: 15rem;
-
-	@media (min-width: ${twConfig.theme.screens.md}) {
-		height: 24rem;
-		max-height: none;
-	}
-`
 
 export default ArticleList
