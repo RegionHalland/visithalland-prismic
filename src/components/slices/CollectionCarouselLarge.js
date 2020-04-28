@@ -45,9 +45,11 @@ const CollectionCarouselLarge = ({ items }) => {
 						{ title, tags, meta, image, alt, copyright, url },
 						index,
 					) => (
-						<div className="focus:outline-none">
+						<div
+							className="focus:outline-none"
+							key={`${index}-${meta.uid}`}
+						>
 							<ArticleCard
-								key={`${index}-${meta.uid}`}
 								title={title}
 								image={image}
 								copyright={copyright}

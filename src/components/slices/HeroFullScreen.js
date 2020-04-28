@@ -30,7 +30,7 @@ const HeroFullScreen = ({
 						<TextRenderer text={introduction} />
 					</StyledIntroduction>
 				)}
-				{author && (
+				{author.name && (
 					<Author className="mb-12" colorscheme="white" {...author} />
 				)}
 				<ScrollIndicator className="-mb-6 md:-mb-8 shadow-lg" />

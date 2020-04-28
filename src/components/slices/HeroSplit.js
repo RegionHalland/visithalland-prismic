@@ -37,7 +37,7 @@ const HeroSplit = ({
 								/>
 							</StyledIntroduction>
 						)}
-						{author && (
+						{author.name && (
 							<Author className="w-full flex" {...author} />
 						)}
 					</div>

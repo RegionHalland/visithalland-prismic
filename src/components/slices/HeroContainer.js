@@ -53,7 +53,7 @@ const HeroContainer = ({ slice, meta }) => {
 	}
 	if (variant === 'full screen') {
 		return (
-			<div class="mb-8">
+			<div className="mb-8">
 				<HeroFullScreen
 					title={title}
 					introduction={introduction}
@@ -69,7 +69,7 @@ const HeroContainer = ({ slice, meta }) => {
 	}
 	// Variant "Full" (or a variant that does not exist) is selected
 	return (
-		<div class="mb-8">
+		<div className="mb-8">
 			<HeroFullWidth
 				title={title}
 				introduction={introduction}
