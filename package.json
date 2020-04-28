@@ -10,7 +10,7 @@
     "@n8tb1t/use-scroll-position": "^1.0.43",
     "@storybook/addon-knobs": "^5.3.9",
     "date-fns": "^2.9.0",
-    "gatsby": "^2.19.5",
+    "gatsby": "^2.21.0",
     "gatsby-image": "^2.2.39",
     "gatsby-parallel-runner": "^1.2.7",
     "gatsby-plugin-manifest": "^2.2.38",
