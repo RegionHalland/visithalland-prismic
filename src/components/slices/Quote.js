@@ -23,6 +23,8 @@ const Quote = ({
 	...props
 }) => {
 	const [active, setActive] = useState(false)
+
+	console.log(meta, url)
 	return (
 		<Container className="px-4 lg:px-6 flex flex-wrap items-center">
 			<div className="w-full h-500px md:h-500px lg:h-600px md:w-6/12 px-3 overflow-hidden rounded relative">
@@ -37,11 +39,7 @@ const Quote = ({
 				<ImageCopyright credits={copyright} />
 			</div>
 
-			<QuoteContainer
-				className="w-11/12 mx-auto md:w-6/12 -mt-8 md:mt-0 md:-ml-16 relative"
-				onMouseEnter={() => setActive()}
-				onMouseLeave={() => setActive(!active)}
-			>
+			<QuoteContainer className="w-11/12 mx-auto md:w-6/12 -mt-8 md:mt-0 md:-ml-16 relative">
 				<div className="p-6 bg-white relative z-20">
 					<blockquote className="text-2xl md:text-3xl mx-auto w-full mb-6 text-black font-bold">
 						“{quote}”
@@ -70,8 +68,10 @@ const Quote = ({
 							</Link>
 						)}
 					>
-						{url && meta.uid && (
+						{(url || meta.uid) && (
 							<FancyLink
+								onMouseEnter={() => setActive()}
+								onMouseLeave={() => setActive(!active)}
 								active={active}
 								external={url}
 								title={buttonLabel ? buttonLabel : 'Läs mer'}

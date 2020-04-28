@@ -100,6 +100,7 @@ const ShadowContainer = styled.div`
 FeatureSplitShadow.propTypes = {
 	title: PropTypes.string.isRequired,
 	buttonLabel: PropTypes.string.isRequired,
+	body: PropTypes.array,
 	image: PropTypes.object,
 	meta: PropTypes.object.isRequired,
 	url: PropTypes.string,
