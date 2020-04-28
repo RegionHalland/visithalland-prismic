@@ -76,7 +76,7 @@ const ArticleCard = ({
 							<FancyLink
 								colorscheme="white"
 								active={active}
-								external={typeof url === 'string'}
+								external={url}
 								title={buttonLabel ? buttonLabel : 'Läs mer'}
 							/>
 						)}

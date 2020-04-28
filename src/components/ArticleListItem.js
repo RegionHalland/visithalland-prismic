@@ -75,7 +75,7 @@ const ArticleListItem = ({
 					)}
 					{(url || meta.uid) && (
 						<FancyLink
-							external={typeof url === 'string'}
+							external={url}
 							active={active}
 							title="Läs mer"
 						/>
