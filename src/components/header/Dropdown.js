@@ -34,7 +34,7 @@ const Dropdown = ({ closeDropdown, submenuId, submenus }) => {
 										label="Utvald artikel"
 									/>
 									<ArticleList
-										articles={item.subItems.slice(0, 1)}
+										articles={item.subItems.slice(1)}
 										label="Artiklar"
 									/>
 								</animated.div>
