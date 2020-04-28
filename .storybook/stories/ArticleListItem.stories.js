@@ -1,7 +1,13 @@
 import React, { useState } from 'react'
 import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
-import { withKnobs, text, object, array } from '@storybook/addon-knobs/react'
+import {
+	withKnobs,
+	text,
+	object,
+	array,
+	boolean,
+} from '@storybook/addon-knobs/react'
 
 import ArticleListItem from '../../src/components/ArticleListItem'
 import placeholder from './assets/placeholder.jpg'
@@ -24,6 +30,12 @@ const body = [
 	},
 ]
 
+const meta = {
+	lang: 'sv-se',
+	type: 'content',
+	uid: 'det-basta-med-halland-ar-mojligheten-att-hitta-sma',
+}
+
 storiesOf('ArticleListItem', module)
 	.addDecorator(withKnobs)
 	.add('default', () => {
@@ -35,6 +47,7 @@ storiesOf('ArticleListItem', module)
 				alt={text('alt', 'En fin bild')}
 				tags={array('tags', ['Natur och Friluftsliv'])}
 				to={text('to', '/')}
+				meta={meta}
 			/>
 		)
 	})
@@ -47,6 +60,23 @@ storiesOf('ArticleListItem', module)
 				alt={text('alt', 'En fin bild')}
 				tags={array('tags', ['Natur och Friluftsliv'])}
 				url={text('url', 'www.aftonbladet.se')}
+				meta={meta}
+			/>
+		)
+	})
+	.add('alternate', () => {
+		return (
+			<ArticleListItem
+				title={text('title', 'Skördetid i Halland')}
+				image={image}
+				excerpt={body}
+				copyright={text('copyright', 'David Öhlin')}
+				alt={text('alt', 'En fin bild')}
+				tags={array('tags', ['Natur och Friluftsliv'])}
+				to={text('to', '/')}
+				size={text('size', 'square')}
+				alternate={boolean('alternate', true)}
+				meta={meta}
 			/>
 		)
 	})
@@ -61,6 +91,7 @@ storiesOf('ArticleListItem', module)
 				tags={array('tags', ['Natur och Friluftsliv'])}
 				to={text('to', '/')}
 				size={text('size', 'large')}
+				meta={meta}
 			/>
 		)
 	})
