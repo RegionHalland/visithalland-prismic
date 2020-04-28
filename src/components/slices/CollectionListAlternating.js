@@ -5,17 +5,14 @@ import { linkResolver } from '../../utils/linkResolver'
 
 import ArticleListItem from '../ArticleListItem'
 
-const CollectionListLarge = ({ items }) => {
+const CollectionListAlternating = ({ items }) => {
 	return (
-		<Container tight className="md:px-6">
+		<Container tight className="px-4 md:px-6">
 			{items.map((item, index) => (
 				<ArticleListItem
-					className="mb-16 md:mb-8 block"
+					className="mb-6 block"
 					key={`${index}-${item.meta.uid}`}
-					size="large"
 					image={item.image}
-					copyright={item.copyright}
-					alt={item.alt}
 					title={item.title}
 					excerpt={item.description}
 					url={item.url}
@@ -26,8 +23,8 @@ const CollectionListLarge = ({ items }) => {
 	)
 }
 
-CollectionListLarge.propTypes = {
+CollectionListAlternating.propTypes = {
 	items: PropTypes.array.isRequired,
 }
 
-export default CollectionListLarge
+export default CollectionListAlternating

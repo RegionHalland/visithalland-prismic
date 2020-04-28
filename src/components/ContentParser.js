@@ -8,7 +8,6 @@ import TextContainer from './slices/TextContainer'
 import CollectionContainer from './slices/CollectionContainer'
 import VideoContainer from './slices/VideoContainer'
 import QuoteContainer from './slices/QuoteContainer'
-import ListContainer from './slices/ListContainer'
 import SectionHeaderContainer from './slices/SectionHeaderContainer'
 
 const TYPE_COMPONENTS = {
@@ -19,7 +18,6 @@ const TYPE_COMPONENTS = {
 	text: TextContainer,
 	video: VideoContainer,
 	quote: QuoteContainer,
-	list: ListContainer,
 	section_header: SectionHeaderContainer,
 }
 

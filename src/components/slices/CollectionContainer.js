@@ -8,6 +8,7 @@ import CollectionGridSmall from './CollectionGridSmall'
 import CollectionGridLarge from './CollectionGridLarge'
 import CollectionCarouselSmall from './CollectionCarouselSmall'
 import CollectionCarouselLarge from './CollectionCarouselLarge'
+import CollectionListAlternating from './CollectionListAlternating'
 
 const CollectionContainer = ({ slice }) => {
 	const { fields, primary } = slice
@@ -68,6 +69,10 @@ const CollectionContainer = ({ slice }) => {
 
 	if (variant === 'large list') {
 		return <CollectionListLarge items={items} />
+	}
+
+	if (variant === 'alternating list') {
+		return <CollectionListAlternating items={items} />
 	}
 
 	if (variant === 'small grid') {
