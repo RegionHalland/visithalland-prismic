@@ -103,7 +103,7 @@ const BackgroundPattern = styled.div`
 `
 
 const MainNav = styled.ul`
-	${tw`relative flex overflow-x-scroll scrolling-touch w-full lg:flex-1 order-3 bg-blue-700 lg:bg-transparent px-4 lg:px-8 py-2 lg:py-0`};
+	${tw`relative flex overflow-x-scroll scrolling-touch w-full lg:flex-1 order-3 bg-blue-700 lg:bg-transparent px-4 lg:px-8 py-3 lg:py-0`};
 	-ms-overflow-style: none;
 
 	&::-webkit-scrollbar {

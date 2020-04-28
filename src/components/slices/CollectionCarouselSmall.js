@@ -23,7 +23,7 @@ const CollectionCarouselSmall = ({ items }) => {
 				slidesToShow={breakpoint === 'xs' ? 1 : 2}
 				renderBottomCenterControls={() => null}
 				renderCenterLeftControls={({ previousSlide }) => (
-					<div className="pl-3 md:pl-0">
+					<div className="pl-3 lg:pl-0">
 						<IconButton
 							onClick={previousSlide}
 							icon={
@@ -33,7 +33,7 @@ const CollectionCarouselSmall = ({ items }) => {
 					</div>
 				)}
 				renderCenterRightControls={({ nextSlide }) => (
-					<div className="pr-3 md:pr-0">
+					<div className="pr-3 lg:pr-0">
 						<IconButton
 							onClick={nextSlide}
 							icon={
