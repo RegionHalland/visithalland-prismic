@@ -19,33 +19,39 @@ const ImageContainer = ({ slice }) => {
 
 	if (variant === 'large') {
 		return (
-			<ImageLarge
-				caption={caption}
-				image={image}
-				alt={alt}
-				copyright={copyright}
-			/>
+			<div className="py-4">
+				<ImageLarge
+					caption={caption}
+					image={image}
+					alt={alt}
+					copyright={copyright}
+				/>
+			</div>
 		)
 	}
 
 	if (variant === 'full width') {
 		return (
-			<ImageFullWidth
+			<div class="py-6">
+				<ImageFullWidth
+					caption={caption}
+					image={image}
+					alt={alt}
+					copyright={copyright}
+				/>
+			</div>
+		)
+	}
+
+	return (
+		<div class="py-4">
+			<ImageSmall
 				caption={caption}
 				image={image}
 				alt={alt}
 				copyright={copyright}
 			/>
-		)
-	}
-
-	return (
-		<ImageSmall
-			caption={caption}
-			image={image}
-			alt={alt}
-			copyright={copyright}
-		/>
+		</div>
 	)
 }
 

@@ -12,7 +12,11 @@ const VideoContainer = ({ slice }) => {
 	const { primary } = slice
 	const url = get(primary, 'video_link', '')
 
-	return <Video url={url} />
+	return (
+		<div className="py-8">
+			<Video url={url} />
+		</div>
+	)
 }
 
 VideoContainer.propTypes = {

@@ -21,16 +21,18 @@ const QuoteContainer = ({ slice }) => {
 	const url = get(primary, 'quote_link.url', '')
 
 	return (
-		<Quote
-			quote={quote}
-			byline={byline}
-			buttonLabel={buttonLabel}
-			image={image}
-			copyright={copyright}
-			alt={alt}
-			meta={meta}
-			url={url}
-		/>
+		<div className="py-8">
+			<Quote
+				quote={quote}
+				byline={byline}
+				buttonLabel={buttonLabel}
+				image={image}
+				copyright={copyright}
+				alt={alt}
+				meta={meta}
+				url={url}
+			/>
+		</div>
 	)
 }
 

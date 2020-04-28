@@ -41,33 +41,37 @@ const FeatureContainer = ({ slice }) => {
 
 	if (variant === 'split color') {
 		return (
-			<FeatureSplitColor
-				title={title}
-				body={body}
-				buttonLabel={buttonLabel}
-				image={image}
-				copyright={copyright}
-				alt={alt}
-				meta={meta}
-				url={url}
-				tags={tags}
-			/>
+			<div className="py-8">
+				<FeatureSplitColor
+					title={title}
+					body={body}
+					buttonLabel={buttonLabel}
+					image={image}
+					copyright={copyright}
+					alt={alt}
+					meta={meta}
+					url={url}
+					tags={tags}
+				/>
+			</div>
 		)
 	}
 
 	if (variant === 'split shadow') {
 		return (
-			<FeatureSplitShadow
-				title={title}
-				body={body}
-				buttonLabel={buttonLabel}
-				image={image}
-				copyright={copyright}
-				alt={alt}
-				meta={meta}
-				url={url}
-				tags={tags}
-			/>
+			<div className="py-8">
+				<FeatureSplitShadow
+					title={title}
+					body={body}
+					buttonLabel={buttonLabel}
+					image={image}
+					copyright={copyright}
+					alt={alt}
+					meta={meta}
+					url={url}
+					tags={tags}
+				/>
+			</div>
 		)
 	}
 

@@ -68,30 +68,54 @@ const CollectionContainer = ({ slice }) => {
 	})
 
 	if (variant === 'large list') {
-		return <CollectionListLarge items={items} />
+		return (
+			<div className="py-8">
+				<CollectionListLarge items={items} />
+			</div>
+		)
 	}
 
 	if (variant === 'alternating list') {
-		return <CollectionListAlternating items={items} />
+		return (
+			<div className="py-8">
+				<CollectionListAlternating items={items} />
+			</div>
+		)
 	}
 
 	if (variant === 'small grid') {
-		return <CollectionGridSmall items={items} />
+		return (
+			<div className="py-8">
+				<CollectionGridSmall items={items} />
+			</div>
+		)
 	}
 
 	if (variant === 'large grid') {
-		return <CollectionGridLarge items={items} />
+		return (
+			<div className="py-8">
+				<CollectionGridLarge items={items} />
+			</div>
+		)
 	}
 
 	if (variant === 'small carousel') {
-		return <CollectionCarouselSmall items={items} />
+		return (
+			<div className="py-8">
+				<CollectionCarouselSmall items={items} />
+			</div>
+		)
 	}
 
 	if (variant === 'large carousel') {
 		return <CollectionCarouselLarge items={items} />
 	}
 
-	return <CollectionListSmall items={items} />
+	return (
+		<div className="py-8">
+			<CollectionListSmall items={items} />
+		</div>
+	)
 }
 
 CollectionContainer.propTypes = {

@@ -19,7 +19,7 @@ const Dropdown = ({ closeDropdown, submenuId, submenus }) => {
 
 	return (
 		<Container className="lg:px-6">
-			<div className="flex flex-1 flex-col overflow-hidden h-600px md:h-400px">
+			<div className="flex flex-1 flex-col overflow-hidden bg-white h-600px md:h-400px">
 				<div className="relative flex h-full">
 					{transition.map(
 						({ item, key, props }) =>

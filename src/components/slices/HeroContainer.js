@@ -37,21 +37,40 @@ const HeroContainer = ({ slice, meta }) => {
 	// Variant "Split" is selected
 	if (variant === 'split') {
 		return (
-			<HeroSplit
-				title={title}
-				introduction={introduction}
-				publicationDate={firstPublicationDate}
-				author={author}
-				image={image}
-				alt={alt}
-				copyright={copyright}
-				video={video}
-			/>
+			<div className="mb-8">
+				<HeroSplit
+					title={title}
+					introduction={introduction}
+					publicationDate={firstPublicationDate}
+					author={author}
+					image={image}
+					alt={alt}
+					copyright={copyright}
+					video={video}
+				/>
+			</div>
 		)
 	}
 	if (variant === 'full screen') {
 		return (
-			<HeroFullScreen
+			<div class="mb-8">
+				<HeroFullScreen
+					title={title}
+					introduction={introduction}
+					publicationDate={firstPublicationDate}
+					author={author}
+					image={image}
+					alt={alt}
+					copyright={copyright}
+					video={video}
+				/>
+			</div>
+		)
+	}
+	// Variant "Full" (or a variant that does not exist) is selected
+	return (
+		<div class="mb-8">
+			<HeroFullWidth
 				title={title}
 				introduction={introduction}
 				publicationDate={firstPublicationDate}
@@ -61,20 +80,7 @@ const HeroContainer = ({ slice, meta }) => {
 				copyright={copyright}
 				video={video}
 			/>
-		)
-	}
-	// Variant "Full" (or a variant that does not exist) is selected
-	return (
-		<HeroFullWidth
-			title={title}
-			introduction={introduction}
-			publicationDate={firstPublicationDate}
-			author={author}
-			image={image}
-			alt={alt}
-			copyright={copyright}
-			video={video}
-		/>
+		</div>
 	)
 }
 

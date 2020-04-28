@@ -13,7 +13,11 @@ const TextContainer = ({ slice }) => {
 
 	const text = get(primary, 'text', null)
 
-	return <Text text={text} />
+	return (
+		<div className="py-5">
+			<Text text={text} />
+		</div>
+	)
 }
 
 TextContainer.propTypes = {

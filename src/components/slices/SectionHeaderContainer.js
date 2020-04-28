@@ -21,14 +21,26 @@ const SectionHeaderContainer = ({ slice }) => {
 	const body = get(primary, 'section_header_body')
 
 	if (variant === 'centered') {
-		return <SectionHeaderCentered title={title} body={body} />
+		return (
+			<div className="pt-8">
+				<SectionHeaderCentered title={title} body={body} />
+			</div>
+		)
 	}
 
 	if (variant === 'line') {
-		return <SectionHeaderLine title={title} body={body} />
+		return (
+			<div className="pt-8">
+				<SectionHeaderLine title={title} body={body} />
+			</div>
+		)
 	}
 
-	return <SectionHeaderLeftAligned title={title} body={body} />
+	return (
+		<div className="pt-8">
+			<SectionHeaderLeftAligned title={title} body={body} />
+		</div>
+	)
 }
 
 SectionHeaderContainer.propTypes = {
