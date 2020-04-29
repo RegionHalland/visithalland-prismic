@@ -1,14 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
-import styled from 'styled-components'
-import tw from 'tailwind.macro'
 import TextRenderer from './TextRenderer'
 import BellIcon from './icons/BellIcon'
 import CloseIcon from './icons/CloseIcon'
 import IconButton from './IconButton'
 
 const Announcement = ({ content, id, onClose }) => {
-	const [active, setActive] = useState(false)
 	return (
 		<div className="flex items-start md:items-center text-blue-700 border-b border-gray-300 bg-gray-200 justify-between px-4 py-2 text-base relative z-50">
 			<BellIcon className="text-gray-600 mr-4 mt-2 h-4 w-4 md:mt-0" />
