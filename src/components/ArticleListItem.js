@@ -105,7 +105,7 @@ const ContentContainer = styled.div`
 			case 'square':
 				return tw`w-full md:w-6/12 px-6 md:px-8 mb-10 lg:mb-0 flex flex-col md:justify-center`
 			case 'large':
-				return tw`w-full md:w-6/12 px-3 flex mb-10 lg:mb-0  flex-col md:justify-center`
+				return tw`w-full md:w-6/12 px-3 flex mb-10 lg:mb-0 flex-col md:justify-center`
 			default:
 				return tw`w-7/12 md:w-8/12 px-3 `
 		}
