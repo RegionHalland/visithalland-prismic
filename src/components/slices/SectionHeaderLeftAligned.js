@@ -4,7 +4,6 @@ import Container from '../Container'
 import Text from '../slices/Text'
 
 const SectionHeaderLeftAligned = ({ title, body }) => {
-	console.log(title)
 	return (
 		<Container tight>
 			<div className="max-w-2xl">
@@ -17,8 +16,8 @@ const SectionHeaderLeftAligned = ({ title, body }) => {
 }
 
 SectionHeaderLeftAligned.propTypes = {
-	title: PropTypes.object.isRequired,
-	body: PropTypes.object,
+	title: PropTypes.array.isRequired,
+	body: PropTypes.array,
 }
 
 export default SectionHeaderLeftAligned

@@ -84,7 +84,7 @@ const RichTextContainer = styled.div`
 `
 
 Text.propTypes = {
-	text: PropTypes.array.isRequired,
+	text: PropTypes.array,
 }
 
 export default Text

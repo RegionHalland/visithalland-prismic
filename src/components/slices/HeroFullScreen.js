@@ -20,7 +20,7 @@ const HeroFullScreen = ({
 	copyright,
 }) => {
 	return (
-		<ImageContainer className="h-70vh md:h-70vh lg:h-80vh w-full flex items-end justify-start relative mb-12">
+		<ImageContainer className="h-70vh md:h-70vh lg:h-80vh w-full flex items-end justify-start relative">
 			<Container className="z-10 relative bg-gray w-full  px-4 md:px-6">
 				<h1 className="text-4xl md:text-5xl lg:text-6xl max-w-2xl mb-8 w-full leading-tight text-white font-bold">
 					{title}

@@ -9,7 +9,7 @@ const HeaderLogo = ({ meta }) => (
 		to={linkResolver({ lang: meta.lang })}
 		className="text-white leading-none font-semibold text-xl order-1 md:text-2xl md:pr-4 lg:pr-8 pl-4 lg:pl-0 py-4 lg:py-0"
 	>
-		<Logo width={150} height="auto" />
+		<Logo width={150} length="100%" />
 	</Link>
 )
 

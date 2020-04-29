@@ -58,7 +58,7 @@ const ArticleCard = ({
 							</span>
 						))}
 
-						<h2 className="text-white font-bold mb-4 leading-tight max-w-sm md:max-w-xl">
+						<h2 className="text-white font-bold mb-4 leading-tight max-w-sm md:max-w-xl ">
 							{title}
 						</h2>
 						{excerpt && (

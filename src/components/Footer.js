@@ -24,7 +24,7 @@ const Footer = ({ mainNavigation, meta, langs }) => {
 						})}
 						className="mb-4 block relative"
 					>
-						<Logo width={150} height="auto" />
+						<Logo width={150} length="100%" />
 					</Link>
 				</div>
 				<div className="w-full lg:w-8/12 flex flex-wrap -mx-3">

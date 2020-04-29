@@ -16,8 +16,8 @@ const SectionHeaderCentered = ({ title, body }) => {
 }
 
 SectionHeaderCentered.propTypes = {
-	title: PropTypes.object.isRequired,
-	body: PropTypes.object,
+	title: PropTypes.array.isRequired,
+	body: PropTypes.array,
 }
 
 export default SectionHeaderCentered

@@ -32,7 +32,7 @@ const ImageContainer = ({ slice }) => {
 
 	if (variant === 'full width') {
 		return (
-			<div class="py-6">
+			<div className="py-6">
 				<ImageFullWidth
 					caption={caption}
 					image={image}
@@ -44,7 +44,7 @@ const ImageContainer = ({ slice }) => {
 	}
 
 	return (
-		<div class="py-4">
+		<div>
 			<ImageSmall
 				caption={caption}
 				image={image}
