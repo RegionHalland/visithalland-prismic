@@ -13,7 +13,7 @@ const CookieNotice = ({ onAccept, title, buttonlabel, body }) => {
 				/>
 				<span className="text-xl font-bold text-black">{title}</span>
 			</div>
-			<span className="text-base text-left text-gray-700 mb-4 block">
+			<span className="text-base text-left text-gray-700 mb-6 block">
 				{body}
 			</span>
 			<Button onClick={() => onAccept()} title={buttonlabel} />

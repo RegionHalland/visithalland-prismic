@@ -4,10 +4,11 @@ import React from 'react'
 import styled from 'styled-components'
 import tw from 'tailwind.macro'
 
-const IconButton = ({ icon, onClick, colorscheme, ...props }) => {
+const IconButton = ({ icon, onClick, colorscheme, size, ...props }) => {
 	return (
 		<StyledButton
 			colorscheme={colorscheme}
+			size={size}
 			className="focus:outline-none"
 			onClick={onClick}
 			{...props}
@@ -38,7 +39,15 @@ const StyledButton = styled.div`
 				return tw`bg-blue-700 hover:bg-blue-600 active:bg-blue-600 focus:bg-blue-600 text-white`
 		}
 	}}
-	${tw`relative flex items-center justify-center overflow-hidden rounded-full focus:outline-none h-10 w-10 cursor-pointer`};
+	${({ size }) => {
+		switch (size) {
+			case 'small':
+				return tw`h-8 w-8`
+			default:
+				return tw` h-10 w-10`
+		}
+	}}
+	${tw`relative flex items-center justify-center overflow-hidden rounded-full focus:outline-none cursor-pointer`};
 
 	&:hover {
 		${StyledIcon} {

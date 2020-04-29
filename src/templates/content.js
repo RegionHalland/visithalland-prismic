@@ -73,7 +73,7 @@ export const query = graphql`
 			menu(lang: $lang, uid: "navigation") {
 				...MenuFragment
 			}
-			allCookie_notices {
+			allCookie_notices(lang: $lang) {
 				edges {
 					node {
 						cookie_notice_button_label
@@ -82,7 +82,7 @@ export const query = graphql`
 					}
 				}
 			}
-			allAnnouncements {
+			allAnnouncements(lang: $lang) {
 				edges {
 					node {
 						announcement_content
