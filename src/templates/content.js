@@ -6,6 +6,8 @@ import Layout from '../components/Layout'
 import Seo from '../components/Seo'
 import ContentParser from '../components/ContentParser'
 import AnnouncementContainer from '../components/AnnouncementContainer'
+import CookieNoticeContainer from '../components/CookieNoticeContainer'
+
 import HeaderContainer from '../components/header/HeaderContainer'
 import FooterContainer from '../components/FooterContainer'
 import {
@@ -23,7 +25,7 @@ import {
 
 const Content = ({
 	data: {
-		prismic: { content, allAnnouncements, menu },
+		prismic: { content, allAnnouncements, allCookie_notices, menu },
 	},
 }) => {
 	// Return if page has no content or body (slices)
@@ -56,6 +58,7 @@ const Content = ({
 				lang={meta.lang}
 				title={title}
 			/>
+			<CookieNoticeContainer notice={allCookie_notices} />
 			<AnnouncementContainer announcements={allAnnouncements} />
 			<HeaderContainer menu={menu} meta={meta} />
 			<ContentParser slices={slices} meta={meta} seo={seo} />
@@ -69,6 +72,15 @@ export const query = graphql`
 		prismic {
 			menu(lang: $lang, uid: "navigation") {
 				...MenuFragment
+			}
+			allCookie_notices {
+				edges {
+					node {
+						cookie_notice_button_label
+						cookie_notice_text
+						cookie_notice_title
+					}
+				}
 			}
 			allAnnouncements {
 				edges {
