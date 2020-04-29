@@ -9,9 +9,9 @@ const NavItem = ({ title, active, onClick }) => (
 )
 
 const Button = styled.button`
-	transition: color 0.2s ease-in-out;
 	${tw`text-base leading-none font-medium hover:text-white focus:outline-none mr-6`};
 	${({ active }) => (active ? tw`text-white` : tw`text-gray-500`)};
+	transition: color 0.2s ease-in-out;
 `
 
 export default NavItem
