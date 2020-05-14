@@ -7,7 +7,7 @@ import Container from './Container'
 import FancyLink from './FancyLink'
 import ListHeader from './ListHeader'
 import { navigate } from 'gatsby'
-import LogoWide from './assets/LogoWide'
+import LogoHorizontal from './assets/LogoHorizontal'
 
 import BackgroundPattern from '../images/bg-pattern.svg'
 
@@ -24,7 +24,7 @@ const Footer = ({ mainNavigation, meta, langs }) => {
 						})}
 						className="mb-4 block relative"
 					>
-						<LogoWide className="mt-1" width={300} />
+						<LogoHorizontal className="mt-1 w-full max-w-xs" />
 					</Link>
 				</div>
 				<div className="w-full lg:w-8/12 flex flex-wrap -mx-3">

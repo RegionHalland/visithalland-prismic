@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import tw from 'tailwind.macro'
 
-const Logo = ({ ...props }) => {
+const LogoHorizontal = ({ ...props }) => {
 	return (
 		<StyledSvg
 			xmlns="http://www.w3.org/2000/svg"
@@ -29,4 +29,4 @@ const StyledSvg = styled.svg`
 	${tw`fill-current`}
 `
 
-export default Logo
+export default LogoHorizontal

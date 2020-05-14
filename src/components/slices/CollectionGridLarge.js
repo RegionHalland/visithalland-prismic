@@ -50,7 +50,7 @@ const GridItem = styled.div`
 		${tw`text-3xl`};
 		&:nth-child(4n + 2),
 		&:nth-child(4n + 3) {
-			${tw`text-4xl`};
+			${tw`text-5xl`};
 			flex: 1 1 66%;
 		}
 	}
