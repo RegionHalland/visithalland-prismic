@@ -24,7 +24,7 @@ const Footer = ({ mainNavigation, meta, langs }) => {
 						})}
 						className="mb-4 block relative"
 					>
-						<LogoHorizontal className="mt-1 w-full max-w-xs" />
+						<LogoHorizontal className="mt-1 w-10/12 sm:w-full max-w-xs" />
 					</Link>
 				</div>
 				<div className="w-full lg:w-8/12 flex flex-wrap -mx-3">
