@@ -62,6 +62,7 @@ const Header = ({ meta, mainNavigation, topNavigation, langs }) => {
 							{mainNavigation.items.map(({ label, id }) => (
 								<li className="flex-shrink-0" key={id}>
 									<NavItem
+										className="mr-6"
 										title={label}
 										active={dropdownId === id}
 										onClick={() => handleClick(id)}

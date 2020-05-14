@@ -11,7 +11,7 @@ const TITLES = {
 }
 
 const LanguageMenu = ({ languages, meta }) => (
-	<ul className="flex lg:pl-8 pr-4 lg:pr-0 py-4 lg:py-0 order-2 lg:order-3">
+	<ul className="flex lg:pl-8 pr-6 lg:pr-0 py-4 lg:py-0 order-2 lg:order-3">
 		{languages.map(item => {
 			let altPage = meta.alternateLanguages.find(el => el.lang === item)
 			if (!altPage) {
@@ -21,6 +21,7 @@ const LanguageMenu = ({ languages, meta }) => (
 			return (
 				<li key={item}>
 					<NavItem
+						className="ml-6"
 						title={TITLES[item]}
 						active={item === meta.lang}
 						onClick={() => navigate(linkResolver(altPage))}
