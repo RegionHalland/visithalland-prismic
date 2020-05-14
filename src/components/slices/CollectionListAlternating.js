@@ -7,7 +7,7 @@ import ArticleListItem from '../ArticleListItem'
 
 const CollectionListAlternating = ({ items }) => {
 	return (
-		<Container tight>
+		<Container tight className="md:px-6">
 			{items.map((item, index) => (
 				<ArticleListItem
 					className="block"

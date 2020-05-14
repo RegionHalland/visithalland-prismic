@@ -54,7 +54,7 @@ const HeroFullWidth = ({
 			</ImageContainer>
 			<Container className="px-4 md:px-6" tight>
 				<div className="w-full md:w-10/12 mx-auto">
-					{introduction && (
+					{introduction && !!introduction.length && (
 						<StyledIntroduction>
 							<TextRenderer
 								className="md:text-center"
@@ -68,6 +68,7 @@ const HeroFullWidth = ({
 							{...author}
 						/>
 					)}
+					<div className="bg-green-600 w-6 h-1 mb-4 mt-6 mx-auto rounded" />
 				</div>
 			</Container>
 		</React.Fragment>
