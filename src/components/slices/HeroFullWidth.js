@@ -68,6 +68,7 @@ const HeroFullWidth = ({
 							{...author}
 						/>
 					)}
+					<div className="bg-green-600 w-6 h-1 mb-4 mt-6 mx-auto rounded" />
 				</div>
 			</Container>
 		</React.Fragment>
