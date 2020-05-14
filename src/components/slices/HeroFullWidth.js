@@ -54,7 +54,7 @@ const HeroFullWidth = ({
 			</ImageContainer>
 			<Container className="px-4 md:px-6" tight>
 				<div className="w-full md:w-10/12 mx-auto">
-					{introduction && (
+					{introduction && !!introduction.length && (
 						<StyledIntroduction>
 							<TextRenderer
 								className="md:text-center"

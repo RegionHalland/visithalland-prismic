@@ -15,7 +15,9 @@ const Button = ({ title, url, to, onClick, colorscheme, size, ...props }) => {
 					data-title={title}
 					colorscheme={colorscheme}
 				>
-					<StyledTitle>{title}</StyledTitle>
+					<StyledTitle>
+						<Localize text={title} />
+					</StyledTitle>
 				</StyledButton>
 			</button>
 		)
