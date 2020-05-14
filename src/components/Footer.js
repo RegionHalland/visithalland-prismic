@@ -42,7 +42,6 @@ const Footer = ({ mainNavigation, meta, langs }) => {
 										<FancyLink
 											title={title}
 											colorscheme="white"
-											size="large"
 											onClick={() =>
 												navigate(linkResolver(meta))
 											}
