@@ -6,6 +6,7 @@ export const MenuFragment = graphql`
 		menu_name
 		menu_featured_label
 		menu_misc_label
+		footer_description
 		nav {
 			... on PRISMIC_MenuNavNav_item {
 				type

@@ -8,6 +8,7 @@ const FooterContainer = ({ menu, meta }) => {
 	// Prepare main navigation
 	const mainNavigation = {
 		featured_label: get(menu, 'menu_featured_label', null),
+		footer_description: get(menu, 'footer_description', null),
 		misc_label: get(menu, 'menu_misc_label', null),
 		items: get(menu, 'nav', []).map((item, index) => ({
 			label: get(item, 'primary.menu_item_label', null),
