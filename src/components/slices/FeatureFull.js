@@ -31,7 +31,7 @@ const FeatureFull = ({
 
 FeatureFull.propTypes = {
 	title: PropTypes.string.isRequired,
-	buttonLabel: PropTypes.string.isRequired,
+	buttonLabel: PropTypes.string,
 	image: PropTypes.object,
 	body: PropTypes.array,
 	meta: PropTypes.object.isRequired,

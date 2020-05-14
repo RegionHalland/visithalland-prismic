@@ -51,6 +51,14 @@ export const MenuFragment = graphql`
 					_linkType
 					url
 				}
+				... on PRISMIC_Content {
+					title
+					_meta {
+						lang
+						uid
+						type
+					}
+				}
 			}
 			top_menu_link_label
 		}
