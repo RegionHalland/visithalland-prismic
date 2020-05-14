@@ -4,15 +4,17 @@ import Link from 'gatsby-link'
 import styled from 'styled-components'
 import tw from 'tailwind.macro'
 
-import Localize from './Localize'
+import Localize, { useLocalize } from './Localize'
 
 const Button = ({ title, url, to, onClick, colorscheme, size, ...props }) => {
+	const titleString = useLocalize(title)
+
 	if (onClick)
 		return (
 			<button className="focus:outline-none" onClick={onClick} {...props}>
 				<StyledButton
 					size={size}
-					data-title={title}
+					data-title={titleString}
 					colorscheme={colorscheme}
 				>
 					<StyledTitle>
@@ -27,7 +29,7 @@ const Button = ({ title, url, to, onClick, colorscheme, size, ...props }) => {
 			<a className="focus:outline-none" href={url} {...props}>
 				<StyledButton
 					size={size}
-					data-title={title}
+					data-title={titleString}
 					colorscheme={colorscheme}
 				>
 					<StyledTitle>
@@ -41,7 +43,7 @@ const Button = ({ title, url, to, onClick, colorscheme, size, ...props }) => {
 		return (
 			<StyledButton
 				size={size}
-				data-title={title}
+				data-title={titleString}
 				colorscheme={colorscheme}
 			>
 				<StyledTitle>
@@ -53,7 +55,7 @@ const Button = ({ title, url, to, onClick, colorscheme, size, ...props }) => {
 		<Link className="focus:outline-none" to={to} {...props}>
 			<StyledButton
 				size={size}
-				data-title={title}
+				data-title={titleString}
 				colorscheme={colorscheme}
 			>
 				<StyledTitle>

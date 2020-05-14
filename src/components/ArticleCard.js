@@ -7,7 +7,6 @@ import Image from './Image'
 import ImageCopyright from './ImageCopyright'
 import ConditionalWrapper from './ConditionalWrapper'
 import Link from 'gatsby-link'
-import Localize from './Localize'
 
 import FancyLink from './FancyLink'
 import Button from './Button'
@@ -71,26 +70,14 @@ const ArticleCard = ({
 							<Button
 								className="mt-2"
 								colorscheme="green"
-								title={
-									buttonLabel ? (
-										buttonLabel
-									) : (
-										<Localize text="Läs mer" />
-									)
-								}
+								title={buttonLabel ? buttonLabel : 'Läs mer'}
 							/>
 						) : (
 							<FancyLink
 								colorscheme="white"
 								active={active}
 								external={url}
-								title={
-									buttonLabel ? (
-										buttonLabel
-									) : (
-										<Localize text="Läs mer" />
-									)
-								}
+								title={buttonLabel ? buttonLabel : 'Läs mer'}
 							/>
 						)}
 					</Container>

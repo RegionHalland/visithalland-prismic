@@ -1,4 +1,4 @@
-import React, { Fragment, useContext } from 'react'
+import React, { Fragment, useEffect, useState, useContext } from 'react'
 import { LocaleContext } from '../templates/content'
 
 const Localize = ({ text }) => {
@@ -15,6 +15,23 @@ const Localize = ({ text }) => {
 				: text}
 		</Fragment>
 	)
+}
+
+export const useLocalize = textProp => {
+	const lang = useContext(LocaleContext)
+	const [text, set] = useState(textProp)
+
+	useEffect(() => {
+		if (lang !== 'sv-se') {
+			set(
+				translations[textProp] && translations[textProp][lang]
+					? translations[textProp][lang]
+					: textProp,
+			)
+		}
+	}, [set, lang, textProp])
+
+	return text
 }
 
 const translations = {
