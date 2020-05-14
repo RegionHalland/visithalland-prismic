@@ -6,6 +6,7 @@ import { useTransition, animated, config } from 'react-spring'
 
 import ArrowRightIcon from './icons/ArrowRightIcon'
 import LinkIcon from './icons/LinkIcon'
+import Localize from './Localize'
 
 const FancyLink = ({
 	title,
@@ -47,7 +48,7 @@ const FancyLink = ({
 				)}
 			</StyledIconContainer>
 			<StyledTitle size={size} colorscheme={colorscheme}>
-				{title}
+				<Localize text={title} />
 			</StyledTitle>
 		</StyledLink>
 	)

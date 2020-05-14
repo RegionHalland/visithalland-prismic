@@ -23,6 +23,8 @@ import {
 	SectionHeaderFragment,
 } from '../fragments'
 
+export const LocaleContext = React.createContext()
+
 const Content = ({
 	data: {
 		prismic: { content, allAnnouncements, allCookie_notices, menu },
@@ -52,17 +54,19 @@ const Content = ({
 
 	return (
 		<Layout>
-			<Seo
-				description={get(seo, 'description[0].text', null)}
-				image={get(seo, 'image.childImageSharp.fixed.src', null)}
-				lang={meta.lang}
-				title={title}
-			/>
-			<CookieNoticeContainer notice={allCookie_notices} />
-			<AnnouncementContainer announcements={allAnnouncements} />
-			<HeaderContainer menu={menu} meta={meta} />
-			<ContentParser slices={slices} meta={meta} seo={seo} />
-			<FooterContainer menu={menu} meta={meta} />
+			<LocaleContext.Provider value={meta.lang}>
+				<Seo
+					description={get(seo, 'description[0].text', null)}
+					image={get(seo, 'image.childImageSharp.fixed.src', null)}
+					lang={meta.lang}
+					title={title}
+				/>
+				<CookieNoticeContainer notice={allCookie_notices} />
+				<AnnouncementContainer announcements={allAnnouncements} />
+				<HeaderContainer menu={menu} meta={meta} />
+				<ContentParser slices={slices} meta={meta} seo={seo} />
+				<FooterContainer menu={menu} meta={meta} />
+			</LocaleContext.Provider>
 		</Layout>
 	)
 }

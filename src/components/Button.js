@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import Link from 'gatsby-link'
-
 import styled from 'styled-components'
 import tw from 'tailwind.macro'
+
+import Localize from './Localize'
 
 const Button = ({ title, url, to, onClick, colorscheme, size, ...props }) => {
 	if (onClick)
@@ -27,7 +28,9 @@ const Button = ({ title, url, to, onClick, colorscheme, size, ...props }) => {
 					data-title={title}
 					colorscheme={colorscheme}
 				>
-					<StyledTitle>{title}</StyledTitle>
+					<StyledTitle>
+						<Localize text={title} />
+					</StyledTitle>
 				</StyledButton>
 			</a>
 		)
@@ -39,7 +42,9 @@ const Button = ({ title, url, to, onClick, colorscheme, size, ...props }) => {
 				data-title={title}
 				colorscheme={colorscheme}
 			>
-				<StyledTitle>{title}</StyledTitle>
+				<StyledTitle>
+					<Localize text={title} />
+				</StyledTitle>
 			</StyledButton>
 		)
 	return (
@@ -49,7 +54,9 @@ const Button = ({ title, url, to, onClick, colorscheme, size, ...props }) => {
 				data-title={title}
 				colorscheme={colorscheme}
 			>
-				<StyledTitle>{title}</StyledTitle>
+				<StyledTitle>
+					<Localize text={title} />
+				</StyledTitle>
 			</StyledButton>
 		</Link>
 	)
