@@ -3,7 +3,9 @@ import langShortener from './langShortener'
 // https://prismic.io/docs/reactjs/beyond-the-api/link-resolving
 export function linkResolver(doc) {
 	if (doc.uid === 'frontpage') {
-		return doc.lang === 'sv-se' ? '/' : '/' + langShortener(doc.lang)
+		// Temporary for the Late summer highlights campaign
+		return 'https://www.visithalland.com/'
+		//return doc.lang === 'sv-se' ? '/' : '/' + langShortener(doc.lang)
 	}
 	if (doc.type === 'content') {
 		return doc.lang === 'sv-se'
@@ -17,5 +19,7 @@ export function linkResolver(doc) {
 
 	// Return the startpage if we fail for some reason
 	//console.log('LinkResolver failed. Could not generate link based on:', doc)
-	return '/'
+	// Temporary for the Late summer highlights campaign
+	return 'https://www.visithalland.com/'
+	//return '/'
 }
