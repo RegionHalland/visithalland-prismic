@@ -53,14 +53,14 @@ const RichTextContainer = styled.div`
 	}
 	> p {
 		${tw`text-gray-700 text-base md:text-lg leading-relaxed mb-6`};
-		& > strong {
-			${tw`font-medium`}
+		& strong {
+			${tw`font-semibold`}
 		}
-		& > em {
+		& em {
 			${tw`font-italic text-black`}
 		}
-		& > a {
-			${tw`font-medium text-black underline`}
+		& a {
+			${tw`font-semibold text-black underline`}
 		}
 	}
 	> img {
