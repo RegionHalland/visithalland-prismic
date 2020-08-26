@@ -14,8 +14,8 @@ import BackgroundPattern from '../images/bg-pattern.svg'
 const Footer = ({ mainNavigation, meta, langs }) => {
 	return (
 		<FooterContainer className="text-white bg-blue-800 pt-24 pb-48 absolute z-10 w-full">
-			<Container className="flex flex-wrap px-4 md:px-6">
-				<div className="w-full md:w-4/12 mb-8">
+			<Container className="flex flex-wrap lg:justify-between px-4 md:px-6">
+				<div className="w-full md:w-4/12 mb-8 pr-8">
 					<Link
 						to={linkResolver({
 							lang: meta.lang,
@@ -24,7 +24,10 @@ const Footer = ({ mainNavigation, meta, langs }) => {
 						})}
 						className="mb-4 block relative"
 					>
-						<LogoHorizontal className="mt-1 w-10/12 sm:w-full max-w-xs" />
+						<LogoHorizontal className="mt-1 w-10/12 sm:w-full max-w-xs mb-2" />
+						<p className="text-base text-gray-300">
+							{mainNavigation.footer_description}
+						</p>
 					</Link>
 				</div>
 				<div className="w-full lg:w-8/12 flex flex-wrap -mx-3">
