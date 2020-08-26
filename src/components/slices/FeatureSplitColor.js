@@ -20,11 +20,12 @@ const FeatureSplitColor = ({
 	buttonLabel,
 	url,
 	copyright,
+	tight,
 	...props
 }) => {
 	const [active, setActive] = useState(false)
 	return (
-		<Container className="px-4 md:px-6">
+		<Container tight={tight} className="px-4 md:px-6">
 			<ConditionalWrapper
 				condition={url}
 				ifWrapper={children => (
@@ -98,6 +99,7 @@ FeatureSplitColor.propTypes = {
 	meta: PropTypes.object.isRequired,
 	body: PropTypes.array,
 	url: PropTypes.string,
+	tight: PropTypes.bool,
 }
 
 export default FeatureSplitColor

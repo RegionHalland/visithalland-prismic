@@ -57,6 +57,25 @@ const FeatureContainer = ({ slice }) => {
 		)
 	}
 
+	if (variant === 'split color tight') {
+		return (
+			<div className="py-8">
+				<FeatureSplitColor
+					title={title}
+					body={body}
+					buttonLabel={buttonLabel}
+					image={image}
+					copyright={copyright}
+					alt={alt}
+					meta={meta}
+					url={url}
+					tags={tags}
+					tight={true}
+				/>
+			</div>
+		)
+	}
+
 	if (variant === 'split shadow') {
 		return (
 			<div className="py-8">
