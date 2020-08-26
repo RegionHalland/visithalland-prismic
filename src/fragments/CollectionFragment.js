@@ -13,10 +13,10 @@ export const CollectionFragment = graphql`
 			collection_image
 			collection_imageSharp {
 				childImageSharp {
-					fluid(maxWidth: 1280, quality: 60) {
+					fluid(maxWidth: 1440, quality: 80) {
 						...GatsbyImageSharpFluid_withWebp
 					}
-					fixed(width: 400, height: 400, quality: 60) {
+					fixed(width: 400, height: 400, quality: 80) {
 						...GatsbyImageSharpFixed_withWebp
 					}
 				}
@@ -34,10 +34,10 @@ export const CollectionFragment = graphql`
 					seo_featured_image
 					seo_featured_imageSharp {
 						childImageSharp {
-							fluid(maxWidth: 1280, quality: 60) {
+							fluid(maxWidth: 1440, quality: 80) {
 								...GatsbyImageSharpFluid_withWebp
 							}
-							fixed(width: 400, height: 400, quality: 60) {
+							fixed(width: 400, height: 400, quality: 80) {
 								...GatsbyImageSharpFixed_withWebp
 							}
 						}

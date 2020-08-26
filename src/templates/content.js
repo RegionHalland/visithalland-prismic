@@ -103,10 +103,10 @@ export const query = graphql`
 				seo_featured_image
 				seo_featured_imageSharp {
 					childImageSharp {
-						fluid(maxWidth: 1280, quality: 60) {
+						fluid(maxWidth: 1440, quality: 80) {
 							...GatsbyImageSharpFluid_withWebp
 						}
-						fixed(width: 1200, height: 628, quality: 60) {
+						fixed(width: 1200, height: 628, quality: 80) {
 							...GatsbyImageSharpFixed_withWebp
 						}
 					}

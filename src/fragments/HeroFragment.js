@@ -17,10 +17,10 @@ export const HeroFragment = graphql`
 			hero_image
 			hero_imageSharp {
 				childImageSharp {
-					fluid(maxWidth: 1280, quality: 60) {
+					fluid(maxWidth: 1440, quality: 80) {
 						...GatsbyImageSharpFluid_withWebp
 					}
-					fixed(width: 400, height: 400, quality: 60) {
+					fixed(width: 400, height: 400, quality: 80) {
 						...GatsbyImageSharpFixed_withWebp
 					}
 				}
@@ -28,10 +28,10 @@ export const HeroFragment = graphql`
 			hero_overlay_image
 			hero_overlay_imageSharp {
 				childImageSharp {
-					fluid(maxWidth: 1280, quality: 60) {
+					fluid(maxWidth: 1440, quality: 80) {
 						...GatsbyImageSharpFluid_withWebp
 					}
-					fixed(width: 400, height: 400, quality: 60) {
+					fixed(width: 400, height: 400, quality: 80) {
 						...GatsbyImageSharpFixed_withWebp
 					}
 				}
