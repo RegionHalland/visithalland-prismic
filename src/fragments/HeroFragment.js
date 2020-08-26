@@ -25,6 +25,17 @@ export const HeroFragment = graphql`
 					}
 				}
 			}
+			hero_overlay_image
+			hero_overlay_imageSharp {
+				childImageSharp {
+					fluid(maxWidth: 1280, quality: 60) {
+						...GatsbyImageSharpFluid_withWebp
+					}
+					fixed(width: 400, height: 400, quality: 60) {
+						...GatsbyImageSharpFixed_withWebp
+					}
+				}
+			}
 		}
 	}
 `
