@@ -3,9 +3,3 @@
 
 [[plugins]]
 package = "netlify-plugin-gatsby-cache"
-
-[[redirects]]
-from = "/"
-to = "https://www.visithalland.com"
-force = true
-status = 302
