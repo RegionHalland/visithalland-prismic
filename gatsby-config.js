@@ -61,12 +61,6 @@ module.exports = {
 				routeChangeEventName: 'gatsby-route-change',
 			},
 		},
-		{
-			resolve: `gatsby-plugin-google-analytics`,
-			options: {
-				trackingId: 'UA-89278649-4',
-			},
-		},
 		'gatsby-plugin-postcss',
 		{
 			resolve: '@digitaliseringsbyran/gatsby-source-prismic-graphql',
