@@ -1,1 +1,1 @@
-module.exports = ['sv-se', 'no']
+module.exports = ['sv-se']
