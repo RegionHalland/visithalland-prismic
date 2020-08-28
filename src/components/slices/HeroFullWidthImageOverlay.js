@@ -67,6 +67,9 @@ const HeroFullWidthImageOverlay = ({
 			</ImageContainer>
 			<Container className="px-4 md:px-6" tight>
 				<div className="w-full md:w-10/12 mx-auto">
+					<h1 className="text-3xl md:text-4xl lg:text-5xl w-full leading-tight text-black font-bold  mb-4 text-center">
+						{title}
+					</h1>
 					{introduction && !!introduction.length && (
 						<StyledIntroduction>
 							<TextRenderer
