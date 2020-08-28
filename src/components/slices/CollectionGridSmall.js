@@ -16,7 +16,7 @@ const CollectionGridSmall = ({ items }) => (
 	<Container className="px-4 md:px-6" tight>
 		<div className="flex flex-wrap -mx-2">
 			{items.map(
-				({ title, tags, meta, image, copyright, alt }, index) => (
+				({ title, tags, meta, image, copyright, alt, url }, index) => (
 					<GridItem
 						key={`${meta.uid}-${index}`}
 						className="px-2 mb-3"
