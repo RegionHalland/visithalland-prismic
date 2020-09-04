@@ -6,6 +6,7 @@ import CollectionListSmall from './CollectionListSmall'
 import CollectionListLarge from './CollectionListLarge'
 import CollectionGridSmall from './CollectionGridSmall'
 import CollectionGridLarge from './CollectionGridLarge'
+import CollectionGridLarge3PerRow from './CollectionGridLarge3PerRow'
 import CollectionCarouselSmall from './CollectionCarouselSmall'
 import CollectionCarouselLarge from './CollectionCarouselLarge'
 import CollectionListAlternating from './CollectionListAlternating'
@@ -95,6 +96,14 @@ const CollectionContainer = ({ slice }) => {
 		return (
 			<div className="py-8">
 				<CollectionGridLarge items={items} />
+			</div>
+		)
+	}
+
+	if (variant === 'large grid 3 per row') {
+		return (
+			<div className="py-8">
+				<CollectionGridLarge3PerRow items={items} />
 			</div>
 		)
 	}
