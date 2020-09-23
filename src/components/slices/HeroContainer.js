@@ -15,8 +15,6 @@ const HeroContainer = ({ slice, meta }) => {
 	const { firstPublicationDate } = meta
 	const { primary } = slice
 
-	console.log(primary)
-
 	const title = get(primary, 'hero_title[0].text', '')
 	const introduction = get(primary, 'hero_introduction', [])
 	const video = get(primary, 'hero_video', [])
