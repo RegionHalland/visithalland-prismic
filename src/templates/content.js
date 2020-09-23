@@ -21,6 +21,7 @@ import {
 	QuoteFragment,
 	MenuFragment,
 	SectionHeaderFragment,
+	InstagramFragment,
 } from '../fragments'
 
 export const LocaleContext = React.createContext()
@@ -132,6 +133,7 @@ export const query = graphql`
 					...VideoFragment
 					...QuoteFragment
 					...SectionHeaderFragment
+					...InstagramFragment
 				}
 			}
 		}
@@ -148,6 +150,7 @@ Content.fragments = [
 	VideoFragment,
 	QuoteFragment,
 	MenuFragment,
+	InstagramFragment,
 	SectionHeaderFragment,
 ]
 

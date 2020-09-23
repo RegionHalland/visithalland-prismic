@@ -9,6 +9,7 @@ import CollectionContainer from './slices/CollectionContainer'
 import VideoContainer from './slices/VideoContainer'
 import QuoteContainer from './slices/QuoteContainer'
 import SectionHeaderContainer from './slices/SectionHeaderContainer'
+import InstagramContainer from './slices/InstagramContainer'
 
 const TYPE_COMPONENTS = {
 	hero: HeroContainer,
@@ -19,6 +20,7 @@ const TYPE_COMPONENTS = {
 	video: VideoContainer,
 	quote: QuoteContainer,
 	section_header: SectionHeaderContainer,
+	instagram: InstagramContainer,
 }
 
 const ContentParser = ({ slices, meta, seo }) => (

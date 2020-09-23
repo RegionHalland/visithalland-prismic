@@ -9,6 +9,7 @@
     "@digitaliseringsbyran/tailwindcss-screens-in-dom": "^0.1.1",
     "@n8tb1t/use-scroll-position": "^1.0.43",
     "@storybook/addon-knobs": "^5.3.9",
+    "await-to-fetch": "^1.2.0",
     "date-fns": "^2.9.0",
     "gatsby": "^2.21.0",
     "gatsby-image": "^2.2.39",
